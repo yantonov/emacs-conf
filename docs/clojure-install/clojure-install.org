@@ -1,0 +1,159 @@
+# Clojure install
+# 1. JDK
+# Clojure runs over JVM, so we need JDK. Get Oracle [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][jdk]].
+#
+#
+# 2. [[http://git-scm.com][Git]] 
+# Clojure project in under active development.
+# Version control system is the best way to keep up the latest changes.
+#
+#
+# 3. [[http://ant.apache.org][Ant]] 
+# Java build tool.
+#
+#
+# 4. [[http://maven.apache.org][Maven]] 
+# Java build and dependency management tool.
+#
+#
+# 5. Clojure directory
+mkdir /opt/clojure
+cd /opt/clojure
+mkdir dist
+mkdir jar
+mkdir sh
+#
+#
+# 6. Get and build Clojure
+cd /opt/clojure/dist/
+git clone git://github.com/clojure/clojure.git clojure
+cd clojure
+ant
+ln -s /opt/clojure/dist/clojure/clojure.jar /opt/clojure/jar/clojure.jar
+#
+#
+# 7. Get and build clojure-contrib library
+cd /opt/clojure/dist
+git clone https://github.com/clojure/clojure-contrib.git clojure-contrib
+cd clojure-contrib
+mvn package -Dclojure.jar=/opt/clojure/jar/clojure.jar -Dmaven.test.skip=true
+mkdir /opt/clojure/jar/clojure-contrib/
+cp `find modules -name "*.jar"` /opt/clojure/jar/clojure-contrib/
+#
+#
+# 8. Make script for launch Clojure 
+cd /opt/sh/
+emacs clj-cmd
+
+Script text:
+#!/bin/bash
+# set classpath
+for i in `find /opt/clojure/jar/ -name "*.jar"`
+do
+CP=${CP}:${i}
+done
+CP=$CLASSPATH:$CP
+# run clojure
+java -cp $CP clojure.main
+# enjoy
+
+chmod +x clj-cmd
+#
+#
+# 9. Use jline ConsoleRunner for simplicity and convience 
+# jline site http://jline.sourceforge.net/
+#  Download dist в /opt/clojure/dist/jline-xxx
+cd /opt/clojure/jar
+ln -s /opt/clojure/dist/jline-xxx.jar jline.jar
+   
+#   Edit script clj (build at step 8)
+cd /opt/clojure/sh
+emacs clj
+
+#  Updated script text:
+#!/bin/bash
+# set classpath
+for i in `find /opt/clojure/jar/ -name "*.jar"`
+do
+CP=${CP}:${i}
+done
+CP=$CLASSPATH:$CP
+# run clojure
+if [ -z "$1" ]; then
+java -cp $CP jline.ConsoleRunner clojure.main
+else
+scriptname=$1
+shift
+java -cp $CP clojure.main $scriptname $*
+fi
+# enjoy
+
+#   Run without parameters - start clojure
+#   Run with arguments load clojure script file under the clojure
+#
+#
+# 10. clojure-mode
+# Get from here : http://github.com/jochu/clojure-mode
+# add clojure-mode initialization (emacs-rc-clojure.el) into init.el
+cd ~/emacs/mode/
+git clone https://github.com/jochu/clojure-mode.git clojure-mode
+echo ";; clojure-mode" >> ~/emacs/init.el
+echo "(load \"~/emacs/rc/emacs-rc-clojure.el\")" >> init.el
+#
+#
+# 11. slime
+# Get from here: http://common-lisp.net/project/slime/
+# Put into "~/emacs/mode/slime
+# Add slime initialization file into init.el
+cd ~/emacs/mode
+rm -rf slime
+echo ";;; getting slime"
+wget http://common-lisp.net/project/slime/snapshots/slime-current.tgz
+echo ";;; unpacking slime"
+tar xvfz slime-current.tgz
+echo ";;; removing downloaded archive"
+rm slime-current.tgz
+echo ";;; renaming 'slime-yyyy-mm-dd' dir into 'slime'"
+mv `ls -d slime* | head -n 1` slime
+echo ";;; ok"
+
+echo ";; slime" >> init.el
+echo "(load \"~/emacs/rc/emacs-rc-slime.el\")" >> init.el
+#
+#
+# 12. leiningen
+cd /opt/clojure/sh
+wget https://raw.github.com/technomancy/leiningen/stable/bin/lein
+chmod +x lein
+lein self-install
+#
+# 13. swank-clojure
+# Get from here https://github.com/technomancy/swank-clojure
+lein plugin install swank-clojure 1.3.3
+
+#
+# 14. add /opt/clojure/sh inside PATH variable
+# add following line to ~/.bashrc
+# export PATH=$PATH:/opt/clojure/sh
+
+
+#
+# 15. cant use doc inside repl
+# https://github.com/technomancy/swank-clojure/issues/45
+# 
+#(use 'clojure.repl)
+#(use 'clojure.java.javadoc)
+
+# These two lines can be added to ~/.lein/user.clj
+   
+# links
+# 1. Tellman Yusupov blog 
+# http://yusupov.com/blog/2009/basic-clojure-setup-part-1/
+#
+# 2. Bill Clemenson blog 
+# http://bc.tech.coop/blog/081231.html
+#
+# 3. Alex Ott 
+# http://github.com/alexott/emacs-configs 
+# http://alexott.net/ru/index.html
+   
