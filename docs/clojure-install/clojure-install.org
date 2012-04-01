@@ -97,8 +97,6 @@ fi
 # add clojure-mode initialization (emacs-rc-clojure.el) into init.el
 cd ~/emacs/mode/
 git clone https://github.com/jochu/clojure-mode.git clojure-mode
-echo ";; clojure-mode" >> ~/emacs/init.el
-echo "(load \"~/emacs/rc/emacs-rc-clojure.el\")" >> init.el
 #
 #
 # 11. slime
@@ -117,8 +115,6 @@ echo ";;; renaming 'slime-yyyy-mm-dd' dir into 'slime'"
 mv `ls -d slime* | head -n 1` slime
 echo ";;; ok"
 
-echo ";; slime" >> init.el
-echo "(load \"~/emacs/rc/emacs-rc-slime.el\")" >> init.el
 #
 #
 # 12. leiningen
@@ -129,7 +125,7 @@ lein self-install
 #
 # 13. swank-clojure
 # Get from here https://github.com/technomancy/swank-clojure
-lein plugin install swank-clojure 1.3.3
+lein plugin install swank-clojure 1.4.2
 
 #
 # 14. add /opt/clojure/sh inside PATH variable
