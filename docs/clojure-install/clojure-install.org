@@ -125,7 +125,7 @@ lein self-install
 #
 # 13. swank-clojure
 # Get from here https://github.com/technomancy/swank-clojure
-lein plugin install swank-clojure 1.4.2
+lein plugin install swank-clojure 1.4.4
 
 #
 # 14. add /opt/clojure/sh inside PATH variable
