@@ -1,6 +1,5 @@
 ;; *** clojure-mode BEGIN
 ;; emacs-mode-dir initialized in emacs-rc-env.el
-(add-to-list 'load-path (concat emacs-mode-home "clojure-mode/"))
 (setq clojure-home "/opt/clojure/jar/")
 (autoload 'clojure-mode "clojure-mode" "A major mode for Clojure" t)
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
@@ -30,7 +29,6 @@
                                         ))
                       " clojure.main")))
 
-;; paredit enable code
 (defun my-clojure-mode-hook ()
   (paredit-mode 1)
   (local-set-key [return] 'newline-and-indent)

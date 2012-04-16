@@ -2,8 +2,11 @@
 (load "~/emacs/rc/emacs-rc-env.el")
 
 ;; used modes
+;; highlight parentheses
 (add-to-list 'load-path (concat emacs-mode-home "highlight-parentheses/"))
 (require 'highlight-parentheses)
+;; clojure mode
+(add-to-list 'load-path (concat emacs-mode-home "clojure-mode/"))
 
 ;; general editor settings
 (load "~/emacs/rc/emacs-rc-editor.el")
