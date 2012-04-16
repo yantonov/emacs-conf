@@ -7,6 +7,10 @@
 (require 'highlight-parentheses)
 ;; clojure mode
 (add-to-list 'load-path (concat emacs-mode-home "clojure-mode/"))
+;; color theme mode
+(add-to-list 'load-path (concat emacs-mode-home "color-theme-6.6.0"))
+;; custom color themes
+(add-to-list 'load-path (concat emacs-home "color-themes"))
 
 ;; general editor settings
 (load "~/emacs/rc/emacs-rc-editor.el")
