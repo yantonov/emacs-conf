@@ -21,6 +21,9 @@
 (setq initial-scratch-message nil)
 ; no toolbars
 (tool-bar-mode nil)
+; tabls
+(setq tab-width 4)
+(setq indent-tabs-mode nil)
 ; resize buffer key bindings
 ; http://www.emacswiki.org/emacs/WindowResize
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
