@@ -12,21 +12,23 @@
 ;; custom color themes
 (add-to-list 'load-path (concat emacs-home "color-themes"))
 ;; linum
+;; http://www.emacswiki.org/emacs/LinumPlus
+;; trunk
+;; http://code.google.com/p/dea/source/browse/trunk/my-lisps/linum%2B.el
+;; download to mode/linumplus/linum+.el
 (add-to-list 'load-path (concat emacs-mode-home "linumplus/"))
+;; paredit
+;; http://mumble.net/~campbell/emacs/paredit.el
+;; download to mode/paredit/paredit.el
+(add-to-list 'load-path (concat emacs-mode-home "paredit/"))
 
 ;; general editor settings
 (load "~/emacs/rc/emacs-rc-editor.el")
 
 ;; paredit
-;; http://mumble.net/~campbell/emacs/paredit.el
-;; download to mode/paredit/paredit.el
 (load "~/emacs/rc/emacs-rc-paredit.el")
 
-;; linum description
-;; http://www.emacswiki.org/emacs/LinumPlus
-;; trunk
-;; http://code.google.com/p/dea/source/browse/trunk/my-lisps/linum%2B.el
-;; download to mode/linumplus/linum+.el
+;; linum
 (load "~/emacs/rc/emacs-rc-linum.el")
  
 ;; clojure-mode
