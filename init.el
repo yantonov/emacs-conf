@@ -1,6 +1,10 @@
 ;; paths, environment
 (load "~/emacs/rc/emacs-rc-env.el")
 
+;; used modes
+(add-to-list 'load-path (concat emacs-mode-home "highlight-parentheses/"))
+(require 'highlight-parentheses)
+
 ;; general editor settings
 (load "~/emacs/rc/emacs-rc-editor.el")
 
