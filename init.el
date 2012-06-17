@@ -3,6 +3,7 @@
 
 ;; used modes
 ;; highlight parentheses
+;; http://www.emacswiki.org/emacs/HighlightParentheses
 (add-to-list 'load-path (concat emacs-mode-home "highlight-parentheses/"))
 (require 'highlight-parentheses)
 ;; clojure mode
@@ -54,4 +55,7 @@
 ;; http://www.nongnu.org/color-theme/
 ;; download to mode/color-theme-x.x.x
 (load "~/emacs/rc/emacs-rc-color-theme.el")
+
+;; erlang support
+(load "~/emacs/rc/emacs-rc-erlang.el")
 
