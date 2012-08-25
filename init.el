@@ -1,3 +1,5 @@
+; elpa settings
+(load "~/emacs/elpa.el")
 ;; paths, environment
 (load "~/emacs/rc/emacs-rc-env.el")
 
