@@ -36,12 +36,7 @@
 (load "~/emacs/rc/emacs-rc-clojure.el")
 
 ;; slime
-;(load "~/emacs/rc/emacs-rc-slime.el")
-
-;; org-mode
-;; git clone git://orgmode.org/org-mode.git
-;; download to mode/org-mode
-(load "~/emacs/rc/emacs-rc-orgmode.el")
+(load "~/emacs/rc/emacs-rc-slime.el")
 
 ;; webjump
 (load "~/emacs/rc/emacs-rc-webjump.el")
