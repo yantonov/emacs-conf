@@ -1,10 +1,14 @@
 # steps to install clojure support
 
-# assumed emacs 24 is used (included elpa support)
+# emacs 24 (included elpa support)
 
-# install using elpa :
-# nrepl, slime
+# install using elpa : nrepl, slime
+M-x package-list-packages
 
-# M-x package-list-packages
+# connect to repl
+M-x nrepl-jack-in
 
-# M-x nrepl-jack-in command
+# emacs 23
+# install package.el
+
+# install nrepl, slime, clojure-mode using package.el
