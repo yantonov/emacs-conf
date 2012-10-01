@@ -4,6 +4,8 @@
 # http://www.emacswiki.org/emacs/LinumPlus
 # trunk
 # http://code.google.com/p/dea/source/browse/trunk/my-lisps/linum%2B.el
+# raw file
+# http://dea.googlecode.com/svn/trunk/my-lisps/linum+.el
 
 # init env
 
@@ -18,7 +20,7 @@ EMACS_MODE_HOME=`${UTIL_DIR}/emacs-mode-home.sh`
 
 # run
 
-INSTALLED_MODE_EL_FILE_URL="http://code.google.com/p/dea/source/browse/trunk/my-lisps/linum%2B.el"
+INSTALLED_MODE_EL_FILE_URL="http://dea.googlecode.com/svn/trunk/my-lisps/linum+.el"
 INSTALLED_MODE_DIR="linumplus"
 
 cd ${EMACS_MODE_HOME}
