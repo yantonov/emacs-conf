@@ -15,7 +15,7 @@
 (require 'highlight-parentheses)
 
 ;; color theme mode
-(add-to-list 'load-path (concat emacs-mode-home "color-theme-6.6.0"))
+(add-to-list 'load-path (concat emacs-mode-home "color-theme"))
 
 ;; custom color themes
 (add-to-list 'load-path (concat emacs-home "color-themes"))
