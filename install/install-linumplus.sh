@@ -27,6 +27,7 @@ cd ${EMACS_MODE_HOME}
 `${UTIL_DIR}/mkdir.sh ${INSTALLED_MODE_DIR}`
 cd ${INSTALLED_MODE_DIR}
 
+rm -rf *
 wget ${INSTALLED_MODE_EL_FILE_URL}
 
 
