@@ -36,6 +36,10 @@
 ;; https://github.com/kingtim/nrepl.el
 (add-to-list 'load-path (concat emacs-mode-home "nrepl/"))
 
+;; expand-region
+;; https://github.com/magnars/expand-region.el.gitl
+(add-to-list 'load-path (concat emacs-mode-home "expand-region/"))
+
 ;; 
 ;; settings
 ;;
@@ -72,3 +76,5 @@
 ;; erlang support
 (load "~/emacs/rc/emacs-rc-erlang.el")
 
+;; expand-region
+(load "~/emacs/rc/emacs-rc-expand-region.el")

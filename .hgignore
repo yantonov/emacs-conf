@@ -20,3 +20,7 @@ mode/**
 
 # temporary shell file
 nohup.out
+
+# mercurial orig files
+syntax: regexp
+.*\.orig
