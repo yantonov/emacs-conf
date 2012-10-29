@@ -40,6 +40,10 @@
 ;; https://github.com/magnars/expand-region.el.gitl
 (add-to-list 'load-path (concat emacs-mode-home "expand-region/"))
 
+;; zencoding
+;; https://github.com/rooney/zencoding.git
+(add-to-list 'load-path (concat emacs-mode-home "zencoding-mode/"))
+
 ;; 
 ;; settings
 ;;
@@ -81,3 +85,6 @@
 
 ;; buffer related defuns
 (load "~/emacs/rc/emacs-rc-buffers.el")
+
+;; zencoding
+(load "~/emacs/rc/emacs-rc-zencoding.el")
