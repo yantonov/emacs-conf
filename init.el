@@ -78,3 +78,6 @@
 
 ;; expand-region
 (load "~/emacs/rc/emacs-rc-expand-region.el")
+
+;; buffer related defuns
+(load "~/emacs/rc/emacs-rc-buffers.el")
