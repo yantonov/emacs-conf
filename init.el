@@ -44,6 +44,10 @@
 ;; https://github.com/rooney/zencoding.git
 (add-to-list 'load-path (concat emacs-mode-home "zencoding-mode/"))
 
+;; markdown
+;; http://jblevins.org/projects/markdown-mode/
+(add-to-list 'load-path (concat emacs-mode-home "markdown-mode/"))
+
 ;; 
 ;; settings
 ;;
@@ -88,3 +92,6 @@
 
 ;; zencoding
 (load "~/emacs/rc/emacs-rc-zencoding.el")
+
+;; markdown
+(load "~/emacs/rc/emacs-rc-markdown.el")
