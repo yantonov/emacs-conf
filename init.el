@@ -12,7 +12,6 @@
 ;; highlight parentheses
 ;; http://www.emacswiki.org/emacs/HighlightParentheses
 (add-to-list 'load-path (concat emacs-mode-home "highlight-parentheses/"))
-(require 'highlight-parentheses)
 
 ;; color theme mode
 (add-to-list 'load-path (concat emacs-mode-home "color-theme"))
@@ -95,3 +94,7 @@
 
 ;; markdown
 (load "~/emacs/rc/emacs-rc-markdown.el")
+
+;; highlight parentheses
+(load "~/emacs/rc/emacs-rc-highlight-parentheses.el")
+
