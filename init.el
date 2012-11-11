@@ -47,6 +47,10 @@
 ;; http://jblevins.org/projects/markdown-mode/
 (add-to-list 'load-path (concat emacs-mode-home "markdown-mode/"))
 
+;; string manipulation
+;; https://github.com/magnars/s.el
+(add-to-list 'load-path (concat emacs-mode-home "string-manipulation/"))
+
 ;; 
 ;; settings
 ;;
@@ -98,3 +102,5 @@
 ;; highlight parentheses
 (load "~/emacs/rc/emacs-rc-highlight-parentheses.el")
 
+;; string manipulation library
+(load "~/emacs/rc/emacs-rc-string-manipulation.el")
