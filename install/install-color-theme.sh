@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# page
-# `http://download.savannah.gnu.org/releases/color-theme/color-theme-6.6.0.zip
+# http://download.savannah.gnu.org/releases/color-theme/color-theme-6.6.0.zip
+# alternative url
+# http://download-mirror.savannah.gnu.org/releases/color-theme/color-theme-6.6.0.zip
 
 # init env
 
@@ -16,7 +17,7 @@ EMACS_MODE_HOME=`${UTIL_DIR}/emacs-mode-home.sh`
 
 # run
 
-INSTALLED_MODE_EL_FILE_URL="http://download.savannah.gnu.org/releases/color-theme/color-theme-6.6.0.zip"
+INSTALLED_MODE_EL_FILE_URL="http://download-mirror.savannah.gnu.org/releases/color-theme/color-theme-6.6.0.zip"
 INSTALLED_MODE_DIR="color-themes"
 
 cd ${EMACS_MODE_HOME}
