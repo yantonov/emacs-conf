@@ -1,0 +1,6 @@
+# backup files
+*~
+\#*\#
+
+# ignore mode dir (every mode is installed from remote repository)
+/mode/*
