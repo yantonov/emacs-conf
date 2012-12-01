@@ -70,6 +70,9 @@
 ;; clojure-mode
 (load "~/emacs/rc/emacs-rc-clojure.el")
 
+;; nrepl
+(load "~/emacs/rc/emacs-rc-nrepl.el")
+
 ;; slime
 (load "~/emacs/rc/emacs-rc-slime.el")
 
