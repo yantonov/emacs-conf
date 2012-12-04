@@ -1,4 +1,5 @@
 ;; Buffer-related defuns
+(require 's)
 
 (defun indent-buffer ()
   (interactive)
