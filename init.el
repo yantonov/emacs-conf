@@ -64,6 +64,9 @@
 ;; paredit
 (load "~/emacs/rc/emacs-rc-paredit.el")
 
+;; highlight parentheses
+(load "~/emacs/rc/emacs-rc-highlight-parentheses.el")
+
 ;; linum
 (load "~/emacs/rc/emacs-rc-linum.el")
  
@@ -93,6 +96,9 @@
 ;; expand-region
 (load "~/emacs/rc/emacs-rc-expand-region.el")
 
+;; string manipulation library
+(load "~/emacs/rc/emacs-rc-string-manipulation.el")
+
 ;; buffer related defuns
 (load "~/emacs/rc/emacs-rc-buffers.el")
 
@@ -101,9 +107,3 @@
 
 ;; markdown
 (load "~/emacs/rc/emacs-rc-markdown.el")
-
-;; highlight parentheses
-(load "~/emacs/rc/emacs-rc-highlight-parentheses.el")
-
-;; string manipulation library
-(load "~/emacs/rc/emacs-rc-string-manipulation.el")
