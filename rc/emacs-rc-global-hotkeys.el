@@ -1,0 +1,1 @@
+(global-set-key (kbd "C-M-l") 'indent-buffer) ; inspired by intellij idea

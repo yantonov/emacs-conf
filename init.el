@@ -107,3 +107,6 @@
 
 ;; markdown
 (load "~/emacs/rc/emacs-rc-markdown.el")
+
+;; personal global hotkeys at one place
+(load "~/emacs/rc/emacs-rc-global-hotkeys.el")
