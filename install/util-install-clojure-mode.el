@@ -1,0 +1,1 @@
+(package-install 'clojure-mode)
