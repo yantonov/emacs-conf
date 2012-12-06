@@ -4,3 +4,6 @@
 
 # ignore mode dir (every mode is installed from remote repository)
 /mode/*
+
+# ignore loaded from git and other places color themes
+/color-themes/solarized/*

@@ -18,6 +18,7 @@
 
 ;; custom color themes
 (add-to-list 'load-path (concat emacs-home "color-themes"))
+(add-to-list 'load-path (concat emacs-home "color-themes" "/solarized"))
 
 ;; linum
 ;; http://www.emacswiki.org/emacs/LinumPlus
