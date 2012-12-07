@@ -6,4 +6,4 @@
 # http://nschum.de/src/emacs/highlight-parentheses/highlight-parentheses.el
 
 SCRIPT_DIR=`dirname $0`
-$SCRIPT_DIR/util-install-single-file.sh "http://nschum.de/src/emacs/highlight-parentheses/highlight-parentheses.el" "highlight-parentheses"
+$SCRIPT_DIR/util/util-install-single-file.sh "http://nschum.de/src/emacs/highlight-parentheses/highlight-parentheses.el" "highlight-parentheses"

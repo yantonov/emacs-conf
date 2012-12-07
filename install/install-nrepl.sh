@@ -6,4 +6,4 @@
 
 
 SCRIPT_DIR=`dirname $0`
-$SCRIPT_DIR/util-install-single-file.sh "https://raw.github.com/kingtim/nrepl.el/master/nrepl.el" "nrepl"
+$SCRIPT_DIR/util/util-install-single-file.sh "https://raw.github.com/kingtim/nrepl.el/master/nrepl.el" "nrepl"

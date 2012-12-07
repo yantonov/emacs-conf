@@ -17,7 +17,7 @@ fi
 # init env
 
 CURRENT_DIR=`dirname $0`
-UTIL_DIR="${CURRENT_DIR}/shell-util"
+UTIL_DIR="${CURRENT_DIR}/util"
 WD=`pwd`
 cd $UTIL_DIR
 UTIL_DIR=`pwd`

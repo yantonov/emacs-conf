@@ -8,5 +8,5 @@
 # http://dea.googlecode.com/svn/trunk/my-lisps/linum+.el
 
 SCRIPT_DIR=`dirname $0`
-$SCRIPT_DIR/util-install-single-file.sh "http://dea.googlecode.com/svn/trunk/my-lisps/linum+.el" "linumplus"
+$SCRIPT_DIR/util/util-install-single-file.sh "http://dea.googlecode.com/svn/trunk/my-lisps/linum+.el" "linumplus"
 
