@@ -15,13 +15,11 @@ else
 fi
     
 # init env
-
-CURRENT_DIR=`dirname $0`
-UTIL_DIR="${CURRENT_DIR}/util"
 WD=`pwd`
+CURRENT_DIR=`dirname $0`
+UTIL_DIR="${CURRENT_DIR}"
 cd $UTIL_DIR
 UTIL_DIR=`pwd`
-cd $WD
 EMACS_HOME=`${UTIL_DIR}/emacs-home.sh`
 EMACS_MODE_HOME=`${UTIL_DIR}/emacs-mode-home.sh`
 
@@ -33,3 +31,4 @@ rm -rf ${INSTALLED_MODE_DIR}
 cd ${INSTALLED_MODE_DIR}
 
 git clone ${GIT_REPO} .
+cd $WD

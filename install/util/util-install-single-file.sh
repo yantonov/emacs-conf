@@ -14,12 +14,11 @@ else
     INSTALLED_MODE_DIR=$2
 fi
 
-CURRENT_DIR=`dirname $0`
-UTIL_DIR="${CURRENT_DIR}/util"
 WD=`pwd`
+CURRENT_DIR=`dirname $0`
+UTIL_DIR="${CURRENT_DIR}"
 cd $UTIL_DIR
 UTIL_DIR=`pwd`
-cd $WD
 EMACS_HOME=`${UTIL_DIR}/emacs-home.sh`
 EMACS_MODE_HOME=`${UTIL_DIR}/emacs-mode-home.sh`
 
@@ -31,3 +30,4 @@ cd ${INSTALLED_MODE_DIR}
 
 rm -rf *
 wget ${INSTALLED_MODE_EL_FILE_URL}
+cd $WD
