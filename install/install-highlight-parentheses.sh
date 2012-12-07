@@ -6,4 +6,6 @@
 # http://nschum.de/src/emacs/highlight-parentheses/highlight-parentheses.el
 
 SCRIPT_DIR=`dirname $0`
-$SCRIPT_DIR/util/util-install-single-file.sh "http://nschum.de/src/emacs/highlight-parentheses/highlight-parentheses.el" "highlight-parentheses"
+URL="http://nschum.de/src/emacs/highlight-parentheses/highlight-parentheses.el"
+MODE_DIR="highlight-parentheses"
+$SCRIPT_DIR/util/single-file-mode.sh ${URL} ${MODE_DIR}

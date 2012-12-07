@@ -1,4 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR=`dirname $0`
-$SCRIPT_DIR/util/util-install-from-git.sh "https://github.com/rooney/zencoding.git" "zencoding-mode"
+URL="https://github.com/rooney/zencoding.git"
+MODE_DIR="zencoding-mode"
+$SCRIPT_DIR/util/mode-from-git.sh ${URL} ${MODE_DIR}
+

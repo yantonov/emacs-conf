@@ -1,4 +1,6 @@
 #!/bin/bash
 
 SCRIPT_DIR=`dirname $0`
-$SCRIPT_DIR/util/util-install-from-git.sh "https://github.com/magnars/expand-region.el.git" "expand-region"
+URL="https://github.com/magnars/expand-region.el.git"
+MODE_DIR="expand-region"
+$SCRIPT_DIR/util/mode-from-git.sh ${URL} ${MODE_DIR}

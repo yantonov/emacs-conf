@@ -1,4 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR=`dirname $0`
-$SCRIPT_DIR/util/util-install-from-git.sh "https://github.com/magnars/s.el.git" "string-manipulation"
+URL="https://github.com/magnars/s.el.git"
+MODE_DIR="string-manipulation"
+$SCRIPT_DIR/util/mode-from-git.sh ${URL} ${MODE_DIR}
+

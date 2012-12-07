@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # https://github.com/kingtim/nrepl.el
-# raw file
-# https://raw.github.com/kingtim/nrepl.el/master/nrepl.el
-
 
 SCRIPT_DIR=`dirname $0`
-$SCRIPT_DIR/util/util-install-single-file.sh "https://raw.github.com/kingtim/nrepl.el/master/nrepl.el" "nrepl"
+URL=https://github.com/kingtim/nrepl.el.git
+MODE_DIR="nrepl"
+$SCRIPT_DIR/util/mode-from-git.sh ${URL} ${MODE_DIR}
+
