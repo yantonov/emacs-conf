@@ -29,8 +29,3 @@ NUMBER_OF_DIRS=`ls -ld color-theme* | wc -l`
 if [ ${NUMBER_OF_DIRS} -eq 1 ]; then
     mv color-theme* color-theme
 fi
-
-
-
-
-
