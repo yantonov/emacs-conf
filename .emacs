@@ -9,7 +9,9 @@
 (add-to-list 'load-path (concat emacs-home "color-themes" "/solarized"))
 (add-to-list 'load-path (concat emacs-mode-home "linumplus/"))
 (add-to-list 'load-path (concat emacs-mode-home "paredit/"))
+(add-to-list 'load-path (concat emacs-mode-home "auto-complete/"))
 (add-to-list 'load-path (concat emacs-mode-home "nrepl/"))
+(add-to-list 'load-path (concat emacs-mode-home "ac-nrepl/"))
 (add-to-list 'load-path (concat emacs-mode-home "expand-region/"))
 (add-to-list 'load-path (concat emacs-mode-home "zencoding-mode/"))
 (add-to-list 'load-path (concat emacs-mode-home "markdown-mode/"))
@@ -18,6 +20,7 @@
 ;; settings
 (load "~/emacs/rc/emacs-rc-elpa.el")
 (load "~/emacs/rc/emacs-rc-editor.el")
+(load "~/emacs/rc/emacs-rc-auto-complete.el")
 (load "~/emacs/rc/emacs-rc-paredit.el")
 (load "~/emacs/rc/emacs-rc-highlight-parentheses.el")
 (load "~/emacs/rc/emacs-rc-linum.el")
