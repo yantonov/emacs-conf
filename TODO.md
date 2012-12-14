@@ -5,6 +5,8 @@
 	   'nrepl-turn-on-eldoc-mode)
 3. Port darcula theme (Intellij idea 12) for emacs
 4. Add rainbow-mode http://julien.danjou.info/projects/emacs-packages#rainbow-mode
+5. Add project tree support
+
 
 
 
