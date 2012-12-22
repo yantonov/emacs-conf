@@ -5,7 +5,7 @@
 2. Port darcula theme (Intellij idea 12) for emacs
 3. Add rainbow-mode http://julien.danjou.info/projects/emacs-packages#rainbow-mode
 4. Add project tree support
-5. Add auto update and install all script
+5. Add install all script
 
 
 
