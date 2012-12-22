@@ -1,8 +1,8 @@
 #/bin/bash
 
-# http://cx4a.org/repo/auto-complete.git
+# https://github.com/auto-complete/auto-complete
 
 SCRIPT_DIR=`dirname $0`
-URL=http://cx4a.org/repo/auto-complete.git
+URL=https://github.com/auto-complete/auto-complete
 MODE_DIR="auto-complete"
 $SCRIPT_DIR/util/mode-from-git.sh ${URL} ${MODE_DIR}
