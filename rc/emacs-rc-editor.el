@@ -20,7 +20,7 @@
 ; no scratch message
 (setq initial-scratch-message nil)
 ; no toolbars
-(tool-bar-mode nil)
+(tool-bar-mode 0)
 ; tabls
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
