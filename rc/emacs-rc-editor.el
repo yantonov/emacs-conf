@@ -6,6 +6,15 @@
 (column-number-mode 1)
 ;; delete selected region on backspace, del, ctrl+d
 (delete-selection-mode t)
+
+;; Write backup files to own directory
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name
+                 (concat user-emacs-directory "backups")))))
+
+;; Make backups of files, even when they're in version control
+(setq vc-make-backup-files t)
+
 ;;; [ ui ]
 ;; hide splash screen
 (setq inhibit-splash-screen t)
