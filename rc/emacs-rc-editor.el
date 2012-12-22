@@ -14,14 +14,23 @@
 (column-number-mode 1)
 ;; delete selected region on backspace, del, ctrl+d
 (delete-selection-mode t)
-;; [ ui ]
+
+;;; [ ui ]
 ;; hide splash screen
 (setq inhibit-splash-screen t)
-; no scratch message
+;; no scratch message
 (setq initial-scratch-message nil)
-; no toolbars
-(tool-bar-mode 0)
-; tabls
+;; no toolbars
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+; (tool-bar-mode 0)
+;; no scroll bar
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+;; no menu bar
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;; tabl
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
+
+
+
 
