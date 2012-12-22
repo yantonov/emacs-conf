@@ -2,6 +2,7 @@
 (require 'nrepl)
 (require 'paredit)
 (require 'highlight-parentheses)
+(require 'rainbow-delimiters)
 (require 'ac-nrepl)
 
 ; Stop the error buffer from popping up while working in the REPL buffer:
@@ -17,6 +18,7 @@
 (defun my-nrepl-mode-hook ()
   (paredit-mode 1)
   (highlight-parentheses-mode t)
+  (ranbow-delimiters-mode 1)
   
   (ac-nrepl-setup)
   (set-auto-complete-as-completion-at-point-function)

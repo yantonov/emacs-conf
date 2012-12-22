@@ -10,6 +10,7 @@
 (add-to-list 'load-path (concat emacs-mode-home "show-keys/"))
 (add-to-list 'load-path (concat emacs-mode-home "linumplus/"))
 (add-to-list 'load-path (concat emacs-mode-home "paredit/"))
+(add-to-list 'load-path (concat emacs-mode-home "rainbow-delimiters/"))
 (add-to-list 'load-path (concat emacs-mode-home "auto-complete/"))
 (add-to-list 'load-path (concat emacs-mode-home "nrepl/"))
 (add-to-list 'load-path (concat emacs-mode-home "ac-nrepl/"))
