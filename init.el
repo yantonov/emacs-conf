@@ -18,6 +18,7 @@
 (add-to-list 'load-path (concat emacs-mode-home "zencoding-mode/"))
 (add-to-list 'load-path (concat emacs-mode-home "markdown-mode/"))
 (add-to-list 'load-path (concat emacs-mode-home "string-manipulation/"))
+(add-to-list 'load-path (concat emacs-mode-home "yasnippet/"))
 
 ;; settings
 (load "~/emacs/rc/emacs-rc-elpa.el")
@@ -39,4 +40,5 @@
 (load "~/emacs/rc/emacs-rc-buffers.el")
 (load "~/emacs/rc/emacs-rc-zencoding.el")
 (load "~/emacs/rc/emacs-rc-markdown.el")
+(load "~/emacs/rc/emacs-rc-yasnippet.el")
 (load "~/emacs/rc/emacs-rc-global-hotkeys.el")
