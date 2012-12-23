@@ -16,3 +16,6 @@
 (global-set-key (kbd "C-c l") 'toggle-truncate-lines)
 ;; newline and indent
 (global-set-key "\r" 'newline-and-indent)
+;; wrapper to goto-line (show line number only during entering line number
+;; goto-line-with-feedback is defined in emacs-rc-editor.el
+(global-set-key [remap goto-line] 'goto-line-with-feedback)
