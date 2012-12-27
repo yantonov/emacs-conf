@@ -19,3 +19,7 @@
 ;; wrapper to goto-line (show line number only during entering line number
 ;; goto-line-with-feedback is defined in emacs-rc-editor.el
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
+
+;; defined in rc/emacs-rc-editor
+(global-set-key (kbd "<C-return>") 'open-line-below)
+(global-set-key (kbd "<C-S-return>") 'open-line-above)
