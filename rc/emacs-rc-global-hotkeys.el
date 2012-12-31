@@ -20,9 +20,9 @@
 ;; goto-line-with-feedback is defined in emacs-rc-editor.el
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
-;; defined in rc/emacs-rc-editor
+;; defined in rc/emacs-rc-edit-defuns
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
-
+;; defined in rc/emacs-rc-file-defuns
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)

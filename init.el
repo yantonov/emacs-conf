@@ -23,6 +23,8 @@
 ;; settings
 (load "~/emacs/rc/emacs-rc-elpa.el")
 (load "~/emacs/rc/emacs-rc-editor.el")
+(load "~/emacs/rc/emacs-rc-edit-defuns.el")
+(load "~/emacs/rc/emacs-rc-file-defuns.el")
 (load "~/emacs/rc/emacs-rc-auto-complete.el")
 (load "~/emacs/rc/emacs-rc-paredit.el")
 (load "~/emacs/rc/emacs-rc-highlight-parentheses.el")
