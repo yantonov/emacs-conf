@@ -16,17 +16,22 @@
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 (defun my-nrepl-mode-hook ()
-  (paredit-mode 1)
+  (paredit-mode +1)
   (highlight-parentheses-mode t)
-  (ranbow-delimiters-mode 1)
+  (rainbow-delimiters-mode-enable)
   
   (ac-nrepl-setup)
   (set-auto-complete-as-completion-at-point-function)
   )
 
 (defun my-nrepl-interaction-mode-hook ()
+  (paredit-mode +1)
+  (highlight-parentheses-mode t)
+  (rainbow-delimiters-mode-enable)
+  
   (ac-nrepl-setup)
   (set-auto-complete-as-completion-at-point-function)
+  
   (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
   )
 
