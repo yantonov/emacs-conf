@@ -23,7 +23,8 @@
 ;; settings
 (load "~/emacs/rc/emacs-rc-elpa.el")
 (load "~/emacs/rc/emacs-rc-editor.el")
-(load "~/emacs/rc/emacs-rc-edit-defuns.el")
+(load "~/emacs/rc/emacs-rc-string-manipulation.el")
+(load "~/emacs/rc/emacs-rc-buffer-defuns.el")
 (load "~/emacs/rc/emacs-rc-file-defuns.el")
 (load "~/emacs/rc/emacs-rc-auto-complete.el")
 (load "~/emacs/rc/emacs-rc-paredit.el")
@@ -38,8 +39,6 @@
 (load "~/emacs/rc/emacs-rc-color-theme.el")
 (load "~/emacs/rc/emacs-rc-erlang.el")
 (load "~/emacs/rc/emacs-rc-expand-region.el")
-(load "~/emacs/rc/emacs-rc-string-manipulation.el")
-(load "~/emacs/rc/emacs-rc-buffers.el")
 (load "~/emacs/rc/emacs-rc-zencoding.el")
 (load "~/emacs/rc/emacs-rc-markdown.el")
 (load "~/emacs/rc/emacs-rc-yasnippet.el")
