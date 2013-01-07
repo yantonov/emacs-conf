@@ -1,0 +1,1 @@
+(require 'command-log-mode)
