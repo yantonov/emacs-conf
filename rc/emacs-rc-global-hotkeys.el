@@ -28,3 +28,6 @@
 (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
 
 (define-key paredit-mode-map (kbd "M-)") 'paredit-wrap-round-from-behind)
+
+(global-set-key (kbd "C-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-?") 'comment-or-uncomment-region)
