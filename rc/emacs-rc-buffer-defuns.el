@@ -105,15 +105,15 @@ Including indent-buffer, which should not be called automatically on save."
   "Create an empty buffer with current datetime name."
   (interactive)
   (switch-to-buffer (concat "*temp-"
-			    (concat (format-time-string "%Y-%m-%d__%H-%M-%S"
-							(current-time))
-				    "*")))
+                            (concat (format-time-string "%Y-%m-%d__%H-%M-%S"
+                                                        (current-time))
+                                    "*")))
   )
 
 (defun create-temp-file ()
   "Create temporary txt file with current datetime name."
   (interactive)
   (find-file (concat random-tempfile-default-directory
-		     (concat "temp-"
-			     (format-time-string "%Y-%m-%d__%H-%M-%S"
-						 (current-time))) ".txt")))
+                     (concat "temp-"
+                             (format-time-string "%Y-%m-%d__%H-%M-%S"
+                                                 (current-time))) ".txt")))
