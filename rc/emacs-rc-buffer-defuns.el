@@ -3,7 +3,18 @@
 
 (defun indent-buffer ()
   (interactive)
-  (indent-region (point-min) (point-max)))
+  (indent-region (point-min) (point-max))
+  )
+
+(defun untabify-buffer()
+  (interactive)
+  (untabify (point-min) (point-max))
+  )
+
+(defun tabify-buffer()
+  (interactive)
+  (tabify (point-min) (point-max))
+  )
 
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
