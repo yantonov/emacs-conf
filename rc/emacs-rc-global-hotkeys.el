@@ -50,3 +50,5 @@
                 (ffip-create-pattern-file-finder "*.html"))
 (global-set-key (kbd "C-x C-o js")
                 (ffip-create-pattern-file-finder "*.js"))
+(global-set-key (kbd "C-x C-o css")
+                (ffip-create-pattern-file-finder "*.css"))
