@@ -19,6 +19,7 @@
 (add-to-list 'load-path (concat emacs-mode-home "zencoding-mode/"))
 (add-to-list 'load-path (concat emacs-mode-home "markdown-mode/"))
 (add-to-list 'load-path (concat emacs-mode-home "string-manipulation/"))
+(add-to-list 'load-path (concat emacs-mode-home "dash/"))
 (add-to-list 'load-path (concat emacs-mode-home "yasnippet/"))
 
 ;; settings
@@ -26,6 +27,7 @@
 (load "~/emacs/rc/emacs-rc-editor.el")
 (load "~/emacs/rc/emacs-rc-dired.el")
 (load "~/emacs/rc/emacs-rc-string-manipulation.el")
+(load "~/emacs/rc/emacs-rc-dash.el")
 (load "~/emacs/rc/emacs-rc-buffer-defuns.el")
 (load "~/emacs/rc/emacs-rc-file-defuns.el")
 (load "~/emacs/rc/emacs-rc-find-file-in-project.el")
