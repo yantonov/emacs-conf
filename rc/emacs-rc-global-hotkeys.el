@@ -37,18 +37,3 @@
                 (lambda ()
                   (interactive)
                   (join-line -1)))
-
-;; Find file in project, with specific patterns
-(global-unset-key (kbd "C-x C-o"))
-(global-set-key (kbd "C-x C-o clj")
-                (ffip-create-pattern-file-finder "*.clj"))
-(global-set-key (kbd "C-x C-o java")
-                (ffip-create-pattern-file-finder "*.java"))
-(global-set-key (kbd "C-x C-o jsp")
-                (ffip-create-pattern-file-finder "*.jsp"))
-(global-set-key (kbd "C-x C-o html")
-                (ffip-create-pattern-file-finder "*.html"))
-(global-set-key (kbd "C-x C-o js")
-                (ffip-create-pattern-file-finder "*.js"))
-(global-set-key (kbd "C-x C-o css")
-                (ffip-create-pattern-file-finder "*.css"))
