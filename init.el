@@ -37,6 +37,7 @@
 (load "~/emacs/rc/emacs-rc-command-log-mode.el")
 (load "~/emacs/rc/emacs-rc-linum.el")
 (load "~/emacs/rc/emacs-rc-clojure.el")
+(load "~/emacs/rc/emacs-rc-clojure-test.el")
 (load "~/emacs/rc/emacs-rc-nrepl.el")
 (load "~/emacs/rc/emacs-rc-slime.el")
 (load "~/emacs/rc/emacs-rc-webjump.el")
