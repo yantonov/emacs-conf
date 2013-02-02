@@ -61,9 +61,11 @@ Including indent-buffer, which should not be called automatically on save."
 (defun rotate-windows ()
   "Rotate your windows"
   (interactive)
-  (cond ((not (> (count-windows)1))
+  (cond ((not (> (count-windows) 1))
          (message "You can't rotate a single window!"))
         (t
+         (defvar i)
+         (defvar numWindows)
          (setq i 1)
          (setq numWindows (count-windows))
          (while  (< i numWindows)
