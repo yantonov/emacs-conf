@@ -4,14 +4,14 @@
 
 # Usage: 
 # first argument - git repo url
-# second argument - dir name for color theme
+# second argument - dir name for color-theme
 
 if [ $# -lt 2 ]; then
     echo "Usage: scriptname git_repo color_theme_dir_name"
     exit 0
 else
     GIT_REPO=$1
-    INSTALL_COLOR_THEME_MODE_DIR=$2
+    INSTALLED_THEME_DIR=$2
 fi
     
 # init env
@@ -21,14 +21,14 @@ UTIL_DIR="${CURRENT_DIR}"
 cd $UTIL_DIR
 UTIL_DIR=`pwd`
 EMACS_HOME=`${UTIL_DIR}/emacs-home.sh`
-EMACS_COLOR_THEMES_HOME=`${UTIL_DIR}/emacs-color-themes-home.sh`
+EMACS_COLOR_THEME_HOME=`${UTIL_DIR}/emacs-color-theme-home.sh`
 
 # run
 
-cd ${EMACS_COLOR_THEMES_HOME}
-rm -rf ${INSTALL_COLOR_THEME_MODE_DIR}
-`${UTIL_DIR}/mkdir.sh ${INSTALL_COLOR_THEME_MODE_DIR}`
-cd ${INSTALL_COLOR_THEME_MODE_DIR}
+cd ${EMACS_COLOR_THEME_HOME}
+rm -rf ${INSTALLED_THEME_DIR}
+`${UTIL_DIR}/mkdir.sh ${INSTALLED_THEME_DIR}`
+cd ${INSTALLED_THEME_DIR}
 
 git clone ${GIT_REPO} .
-cd $WD 
+cd $WD
