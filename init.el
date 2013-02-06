@@ -1,26 +1,17 @@
 ;; paths, environment
 (load "~/emacs/rc/emacs-rc-env.el")
 
-;; used modes
-(add-to-list 'load-path (concat emacs-mode-home "package"))
-(add-to-list 'load-path (concat emacs-mode-home "highlight-parentheses/"))
-(add-to-list 'load-path (concat emacs-mode-home "color-theme"))
-(add-to-list 'load-path (concat emacs-home "color-themes"))
-(add-to-list 'load-path (concat emacs-home "color-themes" "/solarized"))
-(add-to-list 'load-path (concat emacs-mode-home "command-log-mode/"))
-(add-to-list 'load-path (concat emacs-mode-home "linumplus/"))
-(add-to-list 'load-path (concat emacs-mode-home "paredit/"))
-(add-to-list 'load-path (concat emacs-mode-home "projectile/"))
-(add-to-list 'load-path (concat emacs-mode-home "rainbow-delimiters/"))
-(add-to-list 'load-path (concat emacs-mode-home "auto-complete/"))
-(add-to-list 'load-path (concat emacs-mode-home "nrepl/"))
-(add-to-list 'load-path (concat emacs-mode-home "ac-nrepl/"))
-(add-to-list 'load-path (concat emacs-mode-home "expand-region/"))
-(add-to-list 'load-path (concat emacs-mode-home "zencoding-mode/"))
-(add-to-list 'load-path (concat emacs-mode-home "markdown-mode/"))
-(add-to-list 'load-path (concat emacs-mode-home "string-manipulation/"))
-(add-to-list 'load-path (concat emacs-mode-home "dash/"))
-(add-to-list 'load-path (concat emacs-mode-home "yasnippet/"))
+;; modes
+(dolist
+    (project (directory-files emacs-mode-home t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
+
+;; color themes
+(dolist
+    (project (directory-files (concat emacs-home "color-themes") t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
 
 ;; settings
 (load "~/emacs/rc/emacs-rc-elpa.el")
