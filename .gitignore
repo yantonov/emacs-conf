@@ -7,3 +7,6 @@
 
 # ignore loaded from git and other places color themes
 /color-themes/solarized/*
+
+# emacs lisp compiled files
+*.elc
