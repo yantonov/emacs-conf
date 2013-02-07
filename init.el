@@ -39,4 +39,5 @@
 (load "~/emacs/rc/emacs-rc-zencoding.el")
 (load "~/emacs/rc/emacs-rc-markdown.el")
 (load "~/emacs/rc/emacs-rc-yasnippet.el")
+(load "~/emacs/rc/emacs-rc-undo-tree.el")
 (load "~/emacs/rc/emacs-rc-global-hotkeys.el")
