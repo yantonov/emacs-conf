@@ -14,7 +14,7 @@
     (add-to-list 'load-path project)))
 
 ;; settings
-(load "~/emacs/rc/emacs-rc-elpa.el")
+(load "~/emacs/rc/emacs-rc-package.el")
 (load "~/emacs/rc/emacs-rc-editor.el")
 (load "~/emacs/rc/emacs-rc-dired.el")
 (load "~/emacs/rc/emacs-rc-string-manipulation.el")
