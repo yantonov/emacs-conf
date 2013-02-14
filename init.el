@@ -1,5 +1,5 @@
 ;; paths, environment
-(setq emacs-home "~/emacs/")
+(setq emacs-home (concat (getenv "HOME") "/emacs/"))
 (setq emacs-mode-home (concat emacs-home "mode/"))
 
 ;; modes
