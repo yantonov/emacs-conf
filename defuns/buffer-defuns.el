@@ -38,8 +38,10 @@ Does not indent buffer, because it is used for a before-save-hook, and that
 might be bad."
   (interactive)
   (untabify (point-min) (point-max))
-  ; unconvinient for markdown
-  ; (delete-trailing-whitespace)
+  (if (eq 'markdown-mode (buffer-local-value 'major-mode (current-buffer)))
+      nil
+    (delete-trailing-whitespace)
+    )
   (set-buffer-file-coding-system 'utf-8)
   )
 
