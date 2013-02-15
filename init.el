@@ -1,6 +1,8 @@
 ;; paths, environment
 (setq emacs-home (concat (getenv "HOME") "/emacs/"))
 (setq emacs-mode-home (concat emacs-home "mode/"))
+;; for windows move explicitly to user home directory
+(cd (getenv "HOME"))
 
 ;; modes
 (dolist
