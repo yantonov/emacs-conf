@@ -5,6 +5,17 @@
 ;; for windows move explicitly to user home directory
 (cd user-home)
 
+(defvar custom-init-before-file (concat user-emacs-directory "custom-before.el")
+      "Defines custom initialization file.
+This file is loaded before any settings for mode is loaded.
+So you can define environment paths of other global settings it this file.")
+(defvar custom-init-after-file (concat user-emacs-directory "custom-after.el")
+      "Defines custom initialization file.
+This file is loaded after any settings for mode is loaded.
+So you can override any previous defined settings using this file.")
+
+(load custom-init-before-file 'noerror)
+
 ;; modes
 (dolist
     (project (directory-files emacs-mode-home t "\\w+"))
@@ -36,3 +47,5 @@
     (load file)))
 
 (load (concat emacs-home "hotkeys.el"))
+
+(load custom-init-after-file 'noerror)
