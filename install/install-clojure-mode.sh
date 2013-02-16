@@ -1,4 +1,5 @@
 #/bin/bash
 
 SCRIPT_DIR=`dirname $0`
-emacs -q -load $SCRIPT_DIR/util/install-clojure-mode.el -kill
+
+${SCRIPT_DIR}/util/install-using-emacs-pkg.sh $SCRIPT_DIR/util/elisp/install-clojure-mode.el

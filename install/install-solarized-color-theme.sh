@@ -1,4 +1,4 @@
 #/bin/bash
 
 SCRIPT_DIR=`dirname $0`
-emacs -q -load $SCRIPT_DIR/util/install-solarized-color-theme.el -kill
+${SCRIPT_DIR}/util/install-using-emacs-pkg.sh $SCRIPT_DIR/util/elisp/install-solarized-color-theme.el
