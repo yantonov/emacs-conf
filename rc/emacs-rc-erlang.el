@@ -2,12 +2,14 @@
 
 (defun erlang-mode-exists ()
   (and
+   erlang-mode-home
    (file-directory-p erlang-mode-home)
    (file-exists-p (concat erlang-mode-home "/erlang.el")))
   )
 
 (defun erlang-repl-exists()
-  (and (file-directory-p erlang-home)
+  (and erlang-home
+       (file-directory-p erlang-home)
        (or (file-exists-p (concat erlang-home "/bin/erl"))
            (file-exists-p (concat erlang-home "/bin/erl.exe"))))
   )
