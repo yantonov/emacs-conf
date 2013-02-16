@@ -1,7 +1,10 @@
 ;; paths, environment
-(setq user-home (if (getenv "HOME") (getenv "HOME") (expand-file-name "~")))
-(setq emacs-home (concat user-home "/emacs/"))
-(setq emacs-mode-home (concat emacs-home "mode/"))
+(defvar user-home (if (getenv "HOME") (getenv "HOME") (expand-file-name "~"))
+  "Defines user home directory.")
+(defvar emacs-home (concat user-home "/emacs/")
+  "Defines emacs config directory inside user home directory.")
+(defvar emacs-mode-home (concat emacs-home "mode/")
+      "Defines directory for emacs extensions and modes.")
 ;; for windows move explicitly to user home directory
 (cd user-home)
 
