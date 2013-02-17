@@ -22,7 +22,7 @@
 (setq initial-scratch-message nil)
 ;; no toolbars
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-					; (tool-bar-mode 0)
+                    ; (tool-bar-mode 0)
 ;; no scroll bar
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 ;; no menu bar
@@ -34,3 +34,6 @@
 
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
+
+;; enable iswitchrb mode
+(iswitchb-mode 1)
