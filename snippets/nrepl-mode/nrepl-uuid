@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: nrepl-uuid
+# key: uuid
+# --
+(. (java.util.UUID/randomUUID) toString)
