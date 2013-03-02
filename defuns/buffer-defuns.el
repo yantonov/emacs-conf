@@ -52,3 +52,18 @@ Including indent-buffer, which should not be called automatically on save."
   (cleanup-buffer-safe)
   (indent-buffer)
   )
+
+(defun move-region-to-bottom (start end)
+  "Move selected text to bottom of buffer"
+  (interactive "r")
+  (if (use-region-p)
+      (let ((count (count-words-region start end)))
+        (save-excursion
+          (kill-region start end)
+          (goto-char (point-max))
+          (yank)
+          (newline))
+        (push-mark (point))
+        (message "Moved %s words" count))
+    (message "No region selected"))
+  )
