@@ -86,7 +86,11 @@ Windows
 ;; global hotkeys
 (load (concat emacs-home "hotkeys.el"))
 
-(load custom-init-after-file 'noerror)
+;; init ui
+;; fires when an emacs frame is created
+(add-hook 'after-make-frame-functions 'reset-ui)
+;; hook for setting up UI when not running in daemon mode
+(add-hook 'emacs-startup-hook 'reset-ui)
 
-;; for windows move explicitly to user home directory
-(cd user-home)
+;; custom config
+(load custom-init-after-file 'noerror)
