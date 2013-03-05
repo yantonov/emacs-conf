@@ -37,3 +37,7 @@
                 (lambda ()
                   (interactive)
                   (join-line -1)))
+
+;; fullscreen eshell
+(global-set-key (kbd "C-c t")
+                'fullscreen-eshell)

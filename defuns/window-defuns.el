@@ -81,3 +81,13 @@
 (defun reset-ui (&optional frame)
   (interactive)
   (split-window-horizontally))
+
+(defun fullscreen-eshell ()
+  "Bring up a full-screen eshell or restore previous config."
+  (interactive)
+  (if (string= "eshell-mode" major-mode)
+      (jump-to-register :eshell-fullscreen)
+    (progn
+      (window-configuration-to-register :eshell-fullscreen)
+      (eshell)
+      (delete-other-windows))))
