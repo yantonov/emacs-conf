@@ -18,7 +18,7 @@ This file is loaded after any settings for mode is loaded.
 So you can override any previous defined settings using this file.")
 
 ;;
-;; erlang environemnt variables
+;; erlang environment variables
 ;;
 (defvar erlang-mode-home nil
   "Defines directory for erlang-mode. This variable is machine specific, can be defined in `custom-init-before-file' init file.
@@ -62,11 +62,12 @@ Windows
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
+(setq load-emacs-lisp-file-pattern "\\w+\\.elc?$")
 ;;
 ;; etc (core defuns and settings)
 ;;
 (setq etc-dir (expand-file-name "etc" emacs-home))
-(dolist (file (directory-files etc-dir t "\\w+"))
+(dolist (file (directory-files etc-dir t load-emacs-lisp-file-pattern))
   (when (file-regular-p file)
     (load file)))
 
@@ -74,12 +75,12 @@ Windows
 ;; defuns
 ;;
 (setq defuns-dir (expand-file-name "defuns" emacs-home))
-(dolist (file (directory-files defuns-dir t "\\w+"))
+(dolist (file (directory-files defuns-dir t load-emacs-lisp-file-pattern))
   (when (file-regular-p file)
     (load file)))
 
 (setq rc-dir (expand-file-name "rc" emacs-home))
-(dolist (file (directory-files rc-dir t "\\w+"))
+(dolist (file (directory-files rc-dir t load-emacs-lisp-file-pattern))
   (when (file-regular-p file)
     (load file)))
 
