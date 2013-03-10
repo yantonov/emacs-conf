@@ -14,5 +14,7 @@
       "www.google.com"
       "http://www.google.com/search?hl=en&as_sitesearch=http://docs.oracle.com/javase/7/docs/api/&q="
       ""])
-    ("clojure" . "http://clojure.org"))
+    ("clojure" . "http://clojure.org")
+    ("github" . "https://github.com")
+    ("bitbucket" . "https://bitbucket.org"))
   webjump-sample-sites))
