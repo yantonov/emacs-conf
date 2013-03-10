@@ -18,6 +18,18 @@ This file is loaded after any settings for mode is loaded.
 So you can override any previous defined settings using this file.")
 
 ;;
+;; javadoc inside nrepl path
+;;
+
+(defvar user-javadoc-alist nil
+  "Defines list of javadoc root paths. This variable is machine specific, can be defined in `custom-init-before-file' init file."
+  ;; Example :
+  ;; (setq user-javadoc-alist
+  ;;   '(("^\\(java[x]?\.\\|org\.ietf\.\\|org\.omg\.\\|org\.w3c\.\\|org\.xml\.\\)" .
+  ;;   "file:///opt/javadoc/jdk7/docs/api/"  )))
+  )
+
+;;
 ;; erlang environment variables
 ;;
 (defvar erlang-mode-home nil

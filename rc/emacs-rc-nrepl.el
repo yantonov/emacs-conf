@@ -33,15 +33,24 @@
   (set-auto-complete-as-completion-at-point-function)
 
   (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
-  )
-
-(add-hook 'nrepl-mode-hook 'my-nrepl-mode-hook)
-(add-hook 'nrepl-interaction-mode-hook 'my-nrepl-interaction-mode-hook)
+  (add-hook 'nrepl-mode-hook 'my-nrepl-mode-hook)
+  (add-hook 'nrepl-interaction-mode-hook 'my-nrepl-interaction-mode-hook)
+)
 
 ;;; JavaDoc browsing from nrepl
 (defvar javadoc-alist
   '(("^\\(java[x]?\.\\|org\.ietf\.\\|org\.omg\.\\|org\.w3c\.\\|org\.xml\.\\)" .
      "file:///opt/javadoc/jdk7/docs/api/")))
+
+(defun attach-user-javadocs ()
+  "Attach user defined javadocs."
+  (if user-javadoc-alist
+      (dolist (el user-javadoc-alist javadoc-alist)
+        (setq javadoc-alist (cons el javadoc-alist)))
+    )
+  )
+;; load user defined settings
+(attach-user-javadocs)
 
 (defun javadoc-root (sym)
   (let ((m (find-if (lambda (x) (string-match (car x) sym)) javadoc-alist)))
