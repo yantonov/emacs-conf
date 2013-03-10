@@ -1,8 +1,8 @@
-                                        ; inspired by intellij idea
+;; inspired by intellij idea
 (global-set-key (kbd "C-M-l") 'indent-buffer)
 
-                                        ; resize buffer key bindings
-                                        ; http://www.emacswiki.org/emacs/WindowResize
+;; resize buffer key bindings
+;; http://www.emacswiki.org/emacs/WindowResize
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
@@ -41,3 +41,5 @@
 ;; fullscreen eshell
 (global-set-key (kbd "C-c t")
                 'fullscreen-eshell)
+;; webjump
+(global-set-key (kbd "C-x g") 'webjump)
