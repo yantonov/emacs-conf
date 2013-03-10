@@ -3,6 +3,7 @@
 (require 'highlight-parentheses)
 (require 'rainbow-delimiters)
 
+(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
 
 (defun my-clojure-mode-hook ()
