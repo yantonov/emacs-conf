@@ -33,9 +33,10 @@
   (set-auto-complete-as-completion-at-point-function)
 
   (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
-  (add-hook 'nrepl-mode-hook 'my-nrepl-mode-hook)
-  (add-hook 'nrepl-interaction-mode-hook 'my-nrepl-interaction-mode-hook)
-)
+  )
+
+(add-hook 'nrepl-mode-hook 'my-nrepl-mode-hook)
+(add-hook 'nrepl-interaction-mode-hook 'my-nrepl-interaction-mode-hook)
 
 ;;; JavaDoc browsing from nrepl
 (defvar javadoc-alist
