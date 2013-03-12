@@ -1,0 +1,4 @@
+# name: (def var ...)
+# key: def
+# --
+(def ${1:name} $0)$>

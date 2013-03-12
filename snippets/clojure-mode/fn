@@ -1,0 +1,4 @@
+# name: (fn [args] body)
+# key: fn
+# --
+(fn [${1:arg-list}] $0)

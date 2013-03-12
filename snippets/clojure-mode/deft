@@ -1,0 +1,6 @@
+# name: (deftype name ...)
+# key: deft
+# --
+(deftype ${1:Name} [${2:fields}]
+  ${3:Protocol}
+  $0)

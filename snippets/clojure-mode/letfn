@@ -1,0 +1,5 @@
+# name: (letfn [(name [args] body)])
+# key: letfn
+# --
+(letfn [(${1:name) [${2:args}]
+          $0)])

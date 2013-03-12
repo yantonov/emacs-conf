@@ -1,0 +1,4 @@
+# name: (defmulti name ...)
+# key: defmm
+# --
+(defmulti ${1:name} ${2:dispatch-fn})
