@@ -22,6 +22,11 @@
 
   (ac-nrepl-setup)
   (set-auto-complete-as-completion-at-point-function)
+
+  ;; show-paren-mode
+  ;; http://emacswiki.org/emacs/ShowParenMode
+  (show-paren-mode 1)
+  (setq show-paren-style 'expression)
   )
 
 (defun my-nrepl-mode-hook ()
