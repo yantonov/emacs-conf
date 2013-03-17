@@ -35,8 +35,6 @@
 
 (defun my-nrepl-interaction-mode-hook ()
   (my-nrepl-common-hook)
-
-  (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
   )
 
 (add-hook 'nrepl-mode-hook 'my-nrepl-mode-hook)
