@@ -13,3 +13,7 @@
 
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
+
+;; search and replace
+(setq search-highlight           t) ; Highlight search object
+(setq query-replace-highlight    t) ; Highlight query object
