@@ -1,44 +1,64 @@
-;; inspired by intellij idea
-(global-set-key (kbd "C-M-l") 'indent-buffer)
+(defun my-general-keybindings (my-key-map)
+  (define-key my-key-map (kbd "C-SPC") 'set-mark-command)
 
-;; resize buffer key bindings
-;; http://www.emacswiki.org/emacs/WindowResize
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+  ;; inspired by intellij idea
+  (define-key my-key-map (kbd "C-M-l") 'indent-buffer)
 
-;; windows movement
-;; http://www.emacswiki.org/emacs/WindMove
-(when (fboundp 'windmove-default-keybindings)
-  (windmove-default-keybindings))
-;; too long lines shows/hides by "C-C l"
-(global-set-key (kbd "C-c l") 'toggle-truncate-lines)
-;; newline and indent
-(global-set-key "\r" 'newline-and-indent)
-;; wrapper to goto-line (show line number only during entering line number
-(global-set-key [remap goto-line] 'goto-line-with-feedback)
+  ;; resize buffer key bindings
+  ;; http://www.emacswiki.org/emacs/WindowResize
+  (define-key my-key-map (kbd "S-C-<left>") 'shrink-window-horizontally)
+  (define-key my-key-map (kbd "S-C-<right>") 'enlarge-window-horizontally)
+  (define-key my-key-map (kbd "S-C-<down>") 'shrink-window)
+  (define-key my-key-map (kbd "S-C-<up>") 'enlarge-window)
 
-(global-set-key (kbd "<C-return>") 'open-line-below)
-(global-set-key (kbd "<C-S-return>") 'open-line-above)
-(global-set-key (kbd "C-c n") 'cleanup-buffer)
+  ;; windows movement
+  ;; http://www.emacswiki.org/emacs/WindMove
+  (when (fboundp 'windmove-default-keybindings)
+     (windmove-default-keybindings))
+  ;; the same as
+  ;;(define-key my-key-map (kbd "S-<left>") 'windmove-left)
+  ;;(define-key my-key-map (kbd "S-<down>") 'windmove-down)
+  ;;(define-key my-key-map (kbd "S-<right>") 'windmove-right)
+  ;;(define-key my-key-map (kbd "S-<up>") 'windmove-up)
 
-(global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
-(global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
+  ;; too long lines shows/hides by "C-C l"
+  (define-key my-key-map (kbd "C-c l") 'toggle-truncate-lines)
+  ;; newline and indent
+  (define-key my-key-map "\r" 'newline-and-indent)
+  ;; wrapper to goto-line (show line number only during entering line number
+  (define-key my-key-map [remap goto-line] 'goto-line-with-feedback)
 
-(define-key paredit-mode-map (kbd "M-)") 'paredit-wrap-round-from-behind)
+  (define-key my-key-map (kbd "<C-return>") 'open-line-below)
+  (define-key my-key-map (kbd "<C-S-return>") 'open-line-above)
+  (define-key my-key-map (kbd "C-c n") 'cleanup-buffer)
 
-(global-set-key (kbd "C-/") 'comment-or-uncomment-region)
-(global-set-key (kbd "C-?") 'comment-or-uncomment-region)
+  (define-key my-key-map (kbd "C-x C-r") 'rename-current-buffer-file)
+  (define-key my-key-map (kbd "C-x C-k") 'delete-current-buffer-file)
 
-;; join next line to current
-(global-set-key (kbd "M-j")
-                (lambda ()
-                  (interactive)
-                  (join-line -1)))
+  (define-key my-key-map (kbd "C-/") 'comment-or-uncomment-region)
+  (define-key my-key-map (kbd "C-?") 'comment-or-uncomment-region)
 
-;; fullscreen eshell
-(global-set-key (kbd "C-c t")
-                'fullscreen-eshell)
-;; webjump
-(global-set-key (kbd "C-x g") 'webjump)
+  ;; join next line to current
+  (define-key my-key-map  (kbd "M-j")
+    (lambda ()
+      (interactive)
+      (join-line -1)))
+
+  ;; fullscreen eshell
+  (define-key my-key-map (kbd "C-c t")
+    'fullscreen-eshell)
+  ;; webjump
+  (define-key my-key-map (kbd "C-x g") 'webjump)
+  )
+
+(defun my-paredit-keybindings (key-map)
+  (define-key paredit-mode-map (kbd "M-)") 'paredit-wrap-round-from-behind)
+  )
+
+(defun load-my-keybindings ()
+  (interactive)
+  (my-general-keybindings (current-global-map))
+  (my-paredit-keybindings paredit-mode-map)
+  )
+
+(load-my-keybindings)
