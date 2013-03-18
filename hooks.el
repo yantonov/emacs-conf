@@ -14,6 +14,9 @@
   )
 (add-hook 'paredit-mode-hook 'my-paredit-mode-hook)
 
+;; emacs-lisp-mode-hook
+(add-hook 'emacs-lisp-mode-hook 'my-elisp-mode-hook)
+
 ;; init ui
 ;; fires when an emacs frame is created
 (add-hook 'after-make-frame-functions 'reset-ui)

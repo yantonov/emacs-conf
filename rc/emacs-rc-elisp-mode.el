@@ -6,6 +6,8 @@
   (paredit-mode +1)
   (highlight-parentheses-mode t)
   (rainbow-delimiters-mode-enable)
+  ;; show-paren-mode
+  ;; http://emacswiki.org/emacs/ShowParenMode
+  (show-paren-mode 1)
+  (setq show-paren-style 'expression)
   )
-
-(add-hook 'emacs-lisp-mode-hook 'my-elisp-mode-hook)
