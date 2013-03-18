@@ -91,3 +91,14 @@
       (window-configuration-to-register :eshell-fullscreen)
       (eshell)
       (delete-other-windows))))
+
+(defun fullscreen-scratch ()
+  "Save window configuraion and goto *scratch* buffer.
+Second call restores windows configuration."
+  (interactive)
+  (if (= (count-windows) 1)
+      (jump-to-register :fullscreen)
+    (progn
+      (window-configuration-to-register :fullscreen)
+      (delete-other-windows)
+      (switch-to-buffer "*scratch*"))))

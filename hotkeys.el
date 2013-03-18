@@ -47,6 +47,9 @@
   ;; fullscreen eshell
   (define-key my-key-map (kbd "C-c t")
     'fullscreen-eshell)
+  ;; fullscreen scratch
+  (define-key my-key-map (kbd "C-c f")
+    'fullscreen-scratch)
   ;; webjump
   (define-key my-key-map (kbd "C-x g") 'webjump)
   )
