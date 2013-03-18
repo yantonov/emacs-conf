@@ -99,11 +99,8 @@ Windows
 ;; global hotkeys
 (load (concat emacs-home "hotkeys.el"))
 
-;; init ui
-;; fires when an emacs frame is created
-(add-hook 'after-make-frame-functions 'reset-ui)
-;; hook for setting up UI when not running in daemon mode
-(add-hook 'emacs-startup-hook 'reset-ui)
+;; hooks
+(load (concat emacs-home "hooks.el"))
 
 ;; custom config
 (load custom-init-after-file 'noerror)

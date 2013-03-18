@@ -1,6 +1,4 @@
 (defun my-general-keybindings (my-key-map)
-  (define-key my-key-map (kbd "C-SPC") 'set-mark-command)
-
   ;; inspired by intellij idea
   (define-key my-key-map (kbd "C-M-l") 'indent-buffer)
 
@@ -13,13 +11,10 @@
 
   ;; windows movement
   ;; http://www.emacswiki.org/emacs/WindMove
-  (when (fboundp 'windmove-default-keybindings)
-     (windmove-default-keybindings))
-  ;; the same as
-  ;;(define-key my-key-map (kbd "S-<left>") 'windmove-left)
-  ;;(define-key my-key-map (kbd "S-<down>") 'windmove-down)
-  ;;(define-key my-key-map (kbd "S-<right>") 'windmove-right)
-  ;;(define-key my-key-map (kbd "S-<up>") 'windmove-up)
+  (define-key my-key-map (kbd "S-<left>") 'windmove-left)
+  (define-key my-key-map (kbd "S-<down>") 'windmove-down)
+  (define-key my-key-map (kbd "S-<right>") 'windmove-right)
+  (define-key my-key-map (kbd "S-<up>") 'windmove-up)
 
   ;; too long lines shows/hides by "C-C l"
   (define-key my-key-map (kbd "C-c l") 'toggle-truncate-lines)
@@ -54,14 +49,14 @@
   (define-key my-key-map (kbd "C-x g") 'webjump)
   )
 
-(defun my-paredit-keybindings (key-map)
-  (define-key paredit-mode-map (kbd "M-)") 'paredit-wrap-round-from-behind)
-  )
+(defun my-paredit-keybindings ()
+  "Customization for paredit keybindings."
+  (interactive)
+  (define-key paredit-mode-map (kbd "M-)") 'paredit-wrap-round-from-behind))
 
 (defun load-my-keybindings ()
   (interactive)
   (my-general-keybindings (current-global-map))
-  (my-paredit-keybindings paredit-mode-map)
   )
 
 (load-my-keybindings)
