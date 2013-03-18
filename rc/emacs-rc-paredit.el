@@ -38,3 +38,8 @@
 (put 'paredit-open-square 'delete-selection t)
 (put 'paredit-doublequote 'delete-selection t)
 (put 'paredit-newline 'delete-selection t)
+
+(defun my-paredit-mode-hook ()
+  "My hook for paredit mode."
+  (my-paredit-keybindings)
+  )

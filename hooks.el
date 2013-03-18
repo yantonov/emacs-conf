@@ -6,12 +6,7 @@
   )
 (add-hook 'org-mode-hook 'my-org-mode-hook)
 
-
 ;; paredit
-(defun my-paredit-mode-hook ()
-  "My hook for paredit mode."
-  (my-paredit-keybindings)
-  )
 (add-hook 'paredit-mode-hook 'my-paredit-mode-hook)
 
 ;; emacs-lisp-mode-hook
