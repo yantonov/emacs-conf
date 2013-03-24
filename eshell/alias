@@ -1,0 +1,22 @@
+alias s ssh $*
+alias sc scp $*
+alias r rgrep $*
+alias l ls $*
+alias g git $*
+alias f find $*
+alias emacs find-file $1
+alias lh ls -l -h $*
+alias ll ls -l $*
+alias la ls -la $*
+alias saptc apt-cache search $*
+alias sapts apt-cache show $*
+alias sapti sudo apt-get install $*
+alias saptr sudo apt-get remove $*
+alias saptd sudo apt-get update $*
+alias gst git status
+alias gb git branch $*
+alias gbv git branch -v $*
+alias gco git checkout $*
+alias glt git log -n 10
+alias gsu git submodule update --init --recursive
+alias gdum git commit --allow-empty -m dummy
