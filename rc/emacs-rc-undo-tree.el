@@ -1,3 +1,3 @@
 (require 'undo-tree)
 
-(global-undo-tree-mode)
+;(global-undo-tree-mode)
