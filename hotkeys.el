@@ -47,6 +47,9 @@
     'fullscreen-scratch)
   ;; webjump
   (define-key my-key-map (kbd "C-x g") 'webjump)
+
+  ;; projectile
+  (define-key my-key-map (kbd "M-p") 'projectile-find-file)
   )
 
 (defun my-paredit-keybindings ()
