@@ -104,3 +104,7 @@ Windows
 
 ;; custom config
 (load custom-init-after-file 'noerror)
+
+;; goto home in case of windows
+(if (eq system-type 'windows-nt)
+  (cd "~"))
