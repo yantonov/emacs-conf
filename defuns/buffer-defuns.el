@@ -68,7 +68,7 @@ Including indent-buffer, which should not be called automatically on save."
     (message "No region selected"))
   )
 
-(defun smart-open-line ()
+(defun smart-newline-and-indent ()
   "Insert an empty line after the current line.
 Position the cursor at its beginning, according to the current mode."
   (interactive)
