@@ -50,6 +50,9 @@
 
   ;; projectile
   (define-key my-key-map (kbd "M-p") 'projectile-find-file)
+
+  ;; open new line like IntelliJIdea/Eclipse etc
+  (define-key my-key-map (kbd  "S-<return>") 'smart-open-line)
   )
 
 (defun my-paredit-keybindings ()
