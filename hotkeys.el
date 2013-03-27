@@ -53,6 +53,9 @@
 
   ;; open new line like IntelliJIdea/Eclipse etc
   (define-key my-key-map (kbd  "S-<return>") 'smart-newline-and-indent)
+
+  ;; open-with
+  (define-key my-key-map (kbd  "C-c o") 'open-with)
   )
 
 (defun my-paredit-keybindings ()
