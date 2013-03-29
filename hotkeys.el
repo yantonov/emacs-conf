@@ -56,6 +56,9 @@
 
   ;; open-with
   (define-key my-key-map (kbd  "C-c o") 'open-with)
+
+  ;; open-with
+  (define-key my-key-map (kbd  "C-c g") 'google)
   )
 
 (defun my-paredit-keybindings ()
