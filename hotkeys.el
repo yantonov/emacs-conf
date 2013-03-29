@@ -2,6 +2,9 @@
   ;; inspired by intellij idea
   (define-key my-key-map (kbd "C-M-l") 'indent-buffer)
 
+  ;; inspired by intellij idea
+  (define-key my-key-map (kbd "C-S-M-l") 'indent-defun)
+
   ;; resize buffer key bindings
   ;; http://www.emacswiki.org/emacs/WindowResize
   (define-key my-key-map (kbd "S-C-<left>") 'shrink-window-horizontally)
