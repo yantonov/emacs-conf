@@ -112,3 +112,8 @@ Second call restores windows configuration."
       (window-configuration-to-register :fullscreen)
       (delete-other-windows)
       (switch-to-buffer "*scratch*"))))
+
+(defun goto-previous-window ()
+  "Turns you to previous window."
+  (interactive)
+  (other-window -1))

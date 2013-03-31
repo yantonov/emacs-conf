@@ -65,6 +65,9 @@
 
   ;; open-with
   (define-key my-key-map (kbd  "C-c g") 'google)
+
+  ;; prevous window
+  (define-key my-key-map (kbd  "C-x O") 'goto-previous-window)
   )
 
 (defun my-paredit-keybindings ()
