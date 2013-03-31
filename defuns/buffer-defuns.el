@@ -101,3 +101,11 @@ Position the cursor at its beginning, according to the current mode."
   (save-excursion
     (mark-defun)
     (indent-region (region-beginning) (region-end))))
+
+(defun kill-other-buffers ()
+  "Kill all buffers but the current one.
+Don't mess with special buffers."
+  (interactive)
+  (dolist (buffer (buffer-list))
+    (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
+      (kill-buffer buffer))))

@@ -68,6 +68,9 @@
 
   ;; prevous window
   (define-key my-key-map (kbd  "C-x O") 'goto-previous-window)
+
+  ;; close all but this
+  (global-set-key (kbd "C-c k") 'kill-other-buffers)
   )
 
 (defun my-paredit-keybindings ()
