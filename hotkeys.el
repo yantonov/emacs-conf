@@ -71,6 +71,12 @@
 
   ;; close all but this
   (global-set-key (kbd "C-c k") 'kill-other-buffers)
+
+  ;; move line up and down
+  (global-set-key [(control shift up)]  'move-line-up)
+  (global-set-key [(control shift down)]  'move-line-down)
+  (global-set-key [(meta shift up)]  'move-line-up)
+  (global-set-key [(meta shift down)]  'move-line-down)
   )
 
 (defun my-paredit-keybindings ()
