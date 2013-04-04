@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # install mode using emacs package system
 

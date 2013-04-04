@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # creates directories if needed
 

@@ -1,8 +1,8 @@
-#/bin/bash
+#!/bin/bash
 
 # script install color theme from given git repo
 
-# Usage: 
+# Usage:
 # first argument - git repo url
 # second argument - dir name for color-theme
 
@@ -13,7 +13,7 @@ else
     GIT_REPO=$1
     INSTALLED_THEME_DIR=$2
 fi
-    
+
 # init env
 WD=`pwd`
 CURRENT_DIR=`dirname $0`
