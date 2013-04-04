@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # https://github.com/auto-complete/auto-complete
 
