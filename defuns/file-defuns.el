@@ -29,6 +29,7 @@
         (message "File '%s' successfully removed" filename)))))
 
 (defun open-with ()
+  "Opens file with external app"
   (interactive)
   (when buffer-file-name
     (cond
@@ -46,6 +47,7 @@
      )))
 
 (defun open-in-desktop ()
+  "Opens directory contained current file (buffer)."
   (interactive)
   (when buffer-file-name
     (let ((d (file-name-directory buffer-file-name)))
