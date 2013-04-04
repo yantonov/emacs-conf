@@ -29,13 +29,35 @@
         (message "File '%s' successfully removed" filename)))))
 
 (defun open-with ()
-  "Simple function that allows us to open the underlying
-file of a buffer in an external program."
   (interactive)
   (when buffer-file-name
-    (shell-command (concat
-                    (if (eq system-type 'darwin)
-                        "open"
-                      (read-shell-command "Open current file with: "))
-                    " "
-                    buffer-file-name))))
+    (cond
+     ((string-equal system-type "gnu/linux")
+      (let ((process-connection-type nil))
+        (start-process ""
+                       nil
+                       (read-shell-command "Open current file with: ")
+                       buffer-file-name))
+      )
+     ((string-equal system-type "darwin")
+      (shell-command (format "open \"%s\"" buffer-file-name))  )
+     ((string-equal system-type "windows-nt")
+      (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" buffer-file-name t t)))
+     )))
+
+(defun open-in-desktop ()
+  (interactive)
+  (when buffer-file-name
+    (let ((d (file-name-directory buffer-file-name)))
+      (cond
+       ((string-equal system-type "gnu/linux")
+        (let ((process-connection-type nil))
+          (start-process ""
+                         nil
+                         "xdg-open"
+                         d)))
+       ((string-equal system-type "darwin")
+        (shell-command (format "open \"%s\"" d))  )
+       ((string-equal system-type "windows-nt")
+        (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" d t t)))
+       ))))
