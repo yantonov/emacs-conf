@@ -14,4 +14,4 @@ fi
 
 SCRIPT_DIR=`dirname $0`
 
-emacs --batch -load ${SCRIPT_DIR}/elisp/init-package-system.el -load ${INSTALL_EMACS_LISP_SCRIPT}
+emacs -no-init-file -batch -l ${SCRIPT_DIR}/elisp/init-package-system.el -l ${INSTALL_EMACS_LISP_SCRIPT}
