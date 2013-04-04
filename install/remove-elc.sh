@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # remove all emacs lisp compiled files
 

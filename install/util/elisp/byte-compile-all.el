@@ -1,1 +1,1 @@
-(byte-recompile-directory "~/emacs/" 0 t)
+(byte-recompile-directory (file-truename "~/emacs/") 0 t)
