@@ -33,9 +33,6 @@
   (define-key my-key-map (kbd "C-x C-r") 'rename-current-buffer-file)
   (define-key my-key-map (kbd "C-x C-k") 'delete-current-buffer-file)
 
-  (define-key my-key-map (kbd "C-/") 'comment-or-uncomment-region)
-  (define-key my-key-map (kbd "C-?") 'comment-or-uncomment-region)
-
   ;; join next line to current
   (define-key my-key-map  (kbd "M-j")
     (lambda ()
@@ -92,7 +89,12 @@
 
 (defun load-my-keybindings ()
   (interactive)
-  (my-general-keybindings (current-global-map))
-  )
+  (my-general-keybindings (current-global-map)))
 
 (load-my-keybindings)
+
+(defun my-prog-mode-hotkey-hook ()
+  (local-set-key (kbd "C-/") 'comment-or-uncomment-region)
+  (local-set-key (kbd "C-?") 'comment-or-uncomment-region))
+
+(add-hook 'prog-mode-hook 'my-prog-mode-hotkey-hook)
