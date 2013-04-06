@@ -77,7 +77,13 @@
   (global-set-key [(control shift down)]  'move-line-down)
   (global-set-key [(meta shift up)]  'move-line-up)
   (global-set-key [(meta shift down)]  'move-line-down)
-  )
+
+  ;; timeclock
+  (global-set-key "\C-ccst" 'timeclock-in)
+  (global-set-key "\C-cce" 'timeclock-out)
+  (global-set-key "\C-ccr" 'timeclock-reread-log)
+  (global-set-key "\C-ccu" 'timeclock-update-string)
+  (global-set-key "\C-ct" 'timeclock-when-to-leave-string))
 
 (defun my-paredit-keybindings ()
   "Customization for paredit keybindings."

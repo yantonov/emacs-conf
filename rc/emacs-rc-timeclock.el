@@ -1,11 +1,6 @@
 ;;; emacs-rc-timeclock.el ---
 
 (require 'timeclock)
-(global-set-key "\C-ccst" 'timeclock-in)
-(global-set-key "\C-cce" 'timeclock-out)
-(global-set-key "\C-ccr" 'timeclock-reread-log)
-(global-set-key "\C-ccu" 'timeclock-update-string)
-;;(global-set-key "\C-ct" 'timeclock-when-to-leave)
 
 (defvar timeclock-string nil)
 
