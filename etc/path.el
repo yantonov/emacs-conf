@@ -1,7 +1,6 @@
 (defcustom pt-projectile-require-project-root t
   "Require the presence of a project root to operate when true.
 Otherwise consider the current directory the project root."
-  :group 'projectile
   :type 'boolean)
 
 (defvar pt-project-root-files
