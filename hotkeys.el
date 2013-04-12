@@ -80,7 +80,7 @@
   (global-set-key "\C-cce" 'timeclock-out)
   (global-set-key "\C-ccr" 'timeclock-reread-log)
   (global-set-key "\C-ccu" 'timeclock-update-string)
-  (global-set-key "\C-ct" 'timeclock-when-to-leave-string))
+  (global-set-key "\C-cct" 'timeclock-when-to-leave-string))
 
 (defun my-paredit-keybindings ()
   "Customization for paredit keybindings."
