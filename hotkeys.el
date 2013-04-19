@@ -81,7 +81,10 @@
   (global-set-key "\C-cce" 'timeclock-out)
   (global-set-key "\C-ccr" 'timeclock-reread-log)
   (global-set-key "\C-ccu" 'timeclock-update-string)
-  (global-set-key "\C-cct" 'timeclock-when-to-leave-string))
+  (global-set-key "\C-cct" 'timeclock-when-to-leave-string)
+
+  ;; execute shell command for current buffer file
+  (global-set-key (kbd "M-!") 'shell-execute-buffer-file))
 
 (defun my-paredit-keybindings ()
   "Customization for paredit keybindings."

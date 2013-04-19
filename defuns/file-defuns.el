@@ -61,5 +61,11 @@
        ((string-equal system-type "darwin")
         (shell-command (format "open \"%s\"" d))  )
        ((string-equal system-type "windows-nt")
-        (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" d t t)))
-       ))))
+        (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" d t t)))))))
+
+(defun shell-execute-buffer-file ()
+  "Executes shell command for current buffer file. Shall command exaple: bash %"
+  (interactive)
+  (let ((file-buffer (or (buffer-file-name) ""))
+        (command (read-shell-command "Shell command: " nil nil nil)))
+    (shell-command (replace-regexp-in-string "%" file-buffer command))))
