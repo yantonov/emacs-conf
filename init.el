@@ -7,6 +7,8 @@
   "Defines emacs config directory inside user home directory.")
 (defvar emacs-mode-home (concat emacs-home "mode/")
   "Defines directory for emacs extensions and modes.")
+(defvar emacs-color-themes-home (concat emacs-home "color-themes/")
+  "Defines directory for emacs color themes.")
 
 (defvar custom-init-before-file (concat user-emacs-directory "custom-before.el")
   "Defines custom initialization file.
@@ -68,7 +70,7 @@ Windows
 ;;
 ;; color themes
 ;;
-(setq color-themes-dir (concat emacs-home "color-themes"))
+(setq color-themes-dir emacs-color-themes-home)
 (dolist
     (project (directory-files color-themes-dir t "\\w+"))
   (when (file-directory-p project)

@@ -7,3 +7,7 @@
 
 # emacs lisp compiled files
 *.elc
+
+# color-themes from git
+/color-themes/solarized/
+/color-themes/zen-and-art/
