@@ -28,7 +28,7 @@
 
   (define-key my-key-map (kbd "<C-return>") 'open-line-below)
   (define-key my-key-map (kbd "<C-S-return>") 'open-line-above)
-  (define-key my-key-map (kbd "C-c n") 'cleanup-buffer)
+  (define-key my-key-map (kbd "C-c n") 'cleanup-buffer-safe)
 
   (define-key my-key-map (kbd "C-x C-r") 'rename-current-buffer-file)
   (define-key my-key-map (kbd "C-x C-k") 'delete-current-buffer-file)
