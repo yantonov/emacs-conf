@@ -1,9 +1,12 @@
 (defun my-general-keybindings (my-key-map)
+
+  ;;; indentation
   ;; inspired by intellij idea
   (define-key my-key-map (kbd "C-M-l") 'indent-buffer)
-
   ;; inspired by intellij idea
   (define-key my-key-map (kbd "C-S-M-l") 'indent-defun)
+  ;; to-utf, no trailing whitespaces, no tabs
+  (define-key my-key-map (kbd "C-c n") 'cleanup-buffer-safe) 
 
   ;; resize buffer key bindings
   ;; http://www.emacswiki.org/emacs/WindowResize
@@ -18,27 +21,32 @@
   (define-key my-key-map (kbd "S-<down>") 'windmove-down)
   (define-key my-key-map (kbd "S-<right>") 'windmove-right)
   (define-key my-key-map (kbd "S-<up>") 'windmove-up)
+  ;; prevous window
+  (define-key my-key-map (kbd  "C-x O") 'goto-previous-window)
 
   ;; too long lines shows/hides by "C-C l"
   (define-key my-key-map (kbd "C-c l") 'toggle-truncate-lines)
-  ;; newline and indent
-  (define-key my-key-map "\r" 'newline-and-indent)
+  
   ;; wrapper to goto-line (show line number only during entering line number
   (define-key my-key-map [remap goto-line] 'goto-line-with-feedback)
 
+  ;;; new lines
+  (define-key my-key-map "\r" 'newline-and-indent)
+  ;; open new line like IntelliJIdea/Eclipse etc
+  (define-key my-key-map (kbd "S-<return>") 'smart-newline-and-indent)
   (define-key my-key-map (kbd "<C-return>") 'open-line-below)
   (define-key my-key-map (kbd "<C-S-return>") 'open-line-above)
-  (define-key my-key-map (kbd "C-c n") 'cleanup-buffer-safe)
-
-  (define-key my-key-map (kbd "C-x C-r") 'rename-current-buffer-file)
-  (define-key my-key-map (kbd "C-x C-k") 'delete-current-buffer-file)
-
   ;; join next line to current
   (define-key my-key-map  (kbd "M-j")
     (lambda ()
       (interactive)
       (join-line -1)))
+  
+  ;; file manupulations
+  (define-key my-key-map (kbd "C-x C-r") 'rename-current-buffer-file)
+  (define-key my-key-map (kbd "C-x C-k") 'delete-current-buffer-file)
 
+  ;;; fullscreen
   ;; fullscreen eshell
   (define-key my-key-map (kbd "C-c e")
     'fullscreen-eshell)
@@ -48,40 +56,19 @@
   ;; fullscreen scratch
   (define-key my-key-map (kbd "C-c f")
     'fullscreen-scratch)
-  ;; webjump
-  (define-key my-key-map (kbd "C-x g") 'webjump)
 
+  ;;; open 
   ;; projectile
   (define-key my-key-map (kbd "M-p") 'projectile-find-file)
-
-  ;; open new line like IntelliJIdea/Eclipse etc
-  (define-key my-key-map (kbd  "S-<return>") 'smart-newline-and-indent)
-
+  ;; webjump
+  (define-key my-key-map (kbd "C-x g") 'webjump)
   ;; open-with
   (define-key my-key-map (kbd  "C-c o") 'open-with)
-
   ;; open-with
   (define-key my-key-map (kbd  "C-c g") 'google)
 
-  ;; prevous window
-  (define-key my-key-map (kbd  "C-x O") 'goto-previous-window)
-
   ;; close all but this
   (global-set-key (kbd "C-c k") 'kill-other-buffers)
-
-  ;; move line up and down
-  ;; TODO: resolve conflict with windows resize mapping
-  ;;(global-set-key [(control shift up)]  'move-line-up)
-  ;;(global-set-key [(control shift down)]  'move-line-down)
-  ;;(global-set-key [(meta shift up)]  'move-line-up)
-  ;;(global-set-key [(meta shift down)]  'move-line-down)
-
-  ;; timeclock
-  (global-set-key "\C-ccst" 'timeclock-in)
-  (global-set-key "\C-cce" 'timeclock-out)
-  (global-set-key "\C-ccr" 'timeclock-reread-log)
-  (global-set-key "\C-ccu" 'timeclock-update-string)
-  (global-set-key "\C-cct" 'timeclock-when-to-leave-string)
 
   ;; execute shell command for current buffer file
   (global-set-key (kbd "M-!") 'shell-execute-buffer-file))
@@ -102,3 +89,12 @@
   (local-set-key (kbd "C-?") 'comment-or-uncomment-region))
 
 (add-hook 'prog-mode-hook 'my-prog-mode-hotkey-hook)
+
+(defun my-keychords ()
+  (key-chord-define-global "TCI" 'timeclock-in)
+  (key-chord-define-global "TCO" 'timeclock-out)
+  (key-chord-define-global "TCRR" 'timeclock-reread-log)
+  (key-chord-define-global "TCUS" 'timeclock-update-string)
+  (key-chord-define-global "TCL" 'timeclock-when-to-leave-string))
+
+(my-keychords)
