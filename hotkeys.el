@@ -57,6 +57,13 @@
   (define-key my-key-map (kbd "C-c f")
     'fullscreen-scratch)
 
+  ;; timeclock
+  (define-key my-key-map (kbd "C-c cs") 'timeclock-in)
+  (define-key my-key-map (kbd "C-c ce") 'timeclock-out)
+  (define-key my-key-map (kbd "C-c cr") 'timeclock-reread-log)
+  (define-key my-key-map (kbd "C-c cu") 'timeclock-update-string)
+  (define-key my-key-map (kbd "C-c cw") 'timeclock-when-to-leave-string)
+
   ;;; open 
   ;; projectile
   (define-key my-key-map (kbd "M-p") 'projectile-find-file)
@@ -89,12 +96,3 @@
   (local-set-key (kbd "C-?") 'comment-or-uncomment-region))
 
 (add-hook 'prog-mode-hook 'my-prog-mode-hotkey-hook)
-
-(defun my-keychords ()
-  (key-chord-define-global "TCI" 'timeclock-in)
-  (key-chord-define-global "TCO" 'timeclock-out)
-  (key-chord-define-global "TCRR" 'timeclock-reread-log)
-  (key-chord-define-global "TCUS" 'timeclock-update-string)
-  (key-chord-define-global "TCL" 'timeclock-when-to-leave-string))
-
-(my-keychords)
