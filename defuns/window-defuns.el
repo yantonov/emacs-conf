@@ -97,7 +97,7 @@ the current buffer."
   "Create or visit a terminal buffer."
   (interactive)
   (start-or-switch-to (lambda ()
-                         (ansi-term (getenv "SHELL")))
+                        (ansi-term (getenv "SHELL")))
                       "*ansi-term*"))
 
 (defun visit-ielm ()
@@ -111,26 +111,35 @@ Start `ielm' if it's not already running."
   (interactive)
   (start-or-switch-to 'eshell "*eshell*"))
 
+(defun switch-to-fullscreen-buffer (b-name function reg-name)
+  "switches between current buffer layout and fullscreen buffer of given name1.
+Calls function during swithing to fullscrenn."
+  (interactive)
+  (if (and
+       (= (count-windows) 1)
+       (string= (buffer-name) b-name))
+      (jump-to-register reg-name)
+    (progn
+      (window-configuration-to-register reg-name)
+      (delete-other-windows)
+      (if (not (get-buffer b-name))
+          (funcall function)
+        (switch-to-buffer b-name)))))
+
 (defun fullscreen-eshell ()
   "Bring up a full-screen eshell or restore previous config."
   (interactive)
-  (if (string= "eshell-mode" major-mode)
-      (jump-to-register :eshell-fullscreen)
-    (progn
-      (window-configuration-to-register :eshell-fullscreen)
-      (eshell)
-      (delete-other-windows))))
+  (switch-to-fullscreen-buffer "*eshell*"
+                               (lambda () (eshell))
+                               :eshell-fullscreen))
 
 (defun fullscreen-scratch ()
   "Save window configuraion and goto *scratch* buffer.
 Second call restores windows configuration."
   (interactive)
-  (if (= (count-windows) 1)
-      (jump-to-register :fullscreen)
-    (progn
-      (window-configuration-to-register :fullscreen)
-      (delete-other-windows)
-      (switch-to-buffer "*scratch*"))))
+  (switch-to-fullscreen-buffer "*scratch*"
+                               (lambda () (switch-to-buffer "*scratch*"))
+                               :eshell-fullscreen))
 
 (defun goto-previous-window ()
   "Turns you to previous window."
