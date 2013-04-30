@@ -82,6 +82,35 @@
   (interactive)
   (split-window-horizontally))
 
+(defun start-or-switch-to (function buffer-name)
+  "Invoke FUNCTION if there is no buffer with BUFFER-NAME.
+Otherwise switch to the buffer named BUFFER-NAME.  Don't clobber
+the current buffer."
+  (if (not (get-buffer buffer-name))
+      (progn
+        (split-window-sensibly (selected-window))
+        (other-window 1)
+        (funcall function))
+    (switch-to-buffer-other-window buffer-name)))
+
+(defun visit-ansi-term-buffer ()
+  "Create or visit a terminal buffer."
+  (interactive)
+  (start-or-switch-to (lambda ()
+                         (ansi-term (getenv "SHELL")))
+                      "*ansi-term*"))
+
+(defun visit-ielm ()
+  "Switch to default `ielm' buffer.
+Start `ielm' if it's not already running."
+  (interactive)
+  (prelude-start-or-switch-to 'ielm "*ielm*"))
+
+(defun visit-eshell ()
+  "Switch to eshell buffer. Start eshell if it's not already running."
+  (interactive)
+  (start-or-switch-to 'eshell "*eshell*"))
+
 (defun fullscreen-eshell ()
   "Bring up a full-screen eshell or restore previous config."
   (interactive)
@@ -91,16 +120,6 @@
       (window-configuration-to-register :eshell-fullscreen)
       (eshell)
       (delete-other-windows))))
-
-(defun visit-ansi-term-buffer ()
-  "Create or visit a terminal buffer."
-  (interactive)
-  (if (not (get-buffer "*ansi-term*"))
-      (progn
-        (split-window-sensibly (selected-window))
-        (other-window 1)
-        (ansi-term (getenv "SHELL")))
-    (switch-to-buffer-other-window "*ansi-term*")))
 
 (defun fullscreen-scratch ()
   "Save window configuraion and goto *scratch* buffer.
