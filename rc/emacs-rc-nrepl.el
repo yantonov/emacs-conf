@@ -8,6 +8,9 @@
 ;; Stop the error buffer from popping up while working in the REPL buffer:
 (setq nrepl-popup-stacktraces nil)
 
+;; hide special nrepl buffers
+(setq nrepl-hide-special-buffers t)
+
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'nrepl-mode))
 
@@ -26,16 +29,13 @@
   ;; show-paren-mode
   ;; http://emacswiki.org/emacs/ShowParenMode
   (show-paren-mode 1)
-  (setq show-paren-style 'expression)
-  )
+  (setq show-paren-style 'expression))
 
 (defun my-nrepl-mode-hook ()
-  (my-nrepl-common-hook)
-  )
+  (my-nrepl-common-hook))
 
 (defun my-nrepl-interaction-mode-hook ()
-  (my-nrepl-common-hook)
-  )
+  (my-nrepl-common-hook))
 
 (add-hook 'nrepl-mode-hook 'my-nrepl-mode-hook)
 (add-hook 'nrepl-interaction-mode-hook 'my-nrepl-interaction-mode-hook)
@@ -49,9 +49,7 @@
   "Attach user defined javadocs."
   (if user-javadoc-alist
       (dolist (el user-javadoc-alist javadoc-alist)
-        (setq javadoc-alist (cons el javadoc-alist)))
-    )
-  )
+        (setq javadoc-alist (cons el javadoc-alist)))))
 ;; load user defined settings
 (attach-user-javadocs)
 
