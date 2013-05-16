@@ -17,4 +17,4 @@
 (add-hook 'minibuffer-setup-hook 'conditionally-enable-paredit-mode)
 
 ;; save remove whitespace
-;; (add-hook 'before-save-hook 'cleanup-buffer-safe)
+(add-hook 'before-save-hook 'cleanup-buffer-safe)
