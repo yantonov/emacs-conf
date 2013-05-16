@@ -1,12 +1,10 @@
 (defun untabify-buffer()
   (interactive)
-  (untabify (point-min) (point-max))
-  )
+  (untabify (point-min) (point-max)))
 
 (defun tabify-buffer()
   (interactive)
-  (tabify (point-min) (point-max))
-  )
+  (tabify (point-min) (point-max)))
 
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
@@ -40,8 +38,7 @@ might be bad."
   (untabify (point-min) (point-max))
   (if (eq 'markdown-mode (buffer-local-value 'major-mode (current-buffer)))
       nil
-    (delete-trailing-whitespace)
-    )
+    (whitespace-cleanup))
   (set-buffer-file-coding-system 'utf-8))
 
 (defun cleanup-buffer ()
@@ -63,8 +60,7 @@ Including indent-buffer, which should not be called automatically on save."
           (newline))
         (push-mark (point))
         (message "Moved %s words" count))
-    (message "No region selected"))
-  )
+    (message "No region selected")))
 
 (defun smart-newline-and-indent ()
   "Insert an empty line after the current line.
