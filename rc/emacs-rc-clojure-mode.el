@@ -15,6 +15,6 @@
   ;; http://emacswiki.org/emacs/ShowParenMode
   (show-paren-mode 1)
   (setq show-paren-style 'expression)
-  )
+  (turn-on-eldoc-mode))
 
 (add-hook 'clojure-mode-hook 'my-clojure-mode-hook)

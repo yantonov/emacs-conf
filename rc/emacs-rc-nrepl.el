@@ -15,8 +15,11 @@
   '(add-to-list 'ac-modes 'nrepl-mode))
 
 (defun set-auto-complete-as-completion-at-point-function ()
-  (setq completion-at-point-functions '(auto-complete)))
-(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+  (setq completion-at-point-functions
+        '(auto-complete)))
+
+(add-hook 'auto-complete-mode-hook
+          'set-auto-complete-as-completion-at-point-function)
 
 (defun my-nrepl-common-hook ()
   (paredit-mode +1)
@@ -35,6 +38,7 @@
   (my-nrepl-common-hook))
 
 (defun my-nrepl-interaction-mode-hook ()
+  (nrepl-turn-on-eldoc-mode)
   (my-nrepl-common-hook))
 
 (add-hook 'nrepl-mode-hook 'my-nrepl-mode-hook)
