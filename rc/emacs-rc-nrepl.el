@@ -35,6 +35,7 @@
   (setq show-paren-style 'expression))
 
 (defun my-nrepl-mode-hook ()
+  (subword-mode)
   (my-nrepl-common-hook))
 
 (defun my-nrepl-interaction-mode-hook ()
