@@ -52,10 +52,10 @@ Windows
 Examples:
 
 Ubuntu (assumed erlang is installed from deb package provided by https://www.erlang-solutions.com) :
-\(setq erlang-mode-home \"/usr/lib/erlang\"\)
+\(setq erlang-home \"/usr/lib/erlang\"\)
 
 Windows
-\(setq erlang-mode-home \"C:/Program Files/erl<Ver>\"\)")
+\(setq erlang-home \"C:/Program Files/erl<Ver>\"\)")
 
 (load custom-init-before-file 'noerror)
 
