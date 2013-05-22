@@ -104,6 +104,9 @@ Windows
 ;; hooks
 (load (concat emacs-home "hooks.el"))
 
+;; advices
+(load (concat emacs-home "advices.el"))
+
 ;; custom config
 (load custom-init-after-file 'noerror)
 
