@@ -81,3 +81,23 @@ buffer is not visiting a file."
       (find-file (concat "/sudo:root@localhost:"
                          (ido-read-file-name "Find file(as root): ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+(defun open-file-at-cursor ()
+  "Open the file path under cursor.
+If there is text selection, uses the text selection for path.
+If the path is starts with “http://”, open the URL in browser.
+Input path can be {relative, full path, URL}.
+This command is similar to `find-file-at-point' but without prompting for confirmation.
+"
+  (interactive)
+  (let ( (path (thing-at-point 'filename)))
+    (if (string-match-p "\\`https*://" path)
+        (progn (browse-url path))
+      (progn ; not starting “http://”
+        (if (file-exists-p path)
+            (find-file path)
+          (if (file-exists-p (concat path ".el"))
+              (find-file (concat path ".el"))
+            (progn
+              (when (y-or-n-p (format "file doesn't exist: 「%s」. Create?" path) )
+                (find-file path )))))))))
