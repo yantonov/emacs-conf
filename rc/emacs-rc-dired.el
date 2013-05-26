@@ -15,7 +15,9 @@
               (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
 
             (define-key dired-mode-map
-              (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
+              (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)       
             )
           )
+
+(provide 'emacs-rc-dired)
 

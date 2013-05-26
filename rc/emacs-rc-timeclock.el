@@ -9,12 +9,12 @@
 (defun timeclock-update-string ()
   (interactive)
   (let* ((remainder (timeclock-workday-remaining t))
-     (last-in (equal (car timeclock-last-event) "i")))
+         (last-in (equal (car timeclock-last-event) "i")))
     (setq timeclock-string
-      (format "   %c%s%c"
-          (if last-in ?< ?[)
-              remainder
-              (if last-in ?> ?])))))
+          (format "   %c%s%c"
+                  (if last-in ?< ?[)
+                      remainder
+                      (if last-in ?> ?])))))
 
 ;;(run-at-time nil 60 'timeclock-update-string)
 
@@ -22,4 +22,6 @@
 (add-hook 'timeclock-in-hook    'timeclock-reread-log)
 (add-hook 'timeclock-out-hook   'timeclock-reread-log)
 
+
+(provide 'emacs-rc-timeclock)
 ;;; emacs-rc-timeclock.el ends here

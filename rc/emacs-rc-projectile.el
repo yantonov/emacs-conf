@@ -5,3 +5,5 @@
 
 ;; to enable for some mode
 ;; (add-hook 'ruby-mode-hook 'projectile-on)
+
+(provide 'emacs-rc-projectile)

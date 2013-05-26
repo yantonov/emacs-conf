@@ -89,3 +89,5 @@
     (if (and root canon-class-name)
         (browse-url (concat root canon-class-name ".html"))
       (message "No javadoc found for %s" class-name))))
+
+(provide 'emacs-rc-nrepl)

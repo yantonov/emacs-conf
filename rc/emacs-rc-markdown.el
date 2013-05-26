@@ -4,4 +4,6 @@
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
       (cons '("\\.md" . markdown-mode)
-	    auto-mode-alist))
+            auto-mode-alist))
+
+(provide 'emacs-rc-markdown)

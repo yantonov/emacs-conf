@@ -48,3 +48,5 @@
   "Enable `paredit-mode' in the minibuffer, during `eval-expression'."
   (if (eq this-command 'eval-expression)
       (paredit-mode 1)))
+
+(provide 'emacs-rc-paredit)

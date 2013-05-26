@@ -18,3 +18,5 @@
   (turn-on-eldoc-mode))
 
 (add-hook 'clojure-mode-hook 'my-clojure-mode-hook)
+
+(provide 'emacs-rc-clojure-mode)

@@ -11,3 +11,5 @@
   (show-paren-mode 1)
   (setq show-paren-style 'expression)
   )
+
+(provide 'emacs-rc-elisp-mode)

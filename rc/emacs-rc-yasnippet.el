@@ -28,3 +28,5 @@
      )))
 
 (setq yas-prompt-functions '(yas-popup-isearch-prompt yas-ido-prompt yas-no-prompt))
+
+(provide 'emacs-rc-yasnippet)

@@ -39,3 +39,5 @@
   (rainbow-delimiters-mode-enable))
 
 (add-hook 'erlang-mode-hook 'my-erlang-mode-hook)
+
+(provide 'emacs-rc-erlang)

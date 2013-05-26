@@ -26,3 +26,5 @@
 
 ;; highlight current line
 (global-hl-line-mode +1)
+
+(provide 'emacs-rc-editor)

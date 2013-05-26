@@ -18,3 +18,5 @@
     ("github" . "https://github.com")
     ("bitbucket" . "https://bitbucket.org"))
   webjump-sample-sites))
+
+(provide 'emacs-rc-webjump)

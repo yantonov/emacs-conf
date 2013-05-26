@@ -15,4 +15,5 @@
 
 (add-hook 'prog-mode-hook 'my-common-prog-hook)
 
+(provide 'emacs-rc-prog-mode)
 ;;; emacs-rc-prog-mode.el ends here---
