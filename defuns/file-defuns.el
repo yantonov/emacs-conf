@@ -101,3 +101,5 @@ This command is similar to `find-file-at-point' but without prompting for confir
             (progn
               (when (y-or-n-p (format "file doesn't exist: 「%s」. Create?" path) )
                 (find-file path )))))))))
+
+(provide 'file-defuns)

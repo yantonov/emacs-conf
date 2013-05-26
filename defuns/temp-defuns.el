@@ -6,8 +6,7 @@
   (switch-to-buffer (concat "*temp-"
                             (concat (format-time-string "%Y-%m-%d__%H-%M-%S"
                                                         (current-time))
-                                    "*")))
-  )
+                                    "*"))))
 
 (defun create-temp-file ()
   "Create temporary txt file with current datetime name."
@@ -39,3 +38,5 @@
           (switch-to-buffer oldbuf)
           (message (concat "Temporary file :" trash-file " saved."))))
     (message "No region selected")))
+
+(provide 'temp-defuns)

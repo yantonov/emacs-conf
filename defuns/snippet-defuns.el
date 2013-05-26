@@ -2,8 +2,7 @@
 
 (defun file-name ()
   (interactive)
-  (print (expand-file-name (buffer-file-name)))
-  )
+  (print (expand-file-name (buffer-file-name))))
 
 (defun snippet--clojure-namespace-from-buffer-file-name ()
   (replace-regexp-in-string
@@ -64,3 +63,5 @@
              (string= prefix (substring s 0 pos)))
         (substring s pos)
       s)))
+
+(provide 'snippet-defuns)

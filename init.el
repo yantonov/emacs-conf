@@ -89,10 +89,16 @@ Windows
 ;; etc core defuns
 ;;
 (setq defuns-dir (expand-file-name "defuns" emacs-home))
-(dolist (file (directory-files defuns-dir t load-emacs-lisp-file-pattern))
-  (when (file-regular-p file)
-    (load file)))
+(add-to-list 'load-path defuns-dir)
+(require 'buffer-defuns)
+(require 'file-defuns)
+(require 'snippet-defuns)
+(require 'temp-defuns)
+(require 'window-defuns)
 
+;;;
+;;; configurations for modes
+;;;
 (setq rc-dir (expand-file-name "rc" emacs-home))
 (dolist (file (directory-files rc-dir t load-emacs-lisp-file-pattern))
   (when (file-regular-p file)

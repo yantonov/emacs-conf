@@ -118,3 +118,5 @@ Don't mess with special buffers."
   (transpose-lines 1)
   (forward-line -1)
   (indent-according-to-mode))
+
+(provide 'buffer-defuns)

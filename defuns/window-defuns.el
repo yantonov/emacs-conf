@@ -145,3 +145,5 @@ Second call restores windows configuration."
   "Turns you to previous window."
   (interactive)
   (other-window -1))
+
+(provide 'window-defuns)
