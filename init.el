@@ -136,9 +136,6 @@ Windows
 ;; global hotkeys
 (load (concat emacs-home "hotkeys.el"))
 
-;; hooks
-(load (concat emacs-home "hooks.el"))
-
 ;; advices
 (load (concat emacs-home "advices.el"))
 

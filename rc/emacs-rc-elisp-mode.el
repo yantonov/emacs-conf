@@ -9,7 +9,8 @@
   ;; show-paren-mode
   ;; http://emacswiki.org/emacs/ShowParenMode
   (show-paren-mode 1)
-  (setq show-paren-style 'expression)
-  )
+  (setq show-paren-style 'expression))
+
+(add-hook 'emacs-lisp-mode-hook 'my-elisp-mode-hook)
 
 (provide 'emacs-rc-elisp-mode)

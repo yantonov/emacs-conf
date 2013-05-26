@@ -9,4 +9,9 @@
 ;; no menu bar
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
+;; fires when an emacs frame is created
+(add-hook 'after-make-frame-functions 'reset-ui)
+;; hook for setting up UI when not running in daemon mode
+(add-hook 'emacs-startup-hook 'reset-ui)
+
 (provide 'emacs-rc-ui)

@@ -49,4 +49,9 @@
   (if (eq this-command 'eval-expression)
       (paredit-mode 1)))
 
+(add-hook 'paredit-mode-hook 'my-paredit-mode-hook)
+
+;; enable paredit in minibuffer
+(add-hook 'minibuffer-setup-hook 'conditionally-enable-paredit-mode)
+
 (provide 'emacs-rc-paredit)
