@@ -82,7 +82,7 @@ buffer is not visiting a file."
                          (ido-read-file-name "Find file(as root): ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
-(defun open-file-at-cursor ()
+(defun open-at-point ()
   "Open the file path under cursor.
 If there is text selection, uses the text selection for path.
 If the path is starts with “http://”, open the URL in browser.

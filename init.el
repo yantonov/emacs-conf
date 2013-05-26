@@ -78,15 +78,15 @@ Windows
 
 (setq load-emacs-lisp-file-pattern "\\w+\\.elc?$")
 ;;
-;; etc (core defuns and settings)
+;; etc core settings
 ;;
 (setq etc-dir (expand-file-name "etc" emacs-home))
-(dolist (file (directory-files etc-dir t load-emacs-lisp-file-pattern))
-  (when (file-regular-p file)
-    (load file)))
+(add-to-list 'load-path etc-dir)
+(require 'etc-package)
+(require 'etc-path)
 
 ;;
-;; defuns
+;; etc core defuns
 ;;
 (setq defuns-dir (expand-file-name "defuns" emacs-home))
 (dolist (file (directory-files defuns-dir t load-emacs-lisp-file-pattern))
@@ -112,4 +112,4 @@ Windows
 
 ;; goto home in case of windows
 (if (eq system-type 'windows-nt)
-  (cd "~"))
+    (cd "~"))

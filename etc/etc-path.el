@@ -19,3 +19,5 @@ The current directory is assumed to be the project's root otherwise."
       (if pt-projectile-require-project-root
           (error "You're not into a project")
         default-directory)))
+
+(provide 'etc-path)
