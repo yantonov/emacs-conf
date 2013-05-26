@@ -134,10 +134,12 @@ Windows
 (require 'emacs-rc-zencoding)
 
 ;; global hotkeys
+;; after all defuns, settings mode already loaded
 (require 'etc-global-hotkeys)
 
 ;; advices
-(load (concat emacs-home "advices.el"))
+;; after all defuns, settings mode already loaded
+(require 'etc-global-advices)
 
 ;; custom config
 (load custom-init-after-file 'noerror)
