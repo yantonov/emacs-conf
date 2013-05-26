@@ -134,7 +134,7 @@ Windows
 (require 'emacs-rc-zencoding)
 
 ;; global hotkeys
-(load (concat emacs-home "hotkeys.el"))
+(require 'etc-global-hotkeys)
 
 ;; advices
 (load (concat emacs-home "advices.el"))

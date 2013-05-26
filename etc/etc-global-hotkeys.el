@@ -98,3 +98,5 @@
   (local-set-key (kbd "C-?") 'comment-or-uncomment-region))
 
 (add-hook 'prog-mode-hook 'my-prog-mode-hotkey-hook)
+
+(provide 'etc-global-hotkeys)
