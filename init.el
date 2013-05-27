@@ -113,6 +113,7 @@ Windows
 (require 'emacs-rc-elisp-mode)
 (require 'emacs-rc-erlang)
 (require 'emacs-rc-eshell)
+(require 'emacs-rc-expand-region)
 (require 'emacs-rc-highlight-parentheses)
 (require 'emacs-rc-js2-mode)
 (require 'emacs-rc-key-chord)
