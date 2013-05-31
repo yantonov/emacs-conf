@@ -132,6 +132,7 @@ Windows
 (require 'emacs-rc-undo-tree)
 (require 'emacs-rc-webjump)
 (require 'emacs-rc-yasnippet)
+(require 'emacs-rc-whitespace)
 (require 'emacs-rc-zencoding)
 
 ;; global hotkeys
