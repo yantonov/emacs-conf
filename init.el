@@ -122,6 +122,7 @@ Windows
 (require 'emacs-rc-nrepl)
 (require 'emacs-rc-org-mode)
 (require 'emacs-rc-paredit)
+(require 'emacs-rc-pcomplete)
 (require 'emacs-rc-prog-mode)
 (require 'emacs-rc-projectile)
 (require 'emacs-rc-s)
