@@ -11,7 +11,10 @@
   ;; resize buffer key bindings
   ;; http://www.emacswiki.org/emacs/WindowResize
   (define-key my-key-map (kbd "S-C-<left>") 'shrink-window-horizontally)
+  
   (define-key my-key-map (kbd "S-C-<right>") 'enlarge-window-horizontally)
+  
+  
   (define-key my-key-map (kbd "S-C-<down>") 'shrink-window)
   (define-key my-key-map (kbd "S-C-<up>") 'enlarge-window)
 
@@ -33,9 +36,8 @@
   ;;; new lines
   (define-key my-key-map "\r" 'newline-and-indent)
   ;; open new line like IntelliJIdea/Eclipse etc
-  (define-key my-key-map (kbd "S-<return>") 'smart-newline-and-indent)
-  (define-key my-key-map (kbd "<C-return>") 'open-line-below)
-  (define-key my-key-map (kbd "<C-S-return>") 'open-line-above)
+  (define-key my-key-map (kbd "S-<return>") 'smart-open-line)
+  (define-key my-key-map (kbd "<C-S-return>") 'smart-open-line-above)
   ;; join next line to current
   (define-key my-key-map  (kbd "M-j")
     (lambda ()

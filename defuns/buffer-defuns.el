@@ -15,21 +15,6 @@
         (call-interactively 'goto-line))
     (linum-mode 0)))
 
-(defun open-line-below ()
-  (interactive)
-  (if (eolp)
-      (newline)
-    (end-of-line)
-    (newline))
-  (indent-for-tab-command))
-
-(defun open-line-above ()
-  (interactive)
-  (beginning-of-line)
-  (newline)
-  (forward-line -1)
-  (indent-for-tab-command))
-
 (defun cleanup-buffer-safe ()
   "Perform a bunch of safe operations on the whitespace content of a buffer.
 Does not indent buffer, because it is used for a before-save-hook, and that
@@ -62,12 +47,21 @@ Including indent-buffer, which should not be called automatically on save."
         (message "Moved %s words" count))
     (message "No region selected")))
 
-(defun smart-newline-and-indent ()
+(defun smart-open-line ()
   "Insert an empty line after the current line.
 Position the cursor at its beginning, according to the current mode."
   (interactive)
   (move-end-of-line nil)
   (newline-and-indent))
+
+(defun smart-open-line-above ()
+  "Insert an empty line above the current line.
+Position the cursor at it's beginning, according to the current mode."
+  (interactive)
+  (move-beginning-of-line nil)
+  (newline-and-indent)
+  (forward-line -1)
+  (indent-according-to-mode))
 
 (defun copy-file-name-to-clipboard ()
   "Copy the current buffer file name to the clipboard."
