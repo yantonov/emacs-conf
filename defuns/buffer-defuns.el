@@ -113,4 +113,11 @@ Don't mess with special buffers."
   (forward-line -1)
   (indent-according-to-mode))
 
+(defun kill-all-buffers ()
+  (interactive)
+  (mapc 'kill-buffer (buffer-list))
+  (switch-to-buffer "*scratch*")
+  (if (eq system-type 'windows-nt)
+    (cd "~")))
+
 (provide 'buffer-defuns)
