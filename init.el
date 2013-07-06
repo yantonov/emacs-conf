@@ -1,6 +1,6 @@
 ;;
 ;; paths, environment
-;;
+
 (defvar user-home (if (getenv "HOME") (getenv "HOME") (expand-file-name "~"))
   "Defines user home directory.")
 (defvar emacs-home (concat user-home "/emacs/")
@@ -22,7 +22,6 @@ So you can override any previous defined settings using this file.")
 ;;
 ;; javadoc inside nrepl path
 ;;
-
 (defvar user-javadoc-alist nil
   "Defines list of javadoc root paths. This variable is machine specific, can be defined in `custom-init-before-file' init file."
   ;; Example :
@@ -57,37 +56,34 @@ Ubuntu (assumed erlang is installed from deb package provided by https://www.erl
 Windows
 \(setq erlang-home \"C:/Program Files/erl<Ver>\"\)")
 
+
+(defun init-modes-paths (emacs-mode-home)
+  (dolist
+      (project (directory-files emacs-mode-home t "\\w+"))
+    (when (file-directory-p project)
+      (add-to-list 'load-path project))))
+
+(defun init-color-themes-paths (emacs-color-themes-home)
+  (setq color-themes-dir emacs-color-themes-home)
+  (dolist
+      (project (directory-files color-themes-dir t "\\w+"))
+    (when (file-directory-p project)
+      (add-to-list 'load-path project)
+      (add-to-list 'custom-theme-load-path project))))
+
 (load custom-init-before-file 'noerror)
-
-;;
 ;; modes paths
-;;
-(dolist
-    (project (directory-files emacs-mode-home t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
+(init-modes-paths emacs-mode-home)
+;; color-themes paths
+(init-color-themes-paths emacs-color-themes-home)
+;; local el or elc files
 
-;;
-;; color themes
-;;
-(setq color-themes-dir emacs-color-themes-home)
-(dolist
-    (project (directory-files color-themes-dir t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
-
-(setq load-emacs-lisp-file-pattern "\\w+\\.elc?$")
-;;
 ;; etc core settings
-;;
 (setq etc-dir (expand-file-name "etc" emacs-home))
 (add-to-list 'load-path etc-dir)
 (require 'etc-package)
 (require 'etc-path)
-
-;;
 ;; etc core defuns
-;;
 (setq defuns-dir (expand-file-name "defuns" emacs-home))
 (add-to-list 'load-path defuns-dir)
 (require 'buffer-defuns)
@@ -95,10 +91,7 @@ Windows
 (require 'snippet-defuns)
 (require 'temp-defuns)
 (require 'window-defuns)
-
-;;;
 ;;; configurations for modes
-;;;
 (setq rc-dir (expand-file-name "rc" emacs-home))
 (add-to-list 'load-path rc-dir)
 (require 'emacs-rc-auto-complete)
