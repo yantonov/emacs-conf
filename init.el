@@ -112,6 +112,7 @@ Windows
 (require 'emacs-rc-key-chord)
 (require 'emacs-rc-linum)
 (require 'emacs-rc-markdown)
+(require 'emacs-rc-multiple-cursors)
 (require 'emacs-rc-nrepl)
 (require 'emacs-rc-org-mode)
 (require 'emacs-rc-paredit)
