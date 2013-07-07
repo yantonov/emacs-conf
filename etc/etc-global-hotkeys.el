@@ -82,7 +82,10 @@
   (define-key my-key-map (kbd "C-c k") 'kill-other-buffers)
 
   ;; execute shell command for current buffer file
-  (define-key my-key-map (kbd "M-!") 'shell-execute-buffer-file))
+  (define-key my-key-map (kbd "M-!") 'shell-execute-buffer-file)
+
+  ;; close buffer aka IntelliJ Idea
+  (define-key my-key-map (kbd "C-<f4>") 'kill-buffer))
 
 (defun my-paredit-keybindings ()
   "Customization for paredit keybindings."
