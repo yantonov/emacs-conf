@@ -85,7 +85,13 @@
   (define-key my-key-map (kbd "M-!") 'shell-execute-buffer-file)
 
   ;; close buffer aka IntelliJ Idea
-  (define-key my-key-map (kbd "C-<f4>") 'kill-buffer))
+  (define-key my-key-map (kbd "C-<f4>") 'kill-buffer)
+
+  ;; rename tag
+  (define-prefix-command 'tag-util-map)
+  (define-key my-key-map (kbd "C-t") 'tag-util-map)
+  (define-key tag-util-map (kbd "C-r") 'mc/mark-sgml-tag-pair)
+  )
 
 (defun my-paredit-keybindings ()
   "Customization for paredit keybindings."
