@@ -68,7 +68,7 @@
 
   ;;; open
   ;; projectile
-  (define-key my-key-map (kbd "M-p") 'projectile-find-file)
+  (define-key my-key-map (kbd "C-S-n") 'projectile-find-file)
   ;; webjump
   (define-key my-key-map (kbd "C-x g") 'webjump)
   ;; open-with
