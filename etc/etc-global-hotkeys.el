@@ -33,6 +33,10 @@
   ;; wrapper to goto-line (show line number only during entering line number
   (define-key my-key-map [remap goto-line] 'goto-line-with-feedback)
 
+  ;; move lines (examples of using super key)
+  (define-key my-key-map (kbd "M-s-<up>") 'move-line-up)
+  (define-key my-key-map (kbd "M-s-<down>") 'move-line-down)
+
   ;;; new lines
   (define-key my-key-map "\r" 'newline-and-indent)
   ;; open new line like IntelliJIdea/Eclipse etc
@@ -109,5 +113,20 @@
   (local-set-key (kbd "C-?") 'comment-or-uncomment-region))
 
 (add-hook 'prog-mode-hook 'my-prog-mode-hotkey-hook)
+
+(defun activate-super-key-on-win ()
+  ;; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
+  (setq w32-pass-lwindow-to-system nil
+        w32-pass-rwindow-to-system nil
+        w32-pass-apps-to-system nil
+        w32-lwindow-modifier 'super
+        w32-rwindow-modifier 'super
+        w32-apps-modifier 'hyper))
+
+(defun enable-super-key ()
+  (if (eq system-type 'windows-nt)
+      (activate-super-key-on-win)))
+
+(enable-super-key)
 
 (provide 'etc-global-hotkeys)
