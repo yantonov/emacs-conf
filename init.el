@@ -108,6 +108,7 @@ Windows
 (require 'emacs-rc-eshell)
 (require 'emacs-rc-expand-region)
 (require 'emacs-rc-highlight-parentheses)
+(require 'emacs-rc-ido)
 (require 'emacs-rc-js2-mode)
 (require 'emacs-rc-key-chord)
 (require 'emacs-rc-linum)
