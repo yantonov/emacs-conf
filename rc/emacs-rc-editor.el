@@ -5,6 +5,8 @@
 (column-number-mode 1)
 ;; delete selected region on backspace, del, ctrl+d
 (delete-selection-mode t)
+;; no confirmation for new files
+(setq confirm-nonexistent-file-or-buffer nil)
 
 ;; tabs
 (setq-default indent-tabs-mode nil)
