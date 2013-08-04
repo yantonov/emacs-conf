@@ -121,6 +121,7 @@ Windows
 (require 'emacs-rc-prog-mode)
 (require 'emacs-rc-projectile)
 (require 'emacs-rc-s)
+(require 'emacs-rc-showcharcode)
 (require 'emacs-rc-sicp)
 (require 'emacs-rc-switch-buffers)
 (require 'emacs-rc-timeclock)
