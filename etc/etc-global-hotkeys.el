@@ -56,9 +56,6 @@
   ;; fullscreen eshell
   (define-key my-key-map (kbd "C-c e")
     'fullscreen-eshell)
-  ;; fullscreen ansi-term
-  (define-key my-key-map (kbd "C-c t")
-    'visit-ansi-term-buffer)
   ;; fullscreen scratch
   (define-key my-key-map (kbd "C-c f")
     'fullscreen-scratch)

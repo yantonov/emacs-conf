@@ -78,6 +78,22 @@
           (select-window first-win)
           (if this-win-2nd (other-window 1))))))
 
+(defun eshell-for-buffer ()
+  "Switch to eshell and make sure we're in the directory the current buffer is in."
+  (interactive)
+  (let ((dir default-directory)
+        (eshell-buffer-name "*eshell*"))
+    (let ((b (get-buffer eshell-buffer-name)))
+      (unless b
+        (eshell)))
+    (display-buffer eshell-buffer-name t)
+    (switch-to-buffer-other-window eshell-buffer-name)
+    (end-of-buffer)
+    (unless (equalp dir default-directory)
+      (cd dir)
+      (eshell-send-input)
+      (end-of-buffer))))
+
 (defun reset-ui (&optional frame)
   (interactive)
   (split-window-horizontally))
@@ -92,24 +108,6 @@ the current buffer."
         (other-window 1)
         (funcall function))
     (switch-to-buffer-other-window buffer-name)))
-
-(defun visit-ansi-term-buffer ()
-  "Create or visit a terminal buffer."
-  (interactive)
-  (start-or-switch-to (lambda ()
-                        (ansi-term (getenv "SHELL")))
-                      "*ansi-term*"))
-
-(defun visit-ielm ()
-  "Switch to default `ielm' buffer.
-Start `ielm' if it's not already running."
-  (interactive)
-  (prelude-start-or-switch-to 'ielm "*ielm*"))
-
-(defun visit-eshell ()
-  "Switch to eshell buffer. Start eshell if it's not already running."
-  (interactive)
-  (start-or-switch-to 'eshell "*eshell*"))
 
 (defun switch-to-fullscreen-buffer (b-name function reg-name)
   "switches between current buffer layout and fullscreen buffer of given name1.
