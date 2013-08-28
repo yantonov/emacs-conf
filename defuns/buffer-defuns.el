@@ -83,6 +83,16 @@ Position the cursor at it's beginning, according to the current mode."
                            (buffer-substring (region-beginning) (region-end))
                          (read-string "Google: "))))))
 
+(defun youtube ()
+  "Search YouTube with a query or region if any."
+  (interactive)
+  (browse-url
+   (concat
+    "http://www.youtube.com/results?search_query="
+    (url-hexify-string (if mark-active
+                           (buffer-substring (region-beginning) (region-end))
+                         (read-string "Search YouTube: "))))))
+
 (defun indent-defun ()
   "Indent the current defun."
   (interactive)
@@ -118,6 +128,6 @@ Don't mess with special buffers."
   (mapc 'kill-buffer (buffer-list))
   (switch-to-buffer "*scratch*")
   (if (eq system-type 'windows-nt)
-    (cd "~")))
+      (cd "~")))
 
 (provide 'buffer-defuns)
