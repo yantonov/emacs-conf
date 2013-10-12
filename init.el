@@ -57,6 +57,20 @@ Windows
 \(setq erlang-home \"C:/Program Files/erl<Ver>\"\)")
 
 
+;;
+;; R executable environment variable
+;; 
+(defvar my-r-term-path nil
+  "Defines path to R terminal. This variable is machine specific, can be defined in `custom-init-before-file' init file.
+
+Examples:
+
+Ubuntu (assumed R is installed using apt-get):
+\(setq my-r-term-path \"/usr/bin/R\"\)
+
+Windows:
+\(setq my-r-term-path \"C:/Program Files/R/R-2.15.1/bin/Rterm.exe\"\) ")
+
 (defun init-modes-paths (emacs-mode-home)
   (dolist
       (project (directory-files emacs-mode-home t "\\w+"))
@@ -107,6 +121,7 @@ Windows
 (require 'emacs-rc-elisp-mode)
 (require 'emacs-rc-erlang)
 (require 'emacs-rc-eshell)
+(require 'emacs-rc-ess)
 (require 'emacs-rc-expand-region)
 (require 'emacs-rc-highlight-parentheses)
 (require 'emacs-rc-html-mode)
