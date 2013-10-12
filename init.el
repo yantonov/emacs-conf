@@ -23,7 +23,10 @@ So you can override any previous defined settings using this file.")
 ;; javadoc inside nrepl path
 ;;
 (defvar user-javadoc-alist nil
-  "Defines list of javadoc root paths. This variable is machine specific, can be defined in `custom-init-before-file' init file."
+  "Defines list of javadoc root paths.
+   This variable is machine specific,
+   can be defined in `custom-init-before-file' init file."
+  
   ;; Example :
   ;; (setq user-javadoc-alist
   ;;   '(("^\\(java[x]?\.\\|org\.ietf\.\\|org\.omg\.\\|org\.w3c\.\\|org\.xml\.\\)" .
@@ -34,26 +37,34 @@ So you can override any previous defined settings using this file.")
 ;; erlang environment variables
 ;;
 (defvar erlang-mode-home nil
-  "Defines directory for erlang-mode. This variable is machine specific, can be defined in `custom-init-before-file' init file.
+  "Defines directory for erlang-mode.
+This variable is machine specific,
+can be defined in `custom-init-before-file' init file.
 
 Examples:
 
-Ubuntu (assumed erlang is installed from deb package provided by https://www.erlang-solutions.com) :
+Ubuntu
+(assumed erlang is installed from deb package
+         provided by https://www.erlang-solutions.com):
 
 \(setq erlang-mode-home \"/usr/lib/erlang/lib/tools-<ToolsVer>/emacs\"\)
 
-Windows
+Windows:
 \(setq erlang-mode-home \"C:/Program Files/erl<Ver>/lib/tools-<ToolsVer>/emacs\"\)")
 
 (defvar erlang-home nil
-  "Defines directory for erlang installation. This variable is machine specific, can be defined in `custom-init-before-file' init file.
+  "Defines directory for erlang installation.
+This variable is machine specific,
+can be defined in `custom-init-before-file' init file.
 
 Examples:
 
-Ubuntu (assumed erlang is installed from deb package provided by https://www.erlang-solutions.com) :
+Ubuntu
+(assumed erlang is installed from deb package
+         provided by https://www.erlang-solutions.com):
 \(setq erlang-home \"/usr/lib/erlang\"\)
 
-Windows
+Windows:
 \(setq erlang-home \"C:/Program Files/erl<Ver>\"\)")
 
 
@@ -61,7 +72,9 @@ Windows
 ;; R executable environment variable
 ;; 
 (defvar my-r-term-path nil
-  "Defines path to R terminal. This variable is machine specific, can be defined in `custom-init-before-file' init file.
+  "Defines path to R terminal.
+This variable is machine specific,
+can be defined in `custom-init-before-file' init file.
 
 Examples:
 
