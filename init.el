@@ -1,3 +1,5 @@
+(setq debug-on-error t)
+
 ;;
 ;; paths, environment
 
@@ -169,6 +171,9 @@ Windows:
 ;; advices
 ;; after all defuns, settings mode already loaded
 (require 'etc-global-advices)
+
+;; emacs daemon init
+(require 'etc-emacs-daemon-init)
 
 ;; custom config
 (load custom-init-after-file 'noerror)

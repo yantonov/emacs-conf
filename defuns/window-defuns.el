@@ -96,7 +96,10 @@
 
 (defun reset-ui (&optional frame)
   (interactive)
-  (split-window-horizontally))
+  ;; init frame
+  ;; (split-window-horizontally)
+  t
+  )
 
 (defun start-or-switch-to (function buffer-name)
   "Invoke FUNCTION if there is no buffer with BUFFER-NAME.
