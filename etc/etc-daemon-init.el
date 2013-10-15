@@ -5,6 +5,4 @@
           '(lambda ()
              (load-theme 'zenburn t)))
 
-;;; TODO: choose color mode for console mode
-
-(provide 'etc-emacs-daemon-init)
+(provide 'etc-daemon-init)
