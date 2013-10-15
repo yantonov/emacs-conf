@@ -173,7 +173,7 @@ Windows:
 (require 'etc-global-advices)
 
 ;; emacs daemon init
-(require 'etc-emacs-daemon-init)
+(require 'etc-daemon-init)
 
 ;; custom config
 (load custom-init-after-file 'noerror)

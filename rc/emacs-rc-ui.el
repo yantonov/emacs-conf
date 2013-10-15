@@ -20,7 +20,7 @@
 "Selectively run either `after-make-console-frame-hooks' or
 `after-make-window-system-frame-hooks'"
   (select-frame frame)
-  (run-hooks (if window-system
+  (run-hooks (if (window-system frame)
                'after-make-window-system-frame-hooks
                'after-make-console-frame-hooks)))
 

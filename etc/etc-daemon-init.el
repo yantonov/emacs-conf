@@ -3,7 +3,7 @@
              (load-theme 'solarized-dark t)))
 (add-hook 'after-make-console-frame-hooks
           '(lambda ()
-             (load-theme 'solarized-light t)))
+             (load-theme 'zenburn t)))
 
 ;;; TODO: choose color mode for console mode
 
