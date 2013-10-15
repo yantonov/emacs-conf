@@ -9,10 +9,7 @@
 ;; no menu bar
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
-;; fires when an emacs frame is created
-(add-hook 'after-make-frame-functions 'reset-ui)
-;; hook for setting up UI when not running in daemon mode
-(add-hook 'emacs-startup-hook 'reset-ui)
+(setq color-theme-is-global nil)
 
 (defvar after-make-console-frame-hooks '()
 "Hooks to run after creating a new TTY frame")
@@ -30,7 +27,5 @@
 (add-hook 'after-make-frame-functions 'run-after-make-frame-hooks)
 (add-hook 'after-init-hook (lambda ()
   (run-after-make-frame-hooks (selected-frame))))
-
-(setq color-theme-is-global nil)
 
 (provide 'emacs-rc-ui)
