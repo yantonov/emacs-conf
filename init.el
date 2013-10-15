@@ -112,6 +112,7 @@ Windows:
 (add-to-list 'load-path etc-dir)
 (require 'etc-package)
 (require 'etc-path)
+(require 'etc-global-hooks)
 ;; etc core defuns
 (setq defuns-dir (expand-file-name "defuns" emacs-home))
 (add-to-list 'load-path defuns-dir)
@@ -171,9 +172,6 @@ Windows:
 ;; advices
 ;; after all defuns, settings mode already loaded
 (require 'etc-global-advices)
-
-;; emacs daemon init
-(require 'etc-daemon-init)
 
 ;; custom config
 (load custom-init-after-file 'noerror)
