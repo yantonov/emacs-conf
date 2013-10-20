@@ -22,13 +22,13 @@ This file is loaded after any settings for mode is loaded.
 So you can override any previous defined settings using this file.")
 
 ;;
-;; javadoc inside nrepl path
+;; javadoc inside cider path
 ;;
 (defvar user-javadoc-alist nil
   "Defines list of javadoc root paths.
    This variable is machine specific,
    can be defined in `custom-init-before-file' init file."
-  
+
   ;; Example :
   ;; (setq user-javadoc-alist
   ;;   '(("^\\(java[x]?\.\\|org\.ietf\.\\|org\.omg\.\\|org\.w3c\.\\|org\.xml\.\\)" .
@@ -72,7 +72,7 @@ Windows:
 
 ;;
 ;; R executable environment variable
-;; 
+;;
 (defvar my-r-term-path nil
   "Defines path to R terminal.
 This variable is machine specific,
@@ -131,6 +131,7 @@ Windows:
 (require 'emacs-rc-color-theme)
 (require 'emacs-rc-command-log-mode)
 (require 'emacs-rc-css-mode)
+(require 'emacs-rc-cider)
 (require 'emacs-rc-dash)
 (require 'emacs-rc-dired)
 (require 'emacs-rc-editor)
@@ -147,7 +148,6 @@ Windows:
 (require 'emacs-rc-linum)
 (require 'emacs-rc-markdown)
 (require 'emacs-rc-multiple-cursors)
-(require 'emacs-rc-nrepl)
 (require 'emacs-rc-org-mode)
 (require 'emacs-rc-paredit)
 (require 'emacs-rc-pcomplete)
