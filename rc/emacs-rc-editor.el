@@ -8,6 +8,14 @@
 ;; no confirmation for new files
 (setq confirm-nonexistent-file-or-buffer nil)
 
+;; With the default configuration you will get an error when you get
+;; to attempt to move to a window that doesn't exist which becomes
+;; kind of annoying after a while.
+;; However when windmove-wrap-around is set then attempting to move off
+;; the bottom of the frame for example will instead select the topmost
+;; window in the frame.
+(setq windmove-wrap-around t)
+
 ;; tabs
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
