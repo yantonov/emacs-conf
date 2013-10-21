@@ -13,5 +13,9 @@ else
 fi
 
 SCRIPT_DIR=`dirname $0`
-
-emacs -no-init-file -batch -l ${SCRIPT_DIR}/elisp/init-package-system.el -l ${INSTALL_EMACS_LISP_SCRIPT}
+os=`uname`
+if [[ ${os} == *_NT* ]]; then    
+    emacs -q -l ${SCRIPT_DIR}/elisp/init-package-system.el -l ${INSTALL_EMACS_LISP_SCRIPT} -l ${SCRIPT_DIR}/elisp/close-emacs.el
+else    
+    emacs -q -batch -l ${SCRIPT_DIR}/elisp/init-package-system.el -l ${INSTALL_EMACS_LISP_SCRIPT}
+fi
