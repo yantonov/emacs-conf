@@ -140,6 +140,7 @@ Windows:
 (require 'emacs-rc-eshell)
 (require 'emacs-rc-ess)
 (require 'emacs-rc-expand-region)
+(require 'emacs-rc-git-gutter-fridge)
 (require 'emacs-rc-highlight-parentheses)
 (require 'emacs-rc-html-mode)
 (require 'emacs-rc-ido)
