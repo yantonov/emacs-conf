@@ -4,4 +4,5 @@
 ** TODO projectile on windows not works as expected
 ** TODO move lines (intellij idea mapping ctrl+shift + up/down)
 ** TODO solve problem with launch emacs using ec/et scripts (os: windows only)
+** TODO lazy load of initialization (modes, settings) in all places if possible
    
