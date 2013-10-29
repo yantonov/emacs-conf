@@ -5,11 +5,18 @@
 (require 'rainbow-delimiters)
 (require 'ac-nrepl)
 
+;; https://github.com/clojure-emacs/cider/issues/408
+(defun cider--library-version ()
+  "Get the version in the nrepl library header."
+  ;; (-when-let (version (pkg-info-library-version 'cider))
+  ;;   (pkg-info-format-version version))
+  "0.3.0-SNAPSHOT")
+
 ;; Stop the error buffer from popping up while working in the REPL buffer:
-(setq cider-popup-stacktraces nil)
+(setq nepl-popup-stacktraces nil)
 
 ;; hide special cider buffers
-(setq cider-hide-special-buffers t)
+(setq nrepl-hide-special-buffers t)
 
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'cider-mode))
@@ -42,8 +49,8 @@
   (cider-turn-on-eldoc-mode)
   (my-cider-common-hook))
 
-(add-hook 'cider-mode-hook 'my-cider-mode-hook)
-(add-hook 'cider-interaction-mode-hook 'my-cider-interaction-mode-hook)
+;;(add-hook 'cider-mode-hook 'my-cider-mode-hook)
+;;(add-hook 'cider-interaction-mode-hook 'my-cider-interaction-mode-hook)
 
 ;;; JavaDoc browsing from cider
 (defvar javadoc-alist
