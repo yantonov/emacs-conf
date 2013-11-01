@@ -5,13 +5,6 @@
 (require 'rainbow-delimiters)
 (require 'ac-nrepl)
 
-;; https://github.com/clojure-emacs/cider/issues/408
-(defun cider--library-version ()
-  "Get the version in the nrepl library header."
-  ;; (-when-let (version (pkg-info-library-version 'cider))
-  ;;   (pkg-info-format-version version))
-  "0.3.0-SNAPSHOT")
-
 ;; Stop the error buffer from popping up while working in the REPL buffer:
 (setq nepl-popup-stacktraces nil)
 
