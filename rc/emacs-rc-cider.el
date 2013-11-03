@@ -6,7 +6,10 @@
 (require 'ac-nrepl)
 
 ;; Stop the error buffer from popping up while working in the REPL buffer:
-(setq nepl-popup-stacktraces nil)
+(setq cider-popup-stacktraces nil)
+
+;; enable cider for clojure buffers
+(setq cider-enable-on-existing-clojure-buffers t)
 
 ;; hide special cider buffers
 (setq nrepl-hide-special-buffers t)
@@ -32,18 +35,18 @@
   ;; show-paren-mode
   ;; http://emacswiki.org/emacs/ShowParenMode
   (show-paren-mode 1)
-  (setq show-paren-style 'expression))
+  (setq show-paren-style 'expression)
+  (cider-turn-on-eldoc-mode))
 
 (defun my-cider-mode-hook ()
   (subword-mode)
   (my-cider-common-hook))
 
-(defun my-cider-interaction-mode-hook ()
-  (cider-turn-on-eldoc-mode)
+(defun my-repl-mode-hook ()
   (my-cider-common-hook))
 
-;;(add-hook 'cider-mode-hook 'my-cider-mode-hook)
-;;(add-hook 'cider-interaction-mode-hook 'my-cider-interaction-mode-hook)
+(add-hook 'cider-mode-hook 'my-cider-mode-hook)
+(add-hook 'cider-repl-mode-hook 'my-repl-mode-hook)
 
 ;;; JavaDoc browsing from cider
 (defvar javadoc-alist
