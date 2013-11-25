@@ -121,6 +121,7 @@ Windows:
 (require 'snippet-defuns)
 (require 'temp-defuns)
 (require 'window-defuns)
+(require 'xml-buffer-defuns)
 ;;; configurations for modes
 (setq rc-dir (expand-file-name "rc" emacs-home))
 (add-to-list 'load-path rc-dir)
