@@ -61,11 +61,12 @@
     'fullscreen-scratch)
 
   ;; timeclock
-  (define-key my-key-map (kbd "C-c cs") 'timeclock-in)
-  (define-key my-key-map (kbd "C-c ce") 'timeclock-out)
-  (define-key my-key-map (kbd "C-c cr") 'timeclock-reread-log)
-  (define-key my-key-map (kbd "C-c cu") 'timeclock-update-string)
-  (define-key my-key-map (kbd "C-c cw") 'timeclock-when-to-leave-string)
+  (define-key my-key-map (kbd "C-c ti") 'timeclock-in)
+  (define-key my-key-map (kbd "C-c to") 'timeclock-out)
+  (define-key my-key-map (kbd "C-c tc") 'timeclock-change)
+  (define-key my-key-map (kbd "C-c tr") 'timeclock-reread-log)
+  (define-key my-key-map (kbd "C-c tu") 'timeclock-update-string)
+  (define-key my-key-map (kbd "C-c tw") 'timeclock-when-to-leave-string)
 
   ;;; open
   ;; projectile
