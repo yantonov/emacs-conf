@@ -1,7 +1,4 @@
-(autoload 'clojure-mode "clojure-mode.el" "clojure-mode" t)
-
-(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
-(add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
+(require 'clojure-mode-autoloads)
 
 (defun my-clojure-mode-hook ()
   (paredit-mode +1)
@@ -19,6 +16,7 @@
      (require 'paredit)
      (require 'highlight-parentheses)
      (require 'rainbow-delimiters)
+     (require 'clojure-test-mode)
      (add-hook 'clojure-mode-hook 'my-clojure-mode-hook)))
 
 (provide 'emacs-rc-clojure-mode)

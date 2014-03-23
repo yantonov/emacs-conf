@@ -128,7 +128,6 @@ Windows:
 (require 'emacs-rc-auto-complete)
 (require 'emacs-rc-backup)
 (require 'emacs-rc-clojure-mode)
-(require 'emacs-rc-clojure-test)
 (require 'emacs-rc-color-theme)
 (require 'emacs-rc-command-log-mode)
 (require 'emacs-rc-css-mode)
