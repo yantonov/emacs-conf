@@ -1,7 +1,4 @@
-(require 'clojure-mode)
-(require 'paredit)
-(require 'highlight-parentheses)
-(require 'rainbow-delimiters)
+(autoload 'clojure-mode "clojure-mode.el" "clojure-mode" t)
 
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
@@ -17,6 +14,11 @@
   (setq show-paren-style 'expression)
   (turn-on-eldoc-mode))
 
-(add-hook 'clojure-mode-hook 'my-clojure-mode-hook)
+(eval-after-load 'clojure-mode
+  '(progn
+     (require 'paredit)
+     (require 'highlight-parentheses)
+     (require 'rainbow-delimiters)
+     (add-hook 'clojure-mode-hook 'my-clojure-mode-hook)))
 
 (provide 'emacs-rc-clojure-mode)
