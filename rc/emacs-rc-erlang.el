@@ -1,8 +1,4 @@
 ;; erlang-mode-home, erlang-home is defined in ~/emacs/init.el
-(require 'paredit)
-(require 'highlight-parentheses)
-(require 'rainbow-delimiters)
-
 (defun erlang-mode-exists ()
   (and
    erlang-mode-home
@@ -39,5 +35,11 @@
   (rainbow-delimiters-mode-enable))
 
 (add-hook 'erlang-mode-hook 'my-erlang-mode-hook)
+
+(eval-after-load 'erlang-mode
+  '(progn
+     (require 'paredit)
+     (require 'highlight-parentheses)
+     (require 'rainbow-delimiters)))
 
 (provide 'emacs-rc-erlang)
