@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: nrepl-uuid
+# name: cider-uuid
 # key: uuid
 # --
 (. (java.util.UUID/randomUUID) toString)
