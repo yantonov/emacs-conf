@@ -15,7 +15,7 @@
        (or (file-exists-p (concat erlang-home "/bin/erl"))
            (file-exists-p (concat erlang-home "/bin/erl.exe")))))
 
-(defun erlang-envorinment-defined ()
+(defun erlang-environment-defined ()
   (interactive)
   (and (erlang-mode-exists) (erlang-repl-exists)))
 
@@ -30,7 +30,7 @@
   (add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
   (add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode)))
 
-(if (erlang-envorinment-defined)
+(if (erlang-environment-defined)
     (init-erlang-settings))
 
 (defun my-erlang-mode-hook ()
