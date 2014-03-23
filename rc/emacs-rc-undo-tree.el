@@ -1,5 +1,3 @@
-(require 'undo-tree)
-
-;;(global-undo-tree-mode)
+(autoload 'undo-tree-mode "undo-tree" "undo" t)
 
 (provide 'emacs-rc-undo-tree)
