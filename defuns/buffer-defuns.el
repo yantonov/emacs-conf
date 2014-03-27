@@ -63,15 +63,29 @@ Position the cursor at it's beginning, according to the current mode."
   (forward-line -1)
   (indent-according-to-mode))
 
-(defun copy-file-name-to-clipboard ()
-  "Copy the current buffer file name to the clipboard."
+(defun get-buffer-file-name (&optional full-path?)
+  "Returns full path of file name for current buffer"
   (interactive)
-  (let ((filename (if (equal major-mode 'dired-mode)
-                      default-directory
-                    (buffer-file-name))))
+  (if (equal major-mode 'dired-mode)
+      default-directory
+    (let ((name (buffer-file-name)))
+          (when name
+            (if full-path?
+                name
+              (file-name-nondirectory name))))))
+
+(defun copy-buffer-file-name-to-clipboard (&optional full-path?)
+  "Copy file name for the current buffer to the clipboard."
+  (interactive)
+  (let ((filename (get-buffer-file-name full-path?)))
     (when filename
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
+
+(defun copy-buffer-file-path-to-clipboard ()
+  "Copy path for current buffer file"
+  (interactive)
+  (copy-buffer-file-name-to-clipboard 1))
 
 (defun google ()
   "Google the selected region if any, display a query prompt otherwise."

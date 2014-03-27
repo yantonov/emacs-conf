@@ -98,7 +98,10 @@
   (define-prefix-command 'tag-util-map)
   (define-key my-key-map (kbd "C-t") 'tag-util-map)
   (define-key tag-util-map (kbd "C-r") 'mc/mark-sgml-tag-pair)
-  )
+
+  ;; copy file path to clipboard
+  (define-key my-key-map (kbd "C-M-<insert>") 'copy-buffer-file-path-to-clipboard)
+  (define-key my-key-map (kbd "C-<insert>") 'copy-buffer-file-name-to-clipboard))
 
 (defun my-paredit-keybindings ()
   "Customization for paredit keybindings."
