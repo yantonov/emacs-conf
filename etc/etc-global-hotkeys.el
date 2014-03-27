@@ -101,7 +101,9 @@
 
   ;; copy file path to clipboard
   (define-key my-key-map (kbd "C-M-<insert>") 'copy-buffer-file-path-to-clipboard)
-  (define-key my-key-map (kbd "C-<insert>") 'copy-buffer-file-name-to-clipboard))
+  (define-key my-key-map (kbd "C-<insert>") 'copy-buffer-file-name-to-clipboard)
+  ;; rename current buffer file
+  (define-key my-key-map (kbd "C-<f6>") 'rename-current-buffer-file))
 
 (defun my-paredit-keybindings ()
   "Customization for paredit keybindings."
