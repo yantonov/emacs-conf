@@ -32,7 +32,8 @@
 (defun my-erlang-mode-hook ()
   (paredit-mode +1)
   (highlight-parentheses-mode t)
-  (rainbow-delimiters-mode-enable))
+  (rainbow-delimiters-mode-enable)
+  (setq inferior-erlang-machine-options '("-sname" "emacs")))
 
 (add-hook 'erlang-mode-hook 'my-erlang-mode-hook)
 
