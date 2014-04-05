@@ -1,3 +1,11 @@
+(defun file-expand-wildcards-single-or-nil (file)
+  "Try to expand file using wildcards.
+If single file found returns it, otherwise returns nil"
+  (let ((expanded (file-expand-wildcards file)))
+    (if (= 1 (length expanded))
+        (car expanded)
+      nil)))
+
 (defun rename-current-buffer-file ()
   "Renames current buffer and file it is visiting."
   (interactive)

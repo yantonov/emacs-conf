@@ -52,7 +52,9 @@ Ubuntu
 \(setq erlang-mode-home \"/usr/lib/erlang/lib/tools-<ToolsVer>/emacs\"\)
 
 Windows:
-\(setq erlang-mode-home \"C:/Program Files/erl<Ver>/lib/tools-<ToolsVer>/emacs\"\)")
+\(setq erlang-mode-home \"C:/Program Files/erl<Ver>/lib/tools-<ToolsVer>/emacs\"\)
+
+This examples are already used as defaults.")
 
 (defvar erlang-home nil
   "Defines directory for erlang installation.
@@ -67,8 +69,9 @@ Ubuntu
 \(setq erlang-home \"/usr/lib/erlang\"\)
 
 Windows:
-\(setq erlang-home \"C:/Program Files/erl<Ver>\"\)")
+\(setq erlang-home \"C:/Program Files/erl<Ver>\"\) 
 
+This examples are already used as defaults.")
 
 ;;
 ;; R executable environment variable

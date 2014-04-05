@@ -1,4 +1,17 @@
 ;; erlang-mode-home, erlang-home is defined in ~/emacs/init.el
+(defun apply-erlang-environment-defaults ()
+  (interactive)
+  (if (not erlang-mode-home)
+      (cond ((eq system-type 'gnu/linux)
+             (setq erlang-mode-home (file-expand-wildcards-single-or-nil "/usr/lib/erlang/lib/tools*/emacs")))
+            ((eq system-type 'windows-nt)
+             (setq erlang-mode-home (file-expand-wildcards-single-or-nil "C:/Program Files/erl*/lib/tools-*/emacs")))))
+  (if (not erlang-home)
+      (cond ((eq system-type 'gnu/linux)
+             (setq erlang-home (file-expand-wildcards-single-or-nil "/usr/lib/erlang")))
+            ((eq system-type 'windows-nt)
+             (setq erlang-home (file-expand-wildcards-single-or-nil "C:/Program Files/erl*"))))))
+
 (defun erlang-mode-exists ()
   (and
    erlang-mode-home
@@ -23,9 +36,12 @@
   (setq erlang-man-root-dir (concat erlang-root-dir "/man"))
   (require 'erlang-start)
 
+  ;; open *.erl, *.hrl in erlang-mode
+  ;; acrually erlang mode contains this bindings, added to avoid default problems
   (add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
   (add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode)))
 
+(apply-erlang-environment-defaults)
 (if (erlang-environment-defined)
     (init-erlang-settings))
 
