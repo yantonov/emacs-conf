@@ -33,7 +33,12 @@
   (paredit-mode +1)
   (highlight-parentheses-mode t)
   (rainbow-delimiters-mode-enable)
-  (setq inferior-erlang-machine-options '("-sname" "emacs")))
+  ;; default node name in case of starting erlang shell in emacs
+  (setq inferior-erlang-machine-options '("-sname" "emacs"))
+  ;; add erlang functions to an imenu menu
+  (imenu-add-to-menubar "imenu")
+  ;; customize keys
+  (local-set-key [return] 'newline-and-indent))
 
 (add-hook 'erlang-mode-hook 'my-erlang-mode-hook)
 
