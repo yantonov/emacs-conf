@@ -1,16 +1,14 @@
 ;; erlang-mode-home, erlang-home is defined in ~/emacs/init.el
 (defun apply-erlang-environment-defaults ()
   (interactive)
-  (if (not erlang-mode-home)
-      (cond ((eq system-type 'gnu/linux)
-             (setq erlang-mode-home (file-expand-wildcards-single-or-nil "/usr/lib/erlang/lib/tools*/emacs")))
-            ((eq system-type 'windows-nt)
-             (setq erlang-mode-home (file-expand-wildcards-single-or-nil "C:/Program Files/erl*/lib/tools-*/emacs")))))
-  (if (not erlang-home)
-      (cond ((eq system-type 'gnu/linux)
-             (setq erlang-home (file-expand-wildcards-single-or-nil "/usr/lib/erlang")))
-            ((eq system-type 'windows-nt)
-             (setq erlang-home (file-expand-wildcards-single-or-nil "C:/Program Files/erl*"))))))
+  (find-system-type-specific-file
+   erlang-mode-home
+   '(('gnu/linux "/usr/lib/erlang/lib/tools*/emacs")
+     ('windows-nt "C:/Program Files/erl*/lib/tools-*/emacs")))
+  (find-system-type-specific-file
+   erlang-home
+   '(('gnu/linux "/usr/lib/erlang")
+     ('windows-nt "C:/Program Files/erl*"))))
 
 (defun erlang-mode-exists ()
   (and

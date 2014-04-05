@@ -6,6 +6,19 @@ If single file found returns it, otherwise returns nil"
         (car expanded)
       nil)))
 
+(defmacro find-system-type-specific-file (var-name wildcardlist)
+  "Find single matched file for corresponding system type
+Where var-name - variable to set,
+wildcardlist list of os specific patterns '\(\(os1 pattern1, os2 pattern2\)\)"
+  (let ((x (mapcar (lambda (handle)
+                     (let ((os (car handle))
+                           (pattern (car (cdr handle))))
+                       (list (list 'eq 'system-type os)
+                             (list 'setq var-name (list 'file-expand-wildcards-single-or-nil pattern)))))
+                   (car (cdr wildcardlist)))))
+    `(if (not ,var-name)
+         (cond ,@x ))))
+
 (defun rename-current-buffer-file ()
   "Renames current buffer and file it is visiting."
   (interactive)
