@@ -1,0 +1,1 @@
+(provide 'emacs-rc-haskell)
