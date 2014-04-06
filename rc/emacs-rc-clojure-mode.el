@@ -1,6 +1,6 @@
 (require 'clojure-mode-autoloads)
 
-(defun my-clojure-mode-hook ()
+(defun yantonov/clojure-mode-hook ()
   (paredit-mode +1)
   (local-set-key [return] 'newline-and-indent)
   (highlight-parentheses-mode t)
@@ -17,6 +17,6 @@
      (require 'highlight-parentheses)
      (require 'rainbow-delimiters)
      (require 'clojure-test-mode)
-     (add-hook 'clojure-mode-hook 'my-clojure-mode-hook)))
+     (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)))
 
 (provide 'emacs-rc-clojure-mode)

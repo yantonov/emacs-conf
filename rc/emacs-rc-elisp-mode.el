@@ -2,7 +2,7 @@
 (require 'highlight-parentheses)
 (require 'rainbow-delimiters)
 
-(defun remove-elc-on-save ()
+(defun yantonov/remove-elc-on-save ()
   "If you're saving an elisp file, likely the .elc is no longer valid."
   (add-hook 'after-save-hook
             (lambda ()
@@ -11,7 +11,7 @@
             nil
             t))
 
-(defun my-elisp-mode-hook ()
+(defun yantonov/elisp-mode-hook ()
   (paredit-mode +1)
   (highlight-parentheses-mode t)
   (rainbow-delimiters-mode-enable)
@@ -19,8 +19,8 @@
   ;; http://emacswiki.org/emacs/ShowParenMode
   (show-paren-mode 1)
   (setq show-paren-style 'expression)
-  (remove-elc-on-save))
+  (yantonov/remove-elc-on-save))
 
-(add-hook 'emacs-lisp-mode-hook 'my-elisp-mode-hook)
+(add-hook 'emacs-lisp-mode-hook 'yantonov/elisp-mode-hook)
 
 (provide 'emacs-rc-elisp-mode)
