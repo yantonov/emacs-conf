@@ -62,4 +62,13 @@
      (require 'highlight-parentheses)
      (require 'rainbow-delimiters)))
 
+;; distel setup
+(if (not (locate-library "distel"))
+    ;; all modes inside mode directory
+    ;; distel.el inside distel/elisp
+    (add-to-list 'load-path (concat emacs-mode-home  "distel/elisp")))
+(when (locate-library "distel")
+  (require 'distel)
+  (distel-setup))
+
 (provide 'emacs-rc-erlang)

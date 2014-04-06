@@ -1,6 +1,6 @@
 #!/bin/bash
 
 SCRIPT_DIR=`dirname $0`
-URL=https://github.com/auto-complete/auto-complete
-MODE_DIR="auto-complete"
+URL=https://github.com/massemanet/distel.git
+MODE_DIR="distel"
 $SCRIPT_DIR/util/mode-from-git.sh ${URL} ${MODE_DIR}
