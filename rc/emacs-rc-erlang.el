@@ -1,35 +1,36 @@
 ;; erlang-mode-home, erlang-home is defined in ~/emacs/init.el
-(defun apply-erlang-environment-defaults ()
+(defun yantonov/apply-erlang-environment-defaults ()
   (interactive)
   (yantonov/find-system-type-specific-file
-   erlang-mode-home
+   yantonov/erlang-mode-home
    '(('gnu/linux "/usr/lib/erlang/lib/tools*/emacs")
      ('windows-nt "C:/Program Files/erl*/lib/tools-*/emacs")))
   (yantonov/find-system-type-specific-file
-   erlang-home
+   yantonov/erlang-home
    '(('gnu/linux "/usr/lib/erlang")
      ('windows-nt "C:/Program Files/erl*"))))
 
-(defun erlang-mode-exists ()
+(defun yantonov/erlang-mode-exists ()
   (and
-   erlang-mode-home
-   (file-directory-p erlang-mode-home)
-   (file-exists-p (concat erlang-mode-home "/erlang.el"))))
+   yantonov/erlang-mode-home
+   (file-directory-p yantonov/erlang-mode-home)
+   (file-exists-p (concat yantonov/erlang-mode-home "/erlang.el"))))
 
-(defun erlang-repl-exists()
-  (and erlang-home
-       (file-directory-p erlang-home)
-       (or (file-exists-p (concat erlang-home "/bin/erl"))
-           (file-exists-p (concat erlang-home "/bin/erl.exe")))))
+(defun yantonov/erlang-repl-exists()
+  (and yantonov/erlang-home
+       (file-directory-p yantonov/erlang-home)
+       (or (file-exists-p (concat yantonov/erlang-home "/bin/erl"))
+           (file-exists-p (concat yantonov/erlang-home "/bin/erl.exe")))))
 
-(defun erlang-environment-defined ()
+(defun yantonov/erlang-environment-defined ()
   (interactive)
-  (and (erlang-mode-exists) (erlang-repl-exists)))
+  (and (yantonov/erlang-mode-exists) 
+(yantonov/erlang-repl-exists)))
 
-(defun init-erlang-settings ()
+(defun yantonov/init-erlang-settings ()
   (interactive)
-  (add-to-list 'load-path erlang-mode-home)
-  (setq erlang-root-dir erlang-home)
+  (add-to-list 'load-path yantonov/erlang-mode-home)
+  (setq erlang-root-dir yantonov/erlang-home)
   (add-to-list 'exec-path (concat erlang-root-dir "/bin"))
   (setq erlang-man-root-dir (concat erlang-root-dir "/man"))
   (require 'erlang-start)
@@ -39,11 +40,11 @@
   (add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
   (add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode)))
 
-(apply-erlang-environment-defaults)
-(if (erlang-environment-defined)
-    (init-erlang-settings))
+(yantonov/apply-erlang-environment-defaults)
+(if (yantonov/erlang-environment-defined)
+    (yantonov/init-erlang-settings))
 
-(defun my-erlang-mode-hook ()
+(defun yantonov/erlang-mode-hook ()
   (paredit-mode +1)
   (highlight-parentheses-mode t)
   (rainbow-delimiters-mode-enable)
@@ -54,7 +55,7 @@
   ;; customize keys
   (local-set-key [return] 'newline-and-indent))
 
-(add-hook 'erlang-mode-hook 'my-erlang-mode-hook)
+(add-hook 'erlang-mode-hook 'yantonov/erlang-mode-hook)
 
 (eval-after-load 'erlang-mode
   '(progn
@@ -66,7 +67,7 @@
 (if (not (locate-library "distel"))
     ;; all modes inside mode directory
     ;; distel.el inside distel/elisp
-    (add-to-list 'load-path (concat emacs-mode-home  "distel/elisp")))
+    (add-to-list 'load-path (concat yantonov/emacs-mode-home  "/distel/elisp")))
 (when (locate-library "distel")
   (require 'distel)
   (distel-setup))

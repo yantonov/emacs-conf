@@ -1,4 +1,4 @@
-(load (format "%sess/%s" emacs-mode-home "ess-autoloads.el"))
+(load (concat yantonov/emacs-mode-home "/ess/ess-autoloads.el"))
 
 (autoload 'R-mode "ess-site" "ESS" t)
 (add-to-list 'auto-mode-alist '("\\.R\\'" . R-mode))

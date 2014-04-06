@@ -1,5 +1,5 @@
 (require 'yasnippet)
-(add-to-list 'yas-snippet-dirs (concat emacs-home "snippets"))
+(add-to-list 'yas-snippet-dirs (concat yantonov/emacs-home "/snippets"))
 (yas-global-mode 1)
 
 ;;; use popup menu for yas-choose-value
@@ -12,7 +12,7 @@
 (define-key popup-menu-keymap (kbd "<backtab>") 'popup-previous)
 (define-key popup-menu-keymap (kbd "M-p") 'popup-previous)
 
-(defun yas-popup-isearch-prompt (prompt choices &optional display-fn)
+(defun yantonov/yas-popup-isearch-prompt (prompt choices &optional display-fn)
   (when (featurep 'popup)
     (popup-menu*
      (mapcar
@@ -27,6 +27,6 @@
      :isearch t
      )))
 
-(setq yas-prompt-functions '(yas-popup-isearch-prompt yas-ido-prompt yas-no-prompt))
+(setq yas-prompt-functions '(yantonov/yas-popup-isearch-prompt yas-ido-prompt yas-no-prompt))
 
 (provide 'emacs-rc-yasnippet)

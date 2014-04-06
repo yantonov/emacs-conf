@@ -3,20 +3,26 @@
 ;;
 ;; paths, environment
 
-(defvar user-home (if (getenv "HOME") (getenv "HOME") (expand-file-name "~"))
+(defvar yantonov/user-home
+  (if (getenv "HOME") (getenv "HOME") (expand-file-name "~"))
   "Defines user home directory.")
-(defvar emacs-home (concat user-home "/emacs/")
+(defvar yantonov/emacs-home
+  (concat yantonov/user-home "/emacs")
   "Defines emacs config directory inside user home directory.")
-(defvar emacs-mode-home (concat emacs-home "mode/")
+(defvar yantonov/emacs-mode-home
+  (concat yantonov/emacs-home "/mode")
   "Defines directory for emacs extensions and modes.")
-(defvar emacs-color-themes-home (concat emacs-home "color-themes/")
+(defvar yantonov/emacs-color-themes-home
+  (concat yantonov/emacs-home "/color-themes")
   "Defines directory for emacs color themes.")
 
-(defvar custom-init-before-file (concat user-emacs-directory "custom-before.el")
+(defvar yantonov/custom-init-before-file
+  (concat user-emacs-directory "custom-before.el")
   "Defines custom initialization file.
 This file is loaded before any settings for mode is loaded.
 So you can define environment paths of other global settings it this file.")
-(defvar custom-init-after-file (concat user-emacs-directory "custom-after.el")
+(defvar yantonov/custom-init-after-file
+  (concat user-emacs-directory "custom-after.el")
   "Defines custom initialization file.
 This file is loaded after any settings for mode is loaded.
 So you can override any previous defined settings using this file.")
@@ -24,7 +30,8 @@ So you can override any previous defined settings using this file.")
 ;;
 ;; javadoc inside cider path
 ;;
-(defvar user-javadoc-alist nil
+(defvar yantonov/user-javadoc-alist
+  nil
   "Defines list of javadoc root paths.
    This variable is machine specific,
    can be defined in `custom-init-before-file' init file."
@@ -38,7 +45,8 @@ So you can override any previous defined settings using this file.")
 ;;
 ;; erlang environment variables
 ;;
-(defvar erlang-mode-home nil
+(defvar yantonov/erlang-mode-home
+  nil
   "Defines directory for erlang-mode.
 This variable is machine specific,
 can be defined in `custom-init-before-file' init file.
@@ -56,7 +64,8 @@ Windows:
 
 This examples are already used as defaults.")
 
-(defvar erlang-home nil
+(defvar yantonov/erlang-home
+  nil
   "Defines directory for erlang installation.
 This variable is machine specific,
 can be defined in `custom-init-before-file' init file.
@@ -73,13 +82,13 @@ Windows:
 
 This examples are already used as defaults.")
 
-(defun init-modes-paths (emacs-mode-home)
+(defun yantonov/init-modes-paths (emacs-mode-home)
   (dolist
       (project (directory-files emacs-mode-home t "\\w+"))
     (when (file-directory-p project)
       (add-to-list 'load-path project))))
 
-(defun init-color-themes-paths (emacs-color-themes-home)
+(defun yantonov/init-color-themes-paths (emacs-color-themes-home)
   (setq color-themes-dir emacs-color-themes-home)
   (dolist
       (project (directory-files color-themes-dir t "\\w+"))
@@ -87,22 +96,22 @@ This examples are already used as defaults.")
       (add-to-list 'load-path project)
       (add-to-list 'custom-theme-load-path project))))
 
-(load custom-init-before-file 'noerror)
+(load yantonov/custom-init-before-file 'noerror)
 ;; modes paths
-(init-modes-paths emacs-mode-home)
+(yantonov/init-modes-paths yantonov/emacs-mode-home)
 ;; color-themes paths
-(init-color-themes-paths emacs-color-themes-home)
+(yantonov/init-color-themes-paths yantonov/emacs-color-themes-home)
 ;; local el or elc files
 
 ;; etc core settings
-(setq etc-dir (expand-file-name "etc" emacs-home))
-(add-to-list 'load-path etc-dir)
+(setq yantonov/etc-dir (expand-file-name "etc" yantonov/emacs-home))
+(add-to-list 'load-path yantonov/etc-dir)
 (require 'etc-package)
 (require 'etc-path)
 (require 'etc-global-hooks)
 ;; etc core defuns
-(setq defuns-dir (expand-file-name "defuns" emacs-home))
-(add-to-list 'load-path defuns-dir)
+(setq yantonov/defuns-dir (expand-file-name "defuns" yantonov/emacs-home))
+(add-to-list 'load-path yantonov/defuns-dir)
 (require 'buffer-defuns)
 (require 'file-defuns)
 (require 'snippet-defuns)
@@ -110,8 +119,8 @@ This examples are already used as defaults.")
 (require 'window-defuns)
 (require 'xml-buffer-defuns)
 ;;; configurations for modes
-(setq rc-dir (expand-file-name "rc" emacs-home))
-(add-to-list 'load-path rc-dir)
+(setq yantonov/rc-dir (expand-file-name "rc" yantonov/emacs-home))
+(add-to-list 'load-path yantonov/rc-dir)
 (require 'emacs-rc-auto-complete)
 (require 'emacs-rc-backup)
 (require 'emacs-rc-clojure-mode)
@@ -163,7 +172,7 @@ This examples are already used as defaults.")
 (require 'etc-global-advices)
 
 ;; custom config
-(load custom-init-after-file 'noerror)
+(load yantonov/custom-init-after-file 'noerror)
 
 ;; goto home in case of windows
 (if (eq system-type 'windows-nt)

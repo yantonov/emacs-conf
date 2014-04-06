@@ -55,8 +55,8 @@
 
 (defun attach-user-javadocs ()
   "Attach user defined javadocs."
-  (if user-javadoc-alist
-      (dolist (el user-javadoc-alist javadoc-alist)
+  (if yantonov/user-javadoc-alist
+      (dolist (el yantonov/user-javadoc-alist javadoc-alist)
         (setq javadoc-alist (cons el javadoc-alist)))))
 ;; load user defined settings
 (attach-user-javadocs)
