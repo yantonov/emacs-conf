@@ -36,7 +36,4 @@
 ;; highlight current line
 (global-hl-line-mode +1)
 
-;; save remove whitespace
-(add-hook 'before-save-hook 'cleanup-buffer-safe)
-
 (provide 'emacs-rc-editor)

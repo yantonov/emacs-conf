@@ -1,11 +1,11 @@
-(defconst *broken-line-regex* (string ?\n))
+(defconst yantonov/*broken-line-regex* (string ?\n))
 
-(defun xml-join-broken-lines (start end)
+(defun yantonov/xml-join-broken-lines (start end)
   (goto-char start)
-  (while (re-search-forward *broken-line-regex* end t)
+  (while (re-search-forward yantonov/*broken-line-regex* end t)
     (replace-match "" nil nil)))
 
-(defun xml-pretty-print-region (begin end)
+(defun yantonov/xml-pretty-print-region (begin end)
   (interactive)
   (let ((cb (current-buffer))
         (buf (get-buffer-create "*xml*")))
@@ -23,7 +23,7 @@
       (indent-region begin end)
       (other-window -1))))
 
-(defun xml-pretty-print ()
+(defun yantonov/xml-pretty-print ()
   (interactive)
   (xml-pretty-print-region (point-min) (point-max)))
 

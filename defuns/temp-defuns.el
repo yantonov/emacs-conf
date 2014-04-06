@@ -1,6 +1,6 @@
 (setq random-tempfile-default-directory "~/")
 
-(defun create-temp-buffer ()
+(defun yantonov/create-temp-buffer ()
   "Create an empty buffer with current datetime name."
   (interactive)
   (switch-to-buffer (concat "*temp-"
@@ -8,7 +8,7 @@
                                                         (current-time))
                                     "*"))))
 
-(defun create-temp-file ()
+(defun yantonov/create-temp-file ()
   "Create temporary txt file with current datetime name."
   (interactive)
   (find-file (concat random-tempfile-default-directory
@@ -16,7 +16,7 @@
                              (format-time-string "%Y-%m-%d__%H-%M-%S"
                                                  (current-time))) ".txt")))
 
-(defun move-region-to-trash (start end)
+(defun yantonov/move-region-to-trash (start end)
   "Move selected text to associated trash buffer"
   (interactive "r")
   (if (use-region-p)

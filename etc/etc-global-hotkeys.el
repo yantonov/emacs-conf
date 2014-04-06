@@ -7,11 +7,11 @@
   
   ;;; indentation
   ;; inspired by intellij idea
-  (define-key my-key-map (kbd "C-M-l") 'indent-buffer)
+  (define-key my-key-map (kbd "C-M-l") 'yantonov/indent-buffer)
   ;; inspired by intellij idea
-  (define-key my-key-map (kbd "C-S-M-l") 'indent-defun)
+  (define-key my-key-map (kbd "C-S-M-l") 'yantonov/indent-defun)
   ;; to-utf, no trailing whitespaces, no tabs
-  (define-key my-key-map (kbd "C-c n") 'cleanup-buffer-safe)
+  (define-key my-key-map (kbd "C-c n") 'yantonov/cleanup-buffer-safe)
 
   ;; resize buffer key bindings
   ;; http://www.emacswiki.org/emacs/WindowResize
@@ -30,23 +30,23 @@
   (define-key my-key-map (kbd "S-<right>") 'windmove-right)
   (define-key my-key-map (kbd "S-<up>") 'windmove-up)
   ;; prevous window
-  (define-key my-key-map (kbd  "C-x O") 'goto-previous-window)
+  (define-key my-key-map (kbd  "C-x O") 'yantonov/goto-previous-window)
 
   ;; too long lines shows/hides by "C-C l"
   (define-key my-key-map (kbd "C-c l") 'toggle-truncate-lines)
 
   ;; wrapper to goto-line (show line number only during entering line number
-  (define-key my-key-map [remap goto-line] 'goto-line-with-feedback)
+  (define-key my-key-map [remap goto-line] 'yantonov/goto-line-with-feedback)
 
   ;; move lines (examples of using super key)
-  (define-key my-key-map (kbd "M-s-<up>") 'move-line-up)
-  (define-key my-key-map (kbd "M-s-<down>") 'move-line-down)
+  (define-key my-key-map (kbd "M-s-<up>") 'yantonov/move-line-up)
+  (define-key my-key-map (kbd "M-s-<down>") 'yantonov/move-line-down)
 
   ;;; new lines
   (define-key my-key-map "\r" 'newline-and-indent)
   ;; open new line like IntelliJIdea/Eclipse etc
-  (define-key my-key-map (kbd "S-<return>") 'smart-open-line)
-  (define-key my-key-map (kbd "<C-S-return>") 'smart-open-line-above)
+  (define-key my-key-map (kbd "S-<return>") 'yantonov/smart-open-line)
+  (define-key my-key-map (kbd "<C-S-return>") 'yantonov/smart-open-line-above)
   ;; join next line to current
   (define-key my-key-map  (kbd "M-j")
     (lambda ()
@@ -54,8 +54,8 @@
       (join-line -1)))
 
   ;; file manupulations
-  (define-key my-key-map (kbd "C-x C-r") 'rename-current-buffer-file)
-  (define-key my-key-map (kbd "C-x C-k") 'delete-current-buffer-file)
+  (define-key my-key-map (kbd "C-x C-r") 'yantonov/rename-current-buffer-file)
+  (define-key my-key-map (kbd "C-x C-k") 'yantonov/delete-current-buffer-file)
 
   ;;; fullscreen
   ;; fullscreen eshell
@@ -77,19 +77,19 @@
   ;; projectile
   (define-key my-key-map (kbd "C-S-n") 'projectile-find-file)
   ;; webjump
-  (define-key my-key-map (kbd "C-x g") 'webjump)
+  (define-key my-key-map (kbd "C-x g") 'yantonov/webjump)
   ;; open-with
-  (define-key my-key-map (kbd  "C-c o") 'open-with)
+  (define-key my-key-map (kbd  "C-c o") 'yantonov/open-with)
   ;; open-with
-  (define-key my-key-map (kbd  "C-c g") 'google)
+  (define-key my-key-map (kbd  "C-c g") 'yantonov/google)
 
   (define-key my-key-map (kbd "C-@") 'er/expand-region)
 
   ;; close all but this
-  (define-key my-key-map (kbd "C-c k") 'kill-other-buffers)
+  (define-key my-key-map (kbd "C-c k") 'yantonov/kill-other-buffers)
 
   ;; execute shell command for current buffer file
-  (define-key my-key-map (kbd "M-!") 'shell-execute-buffer-file)
+  (define-key my-key-map (kbd "M-!") 'yantonov/shell-execute-buffer-file)
 
   ;; close buffer aka IntelliJ Idea
   (define-key my-key-map (kbd "C-<f4>") 'kill-buffer)
@@ -100,10 +100,10 @@
   (define-key tag-util-map (kbd "C-r") 'mc/mark-sgml-tag-pair)
 
   ;; copy file path to clipboard
-  (define-key my-key-map (kbd "C-M-<insert>") 'copy-buffer-file-path-to-clipboard)
-  (define-key my-key-map (kbd "C-<insert>") 'copy-buffer-file-name-to-clipboard)
+  (define-key my-key-map (kbd "C-M-<insert>") 'yantonov/copy-buffer-file-path-to-clipboard)
+  (define-key my-key-map (kbd "C-<insert>") 'yantonov/copy-buffer-file-name-to-clipboard)
   ;; rename current buffer file
-  (define-key my-key-map (kbd "C-<f6>") 'rename-current-buffer-file))
+  (define-key my-key-map (kbd "C-<f6>") 'yantonov/rename-current-buffer-file))
 
 (defun my-paredit-keybindings ()
   "Customization for paredit keybindings."

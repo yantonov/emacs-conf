@@ -1,4 +1,4 @@
-(defun rotate-windows ()
+(defun yantonov/rotate-windows ()
   "Rotate your windows."
   (interactive)
   (cond ((not (> (count-windows) 1))
@@ -25,7 +25,7 @@
              (set-window-start w2 s1)
              (setq i (1+ i)))))))
 
-(defun reverse-rotate-windows ()
+(defun yantonov/reverse-rotate-windows ()
   "Rotate your windows in reserse order."
   (interactive)
   (cond ((not (> (count-windows) 1))
@@ -52,7 +52,7 @@
              (set-window-start w2 s1)
              (setq i (1- i)))))))
 
-(defun toggle-window-split ()
+(defun yantonov/toggle-window-split ()
   "Toggles between horizontal and vertical layout of two windows."
   (interactive)
   (if (= (count-windows) 2)
@@ -78,7 +78,7 @@
           (select-window first-win)
           (if this-win-2nd (other-window 1))))))
 
-(defun eshell-for-buffer ()
+(defun yantonov/eshell-for-buffer ()
   "Switch to eshell and make sure we're in the directory the current buffer is in."
   (interactive)
   (let ((dir default-directory)
@@ -94,7 +94,7 @@
       (eshell-send-input)
       (end-of-buffer))))
 
-(defun start-or-switch-to (function buffer-name)
+(defun yantonov/start-or-switch-to (function buffer-name)
   "Invoke FUNCTION if there is no buffer with BUFFER-NAME.
 Otherwise switch to the buffer named BUFFER-NAME.  Don't clobber
 the current buffer."
@@ -105,7 +105,7 @@ the current buffer."
         (funcall function))
     (switch-to-buffer-other-window buffer-name)))
 
-(defun switch-to-fullscreen-buffer (b-name function reg-name)
+(defun yantonov/switch-to-fullscreen-buffer (b-name function reg-name)
   "switches between current buffer layout and fullscreen buffer of given name1.
 Calls function during swithing to fullscrenn."
   (interactive)
@@ -120,14 +120,14 @@ Calls function during swithing to fullscrenn."
           (funcall function)
         (switch-to-buffer b-name)))))
 
-(defun fullscreen-eshell ()
+(defun yantonov/fullscreen-eshell ()
   "Bring up a full-screen eshell or restore previous config."
   (interactive)
   (switch-to-fullscreen-buffer "*eshell*"
                                (lambda () (eshell))
                                :eshell-fullscreen))
 
-(defun fullscreen-scratch ()
+(defun yantonov/fullscreen-scratch ()
   "Save window configuraion and goto *scratch* buffer.
 Second call restores windows configuration."
   (interactive)
@@ -135,7 +135,7 @@ Second call restores windows configuration."
                                (lambda () (switch-to-buffer "*scratch*"))
                                :eshell-fullscreen))
 
-(defun goto-previous-window ()
+(defun yantonov/goto-previous-window ()
   "Turns you to previous window."
   (interactive)
   (other-window -1))

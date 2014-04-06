@@ -1,4 +1,4 @@
-(defun file-expand-wildcards-single-or-nil (file)
+(defun yantonov/file-expand-wildcards-single-or-nil (file)
   "Try to expand file using wildcards.
 If single file found returns it, otherwise returns nil"
   (let ((expanded (file-expand-wildcards file)))
@@ -6,7 +6,7 @@ If single file found returns it, otherwise returns nil"
         (car expanded)
       nil)))
 
-(defmacro find-system-type-specific-file (var-name wildcardlist)
+(defmacro yantonov/find-system-type-specific-file (var-name wildcardlist)
   "Find single matched file for corresponding system type
 Where var-name - variable to set,
 wildcardlist list of os specific patterns '\(\(os1 pattern1, os2 pattern2\)\)"
@@ -14,12 +14,12 @@ wildcardlist list of os specific patterns '\(\(os1 pattern1, os2 pattern2\)\)"
                      (let ((os (car handle))
                            (pattern (car (cdr handle))))
                        (list (list 'eq 'system-type os)
-                             (list 'setq var-name (list 'file-expand-wildcards-single-or-nil pattern)))))
+                             (list 'setq var-name (list 'yantonov/file-expand-wildcards-single-or-nil pattern)))))
                    (car (cdr wildcardlist)))))
     `(if (not ,var-name)
          (cond ,@x ))))
 
-(defun rename-current-buffer-file ()
+(defun yantonov/rename-current-buffer-file ()
   "Renames current buffer and file it is visiting."
   (interactive)
   (let ((name (buffer-name))
@@ -36,7 +36,7 @@ wildcardlist list of os specific patterns '\(\(os1 pattern1, os2 pattern2\)\)"
           (message "File '%s' successfully renamed to '%s'"
                    name (file-name-nondirectory new-name)))))))
 
-(defun delete-current-buffer-file ()
+(defun yantonov/delete-current-buffer-file ()
   "Removes file connected to current buffer and kills buffer."
   (interactive)
   (let ((filename (buffer-file-name))
@@ -49,7 +49,7 @@ wildcardlist list of os specific patterns '\(\(os1 pattern1, os2 pattern2\)\)"
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
 
-(defun open-with ()
+(defun yantonov/open-with ()
   "Opens file with external app"
   (interactive)
   (when buffer-file-name
@@ -67,7 +67,7 @@ wildcardlist list of os specific patterns '\(\(os1 pattern1, os2 pattern2\)\)"
       (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" buffer-file-name t t)))
      )))
 
-(defun open-in-desktop ()
+(defun yantonov/open-in-desktop ()
   "Opens directory contained current file (buffer)."
   (interactive)
   (when buffer-file-name
@@ -84,14 +84,14 @@ wildcardlist list of os specific patterns '\(\(os1 pattern1, os2 pattern2\)\)"
        ((string-equal system-type "windows-nt")
         (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" d t t)))))))
 
-(defun shell-execute-buffer-file ()
+(defun yantonov/shell-execute-buffer-file ()
   "Executes shell command for current buffer file. Shall command exaple: bash %"
   (interactive)
   (let ((file-buffer (or (buffer-file-name) ""))
         (command (read-shell-command "Shell command: " nil nil nil)))
     (shell-command (replace-regexp-in-string "%" file-buffer command))))
 
-(defun sudo-edit (&optional arg)
+(defun yantonov/sudo-edit (&optional arg)
   "Edit currently visited file as root.
 
 With a prefix ARG prompt for a file to visit.
@@ -103,7 +103,7 @@ buffer is not visiting a file."
                          (ido-read-file-name "Find file(as root): ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
-(defun open-at-point ()
+(defun yantonov/open-at-point ()
   "Open the file path under cursor.
 If there is text selection, uses the text selection for path.
 If the path is starts with “http://”, open the URL in browser.

@@ -2,4 +2,4 @@
 # name: namespace
 # key: ns
 # --
-(ns `(snippet--clojure-namespace-from-buffer-file-name)`)$0
+(ns `(yantonov/snippet--clojure-namespace-from-buffer-file-name)`)$0

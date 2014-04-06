@@ -1,11 +1,11 @@
 ;; erlang-mode-home, erlang-home is defined in ~/emacs/init.el
 (defun apply-erlang-environment-defaults ()
   (interactive)
-  (find-system-type-specific-file
+  (yantonov/find-system-type-specific-file
    erlang-mode-home
    '(('gnu/linux "/usr/lib/erlang/lib/tools*/emacs")
      ('windows-nt "C:/Program Files/erl*/lib/tools-*/emacs")))
-  (find-system-type-specific-file
+  (yantonov/find-system-type-specific-file
    erlang-home
    '(('gnu/linux "/usr/lib/erlang")
      ('windows-nt "C:/Program Files/erl*"))))

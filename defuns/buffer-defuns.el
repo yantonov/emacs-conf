@@ -1,12 +1,16 @@
-(defun untabify-buffer()
+(defun yantonov/indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun yantonov/untabify-buffer()
   (interactive)
   (untabify (point-min) (point-max)))
 
-(defun tabify-buffer()
+(defun yantonov/tabify-buffer()
   (interactive)
   (tabify (point-min) (point-max)))
 
-(defun goto-line-with-feedback ()
+(defun yantonov/goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
   (unwind-protect
@@ -15,7 +19,7 @@
         (call-interactively 'goto-line))
     (linum-mode 0)))
 
-(defun cleanup-buffer-safe ()
+(defun yantonov/cleanup-buffer-safe ()
   "Perform a bunch of safe operations on the whitespace content of a buffer.
 Does not indent buffer, because it is used for a before-save-hook, and that
 might be bad."
@@ -26,14 +30,14 @@ might be bad."
     (whitespace-cleanup))
   (set-buffer-file-coding-system 'utf-8))
 
-(defun cleanup-buffer ()
+(defun yantonov/cleanup-buffer ()
   "Perform a bunch of operations on the whitespace content of a buffer.
 Including indent-buffer, which should not be called automatically on save."
   (interactive)
-  (cleanup-buffer-safe)
+  (yantonov/cleanup-buffer-safe)
   (indent-buffer))
 
-(defun move-region-to-bottom (start end)
+(defun yantonov/move-region-to-bottom (start end)
   "Move selected text to bottom of buffer"
   (interactive "r")
   (if (use-region-p)
@@ -47,14 +51,14 @@ Including indent-buffer, which should not be called automatically on save."
         (message "Moved %s words" count))
     (message "No region selected")))
 
-(defun smart-open-line ()
+(defun yantonov/smart-open-line ()
   "Insert an empty line after the current line.
 Position the cursor at its beginning, according to the current mode."
   (interactive)
   (move-end-of-line nil)
   (newline-and-indent))
 
-(defun smart-open-line-above ()
+(defun yantonov/smart-open-line-above ()
   "Insert an empty line above the current line.
 Position the cursor at it's beginning, according to the current mode."
   (interactive)
@@ -63,7 +67,7 @@ Position the cursor at it's beginning, according to the current mode."
   (forward-line -1)
   (indent-according-to-mode))
 
-(defun get-buffer-file-name (&optional full-path?)
+(defun yantonov/get-buffer-file-name (&optional full-path?)
   "Returns full path of file name for current buffer"
   (interactive)
   (if (equal major-mode 'dired-mode)
@@ -74,20 +78,20 @@ Position the cursor at it's beginning, according to the current mode."
                 name
               (file-name-nondirectory name))))))
 
-(defun copy-buffer-file-name-to-clipboard (&optional full-path?)
+(defun yantonov/copy-buffer-file-name-to-clipboard (&optional full-path?)
   "Copy file name for the current buffer to the clipboard."
   (interactive)
-  (let ((filename (get-buffer-file-name full-path?)))
+  (let ((filename (yantonov/get-buffer-file-name full-path?)))
     (when filename
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 
-(defun copy-buffer-file-path-to-clipboard ()
+(defun yantonov/copy-buffer-file-path-to-clipboard ()
   "Copy path for current buffer file"
   (interactive)
-  (copy-buffer-file-name-to-clipboard 1))
+  (yantonov/copy-buffer-file-name-to-clipboard 1))
 
-(defun google ()
+(defun yantonov/google ()
   "Google the selected region if any, display a query prompt otherwise."
   (interactive)
   (browse-url
@@ -97,7 +101,7 @@ Position the cursor at it's beginning, according to the current mode."
                            (buffer-substring (region-beginning) (region-end))
                          (read-string "Google: "))))))
 
-(defun youtube ()
+(defun yantonov/youtube ()
   "Search YouTube with a query or region if any."
   (interactive)
   (browse-url
@@ -107,14 +111,14 @@ Position the cursor at it's beginning, according to the current mode."
                            (buffer-substring (region-beginning) (region-end))
                          (read-string "Search YouTube: "))))))
 
-(defun indent-defun ()
+(defun yantonov/indent-defun ()
   "Indent the current defun."
   (interactive)
   (save-excursion
     (mark-defun)
     (indent-region (region-beginning) (region-end))))
 
-(defun kill-other-buffers ()
+(defun yantonov/kill-other-buffers ()
   "Kill all buffers but the current one.
 Don't mess with special buffers."
   (interactive)
@@ -122,14 +126,14 @@ Don't mess with special buffers."
     (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
       (kill-buffer buffer))))
 
-(defun move-line-up ()
+(defun yantonov/move-line-up ()
   "Move up the current line."
   (interactive)
   (transpose-lines 1)
   (forward-line -2)
   (indent-according-to-mode))
 
-(defun move-line-down ()
+(defun yantonov/move-line-down ()
   "Move down the current line."
   (interactive)
   (forward-line 1)
@@ -137,7 +141,7 @@ Don't mess with special buffers."
   (forward-line -1)
   (indent-according-to-mode))
 
-(defun kill-all-buffers ()
+(defun yantonov/kill-all-buffers ()
   (interactive)
   (mapc 'kill-buffer (buffer-list))
   (switch-to-buffer "*scratch*")
