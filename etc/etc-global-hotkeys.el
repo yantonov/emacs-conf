@@ -15,13 +15,13 @@
 
   ;; resize buffer key bindings
   ;; http://www.emacswiki.org/emacs/WindowResize
-  (define-key my-key-map (kbd "S-C-<left>") 'shrink-window-horizontally)
+  (define-key my-key-map (kbd "S-C-M-<left>") 'shrink-window-horizontally)
   
-  (define-key my-key-map (kbd "S-C-<right>") 'enlarge-window-horizontally)
+  (define-key my-key-map (kbd "S-C-M-<right>") 'enlarge-window-horizontally)
   
   
-  (define-key my-key-map (kbd "S-C-<down>") 'shrink-window)
-  (define-key my-key-map (kbd "S-C-<up>") 'enlarge-window)
+  (define-key my-key-map (kbd "S-C-M-<down>") 'shrink-window)
+  (define-key my-key-map (kbd "S-C-M-<up>") 'enlarge-window)
 
   ;; windows movement
   ;; http://www.emacswiki.org/emacs/WindMove
