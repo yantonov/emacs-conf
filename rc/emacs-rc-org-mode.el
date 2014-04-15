@@ -1,10 +1,10 @@
-(defun my-org-mode-hook ()
+(defun yantonov/org-mode-hook ()
   "My hook for org mode"
   (interactive)
-  (my-general-keybindings org-mode-map))
+  (yantonov/apply-general-keybindings org-mode-map))
 
 (setq org-default-notes-file "~/emacs/.todo-list.org")
 
-(add-hook 'org-mode-hook 'my-org-mode-hook)
+(add-hook 'org-mode-hook 'yantonov/org-mode-hook)
 
 (provide 'emacs-rc-org-mode)

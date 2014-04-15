@@ -1,5 +1,4 @@
-(defun my-general-keybindings (my-key-map)
-
+(defun yantonov/apply-general-keybindings (my-key-map)
   ;; copy/paste/cut
   (define-key my-key-map (kbd "C-c c") 'kill-ring-save)
   (define-key my-key-map (kbd "C-c v") 'yank)
@@ -105,24 +104,49 @@
   ;; rename current buffer file
   (define-key my-key-map (kbd "C-<f6>") 'yantonov/rename-current-buffer-file))
 
-(defun my-paredit-keybindings ()
+(defun yantonov/create-general-menu (key-map)
+  (define-key-after key-map
+  [menu-bar file file-operation-separator]
+  '("--" . file-operation-separator)
+  'kill-buffer)
+(define-key-after key-map
+  [menu-bar file rename-file]
+  '("Rename current buffer file" . yantonov/rename-current-buffer-file)
+  'file-operation-separator)
+(define-key-after key-map
+  [menu-bar file delete-file]
+  '("Delete current buffer file" . yantonov/delete-current-buffer-file)
+  'rename-file)
+(define-key-after key-map
+  [menu-bar file file-paths-separator]
+  '("--" . file-paths-separator)
+  'delete-file)
+(define-key-after key-map
+  [menu-bar file copy-file-name]
+  '("Copy file name" . yantonov/copy-buffer-file-name-to-clipboard)
+  'file-paths-separator)
+(define-key-after key-map
+  [menu-bar file copy-file-path]
+  '("Copy file path" . yantonov/copy-buffer-file-path-to-clipboard)
+  'copy-file-name))
+
+(defun yantonov/apply-paredit-keybindings ()
   "Customization for paredit keybindings."
   (interactive)
   (define-key paredit-mode-map (kbd "M-)") 'paredit-wrap-round-from-behind))
 
-(defun load-my-keybindings ()
+(defun yantonov/load-my-keybindings ()
   (interactive)
-  (my-general-keybindings (current-global-map)))
+  (yantonov/apply-general-keybindings (current-global-map))
+  (yantonov/create-general-menu (current-global-map)))
 
-(load-my-keybindings)
+(yantonov/load-my-keybindings)
 
-(defun my-prog-mode-hotkey-hook ()
+(defun yantonov/prog-mode-hotkey-hook ()
   (local-set-key (kbd "C-/") 'comment-or-uncomment-region)
   (local-set-key (kbd "C-?") 'comment-or-uncomment-region))
 
-(add-hook 'prog-mode-hook 'my-prog-mode-hotkey-hook)
-
-(defun activate-super-key-on-win ()
+(defun yantonov/activate-super-key-on-win ()
   ;; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
   (setq w32-pass-lwindow-to-system nil
         w32-pass-rwindow-to-system nil

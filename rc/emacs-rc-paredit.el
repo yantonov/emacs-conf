@@ -41,8 +41,7 @@
 
 (defun my-paredit-mode-hook ()
   "My hook for paredit mode."
-  (my-paredit-keybindings)
-  )
+  (yantonov/apply-paredit-keybindings))
 
 (defun conditionally-enable-paredit-mode ()
   "Enable `paredit-mode' in the minibuffer, during `eval-expression'."

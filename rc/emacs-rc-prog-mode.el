@@ -1,6 +1,4 @@
-;;; emacs-rc-prog-mode.el ---
-
-(defun my-highlight-prog-keywords ()
+(defun yantonov/my-highlight-prog-keywords ()
   "highlight FIXME/TODO/BUG keywords"
 
   ;; action highlighting
@@ -22,11 +20,11 @@
   ;;     font-lock-warning-face t)))
   )
 
-(defun my-common-prog-hook ()
+(defun yantonov/prog-mode-hook ()
   (subword-mode 1)
-  (my-highlight-prog-keywords))
+  (yantonov/my-highlight-prog-keywords)
+  (yantonov/prog-mode-hotkey-hook))
 
-(add-hook 'prog-mode-hook 'my-common-prog-hook)
+(add-hook 'prog-mode-hook 'yantonov/prog-mode-hook)
 
 (provide 'emacs-rc-prog-mode)
-;;; emacs-rc-prog-mode.el ends here---
