@@ -155,10 +155,10 @@
         w32-rwindow-modifier 'super
         w32-apps-modifier 'hyper))
 
-(defun enable-super-key ()
+(defun yantonov/enable-super-key ()
   (if (eq system-type 'windows-nt)
-      (activate-super-key-on-win)))
+      (yantonov/activate-super-key-on-win)))
 
-(enable-super-key)
+(yantonov/enable-super-key)
 
 (provide 'etc-global-hotkeys)
