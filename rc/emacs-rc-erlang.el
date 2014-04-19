@@ -25,7 +25,7 @@
 (defun yantonov/erlang-environment-defined ()
   (interactive)
   (and (yantonov/erlang-mode-exists) 
-(yantonov/erlang-repl-exists)))
+       (yantonov/erlang-repl-exists)))
 
 (defun yantonov/init-erlang-settings ()
   (interactive)
@@ -38,7 +38,23 @@
   ;; open *.erl, *.hrl in erlang-mode
   ;; acrually erlang mode contains this bindings, added to avoid default problems
   (add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
-  (add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode)))
+  (add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode))
+
+  ;; distel setup
+  (if (not (locate-library "distel"))
+      ;; all modes inside mode directory
+      ;; distel.el inside distel/elisp
+      (add-to-list 'load-path (concat yantonov/emacs-mode-home  "/distel/elisp")))
+  (when (locate-library "distel")
+    (require 'distel)
+    (distel-setup));; distel setup
+  (if (not (locate-library "distel"))
+      ;; all modes inside mode directory
+      ;; distel.el inside distel/elisp
+      (add-to-list 'load-path (concat yantonov/emacs-mode-home  "/distel/elisp")))
+  (when (locate-library "distel")
+    (require 'distel)
+    (distel-setup)))
 
 (yantonov/apply-erlang-environment-defaults)
 (if (yantonov/erlang-environment-defined)
@@ -62,14 +78,5 @@
      (require 'paredit)
      (require 'highlight-parentheses)
      (require 'rainbow-delimiters)))
-
-;; distel setup
-(if (not (locate-library "distel"))
-    ;; all modes inside mode directory
-    ;; distel.el inside distel/elisp
-    (add-to-list 'load-path (concat yantonov/emacs-mode-home  "/distel/elisp")))
-(when (locate-library "distel")
-  (require 'distel)
-  (distel-setup))
 
 (provide 'emacs-rc-erlang)
