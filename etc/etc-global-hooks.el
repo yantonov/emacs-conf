@@ -12,7 +12,7 @@
                'yantonov/after-make-console-frame-hooks)))
 
 (add-hook 'after-make-frame-functions
-          'run-after-make-frame-hooks)
+          'yantonov/run-after-make-frame-hooks)
 (add-hook 'after-init-hook
           (lambda ()
             (yantonov/run-after-make-frame-hooks (selected-frame))))
