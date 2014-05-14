@@ -3,6 +3,9 @@
   (define-key my-key-map (kbd "C-c c") 'kill-ring-save)
   (define-key my-key-map (kbd "C-c v") 'yank)
   (define-key my-key-map (kbd "C-c x") 'kill-region)
+
+  ;; ace-window
+  (define-key my-key-map (kbd "C-x o") 'ace-window)
   
   ;;; indentation
   ;; inspired by intellij idea
