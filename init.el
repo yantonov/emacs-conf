@@ -121,6 +121,7 @@ This examples are already used as defaults.")
 ;;; configurations for modes
 (setq yantonov/rc-dir (expand-file-name "rc" yantonov/emacs-home))
 (add-to-list 'load-path yantonov/rc-dir)
+(require 'emacs-rc-ace-window)
 (require 'emacs-rc-auto-complete)
 (require 'emacs-rc-backup)
 (require 'emacs-rc-clojure-mode)
