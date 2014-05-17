@@ -20,6 +20,10 @@
   ;;     font-lock-warning-face t)))
   )
 
+(defun yantonov/prog-mode-hotkey-hook ()
+  (local-set-key (kbd "C-/") 'comment-or-uncomment-region)
+  (local-set-key (kbd "C-?") 'comment-or-uncomment-region))
+
 (defun yantonov/prog-mode-hook ()
   (subword-mode 1)
   (yantonov/my-highlight-prog-keywords)

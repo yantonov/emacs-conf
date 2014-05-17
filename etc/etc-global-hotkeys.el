@@ -145,10 +145,6 @@
 
 (yantonov/load-my-keybindings)
 
-(defun yantonov/prog-mode-hotkey-hook ()
-  (local-set-key (kbd "C-/") 'comment-or-uncomment-region)
-  (local-set-key (kbd "C-?") 'comment-or-uncomment-region))
-
 (defun yantonov/activate-super-key-on-win ()
   ;; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
   (setq w32-pass-lwindow-to-system nil
