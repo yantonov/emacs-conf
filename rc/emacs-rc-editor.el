@@ -7,6 +7,8 @@
 (delete-selection-mode t)
 ;; no confirmation for new files
 (setq confirm-nonexistent-file-or-buffer nil)
+;; Ask "y" or "n" instead of "yes" or "no". Yes, laziness is great.
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; With the default configuration you will get an error when you get
 ;; to attempt to move to a window that doesn't exist which becomes
