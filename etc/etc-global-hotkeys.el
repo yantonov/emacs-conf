@@ -4,6 +4,9 @@
   (define-key my-key-map (kbd "C-c v") 'yank)
   (define-key my-key-map (kbd "C-c x") 'kill-region)
 
+  ;; search
+  (define-key my-key-map (kbd "C-S-s") 'find-grep)
+
   ;; ace-window
   (define-key my-key-map (kbd "C-x o") 'ace-window)
   
