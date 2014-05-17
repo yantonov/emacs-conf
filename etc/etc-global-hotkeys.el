@@ -7,6 +7,9 @@
   ;; search
   (define-key my-key-map (kbd "C-S-s") 'find-grep)
 
+  ;; god-mode
+  (define-key my-key-map (kbd "<escape>") 'god-local-mode)
+
   ;; ace-window
   (define-key my-key-map (kbd "C-x o") 'ace-window)
   
