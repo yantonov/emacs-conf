@@ -29,12 +29,6 @@
 (setq search-highlight           t) ; Highlight search object
 (setq query-replace-highlight    t) ; Highlight query object
 
-;; always ALWAYS use UTF-8
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
-
 ;; highlight current line
 (global-hl-line-mode +1)
 
