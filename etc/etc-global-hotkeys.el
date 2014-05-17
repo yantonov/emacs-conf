@@ -25,6 +25,12 @@
   (define-key my-key-map (kbd "S-C-M-<down>") 'shrink-window)
   (define-key my-key-map (kbd "S-C-M-<up>") 'enlarge-window)
 
+  (define-key my-key-map (kbd "<C-S-up>")     'buf-move-up)
+  (define-key my-key-map (kbd "<C-S-down>")   'buf-move-down)
+  (define-key my-key-map (kbd "<C-S-left>")   'buf-move-left)
+  (define-key my-key-map (kbd "<C-S-right>")  'buf-move-right)
+
+
   ;; windows movement
   ;; http://www.emacswiki.org/emacs/WindMove
   (define-key my-key-map (kbd "S-<left>") 'windmove-left)
