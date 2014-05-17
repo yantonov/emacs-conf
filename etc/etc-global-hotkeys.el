@@ -56,8 +56,8 @@
       (join-line -1)))
 
   ;; file manupulations
-  (define-key my-key-map (kbd "C-x C-r") 'yantonov/rename-current-buffer-file)
-  (define-key my-key-map (kbd "C-x C-k") 'yantonov/delete-current-buffer-file)
+  (define-key my-key-map (kbd "S-<f6>") 'yantonov/rename-current-buffer-file)
+  (define-key my-key-map (kbd "S-<f8>") 'yantonov/delete-current-buffer-file)
 
   ;;; fullscreen
   ;; fullscreen eshell
@@ -103,9 +103,7 @@
 
   ;; copy file path to clipboard
   (define-key my-key-map (kbd "C-M-<insert>") 'yantonov/copy-buffer-file-path-to-clipboard)
-  (define-key my-key-map (kbd "C-<insert>") 'yantonov/copy-buffer-file-name-to-clipboard)
-  ;; rename current buffer file
-  (define-key my-key-map (kbd "C-<f6>") 'yantonov/rename-current-buffer-file))
+  (define-key my-key-map (kbd "C-<insert>") 'yantonov/copy-buffer-file-name-to-clipboard))
 
 (defun yantonov/create-general-menu (key-map)
   (define-key-after key-map

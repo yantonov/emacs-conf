@@ -1,10 +1,7 @@
-* todo list [0/7]
+* todo list [0/6]
 ** TODO Port darcula theme (Intellij idea 12) for emacs
 ** TODO add * to projectile completion (aka intellij idea C-S-n)
 ** TODO projectile on windows not works as expected
 ** TODO move lines (intellij idea mapping ctrl+shift + up/down)
 ** TODO solve problem with launch emacs using ec/et scripts (os: windows only)
 ** TODO lazy load of initialization (modes, settings) in all places if possible
-** TODO keybinding for rename file (intellij idea or far)
-   
-   
