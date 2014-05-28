@@ -10,9 +10,12 @@
 ;; moe-theme
 ;; (load-theme 'moe-dark t)
 
+;; noctilux
+;; (load-theme 'noctilux t)
+
 (add-hook 'yantonov/after-make-window-system-frame-hooks
           '(lambda ()
-             (load-theme 'solarized-dark t)))
+             (load-theme 'noctilux t)))
 (add-hook 'yantonov/after-make-console-frame-hooks
           '(lambda ()
              (load-theme 'zenburn t)))
