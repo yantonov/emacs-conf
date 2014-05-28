@@ -39,6 +39,11 @@
 (put 'paredit-doublequote 'delete-selection t)
 (put 'paredit-newline 'delete-selection t)
 
+(defun yantonov/apply-paredit-keybindings ()
+  "Customization for paredit keybindings."
+  (interactive)
+  (define-key paredit-mode-map (kbd "M-)") 'paredit-wrap-round-from-behind))
+
 (defun my-paredit-mode-hook ()
   "My hook for paredit mode."
   (yantonov/apply-paredit-keybindings))

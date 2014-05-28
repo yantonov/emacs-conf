@@ -33,7 +33,6 @@
   (define-key my-key-map (kbd "<C-S-left>")   'buf-move-left)
   (define-key my-key-map (kbd "<C-S-right>")  'buf-move-right)
 
-
   ;; windows movement
   ;; http://www.emacswiki.org/emacs/WindMove
   (define-key my-key-map (kbd "S-<left>") 'windmove-left)
@@ -112,38 +111,33 @@
 
   ;; copy file path to clipboard
   (define-key my-key-map (kbd "C-M-<insert>") 'yantonov/copy-buffer-file-path-to-clipboard)
-  (define-key my-key-map (kbd "C-<insert>") 'yantonov/copy-buffer-file-name-to-clipboard)
+  (define-key my-key-map (kbd "C-<insert>") 'yantonov/copy-buffer-file-name-to-clipboard))
 
-  (defun yantonov/create-general-menu (key-map)
-    (define-key-after key-map
-      [menu-bar file file-operation-separator]
-      '("--" . file-operation-separator)
-      'kill-buffer)
-    (define-key-after key-map
-      [menu-bar file rename-file]
-      '("Rename current buffer file" . yantonov/rename-current-buffer-file)
-      'file-operation-separator)
-    (define-key-after key-map
-      [menu-bar file delete-file]
-      '("Delete current buffer file" . yantonov/delete-current-buffer-file)
-      'rename-file)
-    (define-key-after key-map
-      [menu-bar file file-paths-separator]
-      '("--" . file-paths-separator)
-      'delete-file)
-    (define-key-after key-map
-      [menu-bar file copy-file-name]
-      '("Copy file name" . yantonov/copy-buffer-file-name-to-clipboard)
-      'file-paths-separator)
-    (define-key-after key-map
-      [menu-bar file copy-file-path]
-      '("Copy file path" . yantonov/copy-buffer-file-path-to-clipboard)
-      'copy-file-name))
-
-  (defun yantonov/apply-paredit-keybindings ()
-    "Customization for paredit keybindings."
-    (interactive)
-    (define-key paredit-mode-map (kbd "M-)") 'paredit-wrap-round-from-behind)))
+(defun yantonov/create-general-menu (key-map)
+  (define-key-after key-map
+    [menu-bar file file-operation-separator]
+    '("--" . file-operation-separator)
+    'kill-buffer)
+  (define-key-after key-map
+    [menu-bar file rename-file]
+    '("Rename current buffer file" . yantonov/rename-current-buffer-file)
+    'file-operation-separator)
+  (define-key-after key-map
+    [menu-bar file delete-file]
+    '("Delete current buffer file" . yantonov/delete-current-buffer-file)
+    'rename-file)
+  (define-key-after key-map
+    [menu-bar file file-paths-separator]
+    '("--" . file-paths-separator)
+    'delete-file)
+  (define-key-after key-map
+    [menu-bar file copy-file-name]
+    '("Copy file name" . yantonov/copy-buffer-file-name-to-clipboard)
+    'file-paths-separator)
+  (define-key-after key-map
+    [menu-bar file copy-file-path]
+    '("Copy file path" . yantonov/copy-buffer-file-path-to-clipboard)
+    'copy-file-name))
 
 (defun yantonov/load-my-keybindings ()
   (interactive)
