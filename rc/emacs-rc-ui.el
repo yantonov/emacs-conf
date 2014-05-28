@@ -12,6 +12,6 @@
 (setq color-theme-is-global nil)
 
 ;; font settings
-(set-default-font "Courier New-13")
+;;(set-default-font "Courier New-13")
 
 (provide 'emacs-rc-ui)
