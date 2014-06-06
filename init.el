@@ -1,4 +1,5 @@
-(setq debug-on-error t)
+;; for debug purposes
+;; (setq debug-on-error t)
 
 ;;
 ;; paths, environment
