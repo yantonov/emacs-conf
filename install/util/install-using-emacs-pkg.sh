@@ -15,7 +15,7 @@ fi
 SCRIPT_DIR=`dirname $0`
 os=`uname`
 if [[ ${os} == *_NT* ]]; then    
-    emacs -q -l ${SCRIPT_DIR}/elisp/init-package-system.el -l ${INSTALL_EMACS_LISP_SCRIPT} -l ${SCRIPT_DIR}/elisp/close-emacs.el
+    emacs -q -l ${SCRIPT_DIR}/../../etc/etc-package.el -l ${SCRIPT_DIR}/elisp/refresh-package-info.el -l ${INSTALL_EMACS_LISP_SCRIPT} -l ${SCRIPT_DIR}/elisp/close-emacs.el
 else    
     emacs -q -batch -l ${SCRIPT_DIR}/elisp/init-package-system.el -l ${INSTALL_EMACS_LISP_SCRIPT}
 fi

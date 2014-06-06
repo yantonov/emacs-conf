@@ -1,8 +1,7 @@
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
+(setq package-archives '(("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
 (provide 'etc-package)
