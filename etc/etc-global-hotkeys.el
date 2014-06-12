@@ -23,15 +23,15 @@
 
   ;; resize buffer key bindings
   ;; http://www.emacswiki.org/emacs/WindowResize
-  (define-key my-key-map (kbd "S-C-M-<left>") 'shrink-window-horizontally)
-  (define-key my-key-map (kbd "S-C-M-<right>") 'enlarge-window-horizontally)
-  (define-key my-key-map (kbd "S-C-M-<down>") 'shrink-window)
-  (define-key my-key-map (kbd "S-C-M-<up>") 'enlarge-window)
+  (define-key my-key-map (kbd "C-S-M-<up>") 'buf-move-up)
+  (define-key my-key-map (kbd "C-S-M-<right>") 'buf-move-right)
+  (define-key my-key-map (kbd "C-S-M-<down>") 'buf-move-down)
+  (define-key my-key-map (kbd "C-S-M-<left>") 'buf-move-left)
 
-  (define-key my-key-map (kbd "<C-S-up>")     'buf-move-up)
-  (define-key my-key-map (kbd "<C-S-down>")   'buf-move-down)
-  (define-key my-key-map (kbd "<C-S-left>")   'buf-move-left)
-  (define-key my-key-map (kbd "<C-S-right>")  'buf-move-right)
+  (define-key my-key-map (kbd "C-S-<up>")     'enlarge-window)
+  (define-key my-key-map (kbd "C-S-<right>")  'enlarge-window-horizontally)
+  (define-key my-key-map (kbd "C-S-<down>")   'shrink-window)
+  (define-key my-key-map (kbd "C-S-<left>")   'shrink-window-horizontally)  
 
   ;; windows movement
   ;; http://www.emacswiki.org/emacs/WindMove
