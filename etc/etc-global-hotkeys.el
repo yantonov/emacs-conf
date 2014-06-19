@@ -139,12 +139,17 @@
     '("Copy file path" . yantonov/copy-buffer-file-path-to-clipboard)
     'copy-file-name))
 
+(defun yantonov/load-my-help-keybinding ()
+  (define-key 'help-command (kbd "C-l") 'find-library)
+  (define-key 'help-command (kbd "C-f") 'find-function)
+  (define-key 'help-command (kbd "C-k") 'find-function-on-key)
+  (define-key 'help-command (kbd "C-v") 'find-variable))
+
 (defun yantonov/load-my-keybindings ()
   (interactive)
   (yantonov/apply-general-keybindings (current-global-map))
-  (yantonov/create-general-menu (current-global-map)))
-
-(yantonov/load-my-keybindings)
+  (yantonov/create-general-menu (current-global-map))
+  (yantonov/load-my-help-keybinding))
 
 (defun yantonov/activate-super-key-on-win ()
   ;; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
@@ -159,6 +164,7 @@
   (if (eq system-type 'windows-nt)
       (yantonov/activate-super-key-on-win)))
 
+(yantonov/load-my-keybindings)
 (yantonov/enable-super-key)
 
 (provide 'etc-global-hotkeys)
