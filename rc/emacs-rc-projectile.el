@@ -1,9 +1,9 @@
 (require 'projectile)
 
 ;; enable globally
-(projectile-global-mode)
+;; (projectile-global-mode)
 
 ;; to enable for some mode
-;; (add-hook 'ruby-mode-hook 'projectile-on)
+;; (add-hook 'clojure-mode-hook 'projectile-on)
 
 (provide 'emacs-rc-projectile)

@@ -9,7 +9,8 @@
   ;; http://emacswiki.org/emacs/ShowParenMode
   (show-paren-mode 1)
   (setq show-paren-style 'expression)
-  (turn-on-eldoc-mode))
+  (turn-on-eldoc-mode)
+  (projectile-on))
 
 (eval-after-load 'clojure-mode
   '(progn
@@ -17,6 +18,7 @@
      (require 'highlight-parentheses)
      (require 'rainbow-delimiters)
      (require 'clojure-test-mode)
+     (require 'projectile)
      (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)))
 
 (provide 'emacs-rc-clojure-mode)
