@@ -25,6 +25,6 @@
 
 (defun yantonov/xml-pretty-print ()
   (interactive)
-  (xml-pretty-print-region (point-min) (point-max)))
+  (yantonov/xml-pretty-print-region (point-min) (point-max)))
 
 (provide 'xml-buffer-defuns)
