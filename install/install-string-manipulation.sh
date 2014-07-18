@@ -1,5 +1,5 @@
 #!/bin/bash
 
 SCRIPT_DIR=`dirname $0`
-${SCRIPT_DIR}/util/install-using-emacs-pkg.sh $SCRIPT_DIR/util/elisp/install-string-manipulation.el
+${SCRIPT_DIR}/util/install-using-emacs-pkg.sh s
 

@@ -2,4 +2,4 @@
 
 SCRIPT_DIR=`dirname $0`
 
-${SCRIPT_DIR}/util/install-using-emacs-pkg.sh $SCRIPT_DIR/util/elisp/install-ac-nrepl.el
+${SCRIPT_DIR}/util/install-using-emacs-pkg.sh ac-nrepl

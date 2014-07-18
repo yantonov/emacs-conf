@@ -1,4 +1,4 @@
 #!/bin/bash
 
 SCRIPT_DIR=`dirname $0`
-${SCRIPT_DIR}/util/install-using-emacs-pkg.sh $SCRIPT_DIR/util/elisp/install-js2-mode.el
+${SCRIPT_DIR}/util/install-using-emacs-pkg.sh js2-mode
