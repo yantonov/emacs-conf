@@ -13,6 +13,9 @@
 ;; noctilux
 ;; (load-theme 'noctilux t)
 
+;; monokai-theme
+;; (load-theme 'monokai t)
+
 (add-hook 'yantonov/after-make-window-system-frame-hooks
           '(lambda ()
              (load-theme 'noctilux t)))
