@@ -1,5 +1,6 @@
 ;; no scroll bar
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'scroll-bar-mode)
+    (set-scroll-bar-mode nil))
 
 (setq redisplay-dont-pause t
       scroll-margin 1
