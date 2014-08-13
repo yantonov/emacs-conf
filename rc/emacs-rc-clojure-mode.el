@@ -17,7 +17,7 @@
      (require 'paredit)
      (require 'highlight-parentheses)
      (require 'rainbow-delimiters)
-     (require 'clojure-test-mode)
+     (require 'cider-test)
      (require 'projectile)
      (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)))
 
