@@ -4,7 +4,7 @@
 ;; (load-theme 'solarized-dark t)
 
 ;; zen-and-art theme
-;; (load-file (concat emacs-color-themes-home "/zen-and-art/zen-and-art.el"))
+;; (load-file (concat yantonov/emacs-color-themes-home "/zen-and-art/zen-and-art.el"))
 ;; (color-theme-zen-and-art)
 
 ;; moe-theme
