@@ -10,7 +10,7 @@
   (show-paren-mode 1)
   (setq show-paren-style 'expression)
   (turn-on-eldoc-mode)
-  (projectile-on))
+  (projectile-mode))
 
 (eval-after-load 'clojure-mode
   '(progn
