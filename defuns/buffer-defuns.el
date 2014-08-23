@@ -25,7 +25,8 @@ Does not indent buffer, because it is used for a before-save-hook, and that
 might be bad."
   (interactive)
   (untabify (point-min) (point-max))
-  (if (eq 'markdown-mode (buffer-local-value 'major-mode (current-buffer)))
+  (if (eq 'markdown-mode
+          (buffer-local-value 'major-mode (current-buffer)))
       nil
     (whitespace-cleanup))
   (set-buffer-file-coding-system 'utf-8))
