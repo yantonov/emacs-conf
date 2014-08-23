@@ -29,7 +29,7 @@
 (setq search-highlight           t) ; Highlight search object
 (setq query-replace-highlight    t) ; Highlight query object
 
-;; highlight current line
-(global-hl-line-mode +1)
+;; no highlight for current line
+(global-hl-line-mode 0)
 
 (provide 'emacs-rc-editor)
