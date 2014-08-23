@@ -12,7 +12,7 @@
 
   ;; ace-window
   (define-key my-key-map (kbd "C-x o") 'ace-window)
-  
+
   ;;; indentation
   ;; inspired by intellij idea
   (define-key my-key-map (kbd "C-M-l") 'yantonov/indent-buffer)
@@ -31,7 +31,7 @@
   (define-key my-key-map (kbd "C-S-<up>")     'enlarge-window)
   (define-key my-key-map (kbd "C-S-<right>")  'enlarge-window-horizontally)
   (define-key my-key-map (kbd "C-S-<down>")   'shrink-window)
-  (define-key my-key-map (kbd "C-S-<left>")   'shrink-window-horizontally)  
+  (define-key my-key-map (kbd "C-S-<left>")   'shrink-window-horizontally)
 
   ;; windows movement
   ;; http://www.emacswiki.org/emacs/WindMove
@@ -80,7 +80,7 @@
   (define-key my-key-map (kbd "C-c to") 'timeclock-out)
   (define-key my-key-map (kbd "C-c tc") 'timeclock-change)
   (define-key my-key-map (kbd "C-c tr") 'timeclock-reread-log)
-  (define-key my-key-map (kbd "C-c tu") 'timeclock-update-string)
+  (define-key my-key-map (kbd "C-c tl") 'timeclock-visit-timelog)
   (define-key my-key-map (kbd "C-c tw") 'timeclock-when-to-leave-string)
 
   ;;; open
