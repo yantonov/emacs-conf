@@ -9,6 +9,8 @@
 (setq confirm-nonexistent-file-or-buffer nil)
 ;; Ask "y" or "n" instead of "yes" or "no". Yes, laziness is great.
 (fset 'yes-or-no-p 'y-or-n-p)
+;; do not require final newline
+(setq require-final-newline nil)
 
 ;; With the default configuration you will get an error when you get
 ;; to attempt to move to a window that doesn't exist which becomes
