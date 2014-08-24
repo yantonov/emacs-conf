@@ -11,12 +11,13 @@
 (if (fboundp 'menu-bar-mode)
     (menu-bar-mode 1))
 
-;; dont let emacs hurt your ears
-(setq visible-bell t)
+;; no flasing frames
+(setq visible-bell nil)
 
 ;; cursor blinking
 (blink-cursor-mode 1)
 
-(setq color-theme-is-global nil)
+;; one theme for all frames
+(setq color-theme-is-global t)
 
 (provide 'emacs-rc-ui)
