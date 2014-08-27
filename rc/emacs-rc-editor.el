@@ -1,3 +1,6 @@
+(require 'uniquify)
+;; directory prefix for buffer name (in case of multiple files with same name at different directories)
+(setq uniquify-buffer-name-style 'forward)
 ;; set goal colulm
 ;; http://emacsblog.org/2007/03/17/quick-tip-set-goal-column/
 (put 'set-goal-column 'disabled nil)
