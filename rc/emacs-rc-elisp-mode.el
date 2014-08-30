@@ -12,13 +12,9 @@
             t))
 
 (defun yantonov/elisp-mode-hook ()
-  (paredit-mode +1)
-  (highlight-parentheses-mode t)
+  (paredit-mode 1)
+  (highlight-parentheses-mode 1)
   (rainbow-delimiters-mode-enable)
-  ;; show-paren-mode
-  ;; http://emacswiki.org/emacs/ShowParenMode
-  (show-paren-mode 1)
-  (setq show-paren-style 'expression)
   (yantonov/remove-elc-on-save))
 
 (add-hook 'emacs-lisp-mode-hook 'yantonov/elisp-mode-hook)

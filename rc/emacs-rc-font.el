@@ -11,7 +11,7 @@
               ((string-equal system-type "windows-nt") ; Windows
                '(
                  "Courier New-13"
-                 ;;"DejaVu Sans Mono-9"
+                 "DejaVu Sans Mono-13"
                  ;;"Lucida Console-10"
                  ;;"Segoe UI Symbol-12"
 
