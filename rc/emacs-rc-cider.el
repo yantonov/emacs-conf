@@ -49,6 +49,9 @@
 (add-hook 'cider-mode-hook 'my-cider-mode-hook)
 (add-hook 'cider-repl-mode-hook 'my-repl-mode-hook)
 
+(define-key cider-mode-map (kbd "C-c C-q") 'nrepl-close)
+(define-key cider-mode-map (kbd "C-c C-Q") 'cider-quit)
+
 ;;; JavaDoc browsing from cider
 (defvar javadoc-alist
   '(("^\\(java[x]?\.\\|org\.ietf\.\\|org\.omg\.\\|org\.w3c\.\\|org\.xml\.\\)" .
