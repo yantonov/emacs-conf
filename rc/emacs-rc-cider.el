@@ -12,7 +12,7 @@
 (setq cider-enable-on-existing-clojure-buffers t)
 
 ;; hide special cider buffers
-(setq nrepl-hide-special-buffers t)
+(setq nrepl-hide-special-buffers nil)
 
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'cider-mode))
