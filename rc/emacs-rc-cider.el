@@ -3,7 +3,6 @@
 (require 'paredit)
 (require 'highlight-parentheses)
 (require 'rainbow-delimiters)
-(require 'ac-nrepl)
 
 ;; Stop the error buffer from popping up while working in the REPL buffer:
 (setq cider-popup-stacktraces nil)
@@ -15,22 +14,11 @@
 ;; hide special cider buffers
 (setq nrepl-hide-special-buffers t)
 
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-mode))
-
-(defun set-auto-complete-as-completion-at-point-function ()
-  (setq completion-at-point-functions
-        '(auto-complete)))
-
-(add-hook 'auto-complete-mode-hook
-          'set-auto-complete-as-completion-at-point-function)
-
 (defun my-cider-common-hook ()
   (paredit-mode +1)
   (highlight-parentheses-mode t)
   (rainbow-delimiters-mode-enable)
 
-  (ac-nrepl-setup)
   (set-auto-complete-as-completion-at-point-function)
 
   ;; show-paren-mode
@@ -61,7 +49,7 @@
   "Attach user defined javadocs."
   (if yantonov/user-javadoc-alist
       (dolist (el yantonov/user-javadoc-alist javadoc-alist)
-        (setq javadoc-alist (cons el javadoc-alist)))))
+    (setq javadoc-alist (cons el javadoc-alist)))))
 ;; load user defined settings
 (attach-user-javadocs)
 
@@ -72,29 +60,29 @@
 (defun my-cider-javadoc (class-name)
   "Get JavaDoc documentation on Java class at point."
   (interactive (list
-                (cond
-                 ((cider-connection-buffer-name)
-                  (or (second (cider-eval
-                               (format "%s" (list 'resolve
-                                                  (list 'quote
-                                                        (make-symbol
-                                                         (substring-no-properties
-                                                          (symbol-name
-                                                           (symbol-at-point)))))
-                                                  ))
-                               ))
-                      (symbol-name (cider-read-symbol-name "JavaDoc info for: "))))
+        (cond
+         ((cider-connection-buffer-name)
+          (or (second (cider-eval
+                   (format "%s" (list 'resolve
+                          (list 'quote
+                            (make-symbol
+                             (substring-no-properties
+                              (symbol-name
+                               (symbol-at-point)))))
+                          ))
+                   ))
+              (symbol-name (cider-read-symbol-name "JavaDoc info for: "))))
 
-                 ((ignore-errors (mark))
-                  (buffer-substring-no-properties (region-beginning) (region-end)))
+         ((ignore-errors (mark))
+          (buffer-substring-no-properties (region-beginning) (region-end)))
 
-                 (t (symbol-name (symbol-at-point))))))
+         (t (symbol-name (symbol-at-point))))))
   (or class-name (error "No symbol given"))
   (let* ((root (and class-name (javadoc-root class-name)))
-         (dots-to-slashes (subst-char-in-string ?. ?/ class-name))
-         (canon-class-name (subst-char-in-string ?$ ?. dots-to-slashes)))
+     (dots-to-slashes (subst-char-in-string ?. ?/ class-name))
+     (canon-class-name (subst-char-in-string ?$ ?. dots-to-slashes)))
     (if (and root canon-class-name)
-        (browse-url (concat root canon-class-name ".html"))
+    (browse-url (concat root canon-class-name ".html"))
       (message "No javadoc found for %s" class-name))))
 
 (provide 'emacs-rc-cider)
