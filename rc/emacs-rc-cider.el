@@ -9,10 +9,11 @@
 (setq cider-popup-stacktraces nil)
 
 ;; enable cider for clojure buffers
+;; switch to by prefixing with space when using swith-to-buffer
 (setq cider-enable-on-existing-clojure-buffers t)
 
 ;; hide special cider buffers
-(setq nrepl-hide-special-buffers nil)
+(setq nrepl-hide-special-buffers t)
 
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'cider-mode))
