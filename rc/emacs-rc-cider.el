@@ -1,7 +1,6 @@
 (require 'clojure-mode)
 (require 'cider)
 (require 'paredit)
-(require 'highlight-parentheses)
 (require 'rainbow-delimiters)
 
 ;; Stop the error buffer from popping up while working in the REPL buffer:
@@ -16,7 +15,6 @@
 
 (defun my-cider-common-hook ()
   (paredit-mode +1)
-  (highlight-parentheses-mode t)
   (rainbow-delimiters-mode-enable)
 
   (set-auto-complete-as-completion-at-point-function)

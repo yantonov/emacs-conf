@@ -1,5 +1,4 @@
 (require 'paredit)
-(require 'highlight-parentheses)
 (require 'rainbow-delimiters)
 
 (defun yantonov/remove-elc-on-save ()
@@ -13,7 +12,6 @@
 
 (defun yantonov/elisp-mode-hook ()
   (paredit-mode 1)
-  (highlight-parentheses-mode 1)
   (rainbow-delimiters-mode-enable)
   (yantonov/remove-elc-on-save))
 
