@@ -79,7 +79,7 @@ Ubuntu
 \(setq erlang-home \"/usr/lib/erlang\"\)
 
 Windows:
-\(setq erlang-home \"C:/Program Files/erl<Ver>\"\) 
+\(setq erlang-home \"C:/Program Files/erl<Ver>\"\)
 
 This examples are already used as defaults.")
 
@@ -165,7 +165,6 @@ This examples are already used as defaults.")
 (require 'emacs-rc-scroll)
 (require 'emacs-rc-showcharcode)
 (require 'emacs-rc-sicp)
-(require 'emacs-rc-switch-buffers)
 (require 'emacs-rc-timeclock)
 (require 'emacs-rc-ui)
 (require 'emacs-rc-undo-tree)
