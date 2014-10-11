@@ -20,11 +20,6 @@
   (rainbow-delimiters-mode-enable)
 
   (set-auto-complete-as-completion-at-point-function)
-
-  ;; show-paren-mode
-  ;; http://emacswiki.org/emacs/ShowParenMode
-  (show-paren-mode 1)
-  (setq show-paren-style 'expression)
   (cider-turn-on-eldoc-mode))
 
 (defun my-cider-mode-hook ()

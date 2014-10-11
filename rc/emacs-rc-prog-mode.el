@@ -11,7 +11,7 @@
   (font-lock-add-keywords
    nil
    '(("\\<\\(DONE\\):" 1 font-lock-doc-face t)))
-  
+
   ;; highlight too long lines
   ;; (font-lock-add-keywords
   ;;  nil
@@ -24,10 +24,18 @@
   (local-set-key (kbd "C-/") 'comment-or-uncomment-region)
   (local-set-key (kbd "C-?") 'comment-or-uncomment-region))
 
+(defun yantonov/prog-mode-showparen ()
+  ;; http://emacswiki.org/emacs/ShowParenMode
+  (setq show-paren-delay 0)
+  (setq show-paren-style 'expression)
+  (make-variable-buffer-local 'show-paren-mode)
+  (show-paren-mode 1))
+
 (defun yantonov/prog-mode-hook ()
   (subword-mode 1)
   (yantonov/my-highlight-prog-keywords)
-  (yantonov/prog-mode-hotkey-hook))
+  (yantonov/prog-mode-hotkey-hook)
+  (yantonov/prog-mode-showparen))
 
 (add-hook 'prog-mode-hook 'yantonov/prog-mode-hook)
 
