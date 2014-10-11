@@ -87,7 +87,7 @@
   ;; projectile
   (define-key my-key-map (kbd "C-S-n") 'projectile-find-file)
   ;; webjump
-  (define-key my-key-map (kbd "C-x g") 'yantonov/webjump)
+  (define-key my-key-map (kbd "C-x g") 'webjump)
   ;; open-with
   (define-key my-key-map (kbd  "C-c o") 'yantonov/open-with)
   ;; open-with
