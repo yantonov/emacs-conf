@@ -119,6 +119,7 @@ This examples are already used as defaults.")
 (require 'file-defuns)
 (require 'snippet-defuns)
 (require 'temp-defuns)
+(require 'sys-defuns)
 (require 'window-defuns)
 (require 'xml-buffer-defuns)
 ;;; configurations for modes
@@ -184,6 +185,5 @@ This examples are already used as defaults.")
 ;; custom config
 (load yantonov/custom-init-after-file 'noerror)
 
-;; goto home in case of windows
-(if (eq system-type 'windows-nt)
+(if (yantonov/os-windows-p)
     (cd "~"))

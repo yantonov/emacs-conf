@@ -1,14 +1,14 @@
-(defmacro yantonov/run (program-name program-args fn-alias)
+(defmacro yantonov/run (program-name &optional program-args)
   "Return a function that runs the executable EXEC."
   (let ((func-name
-         (intern (concat "yantonov/run-executable-"
-                         (if fn-alias fn-alias program-name)))))
+         (intern (concat "yantonov/run-executable-" program-name)))
+        (args (if (eq nil program-args) '() program-args)))
     `(progn
        (defun ,func-name ()
-         ,(format "Run the %s executable [args=%s]." ,program-name ,program-args)
+         ,(format "Run the %s executable [args=%s]." program-name args)
          (interactive)
-         (message (format "Run the %s executable [args=%s]." ,program-name ,program-args))
-         (start-process "" nil ,program-name ,@program-args))
+         (message (format "Run the %s executable [args=%s]." ,program-name ,args))
+         (start-process "" nil ,program-name ,@args))
        ',func-name)))
 
 (defmacro yantonov/browse (url fn-alias)

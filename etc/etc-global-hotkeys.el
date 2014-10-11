@@ -139,6 +139,30 @@
     '("Copy file path" . yantonov/copy-buffer-file-path-to-clipboard)
     'copy-file-name))
 
+(defun yantonov/create-launcher-menu (key-map)
+  (define-key-after
+    key-map
+    [menu-bar launchermenu]
+    (cons "Launch" (make-sparse-keymap "launchermenu menu"))
+    'tools)
+
+  (cond
+   ((yantonov/os-windows-p)
+    (define-key
+      key-map
+      [menu-bar launchermenu chrome]
+      `("Keepass" . ,(yantonov/run "keepass"))))
+   ((yantonov/os-linux-p)
+    (define-key
+      key-map
+      [menu-bar launchermenu chrome]
+      `("Keepass" . ,(yantonov/run "keepassx")))))
+
+  (define-key
+    key-map
+    [menu-bar launchermenu launchidea]
+    `("IntelliJ Idea" . ,(yantonov/run "idea"))))
+
 (defun yantonov/load-my-help-keybinding ()
   (define-key 'help-command (kbd "C-l") 'find-library)
   (define-key 'help-command (kbd "C-f") 'find-function)
@@ -149,6 +173,7 @@
   (interactive)
   (yantonov/apply-general-keybindings (current-global-map))
   (yantonov/create-general-menu (current-global-map))
+  (yantonov/create-launcher-menu (current-global-map))
   (yantonov/load-my-help-keybinding))
 
 (defun yantonov/activate-super-key-on-win ()
