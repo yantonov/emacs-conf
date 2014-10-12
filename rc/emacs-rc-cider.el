@@ -2,6 +2,7 @@
 (require 'cider)
 (require 'paredit)
 (require 'rainbow-delimiters)
+(require 'company)
 
 ;; Stop the error buffer from popping up while working in the REPL buffer:
 (setq cider-popup-stacktraces nil)
@@ -18,7 +19,8 @@
   (rainbow-delimiters-mode-enable)
 
   (set-auto-complete-as-completion-at-point-function)
-  (cider-turn-on-eldoc-mode))
+  (cider-turn-on-eldoc-mode)
+  (company-mode))
 
 (defun my-cider-mode-hook ()
   (subword-mode)
