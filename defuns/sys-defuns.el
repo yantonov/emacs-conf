@@ -4,4 +4,7 @@
 (defun yantonov/os-linux-p ()
   (eq system-type 'gnu/linux))
 
+(defun yantonov/os-mac-p ()
+  (eq system-type 'darwin))
+
 (provide 'sys-defuns)

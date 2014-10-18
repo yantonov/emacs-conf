@@ -97,7 +97,7 @@ This examples are already used as defaults.")
       (add-to-list 'load-path project)
       (add-to-list 'custom-theme-load-path project))))
 
-(load yantonov/custom-init-before-file 'noerror)
+;(load yantonov/custom-init-before-file 'noerror)
 ;; modes paths
 (yantonov/init-modes-paths yantonov/emacs-mode-home)
 ;; color-themes paths
@@ -183,7 +183,7 @@ This examples are already used as defaults.")
 (require 'etc-global-advices)
 
 ;; custom config
-(load yantonov/custom-init-after-file 'noerror)
+;(load yantonov/custom-init-after-file 'noerror)
 
 (if (yantonov/os-windows-p)
     (cd "~"))

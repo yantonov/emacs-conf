@@ -33,6 +33,9 @@
   (define-key my-key-map (kbd "C-S-<down>")   'shrink-window)
   (define-key my-key-map (kbd "C-S-<left>")   'shrink-window-horizontally)
 
+  (if (yantonov/os-mac-p)
+      (define-key my-key-map (kbd "H-SPC")   'set-mark-command))
+
   ;; windows movement
   ;; http://www.emacswiki.org/emacs/WindMove
   (define-key my-key-map (kbd "S-<left>") 'windmove-left)
@@ -169,27 +172,39 @@
   (define-key 'help-command (kbd "C-k") 'find-function-on-key)
   (define-key 'help-command (kbd "C-v") 'find-variable))
 
+(defun yantonov/keyboard-settings-for-macos ()
+  (if (yantonov/os-mac-p)
+      (progn
+        ;; setting Super, Hyper keys for Apple keyboard,
+        ;; for emacs running in OS X
+        ;; sets the Command key to Meta
+        (setq mac-command-modifier 'meta)
+        ;; sets the Option key to Super
+        (setq mac-option-modifier 'super)
+        ;; sets the Control key to Control
+        (setq mac-control-modifier 'control)
+        ;; set Mac's Fn key to Hyper
+        (setq ns-function-modifier 'hyper))))
+
+(defun yantonov/keyboard-settings-for-windows ()
+  (if (yantonov/os-windows-p)
+      (progn ;; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
+        (setq w32-pass-lwindow-to-system nil
+              w32-pass-rwindow-to-system nil
+              w32-pass-apps-to-system nil
+              w32-lwindow-modifier 'super
+              w32-rwindow-modifier 'super
+              w32-apps-modifier 'hyper))))
+
 (defun yantonov/load-my-keybindings ()
   (interactive)
+  (yantonov/keyboard-settings-for-macos)
+  (yantonov/keyboard-settings-for-windows)
   (yantonov/apply-general-keybindings (current-global-map))
   (yantonov/create-general-menu (current-global-map))
   (yantonov/create-launcher-menu (current-global-map))
   (yantonov/load-my-help-keybinding))
 
-(defun yantonov/activate-super-key-on-win ()
-  ;; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
-  (setq w32-pass-lwindow-to-system nil
-        w32-pass-rwindow-to-system nil
-        w32-pass-apps-to-system nil
-        w32-lwindow-modifier 'super
-        w32-rwindow-modifier 'super
-        w32-apps-modifier 'hyper))
-
-(defun yantonov/enable-super-key ()
-  (if (eq system-type 'windows-nt)
-      (yantonov/activate-super-key-on-win)))
-
 (yantonov/load-my-keybindings)
-(yantonov/enable-super-key)
 
 (provide 'etc-global-hotkeys)
