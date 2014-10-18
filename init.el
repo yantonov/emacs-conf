@@ -1,4 +1,4 @@
-;; for debug purposes
+; for debug purposes
 (setq debug-on-error t)
 
 ;;
@@ -39,7 +39,7 @@ So you can override any previous defined settings using this file.")
 
   ;; Example :
   ;; (setq user-javadoc-alist
-  ;;   '(("^\\(java[x]?\.\\|org\.ietf\.\\|org\.omg\.\\|org\.w3c\.\\|org\.xml\.\\)" .
+  ;;   '(("^\\(java[x]?\.\\|org\.ietf\.\\|org\.omg\.\\|org\.w3c\.\\|org\.xml\.\\a)" .
   ;;   "file:///opt/javadoc/jdk7/docs/api/"  )))
   )
 
@@ -56,7 +56,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-         provided by https://www.erlang-solutions.com):
+     provided by https://www.erlang-solutions.com):
 
 \(setq erlang-mode-home \"/usr/lib/erlang/lib/tools-<ToolsVer>/emacs\"\)
 
@@ -75,7 +75,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-         provided by https://www.erlang-solutions.com):
+     provided by https://www.erlang-solutions.com):
 \(setq erlang-home \"/usr/lib/erlang\"\)
 
 Windows:
@@ -97,7 +97,7 @@ This examples are already used as defaults.")
       (add-to-list 'load-path project)
       (add-to-list 'custom-theme-load-path project))))
 
-;(load yantonov/custom-init-before-file 'noerror)
+(load yantonov/custom-init-before-file t)
 ;; modes paths
 (yantonov/init-modes-paths yantonov/emacs-mode-home)
 ;; color-themes paths
@@ -158,10 +158,10 @@ This examples are already used as defaults.")
 (require 'emacs-rc-multiple-cursors)
 (require 'emacs-rc-org-mode)
 (require 'emacs-rc-paredit)
-(require 'emacs-rc-pcomplete)
+;;(require 'emacs-rc-pcomplete)
 (require 'emacs-rc-prog-mode)
 (require 'emacs-rc-projectile)
-(require 'emacs-rc-restclient )
+(require 'emacs-rc-restclient)
 (require 'emacs-rc-s)
 (require 'emacs-rc-scroll)
 (require 'emacs-rc-showcharcode)
@@ -183,7 +183,7 @@ This examples are already used as defaults.")
 (require 'etc-global-advices)
 
 ;; custom config
-;(load yantonov/custom-init-after-file 'noerror)
+(load yantonov/custom-init-after-file t)
 
 (if (yantonov/os-windows-p)
     (cd "~"))
