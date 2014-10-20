@@ -185,5 +185,4 @@ This examples are already used as defaults.")
 ;; custom config
 (load yantonov/custom-init-after-file t)
 
-(if (yantonov/os-windows-p)
-    (cd "~"))
+(cd yantonov/user-home)
