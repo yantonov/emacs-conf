@@ -1,8 +1,9 @@
-* todo list [0/6]
+* todo list [0/7]
 ** TODO Port darcula theme (Intellij idea 12) for emacs
 ** TODO add * to projectile completion (aka intellij idea C-S-n)
 ** TODO projectile on windows not works as expected
 ** TODO move lines (intellij idea mapping ctrl+shift + up/down)
 ** TODO lazy load of initialization (modes, settings) in all places if possible
 ** TODO menu to switch my color themes (not default, only existing in repo)
-   
+** TODO fix pcomplete problem on mac os (copy PATH env to .laucnhd.conf .maxos/env.plist)
+
