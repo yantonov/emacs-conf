@@ -1,4 +1,4 @@
-; for debug purposes
+;; for debug purposes
 (setq debug-on-error t)
 
 ;;
@@ -56,7 +56,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-     provided by https://www.erlang-solutions.com):
+         provided by https://www.erlang-solutions.com):
 
 \(setq erlang-mode-home \"/usr/lib/erlang/lib/tools-<ToolsVer>/emacs\"\)
 
@@ -75,7 +75,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-     provided by https://www.erlang-solutions.com):
+         provided by https://www.erlang-solutions.com):
 \(setq erlang-home \"/usr/lib/erlang\"\)
 
 Windows:
@@ -186,3 +186,6 @@ This examples are already used as defaults.")
 (load yantonov/custom-init-after-file t)
 
 (cd yantonov/user-home)
+
+(if (yantonov/os-mac-p)
+    (x-focus-frame nil))
