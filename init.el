@@ -176,7 +176,7 @@ This examples are already used as defaults.")
 
 ;; global hotkeys
 ;; after all defuns, settings mode already loaded
-(require 'etc-global-hotkeys)
+(require 'etc-key)
 
 ;; advices
 ;; after all defuns, settings mode already loaded

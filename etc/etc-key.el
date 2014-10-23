@@ -150,12 +150,12 @@
     'tools)
 
   (cond
-   ((yantonov/os-windows-p)
+   ((yantonov/windowsp)
     (define-key
       key-map
       [menu-bar launchermenu chrome]
       `("Keepass" . ,(yantonov/run "keepass"))))
-   ((yantonov/os-linux-p)
+   ((yantonov/linuxp)
     (define-key
       key-map
       [menu-bar launchermenu chrome]
@@ -187,7 +187,7 @@
         (setq ns-function-modifier 'control))))
 
 (defun yantonov/keyboard-settings-for-windows ()
-  (if (yantonov/os-windows-p)
+  (if (yantonov/windowsp)
       (progn ;; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
         (setq w32-pass-lwindow-to-system nil
               w32-pass-rwindow-to-system nil
@@ -207,4 +207,4 @@
 
 (yantonov/load-my-keybindings)
 
-(provide 'etc-global-hotkeys)
+(provide 'etc-key)
