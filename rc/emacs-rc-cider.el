@@ -18,7 +18,6 @@
   (paredit-mode +1)
   (rainbow-delimiters-mode-enable)
 
-  (set-auto-complete-as-completion-at-point-function)
   (cider-turn-on-eldoc-mode)
   (company-mode))
 
