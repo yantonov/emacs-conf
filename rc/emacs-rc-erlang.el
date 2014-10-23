@@ -2,14 +2,14 @@
 (defun yantonov/apply-erlang-environment-defaults ()
   (yantonov/find-system-type-specific-file
    yantonov/erlang-mode-home
-   '(('gnu/linux "/usr/lib/erlang/lib/tools*/emacs")
-     ('windows-nt "C:/Program Files/erl*/lib/tools-*/emacs")
-     ('darwin "/usr/local/lib/erlang/lib/tools-*/emacs")))
+   '((yantonov/linuxp "/usr/lib/erlang/lib/tools*/emacs")
+     (yantonov/windowsp "C:/Program Files/erl*/lib/tools-*/emacs")
+     (yantonov/macp "/usr/local/lib/erlang/lib/tools-*/emacs")))
   (yantonov/find-system-type-specific-file
    yantonov/erlang-home
-   '(('gnu/linux "/usr/lib/erlang")
-     ('windows-nt "C:/Program Files/erl*")
-     ('darwin "/usr/local/lib/erlang"))))
+   '((yantonov/linuxp "/usr/lib/erlang")
+     (yantonov/windowsp "C:/Program Files/erl*")
+     (yantonov/macp "/usr/local/lib/erlang"))))
 
 (defun yantonov/erlang-mode-exists ()
   (and

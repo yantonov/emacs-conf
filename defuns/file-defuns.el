@@ -9,11 +9,11 @@ If single file found returns it, otherwise returns nil"
 (defmacro yantonov/find-system-type-specific-file (var-name wildcardlist)
   "Find single matched file for corresponding system type
 Where var-name - variable to set,
-wildcardlist list of os specific patterns '\(\(os1 pattern1, os2 pattern2\)\)"
+wildcardlist list of os specific patterns '\(\(os1-predicate pattern1, os2-predicate pattern2\)\)"
   (let ((x (mapcar (lambda (handle)
-                     (let ((os (car handle))
+                     (let ((os-predicate (car handle))
                            (pattern (car (cdr handle))))
-                       (list (list 'eq 'system-type os)
+                       (list (list os-predicate)
                              (list 'setq var-name (list 'yantonov/file-expand-wildcards-single-or-nil pattern)))))
                    (car (cdr wildcardlist)))))
     `(if (not ,var-name)
