@@ -187,5 +187,5 @@ This examples are already used as defaults.")
 
 (cd yantonov/user-home)
 
-(if (yantonov/os-mac-p)
+(if (yantonov/macp)
     (x-focus-frame nil))

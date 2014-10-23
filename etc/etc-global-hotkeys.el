@@ -33,7 +33,7 @@
   (define-key my-key-map (kbd "C-S-<down>")   'shrink-window)
   (define-key my-key-map (kbd "C-S-<left>")   'shrink-window-horizontally)
 
-  (if (yantonov/os-mac-p)
+  (if (yantonov/macp)
       (define-key my-key-map (kbd "H-SPC")   'set-mark-command))
 
   ;; windows movement
@@ -173,7 +173,7 @@
   (define-key 'help-command (kbd "C-v") 'find-variable))
 
 (defun yantonov/keyboard-settings-for-macos ()
-  (if (yantonov/os-mac-p)
+  (if (yantonov/macp)
       (progn
         ;; setting Super, Hyper keys for Apple keyboard,
         ;; for emacs running in OS X
