@@ -183,8 +183,8 @@
         (setq mac-option-modifier 'super)
         ;; sets the Control key to Control
         (setq mac-control-modifier 'control)
-        ;; set Mac's Fn key to Hyper
-        (setq ns-function-modifier 'hyper))))
+        ;; set Mac's Fn key to Control
+        (setq ns-function-modifier 'control))))
 
 (defun yantonov/keyboard-settings-for-windows ()
   (if (yantonov/os-windows-p)
