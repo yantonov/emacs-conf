@@ -3,11 +3,13 @@
   (yantonov/find-system-type-specific-file
    yantonov/erlang-mode-home
    '(('gnu/linux "/usr/lib/erlang/lib/tools*/emacs")
-     ('windows-nt "C:/Program Files/erl*/lib/tools-*/emacs")))
+     ('windows-nt "C:/Program Files/erl*/lib/tools-*/emacs")
+     ('darwin "/usr/local/lib/erlang/lib/tools-*/emacs")))
   (yantonov/find-system-type-specific-file
    yantonov/erlang-home
    '(('gnu/linux "/usr/lib/erlang")
-     ('windows-nt "C:/Program Files/erl*"))))
+     ('windows-nt "C:/Program Files/erl*")
+     ('darwin "/usr/local/lib/erlang"))))
 
 (defun yantonov/erlang-mode-exists ()
   (and
