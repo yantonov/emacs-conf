@@ -140,4 +140,14 @@ Second call restores windows configuration."
   (interactive)
   (other-window -1))
 
+(defun yantonov/toggle-fullscreen ()
+  "Enable fullscreen mode"
+  (interactive)
+  (let ((old-value (frame-parameter nil 'fullscreen)))
+    (set-frame-parameter nil
+                         'fullscreen
+                         (if (eq old-value 'fullboth)
+                             nil
+                           'fullboth))))
+
 (provide 'window-defuns)

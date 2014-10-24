@@ -34,7 +34,9 @@
   (define-key my-key-map (kbd "C-S-<left>")   'shrink-window-horizontally)
 
   (if (yantonov/macp)
-      (define-key my-key-map (kbd "H-SPC")   'set-mark-command))
+      (progn
+        (define-key my-key-map (kbd "H-SPC")   'set-mark-command)
+        (define-key my-key-map (kbd "C-M-m")   'yantonov/toggle-fullscreen)))
 
   ;; windows movement
   ;; http://www.emacswiki.org/emacs/WindMove
