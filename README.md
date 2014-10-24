@@ -25,18 +25,18 @@ Emacs config files is supposed to be placed at ~/emacs (emacs dir inside user ho
 2. to install all used modes run ~/emacs/install/setup.sh
 3. add line to ~/.emacs initialization file  
     `(load (concat (getenv "HOME") "/emacs/init.el"))`
-4. Fix PATH environment problem.
-Programs which has launched from spotlight has different environment variables than whose who launched from terminal.
-Suppose you add some additional dirs to PATH ($ADDITIONAL_PATH)
-Add something like this to your .profile :
+4. Fix PATH environment problem.  
+Programs which has launched from spotlight has different environment variables than whose who launched from terminal.  
+Suppose you add some additional dirs to PATH ($ADDITIONAL_PATH)  
+Add something like this to your .profile :  
 
-# patch PATH for terminal programs
-export PATH=$ADDITIONAL_PATH:$PATH
-# patch PATH for gui (and spotlight in particular)
-OLD_GUI_PATH=`launchctl getenv PATH`
-if [[ $OLD_GUI_PATH != *$ADDITIONAL_GUI_PATH* ]]
-then
-    NEW_GUI_PATH=$ADDITIONAL_PATH:$OLD_GUI_PATH
-    launchctl setenv PATH $NEW_GUI_PATH
-fi
+    # patch PATH for terminal programs  
+    export PATH=$ADDITIONAL_PATH:$PATH  
+    # patch PATH for gui (and spotlight in particular)  
+    OLD_GUI_PATH=`launchctl getenv PATH`  
+    if [[ $OLD_GUI_PATH != *$ADDITIONAL_GUI_PATH* ]]  
+    then  
+        NEW_GUI_PATH=$ADDITIONAL_PATH:$OLD_GUI_PATH  
+        launchctl setenv PATH $NEW_GUI_PATH  
+    fi
 
