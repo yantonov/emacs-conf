@@ -1,4 +1,4 @@
-# Emacs-conf
+## Emacs-conf
 Emacs configuration.  
 Emacs config files is supposed to be placed at ~/emacs (emacs dir inside user home directory).
 
@@ -33,7 +33,7 @@ Add something like this to your .profile :
     # patch PATH for terminal programs  
     export PATH=$ADDITIONAL_PATH:$PATH  
     # patch PATH for gui (and spotlight in particular)  
-    OLD_GUI_PATH=`launchctl getenv PATH`  
+    OLD_GUI_PATH=\`launchctl getenv PATH\`  
     if [[ $OLD_GUI_PATH != *$ADDITIONAL_GUI_PATH* ]]  
     then  
         NEW_GUI_PATH=$ADDITIONAL_PATH:$OLD_GUI_PATH  
