@@ -34,7 +34,7 @@ Add something like this to your .profile :
         export PATH=$ADDITIONAL_PATH:$PATH  
         # patch PATH for gui (and spotlight in particular)  
         OLD_GUI_PATH=\`launchctl getenv PATH\`  
-        if [[ $OLD_GUI_PATH != *$ADDITIONAL_GUI_PATH* ]]  
+        if [[ $OLD_GUI_PATH != *$ADDITIONAL_PATH* ]]  
         then  
             NEW_GUI_PATH=$ADDITIONAL_PATH:$OLD_GUI_PATH  
             launchctl setenv PATH $NEW_GUI_PATH  
