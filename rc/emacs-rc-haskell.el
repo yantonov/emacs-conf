@@ -5,16 +5,12 @@
 (autoload 'ghc-init "ghc" nil t)
 (autoload 'ghc-debug "ghc" nil t)
 
-;; path for haskell tools
-(setenv "PATH" (concat yantonov/user-home
-                       "/.cabal/bin:"
-                       (getenv "PATH")))
-(add-to-list 'exec-path (concat yantonov/user-home
-                                "~/.cabal/bin"))
-
 ;; company mode settings
 (add-to-list 'company-backends 'company-ghc)
 (custom-set-variables '(company-ghc-show-info t))
+
+;; path to haskell tools
+(add-to-list 'exec-path (concat yantonov/user-home "/.cabal/bin"))
 
 (defun yantonov/haskell-mode-hook ()
   (local-unset-key (kbd "C-M-l"))
