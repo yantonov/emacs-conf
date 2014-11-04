@@ -37,4 +37,6 @@
 ;; no highlight for current line
 (global-hl-line-mode 0)
 
+(setq exec-path (reverse (delete-dups (reverse (append (split-string (getenv "PATH") ":") exec-path)))))
+
 (provide 'emacs-rc-common)

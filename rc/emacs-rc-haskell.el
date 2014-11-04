@@ -9,9 +9,6 @@
 (add-to-list 'company-backends 'company-ghc)
 (custom-set-variables '(company-ghc-show-info t))
 
-;; path to haskell tools
-(add-to-list 'exec-path (concat yantonov/user-home "/.cabal/bin"))
-
 (defun yantonov/haskell-mode-hook ()
   (local-unset-key (kbd "C-M-l"))
   (turn-on-haskell-doc-mode)
