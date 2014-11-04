@@ -37,4 +37,4 @@
 ;; no highlight for current line
 (global-hl-line-mode 0)
 
-(provide 'emacs-rc-editor)
+(provide 'emacs-rc-common)
