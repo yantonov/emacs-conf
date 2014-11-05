@@ -74,10 +74,10 @@ Position the cursor at it's beginning, according to the current mode."
   (if (equal major-mode 'dired-mode)
       default-directory
     (let ((name (buffer-file-name)))
-          (when name
-            (if full-path?
-                name
-              (file-name-nondirectory name))))))
+      (when name
+        (if full-path?
+            name
+          (file-name-nondirectory name))))))
 
 (defun yantonov/copy-buffer-file-name-to-clipboard (&optional full-path?)
   "Copy file name for the current buffer to the clipboard."
@@ -148,5 +148,25 @@ Don't mess with special buffers."
   (switch-to-buffer "*scratch*")
   (if (eq system-type 'windows-nt)
       (cd "~")))
+
+(defun yantonov/unix-file ()
+  "Change the current buffer to utf-8 with Unix line-ends."
+  (interactive)
+  (set-buffer-file-coding-system 'utf-8-unix t))
+
+(defun yantonov/dos-file ()
+  "Change the current buffer to utf-8 with DOS line-ends."
+  (interactive)
+  (set-buffer-file-coding-system 'utf-8-dos t))
+
+(defun yantonov/mac-file ()
+  "Change the current buffer to utf-8 with Mac line-ends."
+  (interactive)
+  (set-buffer-file-coding-system 'utf-8-mac t))
+
+(defun yantonov/buffer-encoding ()
+  "Get buffer file encoding"
+  (interactive)
+  (message (symbol-name buffer-file-coding-system)))
 
 (provide 'buffer-defuns)
