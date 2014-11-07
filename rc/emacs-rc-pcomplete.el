@@ -51,31 +51,6 @@
    (t
     (while (pcomplete-here (pcomplete-entries))))))
 
-;;**** Bzr Completion
-
-(defun pcmpl-bzr-commands ()
-  "Return the most common bzr commands by parsing the bzr output."
-  (with-temp-buffer
-    (call-process-shell-command "bzr" nil (current-buffer) nil "help" "commands")
-    (goto-char 0)
-    (let (commands)
-      (while (re-search-forward "^\\([[:word:]-]+\\)[[:blank:]]+" nil t)
-        (push (match-string 1) commands))
-      (sort commands #'string<))))
-
-(defconst pcmpl-bzr-commands (pcmpl-bzr-commands)
-  "List of `bzr' commands.")
-
-(defun pcomplete/bzr ()
-  "Completion for `bzr'."
-  ;; Completion for the command argument.
-  (pcomplete-here* pcmpl-bzr-commands)
-  (cond
-   ((pcomplete-match "help" 1)
-    (pcomplete-here* pcmpl-bzr-commands))
-   (t
-    (while (pcomplete-here (pcomplete-entries))))))
-
 ;;**** Mercurial (hg) Completion
 
 (defun pcmpl-hg-commands ()
