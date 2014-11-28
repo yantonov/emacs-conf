@@ -1,4 +1,4 @@
-(require 'clojure-mode-autoloads)
+(load "clojure-mode-autoloads.el")
 
 (defun yantonov/clojure-mode-hook ()
   (paredit-mode +1)
