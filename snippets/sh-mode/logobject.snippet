@@ -1,0 +1,5 @@
+# -*- coding: utf-8; mode: snippet -*-
+# name: echo "object=${object}"
+# key: lo
+# --
+echo "${1:object}=\$\{${1:$(yas/substr yas-text "[^ ]*")}\}"
