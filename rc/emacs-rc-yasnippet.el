@@ -24,8 +24,7 @@
       choices)
      :prompt prompt
      ;; start isearch mode immediately
-     :isearch t
-     )))
+     :isearch t)))
 
 (setq yas-prompt-functions '(yantonov/yas-popup-isearch-prompt yas-ido-prompt yas-no-prompt))
 
