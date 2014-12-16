@@ -6,7 +6,8 @@
   (rainbow-delimiters-mode-enable)
   (turn-on-eldoc-mode)
   (projectile-mode)
-  (company-mode))
+  (company-mode)
+  (subword-mode))
 
 (eval-after-load 'clojure-mode
   '(progn
