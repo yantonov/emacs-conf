@@ -21,6 +21,11 @@
      [simple-query
       "http://www.haskell.org/hoogle/"
       "http://www.haskell.org/hoogle/?hoogle="
+      ""])
+    ("symbol" .
+     [simple-query
+      "http://symbolhound.com"
+      "http://symbolhound.com/?q=clojure+"
       ""]))
   webjump-sample-sites))
 
