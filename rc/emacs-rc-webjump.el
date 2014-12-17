@@ -16,7 +16,12 @@
       ""])
     ("clojure" . "http://clojure.org")
     ("github" . "https://github.com")
-    ("bitbucket" . "https://bitbucket.org"))
+    ("bitbucket" . "https://bitbucket.org")
+    ("hoogle" .
+     [simple-query
+      "http://www.haskell.org/hoogle/"
+      "http://www.haskell.org/hoogle/?hoogle="
+      ""]))
   webjump-sample-sites))
 
 (provide 'emacs-rc-webjump)
