@@ -9,7 +9,7 @@
  webjump-sites
  (append
   '(
-    ("JDK" .
+    ("jdk" .
      [simple-query
       "www.google.com"
       "http://www.google.com/search?hl=en&as_sitesearch=http://docs.oracle.com/javase/8/docs/api/&q="
