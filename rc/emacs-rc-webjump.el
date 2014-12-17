@@ -26,6 +26,16 @@
      [simple-query
       "http://symbolhound.com"
       "http://symbolhound.com/?q="
+      ""])
+    ("youtube" .
+     [simple-query
+      "youtube.com"
+      "http://youtube.com/results?search_query="
+      ""])
+    ("google" .
+     [simple-query
+      "http://google.com"
+      "http://www.google.com/search?ie=utf-8&oe=utf-8&q="
       ""]))
   webjump-sample-sites))
 
