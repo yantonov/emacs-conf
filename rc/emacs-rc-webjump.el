@@ -9,10 +9,10 @@
  webjump-sites
  (append
   '(
-    ("Java API" .
+    ("JDK" .
      [simple-query
       "www.google.com"
-      "http://www.google.com/search?hl=en&as_sitesearch=http://docs.oracle.com/javase/7/docs/api/&q="
+      "http://www.google.com/search?hl=en&as_sitesearch=http://docs.oracle.com/javase/8/docs/api/&q="
       ""])
     ("clojure" . "http://clojure.org")
     ("github" . "https://github.com")
