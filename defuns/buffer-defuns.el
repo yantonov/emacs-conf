@@ -95,22 +95,20 @@ Position the cursor at it's beginning, according to the current mode."
 (defun yantonov/google ()
   "Google the selected region if any, display a query prompt otherwise."
   (interactive)
-  (browse-url
-   (concat
-    "http://www.google.com/search?ie=utf-8&oe=utf-8&q="
-    (url-hexify-string (if mark-active
-                           (buffer-substring (region-beginning) (region-end))
-                         (read-string "Google: "))))))
+  (search-internal "http://www.google.com/search?ie=utf-8&oe=utf-8&q=" "Google: "))
 
 (defun yantonov/youtube ()
   "Search YouTube with a query or region if any."
   (interactive)
+  (search-internal "http://www.youtube.com/results?search_query=" "Search YouTube: "))
+
+(defun search-internal (url description)
   (browse-url
    (concat
-    "http://www.youtube.com/results?search_query="
+    url
     (url-hexify-string (if mark-active
                            (buffer-substring (region-beginning) (region-end))
-                         (read-string "Search YouTube: "))))))
+                         (read-string description))))))
 
 (defun yantonov/indent-defun ()
   "Indent the current defun."
