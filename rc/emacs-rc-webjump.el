@@ -25,7 +25,7 @@
     ("symbol" .
      [simple-query
       "http://symbolhound.com"
-      "http://symbolhound.com/?q=clojure+"
+      "http://symbolhound.com/?q="
       ""]))
   webjump-sample-sites))
 
