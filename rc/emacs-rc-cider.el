@@ -15,6 +15,12 @@
 ;; hide special cider buffers
 (setq nrepl-hide-special-buffers t)
 
+;; Log communication with the nREPL server (extremely useful for debugging CIDER problems):
+(setq nrepl-log-messages t)
+
+;; Don't show on error:
+(setq cider-show-error-buffer nil)
+
 (defun my-cider-common-hook ()
   (paredit-mode +1)
   (rainbow-delimiters-mode-enable)
