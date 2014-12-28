@@ -1,7 +1,10 @@
 (require 'color-theme)
 
-;; solarized them
+;; solarized theme
 ;; (load-theme 'solarized-dark t)
+
+;; solarized light theme
+;; (load-theme 'solarized-light t)
 
 ;; zen-and-art theme
 ;; (load-file (concat yantonov/emacs-color-themes-home "/zen-and-art/zen-and-art.el"))
