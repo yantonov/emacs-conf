@@ -10,6 +10,10 @@
 ;; (load-file (concat yantonov/emacs-color-themes-home "/zen-and-art/zen-and-art.el"))
 ;; (color-theme-zen-and-art)
 
+;; darcula
+;; (require 'darcula-theme)
+;; (set-frame-font "Inconsolata-14") ;; your preferred main font face here
+
 ;; moe-theme
 ;; (load-theme 'moe-dark t)
 
