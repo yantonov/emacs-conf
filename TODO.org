@@ -1,5 +1,4 @@
-* todo list [0/8]
-** TODO add * to projectile completion (aka intellij idea C-S-n)
+* todo list [0/6]
 ** TODO projectile on windows not works as expected
 ** TODO move lines (intellij idea mapping ctrl+shift + up/down)
 ** TODO lazy load of initialization (modes, settings) in all places if possible
