@@ -1,4 +1,4 @@
-(defun yantonov/apply-general-keybindings (my-key-map)
+(defun yantonov/kbd-conf-general (my-key-map)
   ;; copy/paste/cut
   (define-key my-key-map (kbd "C-c c") 'kill-ring-save)
   (define-key my-key-map (kbd "C-c v") 'yank)
@@ -114,11 +114,10 @@
   (define-key my-key-map (kbd "C-t") 'tag-util-map)
   (define-key tag-util-map (kbd "C-r") 'mc/mark-sgml-tag-pair)
 
-  ;; copy file path to clipboard
   (define-key my-key-map (kbd "C-M-<insert>") 'yantonov/copy-buffer-file-path-to-clipboard)
   (define-key my-key-map (kbd "C-<insert>") 'yantonov/copy-buffer-file-name-to-clipboard))
 
-(defun yantonov/create-general-menu (key-map)
+(defun yantonov/menu-conf-file (key-map)
   (define-key-after key-map
     [menu-bar file file-operation-separator]
     '("--" . file-operation-separator)
@@ -144,7 +143,7 @@
     '("Copy file path" . yantonov/copy-buffer-file-path-to-clipboard)
     'copy-file-name))
 
-(defun yantonov/create-launcher-menu (key-map)
+(defun yantonov/menu-conf-launcher (key-map)
   (define-key-after
     key-map
     [menu-bar launchermenu]
@@ -168,13 +167,14 @@
     [menu-bar launchermenu launchidea]
     `("IntelliJ Idea" . ,(yantonov/run "idea"))))
 
-(defun yantonov/load-my-help-keybinding ()
+(defun yantonov/kbd-conf-help()
+  "quick navigate to library, function, variable definition, use C-h prefix"
   (define-key 'help-command (kbd "C-l") 'find-library)
   (define-key 'help-command (kbd "C-f") 'find-function)
   (define-key 'help-command (kbd "C-k") 'find-function-on-key)
   (define-key 'help-command (kbd "C-v") 'find-variable))
 
-(defun yantonov/keyboard-settings-for-macos ()
+(defun yantonov/kbd-conf-mac ()
   (if (yantonov/macp)
       (progn
         (setq mac-command-modifier 'meta)
@@ -182,9 +182,10 @@
         (setq mac-control-modifier 'control)
         (setq ns-function-modifier 'hyper))))
 
-(defun yantonov/keyboard-settings-for-windows ()
+(defun yantonov/kbd-conf-win ()
+  "see http://ergoemacs.org/emacs/emacs_hyper_super_keys.html for details"
   (if (yantonov/windowsp)
-      (progn ;; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
+      (progn
         (setq w32-pass-lwindow-to-system nil
               w32-pass-rwindow-to-system nil
               w32-pass-apps-to-system nil
@@ -192,15 +193,16 @@
               w32-rwindow-modifier 'super
               w32-apps-modifier 'hyper))))
 
-(defun yantonov/load-my-keybindings ()
+(defun yantonov/kbd-conf ()
+  "load all key customizations"
   (interactive)
-  (yantonov/keyboard-settings-for-macos)
-  (yantonov/keyboard-settings-for-windows)
-  (yantonov/apply-general-keybindings (current-global-map))
-  (yantonov/create-general-menu (current-global-map))
-  (yantonov/create-launcher-menu (current-global-map))
-  (yantonov/load-my-help-keybinding))
+  (yantonov/kbd-conf-mac)
+  (yantonov/kbd-conf-win)
+  (yantonov/kbd-conf-general (current-global-map))
+  (yantonov/menu-conf-file (current-global-map))
+  (yantonov/menu-conf-launcher (current-global-map))
+  (yantonov/kbd-conf-help))
 
-(yantonov/load-my-keybindings)
+(yantonov/kbd-conf)
 
 (provide 'etc-key)
