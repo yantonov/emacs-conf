@@ -167,4 +167,21 @@ Don't mess with special buffers."
   (interactive)
   (message (symbol-name buffer-file-coding-system)))
 
+(defun yantonov/comment-line (n)
+  "Comment or uncomment current line and leave point after it.
+With positive prefix, apply to N lines including current one.
+With negative prefix, apply to -N lines above."
+  (interactive "p")
+  (comment-or-uncomment-region
+   (line-beginning-position)
+   (goto-char (line-end-position n)))
+  (forward-line 1)
+  (back-to-indentation))
+
+(defun yantonov/smart-comment (n)
+  (interactive "p")
+  (if (use-region-p)
+      (comment-or-uncomment-region (region-beginning) (region-end))
+    (yantonov/comment-line n)))
+
 (provide 'buffer-defuns)

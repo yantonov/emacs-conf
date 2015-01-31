@@ -21,8 +21,8 @@
   )
 
 (defun yantonov/prog-mode-hotkey-hook ()
-  (local-set-key (kbd "C-/") 'comment-or-uncomment-region)
-  (local-set-key (kbd "C-?") 'comment-or-uncomment-region))
+  (local-set-key (kbd "C-/") 'yantonov/smart-comment)
+  (local-set-key (kbd "C-?") 'yantonov/smart-comment))
 
 (defun yantonov/prog-mode-showparen ()
   ;; http://emacswiki.org/emacs/ShowParenMode
