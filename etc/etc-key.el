@@ -177,15 +177,9 @@
 (defun yantonov/keyboard-settings-for-macos ()
   (if (yantonov/macp)
       (progn
-        ;; setting Super, Hyper keys for Apple keyboard,
-        ;; for emacs running in OS X
-        ;; sets the Command key to Meta
         (setq mac-command-modifier 'meta)
-        ;; sets the Option key to Super
         (setq mac-option-modifier 'super)
-        ;; sets the Control key to Control
         (setq mac-control-modifier 'control)
-        ;; set Mac's Fn key to Hyper
         (setq ns-function-modifier 'hyper))))
 
 (defun yantonov/keyboard-settings-for-windows ()
