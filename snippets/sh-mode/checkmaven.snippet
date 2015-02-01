@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: checkmaven
+# key: checkmaven
+# --
+mvn_output=\`mvn --version | grep "Apache Maven"\`
+if [ -z "$mvn_output" ]; then
+    echo "mvn not found";
+    echo "you can get apache maven here: http://maven.apache.org"
+    exit 0
+fi
