@@ -56,7 +56,7 @@
   (define-key my-key-map "\r" 'newline-and-indent)
   ;; open new line like IntelliJIdea/Eclipse etc
   (define-key my-key-map (kbd "S-<return>") 'yantonov/smart-open-line)
-  (define-key my-key-map (kbd "<C-S-return>") 'yantonov/smart-open-line-above)
+  (define-key my-key-map (kbd "C-S-<return>") 'yantonov/smart-open-line-above)
   ;; join next line to current
   (define-key my-key-map  (kbd "M-j")
     (lambda ()
