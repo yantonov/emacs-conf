@@ -33,11 +33,6 @@
   (define-key my-key-map (kbd "C-S-<down>")   'shrink-window)
   (define-key my-key-map (kbd "C-S-<left>")   'shrink-window-horizontally)
 
-  (if (yantonov/macp)
-      (progn
-        (define-key my-key-map (kbd "H-SPC")   'set-mark-command)
-        (define-key my-key-map (kbd "C-M-m")   'yantonov/toggle-fullscreen)))
-
   ;; windows movement
   ;; http://www.emacswiki.org/emacs/WindMove
   (define-key my-key-map (kbd "S-<left>") 'windmove-left)
@@ -174,15 +169,17 @@
   (define-key 'help-command (kbd "C-k") 'find-function-on-key)
   (define-key 'help-command (kbd "C-v") 'find-variable))
 
-(defun yantonov/kbd-conf-mac ()
+(defun yantonov/kbd-conf-mac (key-map)
   (if (yantonov/macp)
       (progn
         (setq mac-command-modifier 'meta)
         (setq mac-option-modifier 'super)
         (setq mac-control-modifier 'control)
-        (setq ns-function-modifier 'hyper))))
+        (setq ns-function-modifier 'hyper)
+        (define-key key-map (kbd "M-_") 'undo)
+        (define-key key-map (kbd "M-N") 'projectile-find-file))))
 
-(defun yantonov/kbd-conf-win ()
+(defun yantonov/kbd-conf-win (key-map)
   "see http://ergoemacs.org/emacs/emacs_hyper_super_keys.html for details"
   (if (yantonov/windowsp)
       (progn
@@ -196,9 +193,9 @@
 (defun yantonov/kbd-conf ()
   "load all key customizations"
   (interactive)
-  (yantonov/kbd-conf-mac)
-  (yantonov/kbd-conf-win)
   (yantonov/kbd-conf-general (current-global-map))
+  (yantonov/kbd-conf-mac (current-global-map))
+  (yantonov/kbd-conf-win (current-global-map))
   (yantonov/menu-conf-file (current-global-map))
   (yantonov/menu-conf-launcher (current-global-map))
   (yantonov/kbd-conf-help))
