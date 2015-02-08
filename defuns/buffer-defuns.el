@@ -1,3 +1,10 @@
+(defun yantonov/whole-line-or-region ()
+  "Returns start, end of selected region or current line if no selection."
+  (interactive)
+  (if (use-region-p)
+      (list (region-beginning) (region-end))
+    (list (line-beginning-position) (line-beginning-position 2))))
+
 (defun yantonov/indent-buffer ()
   (interactive)
   (indent-region (point-min) (point-max)))
@@ -125,20 +132,36 @@ Don't mess with special buffers."
     (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
       (kill-buffer buffer))))
 
-(defun yantonov/move-line-up ()
-  "Move up the current line."
-  (interactive)
-  (transpose-lines 1)
-  (forward-line -2)
-  (indent-according-to-mode))
+(defun yantonov/move-region (from to n)
+  "Move the current region up or down by N lines."
+  (interactive "r\np")
+  (let ((use-region (use-region-p))
+        (line-text  (delete-and-extract-region from to)))
+    (forward-line n)
+    (let ((start (point)))
+      (insert line-text)
+      (if use-region
+          (progn
+            (setq deactivate-mark nil)
+            (set-mark start))
+        (goto-char start)))))
 
-(defun yantonov/move-line-down ()
-  "Move down the current line."
+(defun yantonov/move-whole-line-or-region (n)
   (interactive)
-  (forward-line 1)
-  (transpose-lines 1)
-  (forward-line -1)
-  (indent-according-to-mode))
+  (let ((region (yantonov/whole-line-or-region)))
+    (let ((from (nth 0 region))
+          (to (nth 1 region)))
+      (yantonov/move-region from to n))))
+
+(defun yantonov/move-whole-line-or-region-up ()
+  "Move selected region or current line up."
+  (interactive)
+  (yantonov/move-whole-line-or-region -1))
+
+(defun yantonov/move-whole-line-or-region-down ()
+  "Move selected region or current line down."
+  (interactive)
+  (yantonov/move-whole-line-or-region 1))
 
 (defun yantonov/kill-all-buffers ()
   (interactive)

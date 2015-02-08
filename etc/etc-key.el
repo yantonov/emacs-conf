@@ -49,8 +49,8 @@
   (define-key my-key-map [remap goto-line] 'yantonov/goto-line-with-feedback)
 
   ;; move lines (examples of using super key)
-  (define-key my-key-map (kbd "M-S-<up>") 'yantonov/move-line-up)
-  (define-key my-key-map (kbd "M-S-<down>") 'yantonov/move-line-down)
+  (define-key my-key-map (kbd "M-S-<up>") 'yantonov/move-whole-line-or-region-up)
+  (define-key my-key-map (kbd "M-S-<down>") 'yantonov/move-whole-line-or-region-down)
 
   ;;; new lines
   (define-key my-key-map "\r" 'newline-and-indent)
