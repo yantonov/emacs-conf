@@ -5,7 +5,6 @@
 ** TODO menu to switch my color themes (not default, only existing in repo)
 ** TODO comment s-expression (for elisp mode and clojure mode)
 ** TODO fix highlight expression problem (change height of the line)
-** TODO home/end for mac/unix/win keys
 ** TODO paredit keys
 ** TODO clj-refactor
 ** TODO iswitchb cant deal with buffers which contains space (for example cider nrepl-hide-special-buffers)
