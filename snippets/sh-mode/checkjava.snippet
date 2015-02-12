@@ -4,7 +4,7 @@
 # --
 output=\`java -version 2>&1 >/dev/null | grep "Java(TM) SE Runtime Environment"\`
 if [ -z "$output" ]; then
-    echo "java not found";
-    echo "you can get it here: www.oracle.com/technetwork/java/javase/downloads/index.html"
+    echo "[ERROR] - java not found";
+    echo "[INFO] - you can get it here: www.oracle.com/technetwork/java/javase/downloads/index.html"
     exit 0
 fi
