@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: checklein
+# key: checklein
+# --
+output=\`lein -version | grep "Leiningen"\`
+if [ -z "$output" ]; then
+    echo "[ERROR] - lein not found";
+    echo "[INFO] - you can get it here: http://leiningen.org"
+    exit 0
+fi
