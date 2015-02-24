@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: checkant
+# key: checkant
+# --
+output=\`ant -version | grep "Apache Ant(TM)"\`
+if [ -z "$output" ]; then
+    echo "[ERROR] - ant not found";
+    echo "[INFO] - you can it here: http://ant.apache.org"
+    exit 0
+fi
