@@ -1,4 +1,0 @@
-# name: (:import [...])
-# key: nsimp
-# --
-(:import [${1:package}])
