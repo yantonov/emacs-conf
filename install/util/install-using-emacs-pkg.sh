@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # install mode using emacs package system
@@ -21,7 +22,7 @@ if [ -n "${EMACS_PACKAGE_NAME}" ]; then
             -l ${SCRIPT_DIR}/elisp/install-package.el \
             -install-package ${EMACS_PACKAGE_NAME} \
             -l ${SCRIPT_DIR}/elisp/close-emacs.el
-    else    
+    else
         emacs -q -batch -l ${SCRIPT_DIR}/../../etc/etc-package.el \
             -l ${SCRIPT_DIR}/elisp/install-package.el \
             -l ${SCRIPT_DIR}/elisp/refresh-package-info.el \
