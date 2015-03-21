@@ -1,4 +1,4 @@
 # name: (def- var ...)
 # key: def-
 # --
-(def ^{:private true} ${1:name} $0)$>
+(def ^{:private true} ${1:name} $0)

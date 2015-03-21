@@ -1,6 +1,6 @@
 # name: (defn fun ...)
 # key: defn
 # --
-(defn ${1:func} [${2:args}]$>
-$0$>
-)$>
+(defn ${1:func} [${2:args}]
+$0
+)
