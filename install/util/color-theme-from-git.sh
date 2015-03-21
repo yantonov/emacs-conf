@@ -27,7 +27,7 @@ EMACS_COLOR_THEME_HOME=`${UTIL_DIR}/emacs-color-theme-home.sh`
 
 cd ${EMACS_COLOR_THEME_HOME}
 rm -rf ${INSTALLED_THEME_DIR}
-`${UTIL_DIR}/mkdir.sh ${INSTALLED_THEME_DIR}`
+mkdir -p ${INSTALLED_THEME_DIR}
 cd ${INSTALLED_THEME_DIR}
 
 git clone ${GIT_REPO} .

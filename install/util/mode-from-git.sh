@@ -27,7 +27,7 @@ EMACS_MODE_HOME=`${UTIL_DIR}/emacs-mode-home.sh`
 
 cd ${EMACS_MODE_HOME}
 rm -rf ${INSTALLED_MODE_DIR}
-`${UTIL_DIR}/mkdir.sh ${INSTALLED_MODE_DIR}`
+mkdir -p ${INSTALLED_MODE_DIR}
 cd ${INSTALLED_MODE_DIR}
 
 git clone ${GIT_REPO} .

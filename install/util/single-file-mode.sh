@@ -25,7 +25,7 @@ EMACS_MODE_HOME=`${UTIL_DIR}/emacs-mode-home.sh`
 # run
 
 cd ${EMACS_MODE_HOME}
-`${UTIL_DIR}/mkdir.sh ${INSTALLED_MODE_DIR}`
+mkdir -p ${INSTALLED_MODE_DIR}
 cd ${INSTALLED_MODE_DIR}
 
 rm -rf *
