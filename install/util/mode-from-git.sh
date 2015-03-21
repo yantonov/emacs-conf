@@ -15,13 +15,8 @@ else
 fi
 
 # init env
-WD=`pwd`
-CURRENT_DIR=`dirname $0`
-UTIL_DIR="${CURRENT_DIR}"
-cd $UTIL_DIR
-UTIL_DIR=`pwd`
-EMACS_HOME=`${UTIL_DIR}/emacs-home.sh`
-EMACS_MODE_HOME=`${UTIL_DIR}/emacs-mode-home.sh`
+SCRIPT_DIR=$(cd `dirname $0` && pwd)
+EMACS_MODE_HOME=`${SCRIPT_DIR}/emacs-mode-home.sh`
 
 # run
 
@@ -31,4 +26,3 @@ mkdir -p ${INSTALLED_MODE_DIR}
 cd ${INSTALLED_MODE_DIR}
 
 git clone ${GIT_REPO} .
-cd $WD
