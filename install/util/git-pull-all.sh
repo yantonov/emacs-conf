@@ -3,9 +3,8 @@
 OK="ok"
 DELIMITER="--------"
 
-WD=`pwd`
-SCRIPT_DIR=`dirname $0`
-EMACS_MODE_HOME=`${SCRIPT_DIR}/util/emacs-mode-home.sh`
+SCRIPT_DIR=$(cd `dirname $0` && pwd)
+EMACS_MODE_HOME=`${SCRIPT_DIR}/emacs-mode-home.sh`
 
 cd $EMACS_MODE_HOME
 for modedir in `ls -la | awk -F\  '{print $9}'`
@@ -21,4 +20,3 @@ do
     cd ..
     fi
 done
-cd $WD
