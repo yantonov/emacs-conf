@@ -1,5 +1,3 @@
-(load "clojure-mode-autoloads.el")
-
 (defun yantonov/clojure-mode-hook ()
   (paredit-mode +1)
   (local-set-key [return] 'newline-and-indent)
