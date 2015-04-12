@@ -1,8 +1,8 @@
 (defun yantonov/kbd-conf-general (my-key-map)
   ;; copy/paste/cut
-  (define-key my-key-map (kbd "C-c c") 'kill-ring-save)
-  (define-key my-key-map (kbd "C-c v") 'yank)
-  (define-key my-key-map (kbd "C-c x") 'kill-region)
+  ;; (define-key my-key-map (kbd "C-c c") 'kill-ring-save)
+  ;; (define-key my-key-map (kbd "C-c v") 'yank)
+  ;; (define-key my-key-map (kbd "C-c x") 'kill-region)
 
   ;; revert
   (define-key my-key-map (kbd "C-S-r") 'revert-buffer)
