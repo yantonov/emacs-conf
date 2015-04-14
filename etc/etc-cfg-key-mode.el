@@ -37,7 +37,7 @@
         (global-set-key key func)))))
 
 (defun yantonov/cfg-key-mode-configure ()
-  (add-hook 'minibuffer-setup-hook 'yantonov/turn-off-cfg-mode)
+  (add-hook 'minibuffer-setup-hook 'yantonov/turn-off-cfg-key-mode)
   (yantonov/cfg-hotheys yantonov/cfg-key-mode-map)
   (global-cfg-mode))
 
