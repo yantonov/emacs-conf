@@ -20,7 +20,7 @@
   (interactive)
   (yantonov/cfg-key-mode -1))
 
-(define-globalized-minor-mode global-cfg-mode yantonov/cfg-key-mode turn-on-cfg-mode)
+(define-globalized-minor-mode global-cfg-mode yantonov/cfg-key-mode yantonov/turn-on-cfg-key-mode)
 
 (defun yantonov/get-hotkeys ()
   (list
