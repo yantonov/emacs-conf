@@ -1,20 +1,4 @@
 (defun yantonov/kbd-conf-general (my-key-map)
-  ;; copy/paste/cut
-  ;; (define-key my-key-map (kbd "C-c c") 'kill-ring-save)
-  ;; (define-key my-key-map (kbd "C-c v") 'yank)
-  ;; (define-key my-key-map (kbd "C-c x") 'kill-region)
-
-  ;; revert
-  (define-key my-key-map (kbd "C-S-r") 'revert-buffer)
-
-  ;; search
-  (define-key my-key-map (kbd "C-S-s") 'find-grep)
-
-  ;; god-mode
-  (define-key my-key-map (kbd "C-<escape>") 'god-local-mode)
-
-  ;; ace-window
-  (define-key my-key-map (kbd "C-x o") 'ace-window)
 
   ;;; indentation
   ;; inspired by intellij idea

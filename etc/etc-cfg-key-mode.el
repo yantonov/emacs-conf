@@ -24,9 +24,18 @@
 
 (defun yantonov/get-hotkeys ()
   (list
+   ;; copy/paste/cut
    (list "C-c c" 'kill-ring-save)
    (list "C-c v" 'yank)
-   (list "C-c x" 'kill-region)))
+   (list "C-c x" 'kill-region)
+   ;; revert
+   (list "C-S-r" 'revert-buffer)
+   ;; search
+   (list "C-S-s" 'find-grep)
+   ;; god-mode
+   (list "C-<escape>" 'god-local-mode)
+   ;; ace-window
+   (list "C-x o" 'ace-window)))
 
 (defun yantonov/cfg-hotheys (map)
   (dolist (k (yantonov/get-hotkeys))
