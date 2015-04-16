@@ -1,103 +1,17 @@
 (defun yantonov/kbd-conf-general (my-key-map)
 
-  ;;; indentation
-  ;; inspired by intellij idea
-  (define-key my-key-map (kbd "C-M-l") 'yantonov/indent-buffer)
-  ;; inspired by intellij idea
-  (define-key my-key-map (kbd "C-S-M-l") 'yantonov/indent-defun)
-  ;; to-utf, no trailing whitespaces, no tabs
-  (define-key my-key-map (kbd "C-c n") 'yantonov/cleanup-buffer-safe)
-
-  ;; resize buffer key bindings
-  ;; http://www.emacswiki.org/emacs/WindowResize
-  (define-key my-key-map (kbd "C-S-M-<up>") 'buf-move-up)
-  (define-key my-key-map (kbd "C-S-M-<right>") 'buf-move-right)
-  (define-key my-key-map (kbd "C-S-M-<down>") 'buf-move-down)
-  (define-key my-key-map (kbd "C-S-M-<left>") 'buf-move-left)
-
-  (define-key my-key-map (kbd "C-S-<up>")     'enlarge-window)
-  (define-key my-key-map (kbd "C-S-<right>")  'enlarge-window-horizontally)
-  (define-key my-key-map (kbd "C-S-<down>")   'shrink-window)
-  (define-key my-key-map (kbd "C-S-<left>")   'shrink-window-horizontally)
-
-  ;; windows movement
-  ;; http://www.emacswiki.org/emacs/WindMove
-  (define-key my-key-map (kbd "S-<left>") 'windmove-left)
-  (define-key my-key-map (kbd "S-<down>") 'windmove-down)
-  (define-key my-key-map (kbd "S-<right>") 'windmove-right)
-  (define-key my-key-map (kbd "S-<up>") 'windmove-up)
-  ;; prevous window
-  (define-key my-key-map (kbd  "C-x O") 'yantonov/goto-previous-window)
-
-  ;; too long lines shows/hides by "C-C l"
-  (define-key my-key-map (kbd "C-c l") 'toggle-truncate-lines)
 
   ;; wrapper to goto-line (show line number only during entering line number
   (define-key my-key-map [remap goto-line] 'yantonov/goto-line-with-feedback)
 
-  ;; move lines (examples of using super key)
-  (define-key my-key-map (kbd "M-S-<up>") 'yantonov/move-whole-line-or-region-up)
-  (define-key my-key-map (kbd "M-S-<down>") 'yantonov/move-whole-line-or-region-down)
-
-  ;;; new lines
+  ;;; new lines ;; TODO hohoho
   (define-key my-key-map "\r" 'newline-and-indent)
   ;; open new line like IntelliJIdea/Eclipse etc
-  (define-key my-key-map (kbd "S-<return>") 'yantonov/smart-open-line)
-  (define-key my-key-map (kbd "C-S-<return>") 'yantonov/smart-open-line-above)
-  ;; join next line to current
-  (define-key my-key-map  (kbd "M-j")
-    (lambda ()
-      (interactive)
-      (join-line -1)))
 
-  ;; file manupulations
-  (define-key my-key-map (kbd "S-<f6>") 'yantonov/rename-current-buffer-file)
-  (define-key my-key-map (kbd "S-<f8>") 'yantonov/delete-current-buffer-file)
-
-  ;;; fullscreen
-  ;; fullscreen eshell
-  (define-key my-key-map (kbd "C-c e")
-    'fullscreen-eshell)
-  ;; fullscreen scratch
-  (define-key my-key-map (kbd "C-c f")
-    'fullscreen-scratch)
-
-  ;; timeclock
-  (define-key my-key-map (kbd "C-c ti") 'timeclock-in)
-  (define-key my-key-map (kbd "C-c to") 'timeclock-out)
-  (define-key my-key-map (kbd "C-c tc") 'timeclock-change)
-  (define-key my-key-map (kbd "C-c tr") 'timeclock-reread-log)
-  (define-key my-key-map (kbd "C-c tl") 'timeclock-visit-timelog)
-  (define-key my-key-map (kbd "C-c tw") 'timeclock-when-to-leave-string)
-
-  ;;; open
-  ;; projectile
-  (define-key my-key-map (kbd "C-S-n") 'projectile-find-file)
-  ;; webjump
-  (define-key my-key-map (kbd "C-x g") 'webjump)
-  ;; open-with
-  (define-key my-key-map (kbd  "C-c o") 'yantonov/open-with)
-  ;; open-with
-  (define-key my-key-map (kbd  "C-c g") 'yantonov/google)
-
-  (define-key my-key-map (kbd "C-@") 'er/expand-region)
-
-  ;; close all but this
-  (define-key my-key-map (kbd "C-c k") 'yantonov/kill-other-buffers)
-
-  ;; execute shell command for current buffer file
-  (define-key my-key-map (kbd "M-!") 'yantonov/shell-execute-buffer-file)
-
-  ;; close buffer aka IntelliJ Idea
-  (define-key my-key-map (kbd "C-<f4>") 'kill-buffer)
-
-  ;; rename tag
+  ;; rename tag ;; hohoho
   (define-prefix-command 'tag-util-map)
   (define-key my-key-map (kbd "C-t") 'tag-util-map)
-  (define-key tag-util-map (kbd "C-r") 'mc/mark-sgml-tag-pair)
-
-  (define-key my-key-map (kbd "C-M-<insert>") 'yantonov/copy-buffer-file-path-to-clipboard)
-  (define-key my-key-map (kbd "C-<insert>") 'yantonov/copy-buffer-file-name-to-clipboard))
+  (define-key tag-util-map (kbd "C-r") 'mc/mark-sgml-tag-pair))
 
 (defun yantonov/menu-conf-file (key-map)
   (define-key-after key-map
