@@ -1,5 +1,8 @@
 (require 'swiper)
 
+;; projectile integration
+;; (setq projectile-completion-system 'ivy)
+
 (defun yantonov/ivy-mode-hook()
   (define-key ivy-minibuffer-map (kbd "TAB") 'ivy-alt-done))
 
