@@ -9,4 +9,4 @@
 ** TODO clj-refactor
 ** TODO iswitchb cant deal with buffers which contains space (for example cider nrepl-hide-special-buffers)
 ** TODO search google youtube -> separate menu
-
+** TODO ace-window requires avy (fix install scripts)
