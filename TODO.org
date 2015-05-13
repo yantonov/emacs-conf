@@ -1,4 +1,4 @@
-* todo list [0/11]
+* todo list [0/10]
 ** TODO projectile on windows not works as expected
 ** TODO move lines (intellij idea mapping ctrl+shift + up/down)
 ** TODO lazy load of initialization (modes, settings) in all places if possible
@@ -9,4 +9,3 @@
 ** TODO clj-refactor
 ** TODO iswitchb cant deal with buffers which contains space (for example cider nrepl-hide-special-buffers)
 ** TODO search google youtube -> separate menu
-** TODO ace-window requires avy (fix install scripts)
