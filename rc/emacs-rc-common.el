@@ -22,6 +22,8 @@
 ;; the bottom of the frame for example will instead select the topmost
 ;; window in the frame.
 (setq windmove-wrap-around t)
+;;ensure that M-v always undoes C-v, so you can go back exactly
+(setq scroll-preserve-screen-position 'always)
 
 ;; tabs
 (setq-default indent-tabs-mode nil)
