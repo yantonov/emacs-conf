@@ -13,4 +13,8 @@
 
 (add-hook 'go-mode-hook 'yantonov/go-mode-hook)
 
+(if (and (getenv "GOPATH")
+         (file-exists-p (concat (getenv "GOPATH") "/src/golang.org/x/tools/cmd/oracle/oracle.el")))
+    (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el"))
+
 (provide 'emacs-rc-go-mode)
