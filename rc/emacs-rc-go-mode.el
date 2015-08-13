@@ -4,12 +4,13 @@
     (progn
       (setq exec-path (cons (getenv "GOROOT") exec-path))))
 
-;; todo install only for go-mode
-(defun yantonov/my-go-mode-before-save-hook ()
-  ;;(message major-mode)
-  (when (eq major-mode 'go-mode)
-    (gofmt-before-save)))
+(defun yantonov/go-mode-hook ()
+  (setq compile-command "go build -v && go test -v && go vet")
+  (define-key (current-local-map) "\C-c\C-c" 'compile)
+  (go-eldoc-setup)
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  (local-set-key (kbd "M-.") 'godef-jump))
 
-(add-hook 'before-save-hook 'yantonov/my-go-mode-before-save-hook)
+(add-hook 'go-mode-hook 'yantonov/go-mode-hook)
 
 (provide 'emacs-rc-go-mode)
