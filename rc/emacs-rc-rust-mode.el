@@ -1,18 +1,24 @@
 (autoload 'rust-mode "rust-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
 
-(defun yantonov/rust-mode-hook ()
-  (setq rust-indent-offset 4))
-
 (defun yantonov/racer-defined-p ()
   (and (getenv "RACER_HOME")
        (file-exists-p (getenv "RACER_HOME"))))
+
+(defun yantonov/rust-mode-hook ()
+  (setq rust-indent-offset 4)
+  (if (yantonov/racer-defined-p)
+      (progn
+        (racer-activate)
+        (local-set-key (kbd "M-.") #'racer-find-definition)
+        (local-set-key (kbd "TAB") #'racer-complete-or-indent))))
 
 (defun yantonov/racer-init ()
   (if (yantonov/racer-defined-p)
       (progn
         (setq racer-rust-src-path  (getenv "RUST_SRC_PATH"))
-        (setq racer-cmd (getenv "RACER_HOME"))
+        (setq racer-cmd (concat (getenv "RACER_HOME")
+                                "/target/release/racer"))
         (add-to-list 'load-path (concat (getenv "RACER_HOME")
                                         "/editors/emacs/")))))
 
