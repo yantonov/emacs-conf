@@ -166,9 +166,7 @@ Don't mess with special buffers."
 (defun yantonov/kill-all-buffers ()
   (interactive)
   (mapc 'kill-buffer (buffer-list))
-  (switch-to-buffer "*scratch*")
-  (if (eq system-type 'windows-nt)
-      (cd "~")))
+  (switch-to-buffer "*scratch*"))
 
 (defun yantonov/unix-file ()
   "Change the current buffer to utf-8 with Unix line-ends."
