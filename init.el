@@ -197,7 +197,8 @@ This examples are already used as defaults.")
 ;; custom config
 (load yantonov/custom-init-after-file t)
 
-(cd yantonov/user-home)
+(if (= 1 (length command-line-args))
+    (cd yantonov/user-home))
 
 (if (yantonov/macp)
     (x-focus-frame nil))
