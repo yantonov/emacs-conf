@@ -7,9 +7,13 @@
 
 (defun yantonov/rust-mode-hook ()
   (setq rust-indent-offset 4)
+  (company-mode)
+  (setq company-idle-delay 0.2)
+  (setq company-minimum-prefix-length 1)
   (if (yantonov/racer-defined-p)
       (progn
         (racer-activate)
+        (eldoc-mode)
         (local-set-key (kbd "M-.") #'racer-find-definition)
         (local-set-key (kbd "TAB") #'racer-complete-or-indent)
         (local-set-key (kbd "C-c C-c") #'yantonov/toggle-camelcase-underscores))))
@@ -21,11 +25,10 @@
         (setq racer-cmd (concat (getenv "RACER_HOME")
                                 "/target/release/racer"))
         (add-to-list 'load-path (concat (getenv "RACER_HOME")
-                                        "/editors/emacs/")))))
+                                        "/editors/emacs/"))
+        (require 'racer))))
 
 (defun yantonov/rust-compile-hook ()
-  (require 'compile)
-  (require 'projectile)
   (set (make-local-variable 'compile-command)
        (if (locate-dominating-file (buffer-file-name) "Cargo.toml")
            "cargo run"
@@ -35,12 +38,12 @@
 (add-hook 'rust-mode-hook 'yantonov/rust-mode-hook)
 (add-hook 'rust-mode-hook 'yantonov/rust-compile-hook)
 
-(yantonov/racer-init)
-
 (eval-after-load "rust-mode"
   '(progn
      (require 'company)
+     (require 'compile)
+     (require 'projectile)
      (if (yantonov/racer-defined-p)
-         (require 'racer))))
+         (yantonov/racer-init))))
 
 (provide 'emacs-rc-rust-mode)
