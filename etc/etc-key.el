@@ -48,13 +48,6 @@
     [menu-bar launchermenu launchidea]
     `("IntelliJ Idea" . ,(yantonov/run "idea"))))
 
-(defun yantonov/kbd-conf-help()
-  "quick navigate to library, function, variable definition, use C-h prefix"
-  (define-key 'help-command (kbd "C-l") 'find-library)
-  (define-key 'help-command (kbd "C-f") 'find-function)
-  (define-key 'help-command (kbd "C-k") 'find-function-on-key)
-  (define-key 'help-command (kbd "C-v") 'find-variable))
-
 (defun yantonov/kbd-conf-mac (key-map)
   (if (yantonov/macp)
       (progn
@@ -84,8 +77,7 @@
   (yantonov/kbd-conf-mac (current-global-map))
   (yantonov/kbd-conf-win (current-global-map))
   (yantonov/menu-conf-file (current-global-map))
-  (yantonov/menu-conf-launcher (current-global-map))
-  (yantonov/kbd-conf-help))
+  (yantonov/menu-conf-launcher (current-global-map)))
 
 (yantonov/kbd-conf)
 

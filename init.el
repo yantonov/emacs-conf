@@ -189,6 +189,7 @@ This examples are already used as defaults.")
 ;; after all defuns, settings mode already loaded
 (require 'etc-key)
 (require 'etc-cfg-key-mode)
+(require 'etc-help)
 
 ;; advices
 ;; after all defuns, settings mode already loaded
