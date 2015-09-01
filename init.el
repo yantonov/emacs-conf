@@ -187,7 +187,7 @@ This examples are already used as defaults.")
 
 ;; global hotkeys
 ;; after all defuns, settings mode already loaded
-(require 'etc-key)
+(require 'etc-platform-key)
 (require 'etc-cfg-key-mode)
 (require 'etc-help)
 (require 'etc-menu)

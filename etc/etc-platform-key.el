@@ -29,4 +29,4 @@
 
 (yantonov/kbd-conf)
 
-(provide 'etc-key)
+(provide 'etc-platform-key)
