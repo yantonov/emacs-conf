@@ -190,6 +190,7 @@ This examples are already used as defaults.")
 (require 'etc-key)
 (require 'etc-cfg-key-mode)
 (require 'etc-help)
+(require 'etc-menu)
 
 ;; advices
 ;; after all defuns, settings mode already loaded
