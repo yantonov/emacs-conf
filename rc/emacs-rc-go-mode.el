@@ -4,11 +4,15 @@
     (progn
       (setq exec-path (cons (getenv "GOROOT") exec-path))))
 
+(defun yantonov/go-mode-before-save-hook ()
+  (when (eq major-mode 'go-mode)
+    (gofmt-before-save)))
+
 (defun yantonov/go-mode-hook ()
   (setq compile-command "go build -v && go test -v && go vet")
   (define-key (current-local-map) "\C-c\C-c" 'compile)
   ;; (go-eldoc-setup)
-  (add-hook 'before-save-hook 'gofmt-before-save)
+  (add-hook 'before-save-hook 'yantonov/go-mode-before-save-hook)
   (local-set-key (kbd "M-.") 'godef-jump))
 
 (add-hook 'go-mode-hook 'yantonov/go-mode-hook)
