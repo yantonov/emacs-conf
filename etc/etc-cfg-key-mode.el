@@ -127,10 +127,6 @@
   ;; wrapper to goto-line (show line number only during entering line number
   (define-key map [remap goto-line] 'yantonov/goto-line-with-feedback)
 
-  ;;; new lines ;; TODO hohoho
-  (define-key map "\r" 'newline-and-indent)
-  ;; open new line like IntelliJIdea/Eclipse etc
-
   ;; rename tag ;; hohoho
   (define-prefix-command 'tag-util-map)
   (define-key map (kbd "C-t") 'tag-util-map)
