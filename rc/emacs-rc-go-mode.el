@@ -7,7 +7,7 @@
 (defun yantonov/go-mode-hook ()
   (setq compile-command "go build -v && go test -v && go vet")
   (define-key (current-local-map) "\C-c\C-c" 'compile)
-  (go-eldoc-setup)
+  ;; (go-eldoc-setup)
   (add-hook 'before-save-hook 'gofmt-before-save)
   (local-set-key (kbd "M-.") 'godef-jump))
 
