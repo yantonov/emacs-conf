@@ -14,3 +14,5 @@ ${SCRIPT_DIR}/util/install-using-emacs-pkg.sh go-eldoc
 # find usages
 # go get golang.org/x/tools/cmd/oracle
 
+# go mode
+# go get golang.org/x/tools/cmd/godoc
