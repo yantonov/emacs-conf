@@ -1,18 +1,3 @@
-(defun yantonov/kbd-conf-general (my-key-map)
-
-
-  ;; wrapper to goto-line (show line number only during entering line number
-  (define-key my-key-map [remap goto-line] 'yantonov/goto-line-with-feedback)
-
-  ;;; new lines ;; TODO hohoho
-  (define-key my-key-map "\r" 'newline-and-indent)
-  ;; open new line like IntelliJIdea/Eclipse etc
-
-  ;; rename tag ;; hohoho
-  (define-prefix-command 'tag-util-map)
-  (define-key my-key-map (kbd "C-t") 'tag-util-map)
-  (define-key tag-util-map (kbd "C-r") 'mc/mark-sgml-tag-pair))
-
 (defun yantonov/menu-conf-file (key-map)
   (define-key-after key-map
     [menu-bar file file-operation-separator]
@@ -96,7 +81,6 @@
 (defun yantonov/kbd-conf ()
   "load all key customizations"
   (interactive)
-  (yantonov/kbd-conf-general (current-global-map))
   (yantonov/kbd-conf-mac (current-global-map))
   (yantonov/kbd-conf-win (current-global-map))
   (yantonov/menu-conf-file (current-global-map))
