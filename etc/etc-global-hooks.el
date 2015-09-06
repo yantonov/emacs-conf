@@ -24,6 +24,6 @@
             ;; save all buffers on losing focus
             (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))))))
 
-(add-hook 'before-save-hook 'yantonov/cleanup-buffer-safe)
+;(add-hook 'before-save-hook 'yantonov/cleanup-buffer-safe)
 
 (provide 'etc-global-hooks)
