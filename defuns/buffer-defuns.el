@@ -124,12 +124,19 @@ Position the cursor at it's beginning, according to the current mode."
     (mark-defun)
     (indent-region (region-beginning) (region-end))))
 
-(defun yantonov/kill-other-buffers ()
-  "Kill all buffers but the current one.
-Don't mess with special buffers."
+(defun yantonov/kill-other-file-buffers ()
+  "Kill all buffers but the current one. Don't mess with special buffers."
   (interactive)
   (dolist (buffer (buffer-list))
-    (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
+    (unless (or (eql buffer (current-buffer)) 
+                (not (buffer-file-name buffer)))
+      (kill-buffer buffer))))
+
+(defun yantonov/kill-other-buffers ()
+  "Kill all buffers but the current one. Don't mess with special buffers."
+  (interactive)
+  (dolist (buffer (buffer-list))
+    (unless (or (eql buffer (current-buffer)))
       (kill-buffer buffer))))
 
 (defun yantonov/move-region (from to n)
