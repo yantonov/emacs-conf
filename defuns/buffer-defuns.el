@@ -109,6 +109,11 @@ Position the cursor at it's beginning, according to the current mode."
   (interactive)
   (search-internal "http://www.youtube.com/results?search_query=" "Search YouTube: "))
 
+(defun yantonov/search-rust-doc ()
+  "Search https://doc.rust-lang.org/std/"
+  (interactive)
+  (search-internal "https://doc.rust-lang.org/std/?search=" "Search doc.rust-lang.org/std: "))
+
 (defun search-internal (url description)
   (browse-url
    (concat
