@@ -27,6 +27,11 @@
       "http://symbolhound.com"
       "http://symbolhound.com/?q="
       ""])
+    ("hayoo" .
+     [simple-query
+      "http://hayoo.fh-wedel.de/"
+      "http://hayoo.fh-wedel.de/?query="
+      ""])
     ("youtube" .
      [simple-query
       "youtube.com"
