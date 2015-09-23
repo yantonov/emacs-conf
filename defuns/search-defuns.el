@@ -8,11 +8,6 @@
   (interactive)
   (yantonov/search-internal "http://www.youtube.com/results?search_query=" "Search YouTube: "))
 
-(defun yantonov/search-rust-doc ()
-  "Search https://doc.rust-lang.org/std/"
-  (interactive)
-  (yantonov/search-internal "https://doc.rust-lang.org/std/?search=" "Search doc.rust-lang.org/std: "))
-
 (defun yantonov/search-internal (url description)
   (browse-url
    (concat

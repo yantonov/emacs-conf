@@ -5,6 +5,11 @@
   (and (getenv "RACER_HOME")
        (file-exists-p (getenv "RACER_HOME"))))
 
+(defun yantonov/search-rust-doc ()
+  "Search https://doc.rust-lang.org/std/"
+  (interactive)
+  (yantonov/search-internal "https://doc.rust-lang.org/std/?search=" "Search doc.rust-lang.org/std: "))
+
 (defun yantonov/rust-mode-hook ()
   (setq rust-indent-offset 4)
   (company-mode)
@@ -16,7 +21,8 @@
         (eldoc-mode)
         (local-set-key (kbd "M-.") #'racer-find-definition)
         (local-set-key (kbd "TAB") #'racer-complete-or-indent)
-        (local-set-key (kbd "C-c C-c") #'yantonov/toggle-camelcase-underscores))))
+        (local-set-key (kbd "C-c C-c") #'yantonov/toggle-camelcase-underscores)
+        (local-set-key (kbd "C-c C-d") #'yantonov/search-rust-doc))))
 
 (defun yantonov/racer-init ()
   (if (yantonov/racer-defined-p)
