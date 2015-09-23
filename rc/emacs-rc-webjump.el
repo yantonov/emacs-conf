@@ -22,15 +22,20 @@
       "http://www.haskell.org/hoogle/"
       "http://www.haskell.org/hoogle/?hoogle="
       ""])
-    ("symbol" .
-     [simple-query
-      "http://symbolhound.com"
-      "http://symbolhound.com/?q="
-      ""])
     ("hayoo" .
      [simple-query
       "http://hayoo.fh-wedel.de/"
       "http://hayoo.fh-wedel.de/?query="
+      ""])
+    ("rust" .
+     [simple-query
+      "https://doc.rust-lang.org/std/"
+      "https://doc.rust-lang.org/std/?search="
+      ""])
+    ("symbol" .
+     [simple-query
+      "http://symbolhound.com"
+      "http://symbolhound.com/?q="
       ""])
     ("youtube" .
      [simple-query
