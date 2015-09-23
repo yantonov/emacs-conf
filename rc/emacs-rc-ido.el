@@ -1,7 +1,7 @@
 (require 'ido)
 
 ;; ivy-mode is used by default
-;; (ido-mode t)
+(ido-mode t)
 (setq ido-enable-prefix nil
       ido-enable-flex-matching t
       ido-completion-buffer-all-completions nil
