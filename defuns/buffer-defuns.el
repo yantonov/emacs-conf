@@ -114,13 +114,15 @@ Position the cursor at it's beginning, according to the current mode."
   (interactive)
   (search-internal "https://doc.rust-lang.org/std/?search=" "Search doc.rust-lang.org/std: "))
 
-(defun search-internal (url description)
+(defun search-internal (url description &optional interactive-mode)
   (browse-url
    (concat
     url
-    (url-hexify-string (if mark-active
-                           (buffer-substring (region-beginning) (region-end))
-                         (read-string description))))))
+    (url-hexify-string
+     (cond (interactive-mode (read-string description))
+           (mark-active (buffer-substring (region-beginning)
+                                          (region-end)))
+           (t (thing-at-point 'symbol)))))))
 
 (defun yantonov/indent-defun ()
   "Indent the current defun."
