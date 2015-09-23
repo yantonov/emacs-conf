@@ -13,14 +13,16 @@
   (interactive)
   (yantonov/search-internal "https://doc.rust-lang.org/std/?search=" "Search doc.rust-lang.org/std: "))
 
-(defun yantonov/search-internal (url description &optional interactive-mode)
+(defun yantonov/search-internal (url description)
   (browse-url
    (concat
     url
     (url-hexify-string
-     (cond (interactive-mode (read-string description))
-           (mark-active (buffer-substring (region-beginning)
+     (cond (mark-active (buffer-substring (region-beginning)
                                           (region-end)))
-           (t (thing-at-point 'symbol)))))))
+           (t (let ((s (read-string description)))
+                (if (> (length s) 0)
+                    s
+                  (thing-at-point 'symbol)))))))))
 
 (provide 'search-defuns)
