@@ -121,7 +121,16 @@
    (list "C-<f4>" 'kill-buffer)
 
    (list "C-M-<insert>" 'yantonov/copy-buffer-file-path-to-clipboard)
-   (list "C-<insert>" 'yantonov/copy-buffer-file-name-to-clipboard)))
+   (list "C-<insert>" 'yantonov/copy-buffer-file-name-to-clipboard)
+
+   ;; Experimental multiple-cursors
+   (list "C-S-c C-S-c" 'mc/edit-lines)
+   (list "C-S-c C-e" 'mc/edit-ends-of-lines)
+   (list "C-S-c C-a" 'mc/edit-beginnings-of-lines)
+   ;; multiple cursors
+   (list "C->" 'mc/mark-next-like-this)
+   (list "C-<" 'mc/mark-previous-like-this)
+   (list "C-S-<mouse-1>" 'mc/add-cursor-on-click)))
 
 (defun yantonov/cfg-custom-hotkeys (map)
   ;; wrapper to goto-line (show line number only during entering line number
@@ -135,11 +144,11 @@
 (defun yantonov/cfg-hotheys (map)
   (progn
     (dolist (k (yantonov/get-hotkeys))
-     (when k
-       (let ((key (kbd (car k)))
-             (func (car (cdr k))))
-         (define-key map key func)
-         (global-set-key key func))))
+      (when k
+        (let ((key (kbd (car k)))
+              (func (car (cdr k))))
+          (define-key map key func)
+          (global-set-key key func))))
     (yantonov/cfg-custom-hotkeys map)))
 
 (defun yantonov/cfg-key-mode-configure ()
