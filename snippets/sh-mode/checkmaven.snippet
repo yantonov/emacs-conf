@@ -2,9 +2,23 @@
 # name: checkmaven
 # key: checkmaven
 # --
-output=\`mvn --version | grep "Apache Maven"\`
+
+# check maven
+if [ -z "$JAVA_HOME" ]; then
+    echo "[ERROR] - JAVA_HOME is undefined"
+    exit 0
+fi
+
+output=`$JAVA_HOME/bin/javac 2>&1 >/dev/null | grep "Usage: javac"`
+if [ -z "$output" ]; then
+    echo "[ERROR] - JAVA_HOME is not point to JDK"
+    exit 0
+fi
+
+output=`mvn --version | grep "Apache Maven"`
 if [ -z "$output" ]; then
     echo "[ERROR] - mvn not found";
     echo "[INFO] - you can it here: http://maven.apache.org"
     exit 0
 fi
+# end check maven
