@@ -1,10 +1,12 @@
 # -*- mode: snippet -*-
-# name: checkjava
-# key: checkjava
+# name: checkjre
+# key: checkjre
 # --
+# check jre
 output=\`java -version 2>&1 >/dev/null | grep "Java(TM) SE Runtime Environment"\`
 if [ -z "$output" ]; then
     echo "[ERROR] - java not found";
     echo "[INFO] - you can get it here: www.oracle.com/technetwork/java/javase/downloads/index.html"
     exit 0
 fi
+#end check jre

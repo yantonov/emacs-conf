@@ -1,10 +1,12 @@
 # -*- mode: snippet -*-
-# name: checkjavac
-# key: checkjavac
+# name: checkjdk
+# key: checkjdk
 # --
+# check jdk
 output=\`javac 2>&1 >/dev/null | grep "Usage: javac"\`
 if [ -z "$output" ]; then
     echo "[ERROR] - javac not found, install JDK";
     echo "[INFO] - you can get it here: www.oracle.com/technetwork/java/javase/downloads/index.html"
     exit 0
 fi
+# end check jdk
