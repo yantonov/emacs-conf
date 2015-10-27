@@ -13,6 +13,9 @@
 (defvar yantonov/emacs-mode-home
   (concat yantonov/emacs-home "/mode")
   "Defines directory for emacs extensions and modes.")
+(defvar yantonov/emacs-inline-home
+  (concat yantonov/emacs-home "/inline")
+  "Defines inlined libs dir")
 (defvar yantonov/emacs-color-themes-home
   (concat yantonov/emacs-home "/color-themes")
   "Defines directory for emacs color themes.")
@@ -97,11 +100,16 @@ This examples are already used as defaults.")
       (add-to-list 'load-path project)
       (add-to-list 'custom-theme-load-path project))))
 
+(defun yantonov/init-inline-paths ()
+  (add-to-list 'load-path yantonov/emacs-inline-home))
+
 (load yantonov/custom-init-before-file t)
 ;; modes paths
 (yantonov/init-modes-paths yantonov/emacs-mode-home)
 ;; color-themes paths
 (yantonov/init-color-themes-paths yantonov/emacs-color-themes-home)
+;; inlined libs
+(yantonov/init-inline-paths)
 ;; local el or elc files
 
 ;; etc core settings
@@ -149,6 +157,7 @@ This examples are already used as defaults.")
 (require 'emacs-rc-eshell)
 (require 'emacs-rc-ess)
 (require 'emacs-rc-expand-region)
+(require 'emacs-rc-frame-cmds)
 (require 'emacs-rc-font)
 (require 'emacs-rc-git-gutter-fridge)
 (require 'emacs-rc-git-timemachine)
