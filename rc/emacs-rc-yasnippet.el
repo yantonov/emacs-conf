@@ -7,10 +7,10 @@
 
 ;; add some shotcuts in popup menu mode
 (define-key popup-menu-keymap (kbd "M-n") 'popup-next)
+(define-key popup-menu-keymap (kbd "M-p") 'popup-previous)
 (define-key popup-menu-keymap (kbd "TAB") 'popup-select)
 (define-key popup-menu-keymap (kbd "<tab>") 'popup-select)
-(define-key popup-menu-keymap (kbd "<backtab>") 'popup-previous)
-(define-key popup-menu-keymap (kbd "M-p") 'popup-previous)
+;; (define-key popup-menu-keymap (kbd "<backtab>") 'popup-previous)
 
 (defun yantonov/yas-popup-isearch-prompt (prompt choices &optional display-fn)
   (when (featurep 'popup)
