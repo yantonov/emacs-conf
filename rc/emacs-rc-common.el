@@ -26,11 +26,11 @@
 (setq scroll-preserve-screen-position 'always)
 
 ;; tabs
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil) ; use spaces instead of tabs
+(setq indent-tabs-mode nil) ; use spaces instead of tabs
 (setq-default tab-width 4)
 (setq tab-stop-list (number-sequence 4 200 4))
 (setq tab-width 4)
-(setq indent-tabs-mode nil)
 
 ;; search and replace
 (setq search-highlight           t) ; Highlight search object
