@@ -1,5 +1,4 @@
 # name: comment
 # --
 (comment
-  $0
-  )
+  $0$>)
