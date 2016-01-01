@@ -14,7 +14,8 @@
   (paredit-mode 1)
   (rainbow-delimiters-mode-enable)
   (yantonov/remove-elc-on-save)
-  (define-key emacs-lisp-mode-map (kbd "C-M-;") #'comment-or-uncomment-sexp))
+  (define-key emacs-lisp-mode-map (kbd "C-/") #'comment-or-uncomment-sexp)
+  (define-key emacs-lisp-mode-map (kbd "C-?") #'comment-or-uncomment-sexp))
 
 (add-hook 'emacs-lisp-mode-hook 'yantonov/elisp-mode-hook)
 

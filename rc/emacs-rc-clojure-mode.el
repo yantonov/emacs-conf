@@ -1,6 +1,8 @@
 (defun yantonov/clojure-mode-hook ()
   (paredit-mode +1)
   (local-set-key [return] 'newline-and-indent)
+  (local-set-key (kbd "C-/") #'comment-or-uncomment-sexp)
+  (local-set-key (kbd "C-?") #'comment-or-uncomment-sexp)
   (rainbow-delimiters-mode-enable)
   (turn-on-eldoc-mode)
   (projectile-mode)
@@ -13,7 +15,6 @@
      (require 'rainbow-delimiters)
      (require 'projectile)
      (require 'company)
-     (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)
-     (define-key clojure-mode-map (kbd "C-M-;") #'comment-or-uncomment-sexp)))
+     (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)))
 
 (provide 'emacs-rc-clojure-mode)
