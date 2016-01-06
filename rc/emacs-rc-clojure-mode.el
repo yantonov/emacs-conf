@@ -15,6 +15,7 @@
      (require 'rainbow-delimiters)
      (require 'projectile)
      (require 'company)
+     (require 'clj-refactor)
      (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)))
 
 (provide 'emacs-rc-clojure-mode)

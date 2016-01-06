@@ -59,7 +59,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-         provided by https://www.erlang-solutions.com):
+	 provided by https://www.erlang-solutions.com):
 
 \(setq erlang-mode-home \"/usr/lib/erlang/lib/tools-<ToolsVer>/emacs\"\)
 
@@ -78,7 +78,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-         provided by https://www.erlang-solutions.com):
+	 provided by https://www.erlang-solutions.com):
 \(setq erlang-home \"/usr/lib/erlang\"\)
 
 Windows:
@@ -141,7 +141,6 @@ This examples are already used as defaults.")
 (require 'emacs-rc-backup)
 (require 'emacs-rc-big-fringe)
 (require 'emacs-rc-clojure-mode)
-(require 'emacs-rc-clj-refactor)
 (require 'emacs-rc-color-theme)
 (require 'emacs-rc-command-log-mode)
 (require 'emacs-rc-common)
