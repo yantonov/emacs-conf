@@ -7,38 +7,41 @@
  
     # download emacs dist from [official site](http://www.gnu.org/software/emacs/#Obtaining "obtaining emacs")
 
+    EMACS_VERSION="24.5"
+    DIST_FILE_NAME="emacs-$EMACS_VERSION.tar.xz"
+    EXTRACTED_DIR="emacs-$EMACS_VERSION"
+    EMACS_DIST_URL="http://mirror.tochlab.net/pub/gnu/emacs/$DIST_FILE_NAME"
+    DESTINATION_PARENT="$HOME/Development/bin"
+    DESTINATION_DIR="emacs-$EMACS_VERSION"
+
+    # download    
     cd ~/Downloads  
-    wget http://mirror.tochlab.net/pub/gnu/emacs/emacs-24.3.tar.xz
+    curl -O -L "$EMACS_DIST_URL"
 
     # unpack
-
-    tar xvf emacs-24.3.tar.xz
-
+    tar xvf $DIST_FILE_NAME
+    
     # goto unpacked directory
-
-    cd emacs-24.3
+    cd $EXTRACTED_DIR
  
     # configure before install: specify directory to install emacs  
     # (otherwise it will be installed into /usr/bin)
-
-    mkdir -p $HOME/Development/bin/emacs-24.3
-    ./configure --prefix=$HOME/Development/bin/emacs-24.3
+    mkdir -p $HOME/Development/bin/emacs-$EMACS_VERSION
+    ./configure --prefix=$DESTINATION_PARENT/$DESTINATION_DIR
  
     # build
-
     make
 
     # install
-
     make install
 
     # create symboling link
+    cd $DESTINATION_PARENT
+    # delete old link
+    rm emacs
+    ln -s `pwd`/$DESTINATION_DIR emacs
 
-    $ cd $HOME/Development/bin/
-    ln -s `pwd`/emacs-24.3 emacs
-
-    # clean up
-    
+    # clean up   
     cd ~/Downloads
-    rm -rf emacs-24.3*
+    rm -rf $EXTRACTED_DIR*
     
