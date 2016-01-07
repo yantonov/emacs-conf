@@ -1,16 +1,12 @@
 ;; for debug purposes
 (setq debug-on-error t)
 
-;;
-;; paths, environment
 (defvar yantonov/user-home
   (let ((home (getenv "HOME")))
-    (expand-file-name (if home home "~")))
-  "Defines user home directory.")
+    (expand-file-name (if home home "~"))))
 
 (defvar yantonov/emacs-home
-  (expand-file-name (concat yantonov/user-home "/emacs"))
-  "Defines emacs config directory")
+  (expand-file-name (concat yantonov/user-home "/emacs")))
 
 (load-file (expand-file-name (concat yantonov/emacs-home
                      "/core/core-paths.el")))
