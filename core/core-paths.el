@@ -2,7 +2,7 @@
   "shortcut to adjust load-path"
   (add-to-list 'load-path dir))
 
-(defvar yantonov/emacs-core-home
+(defconst yantonov/emacs-core-home
   (expand-file-name (concat yantonov/emacs-home "/core"))
   "dir with core settings and defuns")
 
@@ -11,25 +11,25 @@
 
 ;; additional paths
 
-(defvar yantonov/modes-home
+(defconst yantonov/modes-home
   (expand-file-name (concat yantonov/emacs-home "/mode")))
 
-(defvar yantonov/color-themes-home
+(defconst yantonov/color-themes-home
   (expand-file-name (concat yantonov/emacs-home "/color-themes")))
 
-(defvar yantonov/rc-home
+(defconst yantonov/rc-home
   (expand-file-name (concat yantonov/emacs-home "/rc")))
 
-(defvar yantonov/defuns-home
+(defconst yantonov/defuns-home
   (expand-file-name (concat yantonov/emacs-home "/defuns")))
 
-(defvar yantonov/etc-home
+(defconst yantonov/etc-home
   (expand-file-name (concat yantonov/emacs-home "/etc")))
 
-(defvar yantonov/snippets-home
+(defconst yantonov/snippets-home
   (expand-file-name (concat yantonov/etc-home "/snippets")))
 
-(defvar yantonov/eshell-home
+(defconst yantonov/eshell-home
   (expand-file-name (concat yantonov/etc-home "/eshell")))
 
 (defun list-directories-only (dir)

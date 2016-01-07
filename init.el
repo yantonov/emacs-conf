@@ -1,11 +1,11 @@
 ;; for debug purposes
 (setq debug-on-error t)
 
-(defvar yantonov/user-home
+(defconst yantonov/user-home
   (let ((home (getenv "HOME")))
     (expand-file-name (if home home "~"))))
 
-(defvar yantonov/emacs-home
+(defconst yantonov/emacs-home
   (expand-file-name (concat yantonov/user-home "/emacs")))
 
 (load-file (expand-file-name (concat yantonov/emacs-home
