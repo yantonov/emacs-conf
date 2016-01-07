@@ -135,15 +135,6 @@
    (list "C-S-<mouse-1>" 'mc/add-cursor-on-click)
    ))
 
-(defun yantonov/cfg-custom-hotkeys (map)
-  ;; wrapper to goto-line (show line number only during entering line number
-  (define-key map [remap goto-line] 'yantonov/goto-line-with-feedback)
-
-  ;; rename tag ;; hohoho
-  (define-prefix-command 'tag-util-map)
-  (define-key map (kbd "C-t") 'tag-util-map)
-  (define-key tag-util-map (kbd "C-r") 'mc/mark-sgml-tag-pair))
-
 (defun yantonov/cfg-hotkeys (map)
   (progn
     (dolist (k (yantonov/get-hotkeys))
@@ -151,8 +142,7 @@
         (let ((key (kbd (car k)))
               (func (car (cdr k))))
           (define-key map key func)
-          (global-set-key key func))))
-    (yantonov/cfg-custom-hotkeys map)))
+          (global-set-key key func))))))
 
 (defun yantonov/cfg-key-mode-configure ()
   (add-hook 'minibuffer-setup-hook 'yantonov/turn-off-cfg-key-mode)
