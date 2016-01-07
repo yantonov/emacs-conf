@@ -1,5 +1,5 @@
 (require 'yasnippet)
-(add-to-list 'yas-snippet-dirs (concat yantonov/emacs-home "/snippets"))
+(add-to-list 'yas-snippet-dirs yantonov/snippets-home)
 (yas-global-mode 1)
 
 ;;; use popup menu for yas-choose-value

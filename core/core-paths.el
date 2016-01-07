@@ -29,6 +29,9 @@
 (defvar yantonov/etc-home
   (expand-file-name (concat yantonov/emacs-home "/etc")))
 
+(defvar yantonov/snippets-home
+  (expand-file-name (concat yantonov/etc-home "/snippets")))
+
 (defun list-directories-only (dir)
   (filter-list 'file-directory-p (directory-files dir t "\\w+")))
 
