@@ -32,6 +32,9 @@
 (defvar yantonov/snippets-home
   (expand-file-name (concat yantonov/etc-home "/snippets")))
 
+(defvar yantonov/eshell-home
+  (expand-file-name (concat yantonov/etc-home "/eshell")))
+
 (defun list-directories-only (dir)
   (filter-list 'file-directory-p (directory-files dir t "\\w+")))
 
