@@ -3,22 +3,17 @@
 
 ;;
 ;; paths, environment
-
 (defvar yantonov/user-home
-  (if (getenv "HOME") (getenv "HOME") (expand-file-name "~"))
+  (let ((home (getenv "HOME")))
+    (expand-file-name (if home home "~")))
   "Defines user home directory.")
+
 (defvar yantonov/emacs-home
-  (concat yantonov/user-home "/emacs")
-  "Defines emacs config directory inside user home directory.")
-(defvar yantonov/emacs-mode-home
-  (concat yantonov/emacs-home "/mode")
-  "Defines directory for emacs extensions and modes.")
-(defvar yantonov/emacs-inline-home
-  (concat yantonov/emacs-home "/inline")
-  "Defines inlined libs dir")
-(defvar yantonov/emacs-color-themes-home
-  (concat yantonov/emacs-home "/color-themes")
-  "Defines directory for emacs color themes.")
+  (expand-file-name (concat yantonov/user-home "/emacs"))
+  "Defines emacs config directory")
+
+(load-file (expand-file-name (concat yantonov/emacs-home
+                     "/core/core-paths.el")))
 
 (defvar yantonov/custom-init-before-file
   (concat user-emacs-directory "custom-before.el")
@@ -59,7 +54,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-	 provided by https://www.erlang-solutions.com):
+         provided by https://www.erlang-solutions.com):
 
 \(setq erlang-mode-home \"/usr/lib/erlang/lib/tools-<ToolsVer>/emacs\"\)
 
@@ -78,7 +73,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-	 provided by https://www.erlang-solutions.com):
+         provided by https://www.erlang-solutions.com):
 \(setq erlang-home \"/usr/lib/erlang\"\)
 
 Windows:
@@ -86,41 +81,14 @@ Windows:
 
 This examples are already used as defaults.")
 
-(defun yantonov/init-modes-paths (emacs-mode-home)
-  (dolist
-      (project (directory-files emacs-mode-home t "\\w+"))
-    (when (file-directory-p project)
-      (add-to-list 'load-path project))))
-
-(defun yantonov/init-color-themes-paths (emacs-color-themes-home)
-  (setq color-themes-dir emacs-color-themes-home)
-  (dolist
-      (project (directory-files color-themes-dir t "\\w+"))
-    (when (file-directory-p project)
-      (add-to-list 'load-path project)
-      (add-to-list 'custom-theme-load-path project))))
-
-(defun yantonov/init-inline-paths ()
-  (add-to-list 'load-path yantonov/emacs-inline-home))
 
 (load yantonov/custom-init-before-file t)
-;; modes paths
-(yantonov/init-modes-paths yantonov/emacs-mode-home)
-;; color-themes paths
-(yantonov/init-color-themes-paths yantonov/emacs-color-themes-home)
-;; inlined libs
-(yantonov/init-inline-paths)
-;; local el or elc files
 
 ;; etc core settings
-(setq yantonov/etc-dir (expand-file-name "etc" yantonov/emacs-home))
-(add-to-list 'load-path yantonov/etc-dir)
 (require 'etc-package)
 (require 'etc-path)
 (require 'etc-global-hooks)
 ;; etc core defuns
-(setq yantonov/defuns-dir (expand-file-name "defuns" yantonov/emacs-home))
-(add-to-list 'load-path yantonov/defuns-dir)
 (require 'buffer-defuns)
 (require 'buffer-move)
 (require 'cache-defuns)
@@ -135,8 +103,6 @@ This examples are already used as defaults.")
 (require 'window-defuns)
 (require 'xml-buffer-defuns)
 ;;; configurations for modes
-(setq yantonov/rc-dir (expand-file-name "rc" yantonov/emacs-home))
-(add-to-list 'load-path yantonov/rc-dir)
 (require 'emacs-rc-ace-window)
 (require 'emacs-rc-backup)
 (require 'emacs-rc-big-fringe)

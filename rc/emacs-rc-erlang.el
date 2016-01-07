@@ -38,7 +38,7 @@
   ;; distel
   (if (not (locate-library "distel"))
       (add-to-list 'load-path
-                   (concat yantonov/emacs-mode-home
+                   (concat yantonov/modes-home
                            "/distel/elisp")))
   (when (locate-library "distel")
     (require 'distel)
