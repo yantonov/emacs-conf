@@ -6,6 +6,7 @@
   yantonov/cfg-key-mode-map)
 
 (defadvice load (after cfg-keybindings-priority)
+  ;; move cfg keybinding to the beginning of minor-mode-map-alist
   (if (not (eq (car (car minor-mode-map-alist)) 'yantonov/cfg-key-mode))
       (let ((mykeys (assq 'yantonov/cfg-key-mode minor-mode-map-alist)))
         (assq-delete-all 'yantonov/cfg-key-mode minor-mode-map-alist)
@@ -20,7 +21,10 @@
   (interactive)
   (yantonov/cfg-key-mode -1))
 
-(define-globalized-minor-mode global-cfg-mode yantonov/cfg-key-mode yantonov/turn-on-cfg-key-mode)
+(define-globalized-minor-mode
+  global-cfg-mode
+  yantonov/cfg-key-mode
+  yantonov/turn-on-cfg-key-mode)
 
 (defun yantonov/get-hotkeys ()
   (list
@@ -135,7 +139,8 @@
    ;; resize frame
    (list "C-c b <left>" 'yantonov/frame-resize-l)
    (list "C-c b <right>" 'yantonov/frame-resize-r)
-   (list "C-c b <S-right>" 'yantonov/frame-resize-r2)))
+   (list "C-c b <S-right>" 'yantonov/frame-resize-r2)
+   ))
 
 (defun yantonov/cfg-custom-hotkeys (map)
   ;; wrapper to goto-line (show line number only during entering line number
@@ -146,7 +151,7 @@
   (define-key map (kbd "C-t") 'tag-util-map)
   (define-key tag-util-map (kbd "C-r") 'mc/mark-sgml-tag-pair))
 
-(defun yantonov/cfg-hotheys (map)
+(defun yantonov/cfg-hotkeys (map)
   (progn
     (dolist (k (yantonov/get-hotkeys))
       (when k
@@ -158,7 +163,7 @@
 
 (defun yantonov/cfg-key-mode-configure ()
   (add-hook 'minibuffer-setup-hook 'yantonov/turn-off-cfg-key-mode)
-  (yantonov/cfg-hotheys yantonov/cfg-key-mode-map)
+  (yantonov/cfg-hotkeys yantonov/cfg-key-mode-map)
   (global-cfg-mode))
 
 (yantonov/cfg-key-mode-configure)
