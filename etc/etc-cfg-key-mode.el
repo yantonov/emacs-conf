@@ -36,8 +36,6 @@
    (list "C-S-r" 'revert-buffer)
    ;; search
    (list "C-S-s" 'find-grep)
-   ;; god-mode
-   (list "C-<escape>" 'god-local-mode)
    ;; ace-window
    (list "C-x o" 'ace-window)
    ;;; indentation

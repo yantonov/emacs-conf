@@ -9,7 +9,7 @@
   (expand-file-name (concat yantonov/user-home "/emacs")))
 
 (load-file (expand-file-name (concat yantonov/emacs-home
-		     "/core/core-paths.el")))
+             "/core/core-paths.el")))
 
 (defvar yantonov/custom-init-before-file
   (concat user-emacs-directory "custom-before.el")
@@ -50,7 +50,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-	 provided by https://www.erlang-solutions.com):
+     provided by https://www.erlang-solutions.com):
 
 \(setq erlang-mode-home \"/usr/lib/erlang/lib/tools-<ToolsVer>/emacs\"\)
 
@@ -69,7 +69,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-	 provided by https://www.erlang-solutions.com):
+     provided by https://www.erlang-solutions.com):
 \(setq erlang-home \"/usr/lib/erlang\"\)
 
 Windows:
@@ -120,7 +120,6 @@ This examples are already used as defaults.")
 (require 'emacs-rc-font)
 (require 'emacs-rc-git-gutter-fridge)
 (require 'emacs-rc-git-timemachine)
-(require 'emacs-rc-god-mode)
 (require 'emacs-rc-haskell)
 (require 'emacs-rc-hide-mode-line)
 (require 'emacs-rc-html-mode)
