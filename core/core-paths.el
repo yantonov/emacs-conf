@@ -14,9 +14,6 @@
 (defvar yantonov/modes-home
   (expand-file-name (concat yantonov/emacs-home "/mode")))
 
-(defvar yantonov/inline-home
-  (expand-file-name (concat yantonov/emacs-home "/inline")))
-
 (defvar yantonov/color-themes-home
   (expand-file-name (concat yantonov/emacs-home "/color-themes")))
 
@@ -47,8 +44,7 @@
 (mapc 'add-to-load-path
       (append (yantonov/modes-paths yantonov/modes-home)
               (yantonov/color-themes-paths yantonov/color-themes-home)
-              (list yantonov/inline-home
-                    yantonov/rc-home
+              (list yantonov/rc-home
                     yantonov/defuns-home
                     yantonov/etc-home)))
 

@@ -133,11 +133,6 @@
    (list "C->" 'mc/mark-next-like-this)
    (list "C-<" 'mc/mark-previous-like-this)
    (list "C-S-<mouse-1>" 'mc/add-cursor-on-click)
-
-   ;; resize frame
-   (list "C-c b <left>" 'yantonov/frame-resize-l)
-   (list "C-c b <right>" 'yantonov/frame-resize-r)
-   (list "C-c b <S-right>" 'yantonov/frame-resize-r2)
    ))
 
 (defun yantonov/cfg-custom-hotkeys (map)
