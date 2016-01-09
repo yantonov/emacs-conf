@@ -25,6 +25,27 @@
       (require 'company)
       ;; (require 'clj-refactor)
       )
-    (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)))
+    (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)
+
+    (define-clojure-indent
+      ;; Compojure
+      (ANY 2)
+      (DELETE 2)
+      (GET 2)
+      (HEAD 2)
+      (POST 2)
+      (PUT 2)
+      (context 2)
+      (defroutes 'defun)
+      ;; Cucumber
+      (After 1)
+      (Before 1)
+      (Given 2)
+      (Then 2)
+      (When 2)
+      ;; Schema
+      (s/defrecord 2)
+      ;; test.check
+      (for-all 'defun))))
 
 (provide 'emacs-rc-clojure-mode)
