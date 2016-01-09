@@ -10,7 +10,7 @@
     (require 'rainbow-delimiters)
     (require 'projectile)
     (require 'company)
-    ;; (require 'clj-refactor)
+    (require 'clj-refactor)
 
     (defun yantonov/clojure-mode-hook ()
       (local-set-key [return] 'newline-and-indent)
@@ -20,10 +20,15 @@
       (turn-on-eldoc-mode)
       (projectile-mode)
       (company-mode)
-      (subword-mode))
+      (subword-mode)
+      (paredit-mode)
+      ;; cljr-refactor settings
+      (clj-refactor-mode 1)
+      (yas-minor-mode 1) ; for adding require/use/import statements
+      ;; This choice of keybinding leaves cider-macroexpand-1 unbound
+      (cljr-add-keybindings-with-prefix "C-c C-m"))
 
     (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)
-    (add-hook 'clojure-mode-hook #'paredit-mode)
 
     (define-clojure-indent
       ;; Compojure
