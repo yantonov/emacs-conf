@@ -4,4 +4,6 @@
                          ("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
+(require 'use-package)
+
 (provide 'etc-package)
