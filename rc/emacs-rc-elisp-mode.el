@@ -17,6 +17,6 @@
   (define-key emacs-lisp-mode-map (kbd "C-?") #'comment-or-uncomment-sexp))
 
 (add-hook 'emacs-lisp-mode-hook 'yantonov/elisp-mode-hook)
-(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 
 (provide 'emacs-rc-elisp-mode)

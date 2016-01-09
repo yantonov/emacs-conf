@@ -6,6 +6,11 @@
     (add-to-list 'magic-mode-alist '(".* boot" . clojure-mode)))
   :config
   (progn
+    (require 'paredit)
+    (require 'rainbow-delimiters)
+    (require 'projectile)
+    (require 'company)
+    ;; (require 'clj-refactor)
 
     (defun yantonov/clojure-mode-hook ()
       (local-set-key [return] 'newline-and-indent)
@@ -17,15 +22,8 @@
       (company-mode)
       (subword-mode))
 
-    (progn
-      (require 'paredit)
-      (require 'rainbow-delimiters)
-      (require 'projectile)
-      (require 'company)
-      ;; (require 'clj-refactor)
-      )
     (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)
-    (add-hook 'clojure-mode-hook 'enable-paredit-mode)
+    (add-hook 'clojure-mode-hook #'paredit-mode)
 
     (define-clojure-indent
       ;; Compojure
