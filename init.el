@@ -83,6 +83,7 @@ This examples are already used as defaults.")
 ;; etc core settings
 (require 'etc-package)
 (require 'etc-global-hooks)
+(require 'etc-key)
 ;; etc core defuns
 (require 'buffer-defuns)
 (require 'buffer-move)
