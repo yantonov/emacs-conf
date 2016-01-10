@@ -20,22 +20,8 @@
   ;;     font-lock-warning-face t)))
   )
 
-(defun yantonov/prog-mode-hotkey-hook ()
-  (local-set-key (kbd "C-/") 'yantonov/smart-comment)
-  (local-set-key (kbd "C-?") 'yantonov/smart-comment))
-
-(defun yantonov/prog-mode-showparen ()
-  ;; http://emacswiki.org/emacs/ShowParenMode
-  (setq show-paren-delay 0)
-  (setq show-paren-style 'expression)
-  (make-variable-buffer-local 'show-paren-mode)
-  (show-paren-mode 1))
-
 (defun yantonov/prog-mode-hook ()
-  (subword-mode 1)
-  (yantonov/my-highlight-prog-keywords)
-  (yantonov/prog-mode-hotkey-hook)
-  (yantonov/prog-mode-showparen))
+  (yantonov/my-highlight-prog-keywords))
 
 (add-hook 'prog-mode-hook 'yantonov/prog-mode-hook)
 
