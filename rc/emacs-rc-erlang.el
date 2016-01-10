@@ -50,11 +50,9 @@
   (add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
   (add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode))
 
-  (require 'paredit)
   (require 'rainbow-delimiters))
 
 (defun yantonov/erlang-mode-hook ()
-  (paredit-mode +1)
   (rainbow-delimiters-mode-enable)
   ;; add erlang functions to an imenu menu
   (imenu-add-to-menubar "imenu")

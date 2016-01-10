@@ -1,4 +1,4 @@
-(require 'paredit)
+(require 'emacs-rc-smartparens)
 (require 'rainbow-delimiters)
 
 (defun yantonov/remove-elc-on-save ()
@@ -13,10 +13,11 @@
 (defun yantonov/elisp-mode-hook ()
   (rainbow-delimiters-mode-enable)
   (yantonov/remove-elc-on-save)
-  (define-key emacs-lisp-mode-map (kbd "C-/") #'comment-or-uncomment-sexp)
-  (define-key emacs-lisp-mode-map (kbd "C-?") #'comment-or-uncomment-sexp))
+  (let ((m emacs-lisp-mode-map))
+    (define-key m (kbd "C-/") #'comment-or-uncomment-sexp)
+    (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)
+    (yantonov/apply-smartparens-keybindings m)))
 
 (add-hook 'emacs-lisp-mode-hook 'yantonov/elisp-mode-hook)
-(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 
 (provide 'emacs-rc-elisp-mode)

@@ -6,22 +6,24 @@
     (add-to-list 'magic-mode-alist '(".* boot" . clojure-mode)))
   :config
   (progn
-    (require 'paredit)
+    (require 'emacs-rc-smartparens)
     (require 'rainbow-delimiters)
     (require 'projectile)
     (require 'company)
     (require 'clj-refactor)
 
     (defun yantonov/clojure-mode-hook ()
-      (local-set-key [return] 'newline-and-indent)
-      (local-set-key (kbd "C-/") #'comment-or-uncomment-sexp)
-      (local-set-key (kbd "C-?") #'comment-or-uncomment-sexp)
+      (let ((m clojure-mode-map))
+        (define-key m [return] 'newline-and-indent)
+        (define-key m (kbd "C-/") #'comment-or-uncomment-sexp)
+        (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)
+        (yantonov/apply-smartparens-keybindings clojure-mode-map))
       (rainbow-delimiters-mode-enable)
       (turn-on-eldoc-mode)
       (projectile-mode)
       (company-mode)
       (subword-mode)
-      (paredit-mode)
+      (smartparens-mode)
       ;; cljr-refactor settings
       (clj-refactor-mode 1)
       (yas-minor-mode 1) ; for adding require/use/import statements
