@@ -14,6 +14,7 @@
      ("C-M-t" sp-transpose-sexp)
      ("C-M-<backspace>" sp-backward-kill-sexp)
      ("C-M-k" sp-kill-sexp)
+     ("C-k" sp-kill-sexp)
      ("C-M-w" sp-copy-sexp))
    ;; sexp navigation
    '(("C-M-<up>" sp-backward-up-sexp)
