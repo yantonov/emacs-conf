@@ -84,6 +84,7 @@ This examples are already used as defaults.")
 (require 'etc-package)
 (require 'etc-global-hooks)
 (require 'etc-key)
+(require 'use-package)
 ;; etc core defuns
 (require 'buffer-defuns)
 (require 'buffer-move)
