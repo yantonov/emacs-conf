@@ -3,7 +3,7 @@
   :init
   (progn
     (setq cider-stacktrace-default-filters '(tooling dup)
-          cider-repl-pop-to-buffer-on-connect nil
+          cider-repl-pop-to-buffer-on-connect t
           cider-prompt-save-file-on-load nil
           cider-repl-use-clojure-font-lock t
           ;; hide special buffers
