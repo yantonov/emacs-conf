@@ -20,4 +20,14 @@
                     s
                   (thing-at-point 'symbol)))))))))
 
+(defun yantonov/isearch-symbol-with-prefix (p)
+  "Like isearch, unless prefix argument is provided.
+With a prefix argument P, isearch for the symbol at point.
+C-u C-s - search symbol under point"
+  (interactive "P")
+  (let ((current-prefix-arg nil))
+    (call-interactively
+     (if p #'isearch-forward-symbol-at-point
+       #'isearch-forward))))
+
 (provide 'search-defuns)
