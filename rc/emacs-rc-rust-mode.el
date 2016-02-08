@@ -28,7 +28,8 @@
             (local-set-key (kbd "M-.") #'racer-find-definition)
             (local-set-key (kbd "TAB") #'racer-complete-or-indent)
             (local-set-key (kbd "C-c C-c") #'yantonov/toggle-camelcase-underscores)
-            (local-set-key (kbd "C-c C-d") #'yantonov/search-rust-doc))))
+            (local-set-key (kbd "C-c C-d") #'yantonov/search-rust-doc)
+            (local-set-key (kbd "C-/") #'yantonov/smart-comment))))
 
     (defun yantonov/racer-init ()
       (if (yantonov/racer-defined-p)
