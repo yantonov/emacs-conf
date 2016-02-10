@@ -13,7 +13,7 @@ do
     echo "Pulling updates for '${modedir}'"
     cd ${modedir}
     if [ -d ".git" ]; then
-        git pull
+        git pull --rebase
     fi
     echo $OK
     echo $DELIMITER
