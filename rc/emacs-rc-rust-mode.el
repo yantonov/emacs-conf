@@ -21,6 +21,9 @@
       (company-mode)
       (setq company-idle-delay 0.2)
       (setq company-minimum-prefix-length 1)
+      (smartparens-mode)
+      (highlight-parentheses-mode)
+      (rainbow-delimiters-mode-enable)
       (if (yantonov/racer-defined-p)
           (progn
             (racer-activate)
@@ -55,6 +58,9 @@
     (require 'compile)
     (require 'emacs-rc-projectile)
     (require 'emacs-rc-flycheck)
+    (require 'emacs-rc-smartparens)
+    (require 'emacs-rc-highlight-parentheses)
+    (require 'rainbow-delimiters)
 
     (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
     (flycheck-mode)
