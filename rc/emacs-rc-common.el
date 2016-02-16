@@ -41,4 +41,9 @@
 
 (setq exec-path (reverse (delete-dups (reverse (append (split-string (getenv "PATH") ":") exec-path)))))
 
+;; disable visual notification
+(setq visible-bell t)
+;; disable ring bell notification
+(setq ring-bell-function 'ignore)
+
 (provide 'emacs-rc-common)
