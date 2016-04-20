@@ -18,7 +18,6 @@
     (defun my-cider-common-hook ()
 
       (rainbow-delimiters-mode-enable)
-      (cider-turn-on-eldoc-mode)
       (company-mode))
 
     (defun my-cider-mode-hook ()
