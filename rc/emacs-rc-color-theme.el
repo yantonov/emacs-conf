@@ -25,7 +25,7 @@
 
 (add-hook 'yantonov/after-make-window-system-frame-hooks
           '(lambda ()
-             (load-theme 'noctilux t)))
+             (load-theme 'monokai t)))
 (add-hook 'yantonov/after-make-console-frame-hooks
           '(lambda ()
              (load-theme 'zenburn t)))
