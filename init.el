@@ -150,6 +150,7 @@ This examples are already used as defaults.")
 (require 'emacs-rc-undo-tree)
 (require 'emacs-rc-webjump)
 (require 'emacs-rc-yasnippet)
+(require 'emacs-rc-yaml-mode)
 (require 'emacs-rc-whitespace)
 (require 'emacs-rc-zencoding)
 

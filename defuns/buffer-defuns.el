@@ -1,3 +1,9 @@
+(defun yantonov/line-number-for-point (pos)
+  (save-excursion
+    (goto-char pos)
+    (beginning-of-line)
+    (point)))
+
 (defun yantonov/whole-line-or-region ()
   "Returns start, end of selected region or current line if no selection."
   (interactive)
@@ -110,7 +116,7 @@ Position the cursor at it's beginning, according to the current mode."
   "Kill all buffers but the current one. Don't mess with special buffers."
   (interactive)
   (dolist (buffer (buffer-list))
-    (unless (or (eql buffer (current-buffer)) 
+    (unless (or (eql buffer (current-buffer))
                 (not (buffer-file-name buffer)))
       (kill-buffer buffer))))
 
