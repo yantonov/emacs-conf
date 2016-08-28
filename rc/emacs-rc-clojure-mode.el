@@ -11,7 +11,6 @@
     (require 'projectile)
     (require 'company)
     (require 'clj-refactor)
-    (require 'emacs-rc-highlight-parentheses)
 
     (defun yantonov/clojure-mode-hook ()
       (let ((m clojure-mode-map))
@@ -31,8 +30,7 @@
       ;; This choice of keybinding leaves cider-macroexpand-1 unbound
       (cljr-add-keybindings-with-prefix "C-c m")
       ;; hightlight-parentheses
-      (yantonov/init-highlight-parentheses)
-      (highlight-parentheses-mode))
+      (show-paren-mode))
 
     (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)
 
