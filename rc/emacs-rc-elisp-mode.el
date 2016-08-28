@@ -1,5 +1,6 @@
 (require 'emacs-rc-smartparens)
 (require 'rainbow-delimiters)
+(require 'emacs-rc-highlight-symbol)
 
 (defun yantonov/remove-elc-on-save ()
   "If you're saving an elisp file, likely the .elc is no longer valid."
@@ -13,6 +14,7 @@
 (defun yantonov/elisp-mode-hook ()
   (rainbow-delimiters-mode-enable)
   (yantonov/remove-elc-on-save)
+  (highlight-symbol-nav-mode)
   (let ((m emacs-lisp-mode-map))
     (define-key m (kbd "C-/") #'comment-or-uncomment-sexp)
     (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)
