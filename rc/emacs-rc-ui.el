@@ -20,4 +20,7 @@
 ;; one theme for all frames
 (setq color-theme-is-global t)
 
+;; Every time a window is started, make sure it get maximized
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (provide 'emacs-rc-ui)
