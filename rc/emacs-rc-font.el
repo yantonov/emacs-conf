@@ -60,12 +60,12 @@ If font-index is -1, cycle backward."
 (defun yantonov/cycle-font-forward ()
   "Switch to the next font, in the current frame. See `cycle-font'."
   (interactive)
-  (cycle-font 1))
+  (yantonov/cycle-font 1))
 
 (defun yantonov/cycle-font-backward ()
   "Switch to the previous font, in the current frame. See `cycle-font'."
   (interactive)
-  (cycle-font -1))
+  (yantonov/cycle-font -1))
 
 (yantonov/set-font 0)
 
