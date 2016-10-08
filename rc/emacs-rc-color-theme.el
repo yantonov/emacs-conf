@@ -23,9 +23,12 @@
 ;; monokai-theme
 ;; (load-theme 'monokai t)
 
+;; tango dark
+;; (load-theme 'tangotango t)
+
 (add-hook 'yantonov/after-make-window-system-frame-hooks
           '(lambda ()
-             (load-theme 'monokai t)))
+             (load-theme 'tangotango t)))
 (add-hook 'yantonov/after-make-console-frame-hooks
           '(lambda ()
              (load-theme 'zenburn t)))
