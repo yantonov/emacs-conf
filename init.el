@@ -8,14 +8,16 @@
 (defconst yantonov/emacs-home
   (expand-file-name (concat yantonov/user-home "/emacs")))
 
-(load-file (expand-file-name (concat yantonov/emacs-home
-             "/core/core-paths.el")))
+(load-file
+ (expand-file-name (concat yantonov/emacs-home
+                           "/core/core-paths.el")))
 
 (defvar yantonov/custom-init-before-file
   (concat user-emacs-directory "custom-before.el")
   "Defines custom initialization file.
 This file is loaded before any settings for mode is loaded.
 So you can define environment paths of other global settings it this file.")
+
 (defvar yantonov/custom-init-after-file
   (concat user-emacs-directory "custom-after.el")
   "Defines custom initialization file.
@@ -29,13 +31,13 @@ So you can override any previous defined settings using this file.")
   nil
   "Defines list of javadoc root paths.
    This variable is machine specific,
-   can be defined in `custom-init-before-file' init file."
+   can be defined in `custom-init-before-file' init file.")
+;; Example :
+;; (setq user-javadoc-alist
+;;   '(("^\\(java[x]?\.\\|org\.ietf\.\\|org\.omg\.\\|org\.w3c\.\\|org\.xml\.\\a)" .
+;;   "file:///opt/javadoc/jdk7/docs/api/"  )))
 
-  ;; Example :
-  ;; (setq user-javadoc-alist
-  ;;   '(("^\\(java[x]?\.\\|org\.ietf\.\\|org\.omg\.\\|org\.w3c\.\\|org\.xml\.\\a)" .
-  ;;   "file:///opt/javadoc/jdk7/docs/api/"  )))
-  )
+
 
 ;;
 ;; erlang environment variables
@@ -50,7 +52,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-     provided by https://www.erlang-solutions.com):
+         provided by https://www.erlang-solutions.com):
 
 \(setq erlang-mode-home \"/usr/lib/erlang/lib/tools-<ToolsVer>/emacs\"\)
 
@@ -69,7 +71,7 @@ Examples:
 
 Ubuntu
 (assumed erlang is installed from deb package
-     provided by https://www.erlang-solutions.com):
+         provided by https://www.erlang-solutions.com):
 \(setq erlang-home \"/usr/lib/erlang\"\)
 
 Windows:
@@ -135,6 +137,7 @@ This examples are already used as defaults.")
 (require 'emacs-rc-markdown)
 (require 'emacs-rc-multiple-cursors)
 (require 'emacs-rc-org-mode)
+(require 'emacs-rc-parinfer-mode)
 (require 'emacs-rc-pcomplete)
 (require 'emacs-rc-pomodoro)
 (require 'emacs-rc-prog-mode)
