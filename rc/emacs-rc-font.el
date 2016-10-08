@@ -28,8 +28,8 @@
                )
               ((string-equal system-type "darwin") ; Mac
                '(
-                 "DejaVu Sans Mono-13"
-                 ;;"DejaVu Sans-13"
+                 ;;"DejaVu Sans Mono-13"
+                 "Monaco-12"
                  ))))
 
 (defun yantonov/set-font (font-index)
