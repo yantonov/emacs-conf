@@ -46,4 +46,7 @@
 ;; disable ring bell notification
 (setq ring-bell-function 'ignore)
 
+;; disable byte compile warning at all
+(setq byte-compile-warnings nil)
+
 (provide 'emacs-rc-common)
