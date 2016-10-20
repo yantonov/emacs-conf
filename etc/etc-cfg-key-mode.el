@@ -42,7 +42,7 @@
    ;; inspired by intellij idea
    (list "C-M-l" 'yantonov/indent-buffer)
    ;; inspired by intellij idea
-   (list "C-S-M-l" 'yantonov/indent-defun)
+   (list "C-S-M-L" 'yantonov/indent-defun)
    ;; to-utf, no trailing whitespaces, no tabs
    (list "C-c n" 'yantonov/cleanup-buffer-safe)
 
