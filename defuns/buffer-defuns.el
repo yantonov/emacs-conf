@@ -11,9 +11,12 @@
       (list (region-beginning) (region-end))
     (list (line-beginning-position) (line-beginning-position 2))))
 
-(defun yantonov/indent-buffer ()
+(defun yantonov/indent-region-or-buffer ()
+  "indent region or whole buffer"
   (interactive)
-  (indent-region (point-min) (point-max)))
+  (if (use-region-p)
+      (indent-region (region-beginning) (region-end))
+    (indent-region (point-min) (point-max))))
 
 (defun yantonov/untabify-buffer()
   (interactive)
