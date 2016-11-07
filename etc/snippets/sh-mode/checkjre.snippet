@@ -3,7 +3,7 @@
 # key: checkjre
 # --
 # check jre
-output=\`java -version 2>&1 >/dev/null | grep "Java(TM) SE Runtime Environment"\`
+output=\`java -version 2>&1 >/dev/null | grep "Java(TM) SE Runtime Environment" || echo ""\`
 if [ -z "$output" ]; then
     echo "[ERROR] - java not found";
     echo "[INFO] - you can get it here: www.oracle.com/technetwork/java/javase/downloads/index.html"

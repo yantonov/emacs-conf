@@ -3,7 +3,7 @@
 # key: checkjdk
 # --
 # check jdk
-output=\`javac 2>&1 >/dev/null | grep "Usage: javac"\`
+output=\`javac 2>&1 >/dev/null | grep "Usage: javac" || echo ""\`
 if [ -z "$output" ]; then
     echo "[ERROR] - javac not found, install JDK";
     echo "[INFO] - you can get it here: www.oracle.com/technetwork/java/javase/downloads/index.html"

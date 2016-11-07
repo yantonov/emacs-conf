@@ -2,7 +2,7 @@
 # name: checklein
 # key: checklein
 # --
-output=\`lein -version | grep "Leiningen"\`
+output=\`lein -version | grep "Leiningen" || echo "" \`
 if [ -z "$output" ]; then
     echo "[ERROR] - lein not found";
     echo "[INFO] - you can get it here: http://leiningen.org"

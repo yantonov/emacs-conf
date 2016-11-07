@@ -2,7 +2,7 @@
 # name: checkjsx
 # key: checkjsx
 # --
-output=`jsx --help | grep "Usage:"`
+output=`jsx --help | grep "Usage:" || echo ""`
 if [ -z "$output" ]; then
     echo "[ERROR] - jsx not found";
     echo "[INFO] - you can install it using node js package manager: "
