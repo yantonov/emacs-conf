@@ -12,11 +12,26 @@
     (require 'company)
     (require 'clj-refactor)
 
+    (defun yantonov/hs-clojure-hide-namespace-and-folds ()
+      "Hide the first (ns ...) expression in the file, and also all
+the (^:fold ...) expressions."
+      (interactive)
+      (hs-life-goes-on
+       (save-excursion
+         (goto-char (point-min))
+         (when (ignore-errors (re-search-forward "^(ns "))
+           (hs-hide-block))
+
+         (while (ignore-errors (re-search-forward "\\^:fold"))
+           (hs-hide-block)
+           (next-line)))))
+
     (defun yantonov/clojure-mode-hook ()
       (let ((m clojure-mode-map))
         (define-key m [return] 'newline-and-indent)
         (define-key m (kbd "C-/") #'comment-or-uncomment-sexp)
         (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)
+        (define-key m (kbd "<tab>") #'hs-toggle-hiding)
         (yantonov/apply-smartparens-keybindings clojure-mode-map))
       (rainbow-delimiters-mode-enable)
       (turn-on-eldoc-mode)
@@ -30,7 +45,10 @@
       ;; This choice of keybinding leaves cider-macroexpand-1 unbound
       (cljr-add-keybindings-with-prefix "C-c m")
       ;; hightlight-parentheses
-      (show-paren-mode))
+      (show-paren-mode)
+      ;; auto collapse namespaces and folds
+      (hs-minor-mode 1)
+      (yantonov/hs-clojure-hide-namespace-and-folds))
 
     (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)
 
