@@ -28,6 +28,8 @@
 
 (defun yantonov/get-hotkeys ()
   (list
+   ;; helm
+   (list "M-x" 'helm-M-x)
    ;; copy/paste/cut
    (list "C-c c" 'kill-ring-save)
    (list "C-c v" 'yank)
