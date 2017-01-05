@@ -1,5 +1,3 @@
-(require 'color-theme)
-
 ;; solarized theme
 ;; (load-theme 'solarized-dark t)
 
@@ -27,10 +25,10 @@
 ;; (load-theme 'tangotango t)
 
 (add-hook 'yantonov/after-make-window-system-frame-hooks
-          '(lambda ()
-             (load-theme 'tangotango t)))
+      '(lambda ()
+         (load-theme 'tangotango t)))
 (add-hook 'yantonov/after-make-console-frame-hooks
-          '(lambda ()
-             (load-theme 'zenburn t)))
+      '(lambda ()
+         (load-theme 'zenburn t)))
 
 (provide 'emacs-rc-color-theme)
