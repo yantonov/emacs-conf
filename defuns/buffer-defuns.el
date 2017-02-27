@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (defun yantonov/line-number-for-point (pos)
   (save-excursion
     (goto-char pos)

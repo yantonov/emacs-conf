@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (defun uncomment-sexp (&optional n)
   "Uncomment a sexp around point."
   (interactive "P")

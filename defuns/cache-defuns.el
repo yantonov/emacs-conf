@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (defun cached (f)
   "evaluate once and cache it"
   (lexical-let ((value nil)

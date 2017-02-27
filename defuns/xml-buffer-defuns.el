@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (defconst yantonov/*broken-line-regex* (string ?\n))
 
 (defun yantonov/xml-join-broken-lines (start end)

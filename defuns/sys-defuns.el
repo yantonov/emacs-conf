@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (defun yantonov/windowsp ()
   (eq system-type 'windows-nt))
 

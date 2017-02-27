@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (defmacro yantonov/run (program-name &optional program-args)
   "Return a function that runs the executable EXEC."
   (let ((func-name

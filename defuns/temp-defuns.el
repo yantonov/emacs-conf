@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (setq random-tempfile-default-directory "~/")
 
 (defun yantonov/create-temp-buffer ()

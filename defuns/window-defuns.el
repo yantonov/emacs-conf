@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (defun yantonov/rotate-windows ()
   "Rotate your windows."
   (interactive)

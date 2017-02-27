@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (defun yantonov/file-expand-wildcards-single-or-nil (file)
   "Try to expand file using wildcards.
 If single file found returns it, otherwise returns nil"
