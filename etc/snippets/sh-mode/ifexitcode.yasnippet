@@ -1,7 +1,9 @@
 # -*- coding: utf-8; mode: snippet -*-
 # name: check exit code
-# key: exitcode
+# key: ifexit
 # --
 if [ $? -ne 0 ]; then
-   $1
+   echo "error occured"
+   $2
+   exit 1
 fi
