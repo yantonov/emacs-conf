@@ -15,8 +15,9 @@ else
 fi
 
 # init env
-SCRIPT_DIR=$(cd `dirname $0` && pwd)
-EMACS_MODE_HOME=`${SCRIPT_DIR}/emacs-mode-home.sh`
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+EMACS_HOME=`${SCRIPT_DIR}/emacs-home.sh`
+EMACS_MODE_HOME="$EMACS_HOME/mode"
 
 # run
 
