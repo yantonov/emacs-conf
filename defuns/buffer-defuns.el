@@ -42,7 +42,8 @@
 Does not indent buffer, because it is used for a before-save-hook, and that
 might be bad."
   (interactive)
-  (untabify (point-min) (point-max))
+  (if (not indent-tabs-mode)
+      (untabify (point-min) (point-max)))
   (if (eq 'markdown-mode
           (buffer-local-value 'major-mode (current-buffer)))
       nil
