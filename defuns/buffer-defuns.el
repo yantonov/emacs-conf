@@ -1,4 +1,5 @@
 ;; -*- lexical-binding: t -*-
+(require 'list-defuns)
 
 (defun yantonov/line-number-for-point (pos)
   (save-excursion
@@ -37,6 +38,15 @@
         (call-interactively 'goto-line))
     (linum-mode 0)))
 
+(defun yantonov/current-modep (major-mode-list &optional current-mode)
+  (interactive)
+  (let ((current-major-mode (if current-mode
+                                current-mode
+                              major-mode)))
+    (somep (mapcar (lambda (m)
+                     (eq m current-major-mode))
+                   major-mode-list))))
+
 (defun yantonov/cleanup-buffer-safe ()
   "Perform a bunch of safe operations on the whitespace content of a buffer.
 Does not indent buffer, because it is used for a before-save-hook, and that
@@ -44,8 +54,7 @@ might be bad."
   (interactive)
   (if (not indent-tabs-mode)
       (untabify (point-min) (point-max)))
-  (if (eq 'markdown-mode
-          (buffer-local-value 'major-mode (current-buffer)))
+  (if (yantonov/current-modep '(markdown-mode org-mode))
       nil
     (whitespace-cleanup))
   (set-buffer-file-coding-system 'utf-8))
