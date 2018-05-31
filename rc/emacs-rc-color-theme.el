@@ -26,7 +26,7 @@
 
 (add-hook 'yantonov/after-make-window-system-frame-hooks
       '(lambda ()
-         (load-theme 'tangotango t)))
+         (load-theme 'adwaita t)))
 (add-hook 'yantonov/after-make-console-frame-hooks
       '(lambda ()
          (load-theme 'zenburn t)))
