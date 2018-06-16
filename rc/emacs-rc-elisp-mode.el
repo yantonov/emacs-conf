@@ -11,6 +11,13 @@
             nil
             t))
 
+(defun yantonov/eval-first-sexp ()
+  (interactive)
+  (let ((debug-on-error t))
+    (mark-sexp)
+    (call-interactively 'eval-region)
+    (setq deactivate-mark t)))
+
 (defun yantonov/elisp-mode-hook ()
   (rainbow-delimiters-mode-enable)
   (yantonov/remove-elc-on-save)
@@ -19,6 +26,7 @@
   (let ((m emacs-lisp-mode-map))
     (define-key m (kbd "C-/") #'comment-or-uncomment-sexp)
     (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)
+    (define-key m (kbd "C-x C-a") #'yantonov/eval-first-sexp)
     (yantonov/apply-smartparens-keybindings m)))
 
 (add-hook 'emacs-lisp-mode-hook 'yantonov/elisp-mode-hook)
