@@ -177,4 +177,7 @@ This examples are already used as defaults.")
     (cd yantonov/user-home))
 
 (if (yantonov/macp)
-    (x-focus-frame nil))
+    (progn
+      (x-focus-frame nil)
+      (toggle-frame-fullscreen)))
+
