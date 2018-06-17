@@ -5,8 +5,7 @@
 ;; (load-theme 'solarized-light t)
 
 ;; zen-and-art theme
-;; (load-file (concat yantonov/emacs-color-themes-home "/zen-and-art/zen-and-art.el"))
-;; (color-theme-zen-and-art)
+;; (load-theme 'zen-and-art)
 
 ;; darcula
 ;; (require 'darcula-theme)
