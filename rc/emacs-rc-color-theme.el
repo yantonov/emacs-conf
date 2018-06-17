@@ -5,11 +5,10 @@
 ;; (load-theme 'solarized-light t)
 
 ;; zen-and-art theme
-;; (load-theme 'zen-and-art)
+;; (load-theme 'zen-and-art t)
 
 ;; darcula
-;; (require 'darcula-theme)
-;; (set-frame-font "Inconsolata-14") ;; your preferred main font face here
+;; (load-theme 'darcula t)
 
 ;; moe-theme
 ;; (load-theme 'moe-dark t)
