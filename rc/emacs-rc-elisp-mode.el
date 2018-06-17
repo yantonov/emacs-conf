@@ -14,9 +14,9 @@
 (defun yantonov/eval-first-sexp ()
   (interactive)
   (let ((debug-on-error t))
-    (mark-sexp)
-    (call-interactively 'eval-region)
-    (setq deactivate-mark t)))
+    (save-excursion
+      (forward-sexp)
+      (eval-last-sexp nil))))
 
 (defun yantonov/elisp-mode-hook ()
   (rainbow-delimiters-mode-enable)
