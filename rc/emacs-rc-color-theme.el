@@ -22,6 +22,9 @@
 ;; tango dark
 ;; (load-theme 'tangotango t)
 
+;; dracula dark
+;; (load-theme 'dracula t)
+
 (add-hook 'yantonov/after-make-window-system-frame-hooks
       '(lambda ()
          (load-theme 'adwaita t)))
