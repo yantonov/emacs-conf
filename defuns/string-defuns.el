@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t -*-
 
-(defun symbol-to-string symbol-name)
-(defun string-to-symbol intern)
+(defun symbol-to-string (&args) (apply 'symbol-name args))
+(defun string-to-symbol (&args) (apply 'intern args))
 
 (provide 'string-defuns)
