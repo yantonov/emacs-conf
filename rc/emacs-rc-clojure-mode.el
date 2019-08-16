@@ -10,7 +10,7 @@
     (require 'rainbow-delimiters)
     (require 'projectile)
     (require 'company)
-    (require 'clj-refactor)
+    ;(require 'clj-refactor)
 
     (defun yantonov/hs-clojure-hide-namespace-and-folds ()
       "Hide the first (ns ...) expression in the file, and also all
@@ -40,10 +40,10 @@ the (^:fold ...) expressions."
       (subword-mode)
       (smartparens-mode)
       ;; cljr-refactor settings
-      (clj-refactor-mode 1)
+      ;(clj-refactor-mode 1)
       (yas-minor-mode 1) ; for adding require/use/import statements
       ;; This choice of keybinding leaves cider-macroexpand-1 unbound
-      (cljr-add-keybindings-with-prefix "C-c m")
+      ;(cljr-add-keybindings-with-prefix "C-c m")
       ;; hightlight-parentheses
       (show-paren-mode)
       ;; auto collapse namespaces and folds
