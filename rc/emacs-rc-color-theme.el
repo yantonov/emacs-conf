@@ -1,15 +1,3 @@
-;; solarized theme
-;; (load-theme 'solarized-dark t)
-
-;; solarized light theme
-;; (load-theme 'solarized-light t)
-
-;; zen-and-art theme
-;; (load-theme 'zen-and-art t)
-
-;; darcula
-;; (load-theme 'darcula t)
-
 ;; moe-theme
 ;; (load-theme 'moe-dark t)
 
