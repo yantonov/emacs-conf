@@ -177,7 +177,7 @@ This examples are already used as defaults.")
 (if (= 1 (length command-line-args))
     (cd yantonov/user-home))
 
-(if (yantonov/macp)
+(if (and (not (daemonp)) (yantonov/macp))
     (progn
       (x-focus-frame nil)
       (toggle-frame-fullscreen)))

@@ -10,14 +10,23 @@
 # the server
 
 server_ok() {
-  emacsclient -a "false" -e "(boundp 'server-process)"
+    emacsclient -a "false" -e "(boundp 'server-process)"
+}
+
+server_stop() {
+    # wasn't removing emacs from ALT-TAB on mac
+    # emacsclient -e "(server-force-delete)"
+    emacsclient -e '(kill-emacs)'
+}
+
+server_start() {
+    emacs --daemon
 }
 
 if [ "t" == "$(server_ok)" ]; then
-  echo "Shutting down Emacs server"
-  # wasn't removing emacs from ALT-TAB on mac
-  # emacsclient -e "(server-force-delete)"
-  emacsclient -e '(kill-emacs)'
+    echo "Shutting down Emacs server"
+    server_stop
 else
-  echo "Emacs server not running"
+    echo "Emacs server not running"
+    server_start
 fi
