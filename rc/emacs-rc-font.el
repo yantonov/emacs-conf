@@ -8,28 +8,20 @@
 
 (set-default 'yantonov/my-font-list
              (cond
-              ((string-equal system-type "windows-nt") ; Windows
+              ((yantonov/windowsp)
                '(
                  "Courier New-13"
-                 "DejaVu Sans Mono-13"
-                 ;;"Lucida Console-10"
-                 ;;"Segoe UI Symbol-12"
-
-                 ;;"DejaVu Sans-10"
-                 ;;"Lucida Sans Unicode-10"
-                 ;;"Arial Unicode MS-10"
-                 )
+                 "DejaVu Sans Mono-13"                 )
                )
-              ((string-equal system-type "gnu/linux")
+              ((yantonov/linuxp)
                '(
                  "DejaVu Sans Mono-13"
-                 ;;"DejaVu Sans-13"
                  )
                )
-              ((string-equal system-type "darwin") ; Mac
+              ((yantonov/macp)
                '(
-                 ;;"DejaVu Sans Mono-13"
                  "Monaco-12"
+                 "DejaVu Sans Mono-13"
                  ))))
 
 (defun yantonov/set-font (font-index)
