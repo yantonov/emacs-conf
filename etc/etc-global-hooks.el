@@ -9,7 +9,8 @@
   (select-frame frame)
   (run-hooks (if (window-system frame)
                  'yantonov/after-make-window-system-frame-hooks
-               'yantonov/after-make-console-frame-hooks)))
+               'yantonov/after-make-console-frame-hooks))
+  (yantonov/set-font 0))
 
 (add-hook 'after-make-frame-functions
           'yantonov/run-after-make-frame-hooks)

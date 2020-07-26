@@ -63,6 +63,4 @@ If font-index is -1, cycle backward."
   (interactive)
   (yantonov/cycle-font -1))
 
-(yantonov/set-font 0)
-
 (provide 'emacs-rc-font)
