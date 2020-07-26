@@ -1,8 +1,11 @@
 ;; source http://ergoemacs.org/emacs/emacs_switching_fonts.html
 
+
+
 (defcustom yantonov/my-font-list
   nil
-  "A list of fonts for `yantonov/cycle-font' to cycle from."
+  "A list of fonts for `yantonov/cycle-font' to cycle from.
+See https://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html to get information about font configuration."
   :group
   'font)
 
@@ -20,8 +23,9 @@
                )
               ((yantonov/macp)
                '(
+                 "Recursive-12" ; https://fonts.google.com/specimen/Recursive#standard-styles
                  "Monaco-12"
-                 "DejaVu Sans Mono-13"
+                 "Courier New-13"
                  ))))
 
 (defun yantonov/set-font (font-index)
