@@ -16,3 +16,4 @@
 
 # separate repositories for yasnippet
 /etc/snippets/sh-mode
+/etc/snippets/java-mode/cp
