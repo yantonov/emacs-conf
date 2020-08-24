@@ -114,7 +114,7 @@
    (list "C-@" 'er/expand-region)
 
    ;; close all but this
-   (list "C-c C-S-o" 'yantonov/kill-other-file-buffers)
+   (list "C-c C-S-o" 'yantonov/kill-other-buffers)
 
    ;; execute shell command for current buffer file
    (list "M-!" 'yantonov/shell-execute-buffer-file)
