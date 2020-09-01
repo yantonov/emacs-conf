@@ -10,6 +10,9 @@
 ;; adwaita
 ;; (load-theme 'adwaita t)
 
+;; vscode dark plus
+;; (load-theme 'vscode-dark-plus t)
+
 (add-hook 'yantonov/after-make-window-system-frame-hooks
       '(lambda ()
          (load-theme 'tangotango t)))
