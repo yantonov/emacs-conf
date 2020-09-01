@@ -7,9 +7,12 @@
 ;; tango dark
 ;; (load-theme 'tangotango t)
 
+;; adwaita
+;; (load-theme 'adwaita t)
+
 (add-hook 'yantonov/after-make-window-system-frame-hooks
       '(lambda ()
-         (load-theme 'adwaita t)))
+         (load-theme 'tangotango t)))
 (add-hook 'yantonov/after-make-console-frame-hooks
       '(lambda ()
          (load-theme 'zenburn t)))
