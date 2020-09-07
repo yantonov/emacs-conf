@@ -2,6 +2,8 @@
 
 (setq random-tempfile-default-directory "~/")
 
+(defconst yantonov/trash-file-suffix "-trash")
+
 (defun yantonov/create-temp-buffer ()
   "Create an empty buffer with current datetime name."
   (interactive)
@@ -22,23 +24,31 @@
   "Move selected text to associated trash buffer"
   (interactive "r")
   (if (use-region-p)
-      (let ((buffer-file-name (if buffer-file-truename buffer-file-truename "scratch")))
-        (let (
-              (trash-file (concat (file-name-sans-extension (buffer-file-name)) palimpsest-trash-file-suffix  "." (file-name-extension (buffer-file-name))))
-              (trash-buffer (concat (file-name-sans-extension (buffer-name)) palimpsest-trash-file-suffix "." (file-name-extension (buffer-file-name))))
-              (oldbuf (current-buffer)))
-          (save-excursion
-            (if (file-exists-p trash-file) (find-file trash-file))
-            (set-buffer (get-buffer-create trash-buffer))
-            (set-visited-file-name trash-file)
-            (goto-char (point-min))
-            (insert-buffer-substring oldbuf start end)
-            (newline)
-            (save-buffer)
-            (write-file buffer-file-truename))
-          (kill-region start end)
-          (switch-to-buffer oldbuf)
-          (message (concat "Temporary file :" trash-file " saved."))))
+      (let (
+            (buffer-file-name (if buffer-file-truename
+                                  buffer-file-truename
+                                "scratch"))
+            (trash-file (concat (file-name-sans-extension (buffer-file-name))
+                                yantonov/trash-file-suffix
+                                "."
+                                (file-name-extension (buffer-file-name))))
+            (trash-buffer (concat (file-name-sans-extension (buffer-name))
+                                  yantonov/trash-file-suffix
+                                  "."
+                                  (file-name-extension (buffer-file-name))))
+            (oldbuf (current-buffer)))
+        (save-excursion
+          (if (file-exists-p trash-file) (find-file trash-file))
+          (set-buffer (get-buffer-create trash-buffer))
+          (set-visited-file-name trash-file)
+          (goto-char (point-max))
+          (insert-buffer-substring oldbuf start end)
+          (newline)
+          (save-buffer)
+          (write-file buffer-file-truename))
+        (kill-region start end)
+        (switch-to-buffer oldbuf)
+        (message (concat "Temporary file :" trash-file " saved.")))
     (message "No region selected")))
 
 (provide 'temp-defuns)
