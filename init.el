@@ -97,7 +97,7 @@ This examples are already used as defaults.")
 (require 'search-defuns)
 (require 'temp-defuns)
 (require 'string-defuns)
-(require 'sys-defuns)
+(require 'os-defuns)
 (require 'window-defuns)
 (require 'xml-buffer-defuns)
 ;;; configurations for modes

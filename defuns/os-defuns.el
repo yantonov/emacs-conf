@@ -9,4 +9,4 @@
 (defun yantonov/macp ()
   (eq system-type 'darwin))
 
-(provide 'sys-defuns)
+(provide 'os-defuns)
