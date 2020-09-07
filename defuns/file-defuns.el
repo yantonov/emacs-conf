@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t -*-
 
+(require 'os-defuns)
+
 (defun yantonov/file-expand-wildcards-single-or-nil (file)
   "Try to expand file using wildcards.
 If single file found returns it, otherwise returns nil"
@@ -56,16 +58,16 @@ wildcardlist list of os specific patterns '\(\(os1-predicate pattern1, os2-predi
   (interactive)
   (when buffer-file-name
     (cond
-     ((string-equal system-type "gnu/linux")
+     ((yantonov/linuxp)
       (let ((process-connection-type nil))
         (start-process ""
                        nil
                        (read-shell-command "Open current file with: ")
                        buffer-file-name))
       )
-     ((string-equal system-type "darwin")
+     ((yantonov/macp)
       (shell-command (format "open \"%s\"" buffer-file-name))  )
-     ((string-equal system-type "windows-nt")
+     ((yantonov/windowsp)
       (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" buffer-file-name t t)))
      )))
 
@@ -75,15 +77,15 @@ wildcardlist list of os specific patterns '\(\(os1-predicate pattern1, os2-predi
   (when buffer-file-name
     (let ((d (file-name-directory buffer-file-name)))
       (cond
-       ((string-equal system-type "gnu/linux")
+       ((yantonov/linuxp)
         (let ((process-connection-type nil))
           (start-process ""
                          nil
                          "xdg-open"
                          d)))
-       ((string-equal system-type "darwin")
+       ((yantonov/macp)
         (shell-command (format "open \"%s\"" d))  )
-       ((string-equal system-type "windows-nt")
+       ((yantonov/windowsp)
         (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" d t t)))))))
 
 (defun yantonov/shell-execute-buffer-file ()
