@@ -46,6 +46,7 @@
   (define-key
     key-map
     [menu-bar launchermenu launchidea]
+    ;; use Tools->Create Command-Line Launcher... to create start script named 'idea'
     `("IntelliJ Idea" . ,(yantonov/run "idea"))))
 
 (defun yantonov/menu-conf ()
