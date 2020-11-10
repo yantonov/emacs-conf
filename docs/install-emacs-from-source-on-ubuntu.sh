@@ -1,3 +1,5 @@
+#!/bin/bash
+set -eu
 ### How to install latest emacs from source on ubuntu
 
 # install X development libraries:
@@ -7,7 +9,7 @@
 
 # download emacs dist from [official site](http://www.gnu.org/software/emacs/#Obtaining "obtaining emacs")
 
-EMACS_VERSION="26.2"
+EMACS_VERSION="27.1"
 DIST_FILE_NAME="emacs-$EMACS_VERSION.tar.xz"
 EXTRACTED_DIR="emacs-$EMACS_VERSION"
 EMACS_DIST_URL="http://mirror.tochlab.net/pub/gnu/emacs/$DIST_FILE_NAME"
@@ -15,6 +17,7 @@ DESTINATION_PARENT="$HOME/Development/bin"
 DESTINATION_DIR="emacs-$EMACS_VERSION"
 
 # download
+mkdir -p ~/Downloads
 cd ~/Downloads
 curl -O -L "$EMACS_DIST_URL"
 
@@ -27,7 +30,7 @@ cd $EXTRACTED_DIR
 # configure before install: specify directory to install emacs
 # (otherwise it will be installed into /usr/bin)
 mkdir -p $HOME/Development/bin/emacs-$EMACS_VERSION
-./configure --prefix=$DESTINATION_PARENT/$DESTINATION_DIR
+./configure --prefix=$DESTINATION_PARENT/$DESTINATION_DIR --with-gnutls=ifavailable
 
 # build
 make
@@ -44,4 +47,3 @@ ln -s `pwd`/$DESTINATION_DIR emacs
 # clean up
 cd ~/Downloads
 rm -rf $EXTRACTED_DIR*
-
