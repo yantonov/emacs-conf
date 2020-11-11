@@ -13,9 +13,16 @@
 ;; vscode dark plus
 ;; (load-theme 'vscode-dark-plus t)
 
+;; borland-blue theme
+;; (load-theme 'borland-blue t)
+
+
+;; desktop
 (add-hook 'yantonov/after-make-window-system-frame-hooks
       '(lambda ()
          (load-theme 'tangotango t)))
+
+;; remote terminal
 (add-hook 'yantonov/after-make-console-frame-hooks
       '(lambda ()
          (load-theme 'zenburn t)))
