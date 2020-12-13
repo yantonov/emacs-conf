@@ -1,4 +1,5 @@
 #/bin/bash
+set -eu
 
 OK="ok"
 DELIMITER="--------"
@@ -10,11 +11,11 @@ SCRIPT_NAME=`basename $0`
 for script in `ls install-* | grep "[^~]$"`
 do
     if [ ${SCRIPT_NAME} != ${script} ]; then
-	echo "Running '${SCRIPT_DIR}/${script}'"
-	${SCRIPT_DIR}/${script}
-	echo ${OK}
+    echo "Running '${SCRIPT_DIR}/${script}'"
+    ${SCRIPT_DIR}/${script}
+    echo ${OK}
     else
-	echo "Disable recursive calls of current script"
+    echo "Disable recursive calls of current script"
     fi
     echo ${DELIMITER}
 done
