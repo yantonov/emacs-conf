@@ -6,6 +6,4 @@
               (lambda ()
                 (define-key sh-mode-map (kbd "C-/") 'yantonov/smart-comment)))))
 
-
-
 (provide 'emacs-rc-sh-script-mode)
