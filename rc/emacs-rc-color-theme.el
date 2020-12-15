@@ -19,12 +19,12 @@
 
 ;; desktop
 (add-hook 'yantonov/after-make-window-system-frame-hooks
-      '(lambda ()
-         (load-theme 'tangotango t)))
+          '(lambda ()
+             (load-theme 'vscode-dark-plus t)))
 
 ;; remote terminal
 (add-hook 'yantonov/after-make-console-frame-hooks
-      '(lambda ()
-         (load-theme 'zenburn t)))
+          '(lambda ()
+             (load-theme 'zenburn t)))
 
 (provide 'emacs-rc-color-theme)
