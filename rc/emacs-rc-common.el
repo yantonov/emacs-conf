@@ -49,4 +49,7 @@
 ;; disable byte compile warning at all
 (setq byte-compile-warnings nil)
 
+;; follow symlinks without confirmaion
+(setq vc-follow-symlinks t)
+
 (provide 'emacs-rc-common)
