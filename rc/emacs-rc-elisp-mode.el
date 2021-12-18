@@ -1,4 +1,3 @@
-(require 'emacs-rc-smartparens)
 (require 'rainbow-delimiters)
 (require 'emacs-rc-highlight-symbol)
 
@@ -26,8 +25,7 @@
   (let ((m emacs-lisp-mode-map))
     (define-key m (kbd "C-/") #'comment-or-uncomment-sexp)
     (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)
-    (define-key m (kbd "C-x C-a") #'yantonov/eval-first-sexp)
-    (yantonov/apply-smartparens-keybindings m)))
+    (define-key m (kbd "C-x C-a") #'yantonov/eval-first-sexp)))
 
 (add-hook 'emacs-lisp-mode-hook 'yantonov/elisp-mode-hook)
 

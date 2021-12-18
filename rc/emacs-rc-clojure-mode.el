@@ -6,7 +6,6 @@
     (add-to-list 'magic-mode-alist '(".* boot" . clojure-mode)))
   :config
   (progn
-    (require 'emacs-rc-smartparens)
     (require 'rainbow-delimiters)
     (require 'projectile)
     (require 'company)
@@ -31,8 +30,7 @@ the (^:fold ...) expressions."
         (define-key m [return] 'newline-and-indent)
         (define-key m (kbd "C-/") #'comment-or-uncomment-sexp)
         (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)
-        (define-key m (kbd "<tab>") #'hs-toggle-hiding)
-        (yantonov/apply-smartparens-keybindings clojure-mode-map))
+        (define-key m (kbd "<tab>") #'hs-toggle-hiding))
       (rainbow-delimiters-mode-enable)
       (turn-on-eldoc-mode)
       (projectile-mode)
