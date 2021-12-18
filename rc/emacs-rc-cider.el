@@ -1,5 +1,4 @@
-(use-package cider
-  :defer t
+(use-package cider :defer t
   :init
   (progn
     (setq cider-stacktrace-default-filters '(tooling dup)
@@ -15,8 +14,19 @@
           ))
   :config
   (progn
-    (defun my-cider-common-hook ()
 
+    (defun yantonov/cider-eval-first-sexp ()
+      (interactive)
+      (let ((debug-on-error t))
+        (save-excursion
+          (forward-sexp 1)
+          (cider-eval-last-sexp))))
+
+    (defun my-cider-common-hook ()
+      (let ((m cider-mode-map))
+        (define-key m (kbd "C-c C-q") 'nrepl-close)
+        (define-key m (kbd "C-c C-Q") 'cider-quit)
+        (define-key m (kbd "C-c C-a") 'yantonov/cider-eval-first-sexp))
       (rainbow-delimiters-mode-enable)
       (company-mode))
 
@@ -27,11 +37,10 @@
     (defun my-repl-mode-hook ()
       (my-cider-common-hook))
 
+
+
     (add-hook 'cider-mode-hook 'my-cider-mode-hook)
     (add-hook 'cider-repl-mode-hook 'my-repl-mode-hook)
-
-    (define-key cider-mode-map (kbd "C-c C-q") 'nrepl-close)
-    (define-key cider-mode-map (kbd "C-c C-Q") 'cider-quit)
 
     ;;; JavaDoc browsing from cider
     (defvar javadoc-alist
