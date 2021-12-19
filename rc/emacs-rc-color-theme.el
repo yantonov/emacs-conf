@@ -1,14 +1,8 @@
-;; moe-theme
 ;; (load-theme 'moe-dark t)
 
-;; monokai-theme
 ;; (load-theme 'monokai t)
 
-;; tango dark
 ;; (load-theme 'tangotango t)
-
-;; adwaita
-;; (load-theme 'adwaita t)
 
 ;; vscode dark plus
 ;; (load-theme 'vscode-dark-plus t)
