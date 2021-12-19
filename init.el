@@ -96,7 +96,6 @@ So you can override any previous defined settings using this file.")
 (require 'emacs-rc-yasnippet)
 (require 'emacs-rc-yaml-mode)
 (require 'emacs-rc-whitespace)
-(require 'emacs-rc-zencoding)
 
 ;; global hotkeys
 ;; after all defuns, settings mode already loaded
