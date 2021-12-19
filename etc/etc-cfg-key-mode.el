@@ -111,8 +111,6 @@
    ;; open-with
    (list "C-c g" 'yantonov/google)
 
-   (list "C-@" 'er/expand-region)
-
    ;; close all but this
    (list "C-c C-S-o" 'yantonov/kill-other-buffers)
 
@@ -132,8 +130,7 @@
    ;; multiple cursors
    (list "C->" 'mc/mark-next-like-this)
    (list "C-<" 'mc/mark-previous-like-this)
-   (list "C-S-<mouse-1>" 'mc/add-cursor-on-click)
-   ))
+   (list "C-S-<mouse-1>" 'mc/add-cursor-on-click)))
 
 (defun yantonov/cfg-hotkeys (map)
   (progn
