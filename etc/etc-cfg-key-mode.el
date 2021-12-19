@@ -93,14 +93,6 @@
    ;; fullscreen scratch
    (list "C-c f" 'fullscreen-scratch)
 
-   ;; timeclock
-   (list "C-c ti" 'timeclock-in)
-   (list "C-c to" 'timeclock-out)
-   (list "C-c tc" 'timeclock-change)
-   (list "C-c tr" 'timeclock-reread-log)
-   (list "C-c tl" 'timeclock-visit-timelog)
-   (list "C-c tw" 'timeclock-when-to-leave-string)
-
   ;;; open
    ;; projectile
    (list "C-S-n" 'projectile-find-file)
