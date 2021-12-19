@@ -19,7 +19,6 @@
 (defun yantonov/elisp-mode-hook ()
   (rainbow-delimiters-mode-enable)
   (yantonov/remove-elc-on-save)
-  (highlight-symbol-nav-mode)
   (show-paren-mode)
   (let ((m emacs-lisp-mode-map))
     (define-key m (kbd "C-/") #'comment-or-uncomment-sexp)
