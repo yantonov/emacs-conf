@@ -45,7 +45,6 @@ So you can override any previous defined settings using this file.")
 (require 'window-defuns)
 (require 'xml-buffer-defuns)
 ;;; configurations for modes
-(require 'emacs-rc-ace-window)
 (require 'emacs-rc-backup)
 (require 'emacs-rc-big-fringe)
 (require 'emacs-rc-clojure-mode)
