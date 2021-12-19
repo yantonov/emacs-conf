@@ -24,47 +24,6 @@ So you can define environment paths of other global settings it this file.")
 This file is loaded after any settings for mode is loaded.
 So you can override any previous defined settings using this file.")
 
-;;
-;; erlang environment variables
-;;
-(defvar yantonov/erlang-mode-home
-  nil
-  "Defines directory for erlang-mode.
-This variable is machine specific,
-can be defined in `custom-init-before-file' init file.
-
-Examples:
-
-Ubuntu
-(assumed erlang is installed from deb package
-         provided by https://www.erlang-solutions.com):
-
-\(setq erlang-mode-home \"/usr/lib/erlang/lib/tools-<ToolsVer>/emacs\"\)
-
-Windows:
-\(setq erlang-mode-home \"C:/Program Files/erl<Ver>/lib/tools-<ToolsVer>/emacs\"\)
-
-This examples are already used as defaults.")
-
-(defvar yantonov/erlang-home
-  nil
-  "Defines directory for erlang installation.
-This variable is machine specific,
-can be defined in `custom-init-before-file' init file.
-
-Examples:
-
-Ubuntu
-(assumed erlang is installed from deb package
-         provided by https://www.erlang-solutions.com):
-\(setq erlang-home \"/usr/lib/erlang\"\)
-
-Windows:
-\(setq erlang-home \"C:/Program Files/erl<Ver>\"\)
-
-This examples are already used as defaults.")
-
-
 (load yantonov/custom-init-before-file t)
 
 ;; etc core settings
