@@ -1,5 +1,4 @@
 (require 'rainbow-delimiters)
-(require 'emacs-rc-highlight-symbol)
 
 (defun yantonov/remove-elc-on-save ()
   "If you're saving an elisp file, likely the .elc is no longer valid."
