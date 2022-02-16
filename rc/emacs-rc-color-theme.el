@@ -6,13 +6,14 @@
 
 ;; (load-theme 'tangotango t)
 
-;; vscode dark plus
 ;; (load-theme 'vscode-dark-plus t)
+
+;; (load-theme 'zenburn t)
 
 ;; desktop
 (add-hook 'yantonov/after-make-window-system-frame-hooks
           '(lambda ()
-             (load-theme 'vscode-dark-plus t)))
+             (load-theme 'dracula t)))
 
 ;; remote terminal
 (add-hook 'yantonov/after-make-console-frame-hooks
