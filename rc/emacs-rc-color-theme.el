@@ -1,3 +1,5 @@
+;; (load-theme 'dracula t)
+
 ;; (load-theme 'moe-dark t)
 
 ;; (load-theme 'monokai t)
