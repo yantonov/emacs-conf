@@ -35,18 +35,12 @@
 (defun list-directories-only (dir)
   (filter-list 'file-directory-p (directory-files dir t "\\w+")))
 
-(defun yantonov/modes-paths (dir)
-  (list-directories-only dir))
-
-(defun yantonov/color-themes-paths (dir)
-  (list-directories-only dir))
-
 (mapc 'add-to-load-path
-      (append (yantonov/modes-paths yantonov/modes-home)
-              (yantonov/color-themes-paths yantonov/color-themes-home)
+      (append (list-directories-only yantonov/modes-home)
+              (list-directories-only yantonov/color-themes-home)
               (list yantonov/rc-home
                     yantonov/defuns-home
                     yantonov/etc-home)))
 
 (mapc (lambda (x) (add-to-list 'custom-theme-load-path x))
-      (yantonov/color-themes-paths yantonov/color-themes-home))
+      (list-directories-only yantonov/color-themes-home))
