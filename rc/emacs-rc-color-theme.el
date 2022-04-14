@@ -13,7 +13,7 @@
 ;; desktop
 (add-hook 'yantonov/after-make-window-system-frame-hooks
           '(lambda ()
-             (load-theme 'dracula t)))
+             (load-theme 'moe-dark t)))
 
 ;; remote terminal
 (add-hook 'yantonov/after-make-console-frame-hooks
