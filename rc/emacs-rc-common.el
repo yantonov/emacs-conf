@@ -14,6 +14,9 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; do not require final newline
 (setq require-final-newline nil)
+;; https://www.lesswrong.com/posts/3qrgPpwvcFRuoSvCJ/emacs-recentering-with-context
+;; more user-friendly offsets
+(setq recenter-positions '(0.1 0.5 0.9))
 
 ;; With the default configuration you will get an error when you get
 ;; to attempt to move to a window that doesn't exist which becomes
