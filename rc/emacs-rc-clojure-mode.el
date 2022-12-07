@@ -32,10 +32,8 @@ the (^:fold ...) expressions."
         (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)
         (define-key m (kbd "<tab>") #'hs-toggle-hiding))
       (rainbow-delimiters-mode-enable)
-      (turn-on-eldoc-mode)
       (projectile-mode)
       (company-mode)
-      (subword-mode)
       (smartparens-mode)
       ;; cljr-refactor settings
       ;(clj-refactor-mode 1)
