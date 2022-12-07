@@ -11,20 +11,6 @@
     (require 'company)
     ;(require 'clj-refactor)
 
-    (defun yantonov/hs-clojure-hide-namespace-and-folds ()
-      "Hide the first (ns ...) expression in the file, and also all
-the (^:fold ...) expressions."
-      (interactive)
-      (hs-life-goes-on
-       (save-excursion
-         (goto-char (point-min))
-         (when (ignore-errors (re-search-forward "^(ns "))
-           (hs-hide-block))
-
-         (while (ignore-errors (re-search-forward "\\^:fold"))
-           (hs-hide-block)
-           (next-line)))))
-
     (defun yantonov/clojure-mode-hook ()
       (let ((m clojure-mode-map))
         (define-key m [return] 'newline-and-indent)
@@ -43,30 +29,8 @@ the (^:fold ...) expressions."
       ;; hightlight-parentheses
       (show-paren-mode)
       ;; auto collapse namespaces and folds
-      (hs-minor-mode 1)
-      (yantonov/hs-clojure-hide-namespace-and-folds))
+      (hs-minor-mode 1))
 
-    (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)
-
-    (define-clojure-indent
-      ;; Compojure
-      (ANY 2)
-      (DELETE 2)
-      (GET 2)
-      (HEAD 2)
-      (POST 2)
-      (PUT 2)
-      (context 2)
-      (defroutes 'defun)
-      ;; Cucumber
-      (After 1)
-      (Before 1)
-      (Given 2)
-      (Then 2)
-      (When 2)
-      ;; Schema
-      (s/defrecord 2)
-      ;; test.check
-      (for-all 'defun))))
+    (add-hook 'clojure-mode-hook 'yantonov/clojure-mode-hook)))
 
 (provide 'emacs-rc-clojure-mode)
