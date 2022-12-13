@@ -14,7 +14,7 @@
       (list (region-beginning) (region-end))
     (list (line-beginning-position) (line-beginning-position 2))))
 
-(defun yantonov/indent-region-or-buffer ()
+(defun yantonov/indent-region ()
   "indent region or whole buffer"
   (interactive)
   (if (use-region-p)
@@ -64,7 +64,7 @@ might be bad."
 Including indent-buffer, which should not be called automatically on save."
   (interactive)
   (yantonov/cleanup-buffer-safe)
-  (indent-buffer))
+  (yantonov/indent-region))
 
 (defun yantonov/move-region-to-bottom (start end)
   "Move selected text to bottom of buffer"
