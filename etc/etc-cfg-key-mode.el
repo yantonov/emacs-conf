@@ -40,7 +40,7 @@
    (list "C-x o" 'ace-window)
    ;;; indentation
    ;; inspired by intellij idea
-   (list "C-M-l" 'yantonov/indent-region-or-buffer)
+   (list "C-M-l" 'yantonov/indent-region)
    ;; inspired by intellij idea
    (list "C-S-M-L" 'yantonov/indent-defun)
    ;; to-utf, no trailing whitespaces, no tabs
