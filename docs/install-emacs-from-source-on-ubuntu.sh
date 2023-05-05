@@ -9,7 +9,7 @@ set -eu
 
 # download emacs dist from [official site](http://www.gnu.org/software/emacs/#Obtaining "obtaining emacs")
 
-EMACS_VERSION="27.1"
+EMACS_VERSION="28.2"
 DIST_FILE_NAME="emacs-$EMACS_VERSION.tar.xz"
 EXTRACTED_DIR="emacs-$EMACS_VERSION"
 EMACS_DIST_URL="http://mirror.tochlab.net/pub/gnu/emacs/$DIST_FILE_NAME"
