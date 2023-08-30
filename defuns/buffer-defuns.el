@@ -47,7 +47,7 @@
                      (eq m current-major-mode))
                    major-mode-list))))
 
-(defun yantonov/cleanup-buffer-safe ()
+(defun yantonov/cleanup-buffer ()
   "Perform a bunch of safe operations on the whitespace content of a buffer.
 Does not indent buffer, because it is used for a before-save-hook, and that
 might be bad."
@@ -58,13 +58,6 @@ might be bad."
       nil
     (whitespace-cleanup))
   (set-buffer-file-coding-system 'utf-8))
-
-(defun yantonov/cleanup-buffer ()
-  "Perform a bunch of operations on the whitespace content of a buffer.
-Including indent-buffer, which should not be called automatically on save."
-  (interactive)
-  (yantonov/cleanup-buffer-safe)
-  (yantonov/indent-region))
 
 (defun yantonov/move-region-to-bottom (start end)
   "Move selected text to bottom of buffer"

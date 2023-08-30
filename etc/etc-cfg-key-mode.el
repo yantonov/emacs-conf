@@ -44,7 +44,7 @@
    ;; inspired by intellij idea
    (list "C-S-M-L" 'yantonov/indent-defun)
    ;; to-utf, no trailing whitespaces, no tabs
-   (list "C-c n" 'yantonov/cleanup-buffer-safe)
+   (list "C-c n" 'yantonov/cleanup-buffer)
 
    ;; resize buffer key bindings
    ;; http://www.emacswiki.org/emacs/WindowResize
