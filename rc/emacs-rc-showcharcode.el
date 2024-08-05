@@ -1,3 +1,3 @@
-(autoload 'showcharcode-mode "showcharcode.el" "showcharcode" t)
+(require 'showcharcode)
 
 (provide 'emacs-rc-showcharcode)
