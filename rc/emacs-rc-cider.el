@@ -27,9 +27,7 @@
         (define-key m (kbd "C-c C-q") 'nrepl-close)
         (define-key m (kbd "C-c C-Q") 'cider-quit)
         (define-key m (kbd "C-c C-a") 'yantonov/cider-eval-first-sexp)
-        (define-key m (kbd "C-<return>") 'cider-eval-defun-at-point))
-      (rainbow-delimiters-mode-enable)
-      (company-mode))
+        (define-key m (kbd "C-<return>") 'cider-eval-defun-at-point)))
 
     (defun my-cider-mode-hook ()
       (subword-mode)

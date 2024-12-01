@@ -1,5 +1,3 @@
-(require 'rainbow-delimiters)
-
 (defun yantonov/remove-elc-on-save ()
   "If you're saving an elisp file, likely the .elc is no longer valid."
   (add-hook 'after-save-hook
@@ -17,7 +15,6 @@
       (eval-last-sexp nil))))
 
 (defun yantonov/elisp-mode-hook ()
-  (rainbow-delimiters-mode-enable)
   (yantonov/remove-elc-on-save)
   (show-paren-mode)
   (let ((m emacs-lisp-mode-map))
