@@ -1,3 +1,5 @@
+(require 'paredit)
+
 (defun yantonov/remove-elc-on-save ()
   "If you're saving an elisp file, likely the .elc is no longer valid."
   (add-hook 'after-save-hook
@@ -17,6 +19,7 @@
 (defun yantonov/elisp-mode-hook ()
   (yantonov/remove-elc-on-save)
   (show-paren-mode)
+  (paredit-mode)
   (let ((m emacs-lisp-mode-map))
     (define-key m (kbd "C-/") #'comment-or-uncomment-sexp)
     (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)

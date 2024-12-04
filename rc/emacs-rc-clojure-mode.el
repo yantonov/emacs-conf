@@ -6,6 +6,7 @@
     (add-to-list 'magic-mode-alist '(".* boot" . clojure-mode)))
   :config
   (progn
+    (require 'paredit)
     (require 'projectile)
     (require 'company)
 
@@ -14,7 +15,8 @@
         (define-key m [return] 'newline-and-indent)
         (define-key m (kbd "C-/") #'comment-or-uncomment-sexp)
         (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)
-        (define-key m (kbd "<tab>") #'hs-toggle-hiding))
+        (define-key m (kbd "<tab>") #'hs-toggle-hiding)
+        (define-key m [return] #'newline-and-indent))
       (projectile-mode)
       (company-mode)
       (smartparens-mode)
@@ -24,6 +26,9 @@
 
       ;; hightlight-parentheses
       (show-paren-mode)
+
+      ;; paredie mode
+      (paredit-mode)
 
       ;; auto collapse namespaces and folds
       (hs-minor-mode 1))
