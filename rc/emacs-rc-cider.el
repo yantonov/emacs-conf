@@ -2,14 +2,14 @@
   :ensure t
   :init
   (progn
-    (setq cider-stacktrace-default-filters '(tooling dup)
-          cider-repl-pop-to-buffer-on-connect t
-          cider-prompt-save-file-on-load nil
-          cider-repl-use-clojure-font-lock t
+    (setq cider-prompt-save-file-on-load nil
+          
           ;; hide special buffers
           nrepl-hide-special-buffers t
+          
           ;; Log communication with the nREPL server (extremely useful for debugging CIDER problems):
-          nrepl-log-messages t
+          ;; nrepl-log-messages t
+          
           ;; Don't show on error:
           cider-show-error-buffer nil))
   :config
