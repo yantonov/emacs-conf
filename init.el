@@ -76,7 +76,6 @@ So you can override any previous defined settings using this file.")
 (require 'emacs-rc-webjump)
 (require 'emacs-rc-yasnippet)
 (require 'emacs-rc-yaml-mode)
-(require 'emacs-rc-whitespace)
 
 ;; global hotkeys
 ;; after all defuns, settings mode already loaded
