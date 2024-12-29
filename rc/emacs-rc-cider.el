@@ -1,43 +1,29 @@
-(use-package cider
-  :ensure t
-  :init
-  (progn
-    (setq cider-prompt-save-file-on-load nil
-          
-          ;; hide special buffers
-          nrepl-hide-special-buffers t
-          
-          ;; Log communication with the nREPL server (extremely useful for debugging CIDER problems):
-          ;; nrepl-log-messages t
-          
-          ;; Don't show on error:
-          cider-show-error-buffer nil))
-  :config
-  (progn
-
-    (defun yantonov/cider-eval-first-sexp ()
+(defun yantonov/cider-eval-first-sexp ()
       (interactive)
       (let ((debug-on-error t))
         (save-excursion
           (forward-sexp 1)
           (cider-eval-last-sexp))))
 
-    (defun my-cider-common-hook ()
-      (let ((m cider-mode-map))
-        (define-key m (kbd "C-c C-q") 'nrepl-close)
-        (define-key m (kbd "C-c C-Q") 'cider-quit)
-        (define-key m (kbd "C-c C-a") 'yantonov/cider-eval-first-sexp)
-        (define-key m (kbd "C-<return>") 'cider-eval-defun-at-point)))
+(use-package cider
+  :ensure t
+  :init
 
-    (defun my-cider-mode-hook ()
-      (subword-mode)
-      (my-cider-common-hook))
-
-    (defun my-repl-mode-hook ()
-      (my-cider-common-hook))
-
-
-    (add-hook 'cider-mode-hook 'my-cider-mode-hook)
-    (add-hook 'cider-repl-mode-hook 'my-repl-mode-hook)))
+  :config
+  (setq cider-prompt-save-file-on-load nil
+          
+        ;; hide special buffers
+        nrepl-hide-special-buffers t
+          
+        ;; Log communication with the nREPL server (extremely useful for debugging CIDER problems):
+        ;; nrepl-log-messages t
+          
+        ;; Don't show on error:
+        cider-show-error-buffer nil)
+  :bind (:map cider-mode-map
+              ("C-c C-q" . nrepl-close)
+              ("C-c C-Q" . cider-quit)
+              ("C-c C-a" . yantonov/cider-eval-first-sexp)
+              ("C-<return>" . cider-eval-defun-at-point)))
 
 (provide 'emacs-rc-cider)
