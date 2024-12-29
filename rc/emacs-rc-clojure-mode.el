@@ -5,7 +5,6 @@
         ("\\.bb\\'" . clojure-mode)
   :config
   (progn
-    (require 'projectile)
     (require 'company)
 
     (defun yantonov/clojure-mode-hook ()
@@ -15,7 +14,6 @@
         (define-key m (kbd "C-?") #'comment-or-uncomment-sexp)
         (define-key m (kbd "<tab>") #'hs-toggle-hiding)
         (define-key m [return] #'newline-and-indent))
-      (projectile-mode)
       (company-mode)
 
       ;; for adding require/use/import statements
