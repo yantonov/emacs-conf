@@ -18,14 +18,4 @@
           (lambda ()
             (yantonov/run-after-make-frame-hooks (selected-frame))))
 
-(if (string-match "\\(^GNU Emacs ([0-9]*.[0-9]*.[0-9]*)\\)" (emacs-version))
-    (let (vrs (match-beginning 1))
-      (if (>= vrs "24.4")
-          (progn
-            ;; save all buffers on losing focus
-            (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))))))
-
-(if (fboundp 'yantonov/cleanup-buffer)
-    (add-hook 'before-save-hook 'yantonov/cleanup-buffer))
-
 (provide 'etc-global-hooks)
