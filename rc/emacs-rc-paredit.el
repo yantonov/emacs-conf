@@ -5,6 +5,10 @@
   :bind (:map paredit-mode-map
               ;; ("C-<left>" . nil)
               ;; ("C-<right>" . nil)
+              ("C-<up>" . backward-up-list)
+              ("C-<down>" . down-list)
+              ("C-<left>" . backward-sexp)
+              ("C-<right>" . forward-sexp)
               ("C-M-," . paredit-forward-barf-sexp)
               ("C-M-." . paredit-forward-slurp-sexp))
   :init
