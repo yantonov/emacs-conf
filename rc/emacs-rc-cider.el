@@ -1,10 +1,3 @@
-(defun yantonov/cider-eval-first-sexp ()
-      (interactive)
-      (let ((debug-on-error t))
-        (save-excursion
-          (forward-sexp 1)
-          (cider-eval-last-sexp))))
-
 (use-package cider
   :ensure t
   :init
@@ -23,7 +16,6 @@
   :bind (:map cider-mode-map
               ("C-c C-q" . nrepl-close)
               ("C-c C-Q" . cider-quit)
-              ("C-c C-a" . yantonov/cider-eval-first-sexp)
               ("C-<return>" . cider-eval-defun-at-point)))
 
 (provide 'emacs-rc-cider)
