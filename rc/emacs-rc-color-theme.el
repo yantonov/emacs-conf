@@ -2,6 +2,8 @@
 
 ;; (load-theme 'moe-dark t)
 
+;; (load-theme 'gruber-darker t)
+
 ;; (load-theme 'monokai t)
 
 ;; (load-theme 'tangotango t)
