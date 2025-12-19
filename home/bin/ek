@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+set -o errexit -o nounset
+
+SERVER_FILE="${HOME}/.emacs.d/server/server"
+
+if [ -f "$SERVER_FILE" ]; then
+    rm "$SERVER_FILE"
+    if [ $? -eq 0 ]; then
+        echo "[OK] File was successfully removed"
+    else
+        echo "[ERROR] cannot remove server file"
+    fi
+fi
+
