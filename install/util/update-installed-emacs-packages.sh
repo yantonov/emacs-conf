@@ -6,5 +6,7 @@ emacs -batch \
     -l ${SCRIPT_DIR}/../../etc/etc-package.el \
     -l ${SCRIPT_DIR}/elisp/refresh-package-info.el \
     -l ${SCRIPT_DIR}/elisp/update-installed.el \
-    -update-packages
+    -l ${SCRIPT_DIR}/elisp/autoremove-packages.el \
+    -update-packages \
+    -autoremove-packages
 
