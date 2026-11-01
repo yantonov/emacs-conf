@@ -17,9 +17,6 @@
 ;; cursor blinking
 (blink-cursor-mode 1)
 
-;; one theme for all frames
-(setq color-theme-is-global t)
-
 ;; Every time a window is started, make sure it get maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 

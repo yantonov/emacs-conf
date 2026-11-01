@@ -15,11 +15,6 @@
 ;; available in color-themes/custom, not installed by a script:
 ;; (load-theme 'bubbleberry t)
 
-;; old color-theme.el style, need color-theme.el to load:
-;; (color-theme-gentooish)
-;; (color-theme-less)
-;; (color-theme-subdued)
-
 ;; desktop
 (add-hook 'yantonov/after-make-window-system-frame-hooks
           '(lambda ()
